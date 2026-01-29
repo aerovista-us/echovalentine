@@ -1,19 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
-    <radialGradient id="g" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#ff7ad9" stop-opacity="1"/>
-      <stop offset="60%" stop-color="#9b5cff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.2"/>
+    <radialGradient id="heartGrad" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ff7ad9" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#9b5cff" stop-opacity="0.9">
+        <animate attributeName="stop-opacity" values="0.9;1;0.9" dur="2.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.2">
+        <animate attributeName="stop-opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <animate attributeName="r" values="60%;75%;60%" dur="3s" repeatCount="indefinite"/>
     </radialGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+    <filter id="heartGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur">
+        <animate attributeName="stdDeviation" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+      </feGaussianBlur>
       <feMerge>
-        <feMergeNode in="b"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sparkle" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="sparkleBlur"/>
+      <feMerge>
+        <feMergeNode in="sparkleBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  <path filter="url(#glow)" fill="url(#g)"
+  <rect width="256" height="256" fill="#0a0a1a" opacity="0.3"/>
+  <path filter="url(#heartGlow)" fill="url(#heartGrad)"
     d="M128 216s-73-43-94-87c-15-31 4-69 38-77 21-5 44 2 56 18
-       12-16 35-23 56-18 34 8 53 46 38 77-21 44-94 87-94 87z"/>
+       12-16 35-23 56-18 34 8 53 46 38 77-21 44-94 87-94 87z">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2.5s" repeatCount="indefinite" transform-origin="128 128"/>
+  </path>
+  <circle cx="100" cy="100" r="4" fill="#00e5ff" filter="url(#sparkle)" opacity="0.9">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="156" cy="90" r="3" fill="#ff7ad9" filter="url(#sparkle)" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -8,8; 0,0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="140" r="2.5" fill="#9b5cff" filter="url(#sparkle)" opacity="0.7">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite" begin="1s"/>
+  </circle>
 </svg>

@@ -1,7 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <rect x="28" y="88" width="200" height="80" rx="18" fill="#101026"/>
-  <path d="M44 128h52l14-30 22 60 18-36h48"
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path d="M44 128h52l14-30 22 60 18-36h48"
         fill="none" stroke="#00e5ff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M46 128h50l14-30 22 60 18-36h54"
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path d="M46 128h50l14-30 22 60 18-36h54"
         fill="none" stroke="#ff4fd8" stroke-width="4" opacity="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

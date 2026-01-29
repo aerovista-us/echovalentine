@@ -5,12 +5,21 @@
       <stop offset="1" stop-color="#00e5ff"/>
     </linearGradient>
   </defs>
-  <path fill="url(#h)"
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path fill="url(#h)"
     d="M128 212s-67-40-86-80c-14-29 3-64 35-71 19-4 40 2 51 17
        11-15 32-21 51-17 32 7 49 42 35 71-19 40-86 80-86 80z"/>
   <g fill="#ffffff" opacity="0.95">
+    <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path d="M196 56l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/>
+    <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path d="M58 120l5 11 11 5-11 5-5 11-5-11-11-5 11-5z"/>
+    <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path d="M186 146l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/>
+  </g>
   </g>
 </svg>

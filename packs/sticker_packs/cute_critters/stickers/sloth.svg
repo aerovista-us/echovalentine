@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feGaussianBlur stdDeviation="4">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/> result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
@@ -9,6 +10,11 @@
   <circle cx="128" cy="120" r="40" fill="#6b4423"/>
   <circle cx="118" cy="110" r="6" fill="#000"/>
   <circle cx="138" cy="110" r="6" fill="#000"/>
-  <path d="M100 130 Q128 140 156 130" stroke="#000" stroke-width="2" fill="none"/>
-  <path d="M128 160 L120 200 L128 190 L136 200 Z" fill="#6b4423"/>
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path d="M100 130 Q128 140 156 130" stroke="#000" stroke-width="2" fill="none"/>
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path d="M128 160 L120 200 L128 190 L136 200 Z" fill="#6b4423"/>
+  </g>
 </svg>

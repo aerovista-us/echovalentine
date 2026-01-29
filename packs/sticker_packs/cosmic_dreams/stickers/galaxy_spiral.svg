@@ -11,7 +11,8 @@
     </radialGradient>
   </defs>
   <rect width="256" height="256" fill="#0a0a1a"/>
-  <circle cx="128" cy="128" r="80" fill="url(#galaxyGrad)" filter="url(#glow)"/>
+  <circle cx="128" cy="128" r="80">
+      <animateTransform attributeName="transform" type="rotate" values="0 128 128;360 128 128" dur="20s" repeatCount="indefinite"/> fill="url(#galaxyGrad)" filter="url(#glow)"/>
   <circle cx="100" cy="100" r="20" fill="#b86bff" opacity="0.6" filter="url(#glow)"/>
   <circle cx="156" cy="156" r="25" fill="#00f0ff" opacity="0.5" filter="url(#glow)"/>
 </svg>

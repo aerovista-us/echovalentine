@@ -6,7 +6,8 @@
     </filter>
   </defs>
   <rect width="256" height="256" fill="#0a0a1a"/>
-  <path d="M128 200 Q80 160 80 120 Q80 90 110 90 Q130 90 128 110 Q126 90 146 90 Q176 90 176 120 Q176 160 128 200 Z" 
+  <path d="M128">
+      <animateTransform attributeName="transform" type="translate" values="0,0;2,-2;0,0;-2,2;0,0" dur="0.3s" repeatCount="indefinite"/> 200 Q80 160 80 120 Q80 90 110 90 Q130 90 128 110 Q126 90 146 90 Q176 90 176 120 Q176 160 128 200 Z" 
         fill="#00e5ff" filter="url(#glow)" opacity="0.8"/>
   <path d="M125 200 Q77 160 77 120 Q77 90 107 90 Q127 90 125 110 Q123 90 143 90 Q173 90 173 120 Q173 160 125 200 Z" 
         fill="#ff4fd8" opacity="0.6"/>

@@ -1,8 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <path fill="#ffd54a" d="M44 176l18-88 52 52 14-64 14 64 52-52 18 88z"/>
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path fill="#ffd54a" d="M44 176l18-88 52 52 14-64 14 64 52-52 18 88z"/>
   <rect x="54" y="176" width="148" height="28" rx="10" fill="#ffb300"/>
   <g fill="#fff">
     <circle cx="62" cy="176" r="6"/><circle cx="98" cy="176" r="6"/><circle cx="128" cy="176" r="6"/>
     <circle cx="158" cy="176" r="6"/><circle cx="194" cy="176" r="6"/>
+  </g>
   </g>
 </svg>

@@ -1,13 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feGaussianBlur stdDeviation="4">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/> result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   <rect width="256" height="256" fill="#fff5f9"/>
   <ellipse cx="128" cy="140" rx="35" ry="50" fill="#8b7355"/>
-  <path d="M100 100 L128 80 L156 100 L140 90 L128 85 L116 90 Z" fill="#8b7355"/>
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
+    <path d="M100 100 L128 80 L156 100 L140 90 L128 85 L116 90 Z" fill="#8b7355"/>
   <circle cx="118" cy="130" r="5" fill="#000"/>
   <circle cx="138" cy="130" r="5" fill="#000"/>
+  </g>
 </svg>
