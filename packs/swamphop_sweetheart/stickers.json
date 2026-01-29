@@ -1,8 +1,34 @@
-[
-  {"id": "shs-st-01", "title": "Shs St 01", "src": "assets/cards/shs-st-01.svg"},
-  {"id": "shs-st-02", "title": "Shs St 02", "src": "assets/cards/shs-st-02.svg"},
-  {"id": "shs-st-03", "title": "Shs St 03", "src": "assets/cards/shs-st-03.svg"},
-  {"id": "shs-st-04", "title": "Shs St 04", "src": "assets/cards/shs-st-04.svg"},
-  {"id": "shs-st-05", "title": "Shs St 05", "src": "assets/cards/shs-st-05.svg"},
-  {"id": "shs-st-06", "title": "Shs St 06", "src": "assets/cards/shs-st-06.svg"}
-]
+{
+  "stickers": [
+    {
+      "id": "shs-st-01",
+      "title": "Shs St 01",
+      "src": "assets/cards/shs-st-01.svg"
+    },
+    {
+      "id": "shs-st-02",
+      "title": "Shs St 02",
+      "src": "assets/cards/shs-st-02.svg"
+    },
+    {
+      "id": "shs-st-03",
+      "title": "Shs St 03",
+      "src": "assets/cards/shs-st-03.svg"
+    },
+    {
+      "id": "shs-st-04",
+      "title": "Shs St 04",
+      "src": "assets/cards/shs-st-04.svg"
+    },
+    {
+      "id": "shs-st-05",
+      "title": "Shs St 05",
+      "src": "assets/cards/shs-st-05.svg"
+    },
+    {
+      "id": "shs-st-06",
+      "title": "Shs St 06",
+      "src": "assets/cards/shs-st-06.svg"
+    }
+  ]
+}

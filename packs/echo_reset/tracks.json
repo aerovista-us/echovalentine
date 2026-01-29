@@ -1,4 +1,14 @@
-[
-  {"id": "3-midnight-fm", "title": "3 Midnight Fm", "src": "assets/audio/3-midnight-fm.mp3"},
-  {"id": "4-ghost-in-the-rearview", "title": "4 Ghost In The Rearview", "src": "assets/audio/4-ghost-in-the-rearview.mp3"}
-]
+{
+  "tracks": [
+    {
+      "id": "3-midnight-fm",
+      "title": "3 Midnight Fm",
+      "src": "assets/audio/3-midnight-fm.mp3"
+    },
+    {
+      "id": "4-ghost-in-the-rearview",
+      "title": "4 Ghost In The Rearview",
+      "src": "assets/audio/4-ghost-in-the-rearview.mp3"
+    }
+  ]
+}

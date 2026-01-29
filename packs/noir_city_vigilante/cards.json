@@ -1,26 +1,184 @@
-[
-  {"id": "ncv-01", "title": "Ncv 01", "src": "assets/cards/ncv-01.svg"},
-  {"id": "ncv-02", "title": "Ncv 02", "src": "assets/cards/ncv-02.svg"},
-  {"id": "ncv-03", "title": "Ncv 03", "src": "assets/cards/ncv-03.svg"},
-  {"id": "ncv-04", "title": "Ncv 04", "src": "assets/cards/ncv-04.svg"},
-  {"id": "ncv-05", "title": "Ncv 05", "src": "assets/cards/ncv-05.svg"},
-  {"id": "ncv-06", "title": "Ncv 06", "src": "assets/cards/ncv-06.svg"},
-  {"id": "ncv-07", "title": "Ncv 07", "src": "assets/cards/ncv-07.svg"},
-  {"id": "ncv-08", "title": "Ncv 08", "src": "assets/cards/ncv-08.svg"},
-  {"id": "ncv-09", "title": "Ncv 09", "src": "assets/cards/ncv-09.svg"},
-  {"id": "ncv-10", "title": "Ncv 10", "src": "assets/cards/ncv-10.svg"},
-  {"id": "ncv-11", "title": "Ncv 11", "src": "assets/cards/ncv-11.svg"},
-  {"id": "ncv-12", "title": "Ncv 12", "src": "assets/cards/ncv-12.svg"},
-  {"id": "ncv-13", "title": "Ncv 13", "src": "assets/cards/ncv-13.svg"},
-  {"id": "ncv-14", "title": "Ncv 14", "src": "assets/cards/ncv-14.svg"},
-  {"id": "ncv-15", "title": "Ncv 15", "src": "assets/cards/ncv-15.svg"},
-  {"id": "ncv-16", "title": "Ncv 16", "src": "assets/cards/ncv-16.svg"},
-  {"id": "ncv-17", "title": "Ncv 17", "src": "assets/cards/ncv-17.svg"},
-  {"id": "ncv-18", "title": "Ncv 18", "src": "assets/cards/ncv-18.svg"},
-  {"id": "ncv-19", "title": "Ncv 19", "src": "assets/cards/ncv-19.svg"},
-  {"id": "ncv-20", "title": "Ncv 20", "src": "assets/cards/ncv-20.svg"},
-  {"id": "ncv-21", "title": "Ncv 21", "src": "assets/cards/ncv-21.svg"},
-  {"id": "ncv-22", "title": "Ncv 22", "src": "assets/cards/ncv-22.svg"},
-  {"id": "ncv-23", "title": "Ncv 23", "src": "assets/cards/ncv-23.svg"},
-  {"id": "ncv-24", "title": "Ncv 24", "src": "assets/cards/ncv-24.svg"}
-]
+{
+  "cards": [
+    {
+      "id": "ncv-01",
+      "title": "Ncv 01",
+      "src": "assets/cards/ncv-01.svg"
+    },
+    {
+      "id": "ncv-02",
+      "title": "Ncv 02",
+      "src": "assets/cards/ncv-02.svg"
+    },
+    {
+      "id": "ncv-03",
+      "title": "Ncv 03",
+      "src": "assets/cards/ncv-03.svg"
+    },
+    {
+      "id": "ncv-04",
+      "title": "Ncv 04",
+      "src": "assets/cards/ncv-04.svg"
+    },
+    {
+      "id": "ncv-05",
+      "title": "Ncv 05",
+      "src": "assets/cards/ncv-05.svg"
+    },
+    {
+      "id": "ncv-06",
+      "title": "Ncv 06",
+      "src": "assets/cards/ncv-06.svg"
+    },
+    {
+      "id": "ncv-07",
+      "title": "Ncv 07",
+      "src": "assets/cards/ncv-07.svg"
+    },
+    {
+      "id": "ncv-08",
+      "title": "Ncv 08",
+      "src": "assets/cards/ncv-08.svg"
+    },
+    {
+      "id": "ncv-09",
+      "title": "Ncv 09",
+      "src": "assets/cards/ncv-09.svg"
+    },
+    {
+      "id": "ncv-10",
+      "title": "Ncv 10",
+      "src": "assets/cards/ncv-10.svg"
+    },
+    {
+      "id": "ncv-11",
+      "title": "Ncv 11",
+      "src": "assets/cards/ncv-11.svg"
+    },
+    {
+      "id": "ncv-12",
+      "title": "Ncv 12",
+      "src": "assets/cards/ncv-12.svg"
+    },
+    {
+      "id": "ncv-13",
+      "title": "Ncv 13",
+      "src": "assets/cards/ncv-13.svg"
+    },
+    {
+      "id": "ncv-14",
+      "title": "Ncv 14",
+      "src": "assets/cards/ncv-14.svg"
+    },
+    {
+      "id": "ncv-15",
+      "title": "Ncv 15",
+      "src": "assets/cards/ncv-15.svg"
+    },
+    {
+      "id": "ncv-16",
+      "title": "Ncv 16",
+      "src": "assets/cards/ncv-16.svg"
+    },
+    {
+      "id": "ncv-17",
+      "title": "Ncv 17",
+      "src": "assets/cards/ncv-17.svg"
+    },
+    {
+      "id": "ncv-18",
+      "title": "Ncv 18",
+      "src": "assets/cards/ncv-18.svg"
+    },
+    {
+      "id": "ncv-19",
+      "title": "Ncv 19",
+      "src": "assets/cards/ncv-19.svg"
+    },
+    {
+      "id": "ncv-20",
+      "title": "Ncv 20",
+      "src": "assets/cards/ncv-20.svg"
+    },
+    {
+      "id": "ncv-21",
+      "title": "Ncv 21",
+      "src": "assets/cards/ncv-21.svg"
+    },
+    {
+      "id": "ncv-22",
+      "title": "Ncv 22",
+      "src": "assets/cards/ncv-22.svg"
+    },
+    {
+      "id": "ncv-23",
+      "title": "Ncv 23",
+      "src": "assets/cards/ncv-23.svg"
+    },
+    {
+      "id": "ncv-24",
+      "title": "Ncv 24",
+      "src": "assets/cards/ncv-24.svg"
+    },
+    {
+      "id": "ncv_st_01",
+      "title": "Ncv St 01",
+      "src": "assets/cards/ncv-st-01.svg"
+    },
+    {
+      "id": "ncv_st_02",
+      "title": "Ncv St 02",
+      "src": "assets/cards/ncv-st-02.svg"
+    },
+    {
+      "id": "ncv_st_03",
+      "title": "Ncv St 03",
+      "src": "assets/cards/ncv-st-03.svg"
+    },
+    {
+      "id": "ncv_st_04",
+      "title": "Ncv St 04",
+      "src": "assets/cards/ncv-st-04.svg"
+    },
+    {
+      "id": "ncv_st_05",
+      "title": "Ncv St 05",
+      "src": "assets/cards/ncv-st-05.svg"
+    },
+    {
+      "id": "ncv_st_06",
+      "title": "Ncv St 06",
+      "src": "assets/cards/ncv-st-06.svg"
+    },
+    {
+      "id": "ncv_st_07",
+      "title": "Ncv St 07",
+      "src": "assets/cards/ncv-st-07.svg"
+    },
+    {
+      "id": "ncv_st_08",
+      "title": "Ncv St 08",
+      "src": "assets/cards/ncv-st-08.svg"
+    },
+    {
+      "id": "ncv_st_09",
+      "title": "Ncv St 09",
+      "src": "assets/cards/ncv-st-09.svg"
+    },
+    {
+      "id": "ncv_st_10",
+      "title": "Ncv St 10",
+      "src": "assets/cards/ncv-st-10.svg"
+    },
+    {
+      "id": "ncv_st_11",
+      "title": "Ncv St 11",
+      "src": "assets/cards/ncv-st-11.svg"
+    },
+    {
+      "id": "ncv_st_12",
+      "title": "Ncv St 12",
+      "src": "assets/cards/ncv-st-12.svg"
+    }
+  ]
+}

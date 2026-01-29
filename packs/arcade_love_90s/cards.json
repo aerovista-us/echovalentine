@@ -1,157 +1,159 @@
-[
-  {
-    "id": "al90-01",
-    "title": "Al90 01",
-    "src": "assets/cards/al90-01.svg"
-  },
-  {
-    "id": "al90-02",
-    "title": "Al90 02",
-    "src": "assets/cards/al90-02.svg"
-  },
-  {
-    "id": "al90-03",
-    "title": "Al90 03",
-    "src": "assets/cards/al90-03.svg"
-  },
-  {
-    "id": "al90-04",
-    "title": "Al90 04",
-    "src": "assets/cards/al90-04.svg"
-  },
-  {
-    "id": "al90-05",
-    "title": "Al90 05",
-    "src": "assets/cards/al90-05.svg"
-  },
-  {
-    "id": "al90-06",
-    "title": "Al90 06",
-    "src": "assets/cards/al90-06.svg"
-  },
-  {
-    "id": "al90-07",
-    "title": "Al90 07",
-    "src": "assets/cards/al90-07.svg"
-  },
-  {
-    "id": "al90-08",
-    "title": "Al90 08",
-    "src": "assets/cards/al90-08.svg"
-  },
-  {
-    "id": "al90-09",
-    "title": "Al90 09",
-    "src": "assets/cards/al90-09.svg"
-  },
-  {
-    "id": "al90-10",
-    "title": "Al90 10",
-    "src": "assets/cards/al90-10.svg"
-  },
-  {
-    "id": "al90-11",
-    "title": "Al90 11",
-    "src": "assets/cards/al90-11.svg"
-  },
-  {
-    "id": "al90-12",
-    "title": "Al90 12",
-    "src": "assets/cards/al90-12.svg"
-  },
-  {
-    "id": "al90-13",
-    "title": "Al90 13",
-    "src": "assets/cards/al90-13.svg"
-  },
-  {
-    "id": "al90-14",
-    "title": "Al90 14",
-    "src": "assets/cards/al90-14.svg"
-  },
-  {
-    "id": "al90-15",
-    "title": "Al90 15",
-    "src": "assets/cards/al90-15.svg"
-  },
-  {
-    "id": "al90-16",
-    "title": "Al90 16",
-    "src": "assets/cards/al90-16.svg"
-  },
-  {
-    "id": "al90-17",
-    "title": "Al90 17",
-    "src": "assets/cards/al90-17.svg"
-  },
-  {
-    "id": "al90-18",
-    "title": "Al90 18",
-    "src": "assets/cards/al90-18.svg"
-  },
-  {
-    "id": "al90-19",
-    "title": "Al90 19",
-    "src": "assets/cards/al90-19.svg"
-  },
-  {
-    "id": "al90-20",
-    "title": "Al90 20",
-    "src": "assets/cards/al90-20.svg"
-  },
-  {
-    "id": "al90-21",
-    "title": "Al90 21",
-    "src": "assets/cards/al90-21.svg"
-  },
-  {
-    "id": "al90-22",
-    "title": "Al90 22",
-    "src": "assets/cards/al90-22.svg"
-  },
-  {
-    "id": "al90-23",
-    "title": "Al90 23",
-    "src": "assets/cards/al90-23.svg"
-  },
-  {
-    "id": "al90-24",
-    "title": "Al90 24",
-    "src": "assets/cards/al90-24.svg"
-  },
-  {
-    "id": "al90-st-01",
-    "title": "al90 St 01",
-    "src": "assets/cards/al90-st-01.svg"
-  },
-  {
-    "id": "al90-st-02",
-    "title": "al90 St 02",
-    "src": "assets/cards/al90-st-02.svg"
-  },
-  {
-    "id": "al90-st-03",
-    "title": "al90 St 03",
-    "src": "assets/cards/al90-st-03.svg"
-  },
-  {
-    "id": "al90-st-04",
-    "title": "al90 St 04",
-    "src": "assets/cards/al90-st-04.svg"
-  },
-  {
-    "id": "al90-st-05",
-    "title": "al90 St 05",
-    "src": "assets/cards/al90-st-05.svg"
-  },
-  {
-    "id": "al90-st-06",
-    "title": "al90 St 06",
-    "src": "assets/cards/al90-st-06.svg"
-  },
-  {
-    "id": "alen_dude",
-    "title": "Alen Dude",
-    "src": "assets/cards/alen_dude.png"
-  }
-]
+{
+  "cards": [
+    {
+      "id": "al90-01",
+      "title": "Al90 01",
+      "src": "assets/cards/al90-01.svg"
+    },
+    {
+      "id": "al90-02",
+      "title": "Al90 02",
+      "src": "assets/cards/al90-02.svg"
+    },
+    {
+      "id": "al90-03",
+      "title": "Al90 03",
+      "src": "assets/cards/al90-03.svg"
+    },
+    {
+      "id": "al90-04",
+      "title": "Al90 04",
+      "src": "assets/cards/al90-04.svg"
+    },
+    {
+      "id": "al90-05",
+      "title": "Al90 05",
+      "src": "assets/cards/al90-05.svg"
+    },
+    {
+      "id": "al90-06",
+      "title": "Al90 06",
+      "src": "assets/cards/al90-06.svg"
+    },
+    {
+      "id": "al90-07",
+      "title": "Al90 07",
+      "src": "assets/cards/al90-07.svg"
+    },
+    {
+      "id": "al90-08",
+      "title": "Al90 08",
+      "src": "assets/cards/al90-08.svg"
+    },
+    {
+      "id": "al90-09",
+      "title": "Al90 09",
+      "src": "assets/cards/al90-09.svg"
+    },
+    {
+      "id": "al90-10",
+      "title": "Al90 10",
+      "src": "assets/cards/al90-10.svg"
+    },
+    {
+      "id": "al90-11",
+      "title": "Al90 11",
+      "src": "assets/cards/al90-11.svg"
+    },
+    {
+      "id": "al90-12",
+      "title": "Al90 12",
+      "src": "assets/cards/al90-12.svg"
+    },
+    {
+      "id": "al90-13",
+      "title": "Al90 13",
+      "src": "assets/cards/al90-13.svg"
+    },
+    {
+      "id": "al90-14",
+      "title": "Al90 14",
+      "src": "assets/cards/al90-14.svg"
+    },
+    {
+      "id": "al90-15",
+      "title": "Al90 15",
+      "src": "assets/cards/al90-15.svg"
+    },
+    {
+      "id": "al90-16",
+      "title": "Al90 16",
+      "src": "assets/cards/al90-16.svg"
+    },
+    {
+      "id": "al90-17",
+      "title": "Al90 17",
+      "src": "assets/cards/al90-17.svg"
+    },
+    {
+      "id": "al90-18",
+      "title": "Al90 18",
+      "src": "assets/cards/al90-18.svg"
+    },
+    {
+      "id": "al90-19",
+      "title": "Al90 19",
+      "src": "assets/cards/al90-19.svg"
+    },
+    {
+      "id": "al90-20",
+      "title": "Al90 20",
+      "src": "assets/cards/al90-20.svg"
+    },
+    {
+      "id": "al90-21",
+      "title": "Al90 21",
+      "src": "assets/cards/al90-21.svg"
+    },
+    {
+      "id": "al90-22",
+      "title": "Al90 22",
+      "src": "assets/cards/al90-22.svg"
+    },
+    {
+      "id": "al90-23",
+      "title": "Al90 23",
+      "src": "assets/cards/al90-23.svg"
+    },
+    {
+      "id": "al90-24",
+      "title": "Al90 24",
+      "src": "assets/cards/al90-24.svg"
+    },
+    {
+      "id": "al90-st-01",
+      "title": "al90 St 01",
+      "src": "assets/cards/al90-st-01.svg"
+    },
+    {
+      "id": "al90-st-02",
+      "title": "al90 St 02",
+      "src": "assets/cards/al90-st-02.svg"
+    },
+    {
+      "id": "al90-st-03",
+      "title": "al90 St 03",
+      "src": "assets/cards/al90-st-03.svg"
+    },
+    {
+      "id": "al90-st-04",
+      "title": "al90 St 04",
+      "src": "assets/cards/al90-st-04.svg"
+    },
+    {
+      "id": "al90-st-05",
+      "title": "al90 St 05",
+      "src": "assets/cards/al90-st-05.svg"
+    },
+    {
+      "id": "al90-st-06",
+      "title": "al90 St 06",
+      "src": "assets/cards/al90-st-06.svg"
+    },
+    {
+      "id": "alen_dude",
+      "title": "Alen Dude",
+      "src": "assets/cards/alen_dude.png"
+    }
+  ]
+}

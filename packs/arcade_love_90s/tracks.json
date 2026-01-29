@@ -1,14 +1,16 @@
-[
-  {
-    "id": "incert_coin",
-    "title": "Incert Coin",
-    "type": "audio",
-    "src": "assets/audio/incert_coin.mp3"
-  },
-  {
-    "id": "player_2_locked",
-    "title": "Player 2 Locked",
-    "type": "audio",
-    "src": "assets/audio/player_2_locked.mp3"
-  }
-]
+{
+  "tracks": [
+    {
+      "id": "incert_coin",
+      "title": "Incert Coin",
+      "type": "audio",
+      "src": "assets/audio/incert_coin.mp3"
+    },
+    {
+      "id": "player_2_locked",
+      "title": "Player 2 Locked",
+      "type": "audio",
+      "src": "assets/audio/player_2_locked.mp3"
+    }
+  ]
+}

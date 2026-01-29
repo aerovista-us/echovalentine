@@ -1,28 +1,30 @@
-[
-  {
-    "id": "love-spell",
-    "title": "Love Spell",
-    "src": "assets/audio/love_spell.mp3"
-  },
-  {
-    "id": "love-spell-alt",
-    "title": "Love Spell Alt",
-    "src": "assets/audio/love_spell_alt.mp3"
-  },
-  {
-    "id": "spell-ambiance",
-    "title": "Spell Ambiance",
-    "src": "assets/audio/spell_ambiance.mp3"
-  },
-  {
-    "id": "spell-ambiance-alt",
-    "title": "Spell Ambiance Alt",
-    "src": "assets/audio/spell_ambiance_alt.mp3"
-  },
-  {
-    "id": "loop_03",
-    "title": "Loop 03",
-    "type": "video",
-    "src": "assets/video/loop_03.mp4"
-  }
-]
+{
+  "tracks": [
+    {
+      "id": "love-spell",
+      "title": "Love Spell",
+      "src": "assets/audio/love_spell.mp3"
+    },
+    {
+      "id": "love-spell-alt",
+      "title": "Love Spell Alt",
+      "src": "assets/audio/love_spell_alt.mp3"
+    },
+    {
+      "id": "spell-ambiance",
+      "title": "Spell Ambiance",
+      "src": "assets/audio/spell_ambiance.mp3"
+    },
+    {
+      "id": "spell-ambiance-alt",
+      "title": "Spell Ambiance Alt",
+      "src": "assets/audio/spell_ambiance_alt.mp3"
+    },
+    {
+      "id": "loop_03",
+      "title": "Loop 03",
+      "type": "video",
+      "src": "assets/video/loop_03.mp4"
+    }
+  ]
+}

@@ -1,4 +1,14 @@
-[
-  {"id": "all-the-love", "title": "All The Love", "src": "assets/audio/all_the_love.mp3"},
-  {"id": "all-the-love-alt", "title": "All The Love Alt", "src": "assets/audio/all_the_lovealt.mp3"}
-]
+{
+  "tracks": [
+    {
+      "id": "all-the-love",
+      "title": "All The Love",
+      "src": "assets/audio/all_the_love.mp3"
+    },
+    {
+      "id": "all-the-love-alt",
+      "title": "All The Love Alt",
+      "src": "assets/audio/all_the_lovealt.mp3"
+    }
+  ]
+}

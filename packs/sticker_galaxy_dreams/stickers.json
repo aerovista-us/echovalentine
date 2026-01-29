@@ -1,14 +1,64 @@
-[
-  {"id": "sgd-st-01", "title": "Sgd St 01", "src": "assets/cards/sgd-st-01.svg"},
-  {"id": "sgd-st-02", "title": "Sgd St 02", "src": "assets/cards/sgd-st-02.svg"},
-  {"id": "sgd-st-03", "title": "Sgd St 03", "src": "assets/cards/sgd-st-03.svg"},
-  {"id": "sgd-st-04", "title": "Sgd St 04", "src": "assets/cards/sgd-st-04.svg"},
-  {"id": "sgd-st-05", "title": "Sgd St 05", "src": "assets/cards/sgd-st-05.svg"},
-  {"id": "sgd-st-06", "title": "Sgd St 06", "src": "assets/cards/sgd-st-06.svg"},
-  {"id": "sgd-st-07", "title": "Sgd St 07", "src": "assets/cards/sgd-st-07.svg"},
-  {"id": "sgd-st-08", "title": "Sgd St 08", "src": "assets/cards/sgd-st-08.svg"},
-  {"id": "sgd-st-09", "title": "Sgd St 09", "src": "assets/cards/sgd-st-09.svg"},
-  {"id": "sgd-st-10", "title": "Sgd St 10", "src": "assets/cards/sgd-st-10.svg"},
-  {"id": "sgd-st-11", "title": "Sgd St 11", "src": "assets/cards/sgd-st-11.svg"},
-  {"id": "sgd-st-12", "title": "Sgd St 12", "src": "assets/cards/sgd-st-12.svg"}
-]
+{
+  "stickers": [
+    {
+      "id": "sgd-st-01",
+      "title": "Sgd St 01",
+      "src": "assets/cards/sgd-st-01.svg"
+    },
+    {
+      "id": "sgd-st-02",
+      "title": "Sgd St 02",
+      "src": "assets/cards/sgd-st-02.svg"
+    },
+    {
+      "id": "sgd-st-03",
+      "title": "Sgd St 03",
+      "src": "assets/cards/sgd-st-03.svg"
+    },
+    {
+      "id": "sgd-st-04",
+      "title": "Sgd St 04",
+      "src": "assets/cards/sgd-st-04.svg"
+    },
+    {
+      "id": "sgd-st-05",
+      "title": "Sgd St 05",
+      "src": "assets/cards/sgd-st-05.svg"
+    },
+    {
+      "id": "sgd-st-06",
+      "title": "Sgd St 06",
+      "src": "assets/cards/sgd-st-06.svg"
+    },
+    {
+      "id": "sgd-st-07",
+      "title": "Sgd St 07",
+      "src": "assets/cards/sgd-st-07.svg"
+    },
+    {
+      "id": "sgd-st-08",
+      "title": "Sgd St 08",
+      "src": "assets/cards/sgd-st-08.svg"
+    },
+    {
+      "id": "sgd-st-09",
+      "title": "Sgd St 09",
+      "src": "assets/cards/sgd-st-09.svg"
+    },
+    {
+      "id": "sgd-st-10",
+      "title": "Sgd St 10",
+      "src": "assets/cards/sgd-st-10.svg"
+    },
+    {
+      "id": "sgd-st-11",
+      "title": "Sgd St 11",
+      "src": "assets/cards/sgd-st-11.svg"
+    },
+    {
+      "id": "sgd-st-12",
+      "title": "Sgd St 12",
+      "src": "assets/cards/sgd-st-12.svg"
+    }
+  ]
+}

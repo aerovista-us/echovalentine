@@ -20,9 +20,10 @@ def card_svg(front_text: str, subtitle: str, theme: str, footer: str):
         bg1,bg2,accent1,accent2 = "#0f172a","#1f2a4a","#ffd54a","#ff7ad9"
     front_text = xesc(front_text)
     subtitle = xesc(subtitle)
+    # Use landscape format: 1500x1000 with viewBox 0 0 900 600
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 900 600">
   <defs>
-    <linearGradient id="bg" x1="0" x2="1">
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="{bg1}"/>
       <stop offset="1" stop-color="{bg2}"/>
     </linearGradient>
@@ -31,26 +32,29 @@ def card_svg(front_text: str, subtitle: str, theme: str, footer: str):
       <stop offset="1" stop-color="{accent2}"/>
     </linearGradient>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feGaussianBlur stdDeviation="8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
   </defs>
-  <rect width="800" height="1200" fill="url(#bg)"/>
-  <g opacity="0.20">
-    <circle cx="120" cy="210" r="140" fill="{accent1}"/>
-    <circle cx="690" cy="980" r="180" fill="{accent2}"/>
-    <path d="M0 980 C180 910, 300 1200, 520 1100 S710 980, 800 1080 V1200 H0 Z" fill="{accent1}"/>
+  <rect width="900" height="600" rx="20" fill="url(#bg)"/>
+  <g opacity="0.25">
+    <circle cx="150" cy="120" r="100" fill="{accent1}"/>
+    <circle cx="750" cy="480" r="120" fill="{accent2}"/>
+    <path d="M0 450 C150 400, 300 600, 500 550 S750 450, 900 500 V600 H0 Z" fill="{accent1}" opacity="0.3"/>
   </g>
   <g filter="url(#glow)">
-    <text x="70" y="420" font-family="system-ui,Segoe UI,Arial" font-size="66" font-weight="850" fill="url(#grad)">{front_text}</text>
+    <text x="450" y="280" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="56" font-weight="800" fill="url(#grad)" filter="url(#softShadow)">{front_text}</text>
   </g>
-  <text x="72" y="500" font-family="system-ui,Segoe UI,Arial" font-size="26" fill="#e7ecff" opacity="0.92">{subtitle}</text>
-  <g opacity="0.9">
-    <rect x="70" y="560" width="660" height="480" rx="28" fill="#0b0b12" opacity="0.28"/>
-    <text x="100" y="640" font-family="system-ui,Segoe UI,Arial" font-size="22" fill="#c7d2fe" opacity="0.95">Inside message goes here →</text>
-    <text x="100" y="680" font-family="system-ui,Segoe UI,Arial" font-size="20" fill="#c7d2fe" opacity="0.75">(User-customizable in composer)</text>
+  <text x="450" y="330" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="22" fill="rgba(255,255,255,0.85)" opacity="0.9">{subtitle}</text>
+  <g opacity="0.85">
+    <rect x="100" y="380" width="700" height="160" rx="16" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="450" y="430" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="rgba(255,255,255,0.7)" opacity="0.9">Inside message goes here</text>
+    <text x="450" y="460" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="14" fill="rgba(255,255,255,0.6)" opacity="0.8">(User-customizable in composer)</text>
   </g>
-  <text x="70" y="1135" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="#9fb0ff" opacity="0.9">{footer}</text>
+  <text x="450" y="570" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="16" fill="rgba(255,255,255,0.6)" opacity="0.8" letter-spacing="2">{footer}</text>
 </svg>
 """
 

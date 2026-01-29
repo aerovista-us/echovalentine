@@ -1,18 +1,84 @@
-[
-  {"id": "nsh-st-01", "title": "Nsh St 01", "src": "assets/cards/nsh-st-01.svg"},
-  {"id": "nsh-st-02", "title": "Nsh St 02", "src": "assets/cards/nsh-st-02.svg"},
-  {"id": "nsh-st-03", "title": "Nsh St 03", "src": "assets/cards/nsh-st-03.svg"},
-  {"id": "nsh-st-04", "title": "Nsh St 04", "src": "assets/cards/nsh-st-04.svg"},
-  {"id": "nsh-st-05", "title": "Nsh St 05", "src": "assets/cards/nsh-st-05.svg"},
-  {"id": "nsh-st-06", "title": "Nsh St 06", "src": "assets/cards/nsh-st-06.svg"},
-  {"id": "nsh-st-07", "title": "Nsh St 07", "src": "assets/cards/nsh-st-07.svg"},
-  {"id": "nsh-st-08", "title": "Nsh St 08", "src": "assets/cards/nsh-st-08.svg"},
-  {"id": "nsh-st-09", "title": "Nsh St 09", "src": "assets/cards/nsh-st-09.svg"},
-  {"id": "nsh-st-10", "title": "Nsh St 10", "src": "assets/cards/nsh-st-10.svg"},
-  {"id": "nsh-st-11", "title": "Nsh St 11", "src": "assets/cards/nsh-st-11.svg"},
-  {"id": "nsh-st-12", "title": "Nsh St 12", "src": "assets/cards/nsh-st-12.svg"},
-  {"id": "dalle-2025-01-31-165613", "title": "Dalle 2025 01 31 165613", "src": "assets/stickers/dalle-2025-01-31-165613-a-cinematic-cyberpunk-city-at-night-for-neon-echoes-scene-1-a-lone-figure-walks-down-an-empty-neon-lit-street-bathed-in-glowing-lights-of-blue-pi.webp"},
-  {"id": "dalle-2025-01-31-183431", "title": "Dalle 2025 01 31 183431", "src": "assets/stickers/dalle-2025-01-31-183431-a-ghostly-holographic-figure-standing-in-a-neon-lit-cyberpunk-city-representing-neon-reflections-of-who-we-used-to-be-the-figure-glows-with-a-sof.webp"},
-  {"id": "dalle-2025-01-31-195823", "title": "Dalle 2025 01 31 195823", "src": "assets/stickers/dalle-2025-01-31-195823-a-vibrant-and-dreamy-scene-of-people-dancing-under-a-starry-night-sky-illuminated-by-the-glow-of-shooting-stars-the-dancers-move-freely-with-joy-and.webp"},
-  {"id": "dalle-2025-01-31-222629", "title": "Dalle 2025 01 31 222629", "src": "assets/stickers/dalle-2025-01-31-222629-a-surreal-vaporwave-dreamscape-where-time-loops-endlessly-glowing-in-neon-hues-of-pink-purple-and-blue-a-vast-futuristic-city-stretches-infinitel.webp"}
-]
+{
+  "stickers": [
+    {
+      "id": "nsh-st-01",
+      "title": "Nsh St 01",
+      "src": "assets/cards/nsh-st-01.svg"
+    },
+    {
+      "id": "nsh-st-02",
+      "title": "Nsh St 02",
+      "src": "assets/cards/nsh-st-02.svg"
+    },
+    {
+      "id": "nsh-st-03",
+      "title": "Nsh St 03",
+      "src": "assets/cards/nsh-st-03.svg"
+    },
+    {
+      "id": "nsh-st-04",
+      "title": "Nsh St 04",
+      "src": "assets/cards/nsh-st-04.svg"
+    },
+    {
+      "id": "nsh-st-05",
+      "title": "Nsh St 05",
+      "src": "assets/cards/nsh-st-05.svg"
+    },
+    {
+      "id": "nsh-st-06",
+      "title": "Nsh St 06",
+      "src": "assets/cards/nsh-st-06.svg"
+    },
+    {
+      "id": "nsh-st-07",
+      "title": "Nsh St 07",
+      "src": "assets/cards/nsh-st-07.svg"
+    },
+    {
+      "id": "nsh-st-08",
+      "title": "Nsh St 08",
+      "src": "assets/cards/nsh-st-08.svg"
+    },
+    {
+      "id": "nsh-st-09",
+      "title": "Nsh St 09",
+      "src": "assets/cards/nsh-st-09.svg"
+    },
+    {
+      "id": "nsh-st-10",
+      "title": "Nsh St 10",
+      "src": "assets/cards/nsh-st-10.svg"
+    },
+    {
+      "id": "nsh-st-11",
+      "title": "Nsh St 11",
+      "src": "assets/cards/nsh-st-11.svg"
+    },
+    {
+      "id": "nsh-st-12",
+      "title": "Nsh St 12",
+      "src": "assets/cards/nsh-st-12.svg"
+    },
+    {
+      "id": "n1",
+      "name": "N1",
+      "src": "assets/stickers/n1.webp"
+    },
+    {
+      "id": "n2",
+      "name": "N2",
+      "src": "assets/stickers/n2.webp"
+    },
+    {
+      "id": "n3",
+      "name": "N3",
+      "src": "assets/stickers/n3.webp"
+    },
+    {
+      "id": "n4",
+      "name": "N4",
+      "src": "assets/stickers/n4.webp"
+    }
+  ]
+}

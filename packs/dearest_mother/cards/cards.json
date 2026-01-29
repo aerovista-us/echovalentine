@@ -4,145 +4,169 @@
       "id": "mom_01",
       "title": "Thank You, Mom",
       "front": "Dearest Mom,",
-      "inside": "Thank you for everything you do—especially the things nobody sees."
+      "inside": "Thank you for everything you do—especially the things nobody sees.",
+      "src": "assets/cards/mom_01.svg"
     },
     {
       "id": "mom_02",
       "title": "I See You",
       "front": "I notice.",
-      "inside": "The effort. The patience. The care. I see it, and I’m grateful."
+      "inside": "The effort. The patience. The care. I see it, and I’m grateful.",
+      "src": "assets/cards/mom_02.svg"
     },
     {
       "id": "mom_03",
       "title": "Home",
       "front": "You are home.",
-      "inside": "Not a place—an energy. Thank you for making life feel safe."
+      "inside": "Not a place—an energy. Thank you for making life feel safe.",
+      "src": "assets/cards/mom_03.svg"
     },
     {
       "id": "mom_04",
       "title": "Proud of You",
       "front": "I’m proud of you.",
-      "inside": "For your strength, your heart, and the way you keep going."
+      "inside": "For your strength, your heart, and the way you keep going.",
+      "src": "assets/cards/mom_04.svg"
     },
     {
       "id": "mom_05",
       "title": "Small Things",
       "front": "It’s the little things.",
-      "inside": "Your reminders, your check-ins, your warmth… they matter more than you know."
+      "inside": "Your reminders, your check-ins, your warmth… they matter more than you know.",
+      "src": "assets/cards/mom_05.svg"
     },
     {
       "id": "mom_06",
       "title": "Thank You for Raising Me",
       "front": "Because of you—",
-      "inside": "I know what kindness looks like. Thank you for raising me with love."
+      "inside": "I know what kindness looks like. Thank you for raising me with love.",
+      "src": "assets/cards/mom_06.svg"
     },
     {
       "id": "mom_07",
       "title": "You Deserve Rest",
       "front": "Permission slip:",
-      "inside": "You deserve a real break. Rest without guilt. You’ve earned it."
+      "inside": "You deserve a real break. Rest without guilt. You’ve earned it.",
+      "src": "assets/cards/mom_07.svg"
     },
     {
       "id": "mom_08",
       "title": "You’re Appreciated",
       "front": "Just a note—",
-      "inside": "You’re appreciated every day, even when I forget to say it out loud."
+      "inside": "You’re appreciated every day, even when I forget to say it out loud.",
+      "src": "assets/cards/mom_08.svg"
     },
     {
       "id": "mom_09",
       "title": "Your Advice",
       "front": "I remember your words.",
-      "inside": "They’ve guided me more times than you’ll ever know."
+      "inside": "They’ve guided me more times than you’ll ever know.",
+      "src": "assets/cards/mom_09.svg"
     },
     {
       "id": "mom_10",
       "title": "Thank You for Believing",
       "front": "Thank you for believing in me.",
-      "inside": "Even when I didn’t. That support changed everything."
+      "inside": "Even when I didn’t. That support changed everything.",
+      "src": "assets/cards/mom_10.svg"
     },
     {
       "id": "mom_11",
       "title": "You Made It Possible",
       "front": "You made it possible.",
-      "inside": "So much of who I am is because of how you loved me."
+      "inside": "So much of who I am is because of how you loved me.",
+      "src": "assets/cards/mom_11.svg"
     },
     {
       "id": "mom_12",
       "title": "Gentle Strength",
       "front": "Your strength is quiet.",
-      "inside": "But it’s powerful. I’m grateful to have you as my example."
+      "inside": "But it’s powerful. I’m grateful to have you as my example.",
+      "src": "assets/cards/mom_12.svg"
     },
     {
       "id": "mom_13",
       "title": "Gratitude",
       "front": "Today’s mood:",
-      "inside": "Grateful. For you, for your care, and for the way you show up."
+      "inside": "Grateful. For you, for your care, and for the way you show up.",
+      "src": "assets/cards/mom_13.svg"
     },
     {
       "id": "mom_14",
       "title": "Always Learning",
       "front": "Still learning from you.",
-      "inside": "Even now. Even in small moments. Thank you."
+      "inside": "Even now. Even in small moments. Thank you.",
+      "src": "assets/cards/mom_14.svg"
     },
     {
       "id": "mom_15",
       "title": "The Things You Carry",
       "front": "I know you carry a lot.",
-      "inside": "You don’t have to carry it alone. I’m here for you too."
+      "inside": "You don’t have to carry it alone. I’m here for you too.",
+      "src": "assets/cards/mom_15.svg"
     },
     {
       "id": "mom_16",
       "title": "Your Heart",
       "front": "Your heart is rare.",
-      "inside": "The way you care is a gift. Thank you for sharing it so freely."
+      "inside": "The way you care is a gift. Thank you for sharing it so freely.",
+      "src": "assets/cards/mom_16.svg"
     },
     {
       "id": "mom_17",
       "title": "A Simple Thank You",
       "front": "No long message.",
-      "inside": "Just a simple, honest thank you. I love and appreciate you."
+      "inside": "Just a simple, honest thank you. I love and appreciate you.",
+      "src": "assets/cards/mom_17.svg"
     },
     {
       "id": "mom_18",
       "title": "You Matter",
       "front": "You matter.",
-      "inside": "Your needs, your dreams, your happiness—just as much as everyone else’s."
+      "inside": "Your needs, your dreams, your happiness—just as much as everyone else’s.",
+      "src": "assets/cards/mom_18.svg"
     },
     {
       "id": "mom_19",
       "title": "I’m Thinking of You",
       "front": "Thinking of you.",
-      "inside": "Sending comfort, peace, and a little extra light your way today."
+      "inside": "Sending comfort, peace, and a little extra light your way today.",
+      "src": "assets/cards/mom_19.svg"
     },
     {
       "id": "mom_20",
       "title": "Your Support",
       "front": "Thank you for your support.",
-      "inside": "It has been steady, real, and life-changing."
+      "inside": "It has been steady, real, and life-changing.",
+      "src": "assets/cards/mom_20.svg"
     },
     {
       "id": "mom_21",
       "title": "The Best Parts",
       "front": "The best parts of me—",
-      "inside": "I learned from you. Thank you for your love and guidance."
+      "inside": "I learned from you. Thank you for your love and guidance.",
+      "src": "assets/cards/mom_21.svg"
     },
     {
       "id": "mom_22",
       "title": "Proud to Be Yours",
       "front": "I’m grateful to be yours.",
-      "inside": "Thank you for being my mom, exactly as you are."
+      "inside": "Thank you for being my mom, exactly as you are.",
+      "src": "assets/cards/mom_22.svg"
     },
     {
       "id": "mom_23",
       "title": "A Warm Hug",
       "front": "Sending a hug.",
-      "inside": "The kind that says: I’m with you. I appreciate you. I love you."
+      "inside": "The kind that says: I’m with you. I appreciate you. I love you.",
+      "src": "assets/cards/mom_23.svg"
     },
     {
       "id": "mom_24",
       "title": "Always",
       "front": "Always, Mom.",
-      "inside": "Always grateful. Always proud. Always love."
+      "inside": "Always grateful. Always proud. Always love.",
+      "src": "assets/cards/mom_24.svg"
     }
   ]
 }

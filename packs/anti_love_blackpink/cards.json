@@ -1,26 +1,154 @@
-[
-  {"id": "albp-01", "title": "Albp 01", "src": "assets/cards/albp-01.svg"},
-  {"id": "albp-02", "title": "Albp 02", "src": "assets/cards/albp-02.svg"},
-  {"id": "albp-03", "title": "Albp 03", "src": "assets/cards/albp-03.svg"},
-  {"id": "albp-04", "title": "Albp 04", "src": "assets/cards/albp-04.svg"},
-  {"id": "albp-05", "title": "Albp 05", "src": "assets/cards/albp-05.svg"},
-  {"id": "albp-06", "title": "Albp 06", "src": "assets/cards/albp-06.svg"},
-  {"id": "albp-07", "title": "Albp 07", "src": "assets/cards/albp-07.svg"},
-  {"id": "albp-08", "title": "Albp 08", "src": "assets/cards/albp-08.svg"},
-  {"id": "albp-09", "title": "Albp 09", "src": "assets/cards/albp-09.svg"},
-  {"id": "albp-10", "title": "Albp 10", "src": "assets/cards/albp-10.svg"},
-  {"id": "albp-11", "title": "Albp 11", "src": "assets/cards/albp-11.svg"},
-  {"id": "albp-12", "title": "Albp 12", "src": "assets/cards/albp-12.svg"},
-  {"id": "albp-13", "title": "Albp 13", "src": "assets/cards/albp-13.svg"},
-  {"id": "albp-14", "title": "Albp 14", "src": "assets/cards/albp-14.svg"},
-  {"id": "albp-15", "title": "Albp 15", "src": "assets/cards/albp-15.svg"},
-  {"id": "albp-16", "title": "Albp 16", "src": "assets/cards/albp-16.svg"},
-  {"id": "albp-17", "title": "Albp 17", "src": "assets/cards/albp-17.svg"},
-  {"id": "albp-18", "title": "Albp 18", "src": "assets/cards/albp-18.svg"},
-  {"id": "albp-19", "title": "Albp 19", "src": "assets/cards/albp-19.svg"},
-  {"id": "albp-20", "title": "Albp 20", "src": "assets/cards/albp-20.svg"},
-  {"id": "albp-21", "title": "Albp 21", "src": "assets/cards/albp-21.svg"},
-  {"id": "albp-22", "title": "Albp 22", "src": "assets/cards/albp-22.svg"},
-  {"id": "albp-23", "title": "Albp 23", "src": "assets/cards/albp-23.svg"},
-  {"id": "albp-24", "title": "Albp 24", "src": "assets/cards/albp-24.svg"}
-]
+{
+  "cards": [
+    {
+      "id": "albp-01",
+      "title": "Albp 01",
+      "src": "assets/cards/albp-01.svg"
+    },
+    {
+      "id": "albp-02",
+      "title": "Albp 02",
+      "src": "assets/cards/albp-02.svg"
+    },
+    {
+      "id": "albp-03",
+      "title": "Albp 03",
+      "src": "assets/cards/albp-03.svg"
+    },
+    {
+      "id": "albp-04",
+      "title": "Albp 04",
+      "src": "assets/cards/albp-04.svg"
+    },
+    {
+      "id": "albp-05",
+      "title": "Albp 05",
+      "src": "assets/cards/albp-05.svg"
+    },
+    {
+      "id": "albp-06",
+      "title": "Albp 06",
+      "src": "assets/cards/albp-06.svg"
+    },
+    {
+      "id": "albp-07",
+      "title": "Albp 07",
+      "src": "assets/cards/albp-07.svg"
+    },
+    {
+      "id": "albp-08",
+      "title": "Albp 08",
+      "src": "assets/cards/albp-08.svg"
+    },
+    {
+      "id": "albp-09",
+      "title": "Albp 09",
+      "src": "assets/cards/albp-09.svg"
+    },
+    {
+      "id": "albp-10",
+      "title": "Albp 10",
+      "src": "assets/cards/albp-10.svg"
+    },
+    {
+      "id": "albp-11",
+      "title": "Albp 11",
+      "src": "assets/cards/albp-11.svg"
+    },
+    {
+      "id": "albp-12",
+      "title": "Albp 12",
+      "src": "assets/cards/albp-12.svg"
+    },
+    {
+      "id": "albp-13",
+      "title": "Albp 13",
+      "src": "assets/cards/albp-13.svg"
+    },
+    {
+      "id": "albp-14",
+      "title": "Albp 14",
+      "src": "assets/cards/albp-14.svg"
+    },
+    {
+      "id": "albp-15",
+      "title": "Albp 15",
+      "src": "assets/cards/albp-15.svg"
+    },
+    {
+      "id": "albp-16",
+      "title": "Albp 16",
+      "src": "assets/cards/albp-16.svg"
+    },
+    {
+      "id": "albp-17",
+      "title": "Albp 17",
+      "src": "assets/cards/albp-17.svg"
+    },
+    {
+      "id": "albp-18",
+      "title": "Albp 18",
+      "src": "assets/cards/albp-18.svg"
+    },
+    {
+      "id": "albp-19",
+      "title": "Albp 19",
+      "src": "assets/cards/albp-19.svg"
+    },
+    {
+      "id": "albp-20",
+      "title": "Albp 20",
+      "src": "assets/cards/albp-20.svg"
+    },
+    {
+      "id": "albp-21",
+      "title": "Albp 21",
+      "src": "assets/cards/albp-21.svg"
+    },
+    {
+      "id": "albp-22",
+      "title": "Albp 22",
+      "src": "assets/cards/albp-22.svg"
+    },
+    {
+      "id": "albp-23",
+      "title": "Albp 23",
+      "src": "assets/cards/albp-23.svg"
+    },
+    {
+      "id": "albp-24",
+      "title": "Albp 24",
+      "src": "assets/cards/albp-24.svg"
+    },
+    {
+      "id": "albp_st_01",
+      "title": "Albp St 01",
+      "src": "assets/cards/albp-st-01.svg"
+    },
+    {
+      "id": "albp_st_02",
+      "title": "Albp St 02",
+      "src": "assets/cards/albp-st-02.svg"
+    },
+    {
+      "id": "albp_st_03",
+      "title": "Albp St 03",
+      "src": "assets/cards/albp-st-03.svg"
+    },
+    {
+      "id": "albp_st_04",
+      "title": "Albp St 04",
+      "src": "assets/cards/albp-st-04.svg"
+    },
+    {
+      "id": "albp_st_05",
+      "title": "Albp St 05",
+      "src": "assets/cards/albp-st-05.svg"
+    },
+    {
+      "id": "albp_st_06",
+      "title": "Albp St 06",
+      "src": "assets/cards/albp-st-06.svg"
+    }
+  ]
+}

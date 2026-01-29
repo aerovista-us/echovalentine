@@ -1,14 +1,124 @@
-[
-  {"id": "tfp-01", "title": "Tfp 01", "src": "assets/cards/tfp-01.svg"},
-  {"id": "tfp-02", "title": "Tfp 02", "src": "assets/cards/tfp-02.svg"},
-  {"id": "tfp-03", "title": "Tfp 03", "src": "assets/cards/tfp-03.svg"},
-  {"id": "tfp-04", "title": "Tfp 04", "src": "assets/cards/tfp-04.svg"},
-  {"id": "tfp-05", "title": "Tfp 05", "src": "assets/cards/tfp-05.svg"},
-  {"id": "tfp-06", "title": "Tfp 06", "src": "assets/cards/tfp-06.svg"},
-  {"id": "tfp-07", "title": "Tfp 07", "src": "assets/cards/tfp-07.svg"},
-  {"id": "tfp-08", "title": "Tfp 08", "src": "assets/cards/tfp-08.svg"},
-  {"id": "tfp-09", "title": "Tfp 09", "src": "assets/cards/tfp-09.svg"},
-  {"id": "tfp-10", "title": "Tfp 10", "src": "assets/cards/tfp-10.svg"},
-  {"id": "tfp-11", "title": "Tfp 11", "src": "assets/cards/tfp-11.svg"},
-  {"id": "tfp-12", "title": "Tfp 12", "src": "assets/cards/tfp-12.svg"}
-]
+{
+  "cards": [
+    {
+      "id": "tfp-01",
+      "title": "Tfp 01",
+      "src": "assets/cards/tfp-01.svg"
+    },
+    {
+      "id": "tfp-02",
+      "title": "Tfp 02",
+      "src": "assets/cards/tfp-02.svg"
+    },
+    {
+      "id": "tfp-03",
+      "title": "Tfp 03",
+      "src": "assets/cards/tfp-03.svg"
+    },
+    {
+      "id": "tfp-04",
+      "title": "Tfp 04",
+      "src": "assets/cards/tfp-04.svg"
+    },
+    {
+      "id": "tfp-05",
+      "title": "Tfp 05",
+      "src": "assets/cards/tfp-05.svg"
+    },
+    {
+      "id": "tfp-06",
+      "title": "Tfp 06",
+      "src": "assets/cards/tfp-06.svg"
+    },
+    {
+      "id": "tfp-07",
+      "title": "Tfp 07",
+      "src": "assets/cards/tfp-07.svg"
+    },
+    {
+      "id": "tfp-08",
+      "title": "Tfp 08",
+      "src": "assets/cards/tfp-08.svg"
+    },
+    {
+      "id": "tfp-09",
+      "title": "Tfp 09",
+      "src": "assets/cards/tfp-09.svg"
+    },
+    {
+      "id": "tfp-10",
+      "title": "Tfp 10",
+      "src": "assets/cards/tfp-10.svg"
+    },
+    {
+      "id": "tfp-11",
+      "title": "Tfp 11",
+      "src": "assets/cards/tfp-11.svg"
+    },
+    {
+      "id": "tfp-12",
+      "title": "Tfp 12",
+      "src": "assets/cards/tfp-12.svg"
+    },
+    {
+      "id": "tfp_st_01",
+      "title": "Tfp St 01",
+      "src": "assets/cards/tfp-st-01.svg"
+    },
+    {
+      "id": "tfp_st_02",
+      "title": "Tfp St 02",
+      "src": "assets/cards/tfp-st-02.svg"
+    },
+    {
+      "id": "tfp_st_03",
+      "title": "Tfp St 03",
+      "src": "assets/cards/tfp-st-03.svg"
+    },
+    {
+      "id": "tfp_st_04",
+      "title": "Tfp St 04",
+      "src": "assets/cards/tfp-st-04.svg"
+    },
+    {
+      "id": "tfp_st_05",
+      "title": "Tfp St 05",
+      "src": "assets/cards/tfp-st-05.svg"
+    },
+    {
+      "id": "tfp_st_06",
+      "title": "Tfp St 06",
+      "src": "assets/cards/tfp-st-06.svg"
+    },
+    {
+      "id": "tfp_st_07",
+      "title": "Tfp St 07",
+      "src": "assets/cards/tfp-st-07.svg"
+    },
+    {
+      "id": "tfp_st_08",
+      "title": "Tfp St 08",
+      "src": "assets/cards/tfp-st-08.svg"
+    },
+    {
+      "id": "tfp_01",
+      "title": "Tfp 01",
+      "src": "assets/cards/tfp_01.svg"
+    },
+    {
+      "id": "tfp_02",
+      "title": "Tfp 02",
+      "src": "assets/cards/tfp_02.svg"
+    },
+    {
+      "id": "tfp_03",
+      "title": "Tfp 03",
+      "src": "assets/cards/tfp_03.svg"
+    },
+    {
+      "id": "tfp_04",
+      "title": "Tfp 04",
+      "src": "assets/cards/tfp_04.svg"
+    }
+  ]
+}

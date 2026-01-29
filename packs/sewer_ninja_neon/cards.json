@@ -1,26 +1,204 @@
-[
-  {"id": "snn-01", "title": "Snn 01", "src": "assets/cards/snn-01.svg"},
-  {"id": "snn-02", "title": "Snn 02", "src": "assets/cards/snn-02.svg"},
-  {"id": "snn-03", "title": "Snn 03", "src": "assets/cards/snn-03.svg"},
-  {"id": "snn-04", "title": "Snn 04", "src": "assets/cards/snn-04.svg"},
-  {"id": "snn-05", "title": "Snn 05", "src": "assets/cards/snn-05.svg"},
-  {"id": "snn-06", "title": "Snn 06", "src": "assets/cards/snn-06.svg"},
-  {"id": "snn-07", "title": "Snn 07", "src": "assets/cards/snn-07.svg"},
-  {"id": "snn-08", "title": "Snn 08", "src": "assets/cards/snn-08.svg"},
-  {"id": "snn-09", "title": "Snn 09", "src": "assets/cards/snn-09.svg"},
-  {"id": "snn-10", "title": "Snn 10", "src": "assets/cards/snn-10.svg"},
-  {"id": "snn-11", "title": "Snn 11", "src": "assets/cards/snn-11.svg"},
-  {"id": "snn-12", "title": "Snn 12", "src": "assets/cards/snn-12.svg"},
-  {"id": "snn-13", "title": "Snn 13", "src": "assets/cards/snn-13.svg"},
-  {"id": "snn-14", "title": "Snn 14", "src": "assets/cards/snn-14.svg"},
-  {"id": "snn-15", "title": "Snn 15", "src": "assets/cards/snn-15.svg"},
-  {"id": "snn-16", "title": "Snn 16", "src": "assets/cards/snn-16.svg"},
-  {"id": "snn-17", "title": "Snn 17", "src": "assets/cards/snn-17.svg"},
-  {"id": "snn-18", "title": "Snn 18", "src": "assets/cards/snn-18.svg"},
-  {"id": "snn-19", "title": "Snn 19", "src": "assets/cards/snn-19.svg"},
-  {"id": "snn-20", "title": "Snn 20", "src": "assets/cards/snn-20.svg"},
-  {"id": "snn-21", "title": "Snn 21", "src": "assets/cards/snn-21.svg"},
-  {"id": "snn-22", "title": "Snn 22", "src": "assets/cards/snn-22.svg"},
-  {"id": "snn-23", "title": "Snn 23", "src": "assets/cards/snn-23.svg"},
-  {"id": "snn-24", "title": "Snn 24", "src": "assets/cards/snn-24.svg"}
-]
+{
+  "cards": [
+    {
+      "id": "snn-01",
+      "title": "Snn 01",
+      "src": "assets/cards/snn-01.svg"
+    },
+    {
+      "id": "snn-02",
+      "title": "Snn 02",
+      "src": "assets/cards/snn-02.svg"
+    },
+    {
+      "id": "snn-03",
+      "title": "Snn 03",
+      "src": "assets/cards/snn-03.svg"
+    },
+    {
+      "id": "snn-04",
+      "title": "Snn 04",
+      "src": "assets/cards/snn-04.svg"
+    },
+    {
+      "id": "snn-05",
+      "title": "Snn 05",
+      "src": "assets/cards/snn-05.svg"
+    },
+    {
+      "id": "snn-06",
+      "title": "Snn 06",
+      "src": "assets/cards/snn-06.svg"
+    },
+    {
+      "id": "snn-07",
+      "title": "Snn 07",
+      "src": "assets/cards/snn-07.svg"
+    },
+    {
+      "id": "snn-08",
+      "title": "Snn 08",
+      "src": "assets/cards/snn-08.svg"
+    },
+    {
+      "id": "snn-09",
+      "title": "Snn 09",
+      "src": "assets/cards/snn-09.svg"
+    },
+    {
+      "id": "snn-10",
+      "title": "Snn 10",
+      "src": "assets/cards/snn-10.svg"
+    },
+    {
+      "id": "snn-11",
+      "title": "Snn 11",
+      "src": "assets/cards/snn-11.svg"
+    },
+    {
+      "id": "snn-12",
+      "title": "Snn 12",
+      "src": "assets/cards/snn-12.svg"
+    },
+    {
+      "id": "snn-13",
+      "title": "Snn 13",
+      "src": "assets/cards/snn-13.svg"
+    },
+    {
+      "id": "snn-14",
+      "title": "Snn 14",
+      "src": "assets/cards/snn-14.svg"
+    },
+    {
+      "id": "snn-15",
+      "title": "Snn 15",
+      "src": "assets/cards/snn-15.svg"
+    },
+    {
+      "id": "snn-16",
+      "title": "Snn 16",
+      "src": "assets/cards/snn-16.svg"
+    },
+    {
+      "id": "snn-17",
+      "title": "Snn 17",
+      "src": "assets/cards/snn-17.svg"
+    },
+    {
+      "id": "snn-18",
+      "title": "Snn 18",
+      "src": "assets/cards/snn-18.svg"
+    },
+    {
+      "id": "snn-19",
+      "title": "Snn 19",
+      "src": "assets/cards/snn-19.svg"
+    },
+    {
+      "id": "snn-20",
+      "title": "Snn 20",
+      "src": "assets/cards/snn-20.svg"
+    },
+    {
+      "id": "snn-21",
+      "title": "Snn 21",
+      "src": "assets/cards/snn-21.svg"
+    },
+    {
+      "id": "snn-22",
+      "title": "Snn 22",
+      "src": "assets/cards/snn-22.svg"
+    },
+    {
+      "id": "snn-23",
+      "title": "Snn 23",
+      "src": "assets/cards/snn-23.svg"
+    },
+    {
+      "id": "snn-24",
+      "title": "Snn 24",
+      "src": "assets/cards/snn-24.svg"
+    },
+    {
+      "id": "bolt",
+      "title": "Bolt",
+      "src": "assets/cards/bolt.svg"
+    },
+    {
+      "id": "neon_01",
+      "title": "Neon 01",
+      "src": "assets/cards/neon_01.svg"
+    },
+    {
+      "id": "neon_02",
+      "title": "Neon 02",
+      "src": "assets/cards/neon_02.svg"
+    },
+    {
+      "id": "neon_03",
+      "title": "Neon 03",
+      "src": "assets/cards/neon_03.svg"
+    },
+    {
+      "id": "snn_st_01",
+      "title": "Snn St 01",
+      "src": "assets/cards/snn-st-01.svg"
+    },
+    {
+      "id": "snn_st_02",
+      "title": "Snn St 02",
+      "src": "assets/cards/snn-st-02.svg"
+    },
+    {
+      "id": "snn_st_03",
+      "title": "Snn St 03",
+      "src": "assets/cards/snn-st-03.svg"
+    },
+    {
+      "id": "snn_st_04",
+      "title": "Snn St 04",
+      "src": "assets/cards/snn-st-04.svg"
+    },
+    {
+      "id": "snn_st_05",
+      "title": "Snn St 05",
+      "src": "assets/cards/snn-st-05.svg"
+    },
+    {
+      "id": "snn_st_06",
+      "title": "Snn St 06",
+      "src": "assets/cards/snn-st-06.svg"
+    },
+    {
+      "id": "snn_st_07",
+      "title": "Snn St 07",
+      "src": "assets/cards/snn-st-07.svg"
+    },
+    {
+      "id": "snn_st_08",
+      "title": "Snn St 08",
+      "src": "assets/cards/snn-st-08.svg"
+    },
+    {
+      "id": "snn_st_09",
+      "title": "Snn St 09",
+      "src": "assets/cards/snn-st-09.svg"
+    },
+    {
+      "id": "snn_st_10",
+      "title": "Snn St 10",
+      "src": "assets/cards/snn-st-10.svg"
+    },
+    {
+      "id": "snn_st_11",
+      "title": "Snn St 11",
+      "src": "assets/cards/snn-st-11.svg"
+    },
+    {
+      "id": "snn_st_12",
+      "title": "Snn St 12",
+      "src": "assets/cards/snn-st-12.svg"
+    }
+  ]
+}

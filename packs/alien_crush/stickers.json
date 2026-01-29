@@ -2,36 +2,6 @@
   "version": 1,
   "stickers": [
     {
-      "id": "AC-ST-01",
-      "name": "UFO",
-      "src": "assets/stickers/AC-ST-01.svg"
-    },
-    {
-      "id": "AC-ST-02",
-      "name": "Alien Head",
-      "src": "assets/stickers/AC-ST-02.svg"
-    },
-    {
-      "id": "AC-ST-03",
-      "name": "Star Cluster",
-      "src": "assets/stickers/AC-ST-03.svg"
-    },
-    {
-      "id": "AC-ST-04",
-      "name": "TOP SECRET",
-      "src": "assets/stickers/AC-ST-04.svg"
-    },
-    {
-      "id": "AC-ST-05",
-      "name": "Orbit Rings",
-      "src": "assets/stickers/AC-ST-05.svg"
-    },
-    {
-      "id": "AC-ST-06",
-      "name": "Radar Heart",
-      "src": "assets/stickers/AC-ST-06.svg"
-    },
-    {
       "id": "AC-ST-07",
       "name": "Alien Dude",
       "src": "assets/stickers/AC-ST-07.png"
@@ -40,6 +10,16 @@
       "id": "AC-ST-08",
       "name": "Alien Kiss",
       "src": "assets/stickers/AC-ST-08.png"
+    },
+    {
+      "id": "ac_st_07",
+      "name": "Ac St 07",
+      "src": "assets/stickers/ac-st-07.png"
+    },
+    {
+      "id": "ac_st_08",
+      "name": "Ac St 08",
+      "src": "assets/stickers/ac-st-08.png"
     }
   ]
 }

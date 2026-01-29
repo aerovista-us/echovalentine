@@ -2,36 +2,6 @@
   "version": 1,
   "stickers": [
     {
-      "id": "albp-st-01",
-      "name": "Albp St 01",
-      "src": "assets/stickers/albp-st-01.svg"
-    },
-    {
-      "id": "albp-st-02",
-      "name": "Albp St 02",
-      "src": "assets/stickers/albp-st-02.svg"
-    },
-    {
-      "id": "albp-st-03",
-      "name": "Albp St 03",
-      "src": "assets/stickers/albp-st-03.svg"
-    },
-    {
-      "id": "albp-st-04",
-      "name": "Albp St 04",
-      "src": "assets/stickers/albp-st-04.svg"
-    },
-    {
-      "id": "albp-st-05",
-      "name": "Albp St 05",
-      "src": "assets/stickers/albp-st-05.svg"
-    },
-    {
-      "id": "albp-st-06",
-      "name": "Albp St 06",
-      "src": "assets/stickers/albp-st-06.svg"
-    },
-    {
       "id": "albp-blender",
       "name": "Blender",
       "src": "assets/stickers/sticker.pk.1/blender_sticker.png"
@@ -80,6 +50,81 @@
       "id": "albp-microwave",
       "name": "Microwave",
       "src": "assets/stickers/sticker.pk.1/microwave_sticker.png"
+    },
+    {
+      "id": "nope",
+      "name": "Nope",
+      "src": "assets/stickers/nope.png"
+    },
+    {
+      "id": "nope2",
+      "name": "Nope2",
+      "src": "assets/stickers/nope2.png"
+    },
+    {
+      "id": "nope2_sticker",
+      "name": "Nope2 Sticker",
+      "src": "assets/stickers/nope2_sticker.png"
+    },
+    {
+      "id": "nope_sticker",
+      "name": "Nope Sticker",
+      "src": "assets/stickers/nope_sticker.png"
+    },
+    {
+      "id": "single1",
+      "name": "Single1",
+      "src": "assets/stickers/single1.png"
+    },
+    {
+      "id": "single2",
+      "name": "Single2",
+      "src": "assets/stickers/single2.png"
+    },
+    {
+      "id": "single3",
+      "name": "Single3",
+      "src": "assets/stickers/single3.png"
+    },
+    {
+      "id": "single4",
+      "name": "Single4",
+      "src": "assets/stickers/single4.png"
+    },
+    {
+      "id": "single5",
+      "name": "Single5",
+      "src": "assets/stickers/single5.png"
+    },
+    {
+      "id": "single6",
+      "name": "Single6",
+      "src": "assets/stickers/single6.png"
+    },
+    {
+      "id": "trash",
+      "name": "Trash",
+      "src": "assets/stickers/trash.png"
+    },
+    {
+      "id": "trash1",
+      "name": "Trash1",
+      "src": "assets/stickers/trash1.png"
+    },
+    {
+      "id": "trash2",
+      "name": "Trash2",
+      "src": "assets/stickers/trash2.png"
+    },
+    {
+      "id": "trash3",
+      "name": "Trash3",
+      "src": "assets/stickers/trash3.png"
+    },
+    {
+      "id": "trash4",
+      "name": "Trash4",
+      "src": "assets/stickers/trash4.png"
     }
   ]
 }

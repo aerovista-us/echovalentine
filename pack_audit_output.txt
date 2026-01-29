@@ -1,0 +1,243 @@
+================================================================================
+PACK AUDIT REPORT
+================================================================================
+
+Auditing: sample_love...
+Auditing: alien_crush...
+Auditing: anti_love_blackpink...
+Auditing: arcade_love_90s...
+Auditing: classic_sweet...
+Auditing: echo_reset...
+Auditing: found_family...
+Auditing: love_spell...
+Auditing: neon_squad_heroes...
+Auditing: noir_city_vigilante...
+Auditing: sewer_ninja_neon...
+Auditing: sticker_galaxy_dreams...
+Auditing: swamphop_sweetheart...
+Auditing: timbr_founders_pack...
+Auditing: yo_bro...
+Auditing: dearest_mother...
+
+================================================================================
+SUMMARY
+================================================================================
+Total packs: 16
+Packs with errors: 0
+Packs with warnings: 3
+Packs with dummy data: 2
+V2 compliant packs: 0
+Total dummy/placeholder items: 14
+Total file issues: 27
+
+================================================================================
+DETAILED REPORTS
+================================================================================
+
+
+================================================================================
+PACK: sample_love
+================================================================================
+
+[WARNINGS]
+  - No cover.svg or cover.webp found
+  - Track t1: No src field
+  - Does not match v2 folder structure
+
+[DUMMY/PLACEHOLDER DATA]
+  - pack.json -> unknown.id
+    Value: 'sample_love'
+    Issues: placeholder: matches 'sample'
+  - pack.json -> unknown.name
+    Value: 'Sample Love'
+    Issues: placeholder: matches 'sample'
+  - pack.json -> unknown.description
+    Value: 'A sample pack showcasing the EchoValentines experience. Bright neon aesthetics with playful, chaotic energy.'
+    Issues: placeholder: matches 'sample'
+  - cards.json -> c1.title
+    Value: 'Card 1'
+    Issues: generic: matches '^card \d+$'
+  - cards.json -> c2.title
+    Value: 'Card 2'
+    Issues: generic: matches '^card \d+$'
+  - cards.json -> c3.title
+    Value: 'Card 3'
+    Issues: generic: matches '^card \d+$'
+  - cards.json -> c4.title
+    Value: 'Card 4'
+    Issues: generic: matches '^card \d+$'
+  - cards.json -> c5.title
+    Value: 'Card 5'
+    Issues: generic: matches '^card \d+$'
+  - cards.json -> c6.title
+    Value: 'Card 6'
+    Issues: generic: matches '^card \d+$'
+  - tracks.json -> t1.name
+    Value: '(optional) dreamy loop'
+    Issues: placeholder: matches 'optional', empty: matches '^\(optional\)'
+  - tracks.json -> t1.src
+    Value: ''
+    Issues: empty: matches '^\s*$'
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': False, 'cards_count': 6, 'stickers_count': 6, 'tracks_count': 1}
+V2 Compliance: {'v2_structure': False, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: alien_crush
+================================================================================
+
+[FILE ISSUES]
+  - Sticker AC-ST-01: Missing file assets/stickers/AC-ST-01.svg
+  - Sticker AC-ST-02: Missing file assets/stickers/AC-ST-02.svg
+  - Sticker AC-ST-03: Missing file assets/stickers/AC-ST-03.svg
+  - Sticker AC-ST-04: Missing file assets/stickers/AC-ST-04.svg
+  - Sticker AC-ST-05: Missing file assets/stickers/AC-ST-05.svg
+  - Sticker AC-ST-06: Missing file assets/stickers/AC-ST-06.svg
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 32, 'stickers_count': 8, 'tracks_count': 6}
+V2 Compliance: {'v2_structure': True, 'v2_naming': False, 'v2_formats': False}
+
+================================================================================
+PACK: anti_love_blackpink
+================================================================================
+
+[FILE ISSUES]
+  - Sticker albp-st-01: Missing file assets/stickers/albp-st-01.svg
+  - Sticker albp-st-02: Missing file assets/stickers/albp-st-02.svg
+  - Sticker albp-st-03: Missing file assets/stickers/albp-st-03.svg
+  - Sticker albp-st-04: Missing file assets/stickers/albp-st-04.svg
+  - Sticker albp-st-05: Missing file assets/stickers/albp-st-05.svg
+  - Sticker albp-st-06: Missing file assets/stickers/albp-st-06.svg
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 16, 'tracks_count': 7}
+V2 Compliance: {'v2_structure': True, 'v2_naming': False, 'v2_formats': False}
+
+================================================================================
+PACK: arcade_love_90s
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 31, 'stickers_count': 1, 'tracks_count': 2}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: classic_sweet
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 15, 'stickers_count': 3, 'tracks_count': 2}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: echo_reset
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 12, 'tracks_count': 2}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: found_family
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 31, 'stickers_count': 0, 'tracks_count': 0}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: love_spell
+================================================================================
+
+[DUMMY/PLACEHOLDER DATA]
+  - cards.json -> card_01.id
+    Value: 'card_01'
+    Issues: generic: matches '^card_\d+$'
+  - cards.json -> card_01.title
+    Value: 'Card 01'
+    Issues: generic: matches '^card \d+$'
+  - stickers.json -> sticker_01.title
+    Value: 'Sticker 01'
+    Issues: generic: matches '^sticker \d+$'
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 71, 'stickers_count': 3, 'tracks_count': 5}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: neon_squad_heroes
+================================================================================
+
+[FILE ISSUES]
+  - Card dalle-2025-01-31-160816: Filename too long (175 > 50)
+  - Card dalle-2025-01-31-161122: Filename too long (175 > 50)
+  - Card dalle-2025-01-31-161124: Filename too long (175 > 50)
+  - Card dalle-2025-01-31-181900: Filename too long (174 > 50)
+  - Card dalle-2025-01-31-215604: Filename too long (176 > 50)
+  - Card dalle-2025-01-31-221353: Filename too long (176 > 50)
+  - Card dalle-2025-01-31-221807: Filename too long (176 > 50)
+  - Card dalle-2025-01-31-233849: Filename too long (176 > 50)
+  - Card dalle-2025-02-01-013145: Filename too long (176 > 50)
+  - Card dalle-2025-02-01-013600: Filename too long (176 > 50)
+  - Card dalle-2025-02-01-030413: Filename too long (173 > 50)
+  - Sticker dalle-2025-01-31-165613: Missing file assets/stickers/dalle-2025-01-31-165613-a-cinematic-cyberpunk-city-at-night-for-neon-echoes-scene-1-a-lone-figure-walks-down-an-empty-neon-lit-street-bathed-in-glowing-lights-of-blue-pi.webp
+  - Sticker dalle-2025-01-31-183431: Missing file assets/stickers/dalle-2025-01-31-183431-a-ghostly-holographic-figure-standing-in-a-neon-lit-cyberpunk-city-representing-neon-reflections-of-who-we-used-to-be-the-figure-glows-with-a-sof.webp
+  - Sticker dalle-2025-01-31-195823: Missing file assets/stickers/dalle-2025-01-31-195823-a-vibrant-and-dreamy-scene-of-people-dancing-under-a-starry-night-sky-illuminated-by-the-glow-of-shooting-stars-the-dancers-move-freely-with-joy-and.webp
+  - Sticker dalle-2025-01-31-222629: Missing file assets/stickers/dalle-2025-01-31-222629-a-surreal-vaporwave-dreamscape-where-time-loops-endlessly-glowing-in-neon-hues-of-pink-purple-and-blue-a-vast-futuristic-city-stretches-infinitel.webp
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 35, 'stickers_count': 16, 'tracks_count': 2}
+V2 Compliance: {'v2_structure': True, 'v2_naming': False, 'v2_formats': False}
+
+================================================================================
+PACK: noir_city_vigilante
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 12, 'tracks_count': 0}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: sewer_ninja_neon
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': True, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 15, 'tracks_count': 8}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: sticker_galaxy_dreams
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 12, 'tracks_count': 0}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: swamphop_sweetheart
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 24, 'stickers_count': 6, 'tracks_count': 8}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: timbr_founders_pack
+================================================================================
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': True, 'has_cover_svg': True, 'cards_count': 12, 'stickers_count': 8, 'tracks_count': 1}
+V2 Compliance: {'v2_structure': True, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: yo_bro
+================================================================================
+
+[WARNINGS]
+  - No cover.svg or cover.webp found
+  - Does not match v2 folder structure
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': False, 'stickers_count': 0, 'tracks_count': 0}
+V2 Compliance: {'v2_structure': False, 'v2_naming': True, 'v2_formats': False}
+
+================================================================================
+PACK: dearest_mother
+================================================================================
+
+[WARNINGS]
+  - No cover.svg or cover.webp found
+  - Does not match v2 folder structure
+
+Structure: {'has_assets_dir': True, 'has_cards_dir': True, 'has_stickers_dir': False, 'has_covers_dir': False, 'stickers_count': 0, 'tracks_count': 0}
+V2 Compliance: {'v2_structure': False, 'v2_naming': True, 'v2_formats': False}
+
+
+Full report saved to: pack_audit_report.json

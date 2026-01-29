@@ -1,17 +1,84 @@
-[
-  {"id": "cs-01", "title": "Cs 01", "src": "assets/cards/cs-01.svg"},
-  {"id": "cs-02", "title": "Cs 02", "src": "assets/cards/cs-02.svg"},
-  {"id": "cs-03", "title": "Cs 03", "src": "assets/cards/cs-03.svg"},
-  {"id": "cs-04", "title": "Cs 04", "src": "assets/cards/cs-04.svg"},
-  {"id": "cs-05", "title": "Cs 05", "src": "assets/cards/cs-05.svg"},
-  {"id": "cs-06", "title": "Cs 06", "src": "assets/cards/cs-06.svg"},
-  {"id": "cs-07", "title": "Cs 07", "src": "assets/cards/cs-07.svg"},
-  {"id": "cs-08", "title": "Cs 08", "src": "assets/cards/cs-08.svg"},
-  {"id": "cs-09", "title": "Cs 09", "src": "assets/cards/cs-09.svg"},
-  {"id": "cs-10", "title": "Cs 10", "src": "assets/cards/cs-10.svg"},
-  {"id": "cs-11", "title": "Cs 11", "src": "assets/cards/cs-11.svg"},
-  {"id": "cs-12", "title": "Cs 12", "src": "assets/cards/cs-12.svg"},
-  {"id": "sweet-01", "title": "Sweet 01", "src": "assets/cards/sweet_01.svg"},
-  {"id": "sweet-02", "title": "Sweet 02", "src": "assets/cards/sweet_02.svg"},
-  {"id": "sweet-03", "title": "Sweet 03", "src": "assets/cards/sweet_03.svg"}
-]
+{
+  "cards": [
+    {
+      "id": "cs-01",
+      "title": "Cs 01",
+      "src": "assets/cards/cs-01.svg"
+    },
+    {
+      "id": "cs-02",
+      "title": "Cs 02",
+      "src": "assets/cards/cs-02.svg"
+    },
+    {
+      "id": "cs-03",
+      "title": "Cs 03",
+      "src": "assets/cards/cs-03.svg"
+    },
+    {
+      "id": "cs-04",
+      "title": "Cs 04",
+      "src": "assets/cards/cs-04.svg"
+    },
+    {
+      "id": "cs-05",
+      "title": "Cs 05",
+      "src": "assets/cards/cs-05.svg"
+    },
+    {
+      "id": "cs-06",
+      "title": "Cs 06",
+      "src": "assets/cards/cs-06.svg"
+    },
+    {
+      "id": "cs-07",
+      "title": "Cs 07",
+      "src": "assets/cards/cs-07.svg"
+    },
+    {
+      "id": "cs-08",
+      "title": "Cs 08",
+      "src": "assets/cards/cs-08.svg"
+    },
+    {
+      "id": "cs-09",
+      "title": "Cs 09",
+      "src": "assets/cards/cs-09.svg"
+    },
+    {
+      "id": "cs-10",
+      "title": "Cs 10",
+      "src": "assets/cards/cs-10.svg"
+    },
+    {
+      "id": "cs-11",
+      "title": "Cs 11",
+      "src": "assets/cards/cs-11.svg"
+    },
+    {
+      "id": "cs-12",
+      "title": "Cs 12",
+      "src": "assets/cards/cs-12.svg"
+    },
+    {
+      "id": "sweet-01",
+      "title": "Sweet 01",
+      "src": "assets/cards/sweet_01.svg"
+    },
+    {
+      "id": "sweet-02",
+      "title": "Sweet 02",
+      "src": "assets/cards/sweet_02.svg"
+    },
+    {
+      "id": "sweet-03",
+      "title": "Sweet 03",
+      "src": "assets/cards/sweet_03.svg"
+    },
+    {
+      "id": "bolt_01",
+      "title": "Bolt 01",
+      "src": "assets/cards/bolt-01.svg"
+    }
+  ]
+}
