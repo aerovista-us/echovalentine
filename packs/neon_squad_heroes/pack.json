@@ -1,0 +1,23 @@
+{
+  "id": "neon_squad_heroes",
+  "name": "Neon Squad Heroes",
+  "title": "Neon Squad Heroes",
+  "tagline": "Suit up. Speak up. Send it.",
+  "description": "Superhero squad energy with neon aesthetics. Cards for your ride-or-die crew, your team, and the heroes in your life.",
+  "version": "1.0.0",
+  "cards_count": 36,
+  "pricing": {
+    "tier": "premium",
+    "price_usd": 5,
+    "unlock_code_required": true
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

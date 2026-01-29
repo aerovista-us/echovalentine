@@ -1,0 +1,1365 @@
+{
+  "generated": "C:\\APPS\\valentines",
+  "packs": [
+    "alien_crush",
+    "anti_love",
+    "arcade_love_90s",
+    "love_spell"
+  ],
+  "mode": "apply",
+  "added": 0,
+  "warn": 0,
+  "changes": [
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-01.svg",
+      "title": "Ac 01"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-02.svg",
+      "title": "Ac 02"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-03.svg",
+      "title": "Ac 03"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-04.svg",
+      "title": "Ac 04"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-05.svg",
+      "title": "Ac 05"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-06.svg",
+      "title": "Ac 06"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-07.svg",
+      "title": "Ac 07"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-08.svg",
+      "title": "Ac 08"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-09.svg",
+      "title": "Ac 09"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-10.svg",
+      "title": "Ac 10"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-11.svg",
+      "title": "Ac 11"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-12.svg",
+      "title": "Ac 12"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-13.svg",
+      "title": "Ac 13"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-14.svg",
+      "title": "Ac 14"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-15.svg",
+      "title": "Ac 15"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-16.svg",
+      "title": "Ac 16"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-17.svg",
+      "title": "Ac 17"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-18.svg",
+      "title": "Ac 18"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-19.svg",
+      "title": "Ac 19"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-20.svg",
+      "title": "Ac 20"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-21.svg",
+      "title": "Ac 21"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-22.svg",
+      "title": "Ac 22"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-23.svg",
+      "title": "Ac 23"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-24.svg",
+      "title": "Ac 24"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-01.svg",
+      "title": "Ac St 01"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-02.svg",
+      "title": "Ac St 02"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-03.svg",
+      "title": "Ac St 03"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-04.svg",
+      "title": "Ac St 04"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-05.svg",
+      "title": "Ac St 05"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ac-st-06.svg",
+      "title": "Ac St 06"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/ac-st-07.png",
+      "title": "Ac St 07"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/ac-st-08.png",
+      "title": "Ac St 08"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/beam_me_close.mp3",
+      "title": "Beam Me Close"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/beam_me_close_alt.mp3",
+      "title": "Beam Me Close Alt"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/classified_love_file.mp3",
+      "title": "Classified Love File"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/classified_love_file_alt.mp3",
+      "title": "Classified Love File Alt"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/ufo_found_one-1.mp3",
+      "title": "Ufo Found One 1"
+    },
+    {
+      "pack": "alien_crush",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/ufo_found_one.mp3",
+      "title": "Ufo Found One"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-01.svg",
+      "title": "Albp 01"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-02.svg",
+      "title": "Albp 02"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-03.svg",
+      "title": "Albp 03"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-04.svg",
+      "title": "Albp 04"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-05.svg",
+      "title": "Albp 05"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-06.svg",
+      "title": "Albp 06"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-07.svg",
+      "title": "Albp 07"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-08.svg",
+      "title": "Albp 08"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-09.svg",
+      "title": "Albp 09"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-10.svg",
+      "title": "Albp 10"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-11.svg",
+      "title": "Albp 11"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-12.svg",
+      "title": "Albp 12"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-13.svg",
+      "title": "Albp 13"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-14.svg",
+      "title": "Albp 14"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-15.svg",
+      "title": "Albp 15"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-16.svg",
+      "title": "Albp 16"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-17.svg",
+      "title": "Albp 17"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-18.svg",
+      "title": "Albp 18"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-19.svg",
+      "title": "Albp 19"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-20.svg",
+      "title": "Albp 20"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-21.svg",
+      "title": "Albp 21"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-22.svg",
+      "title": "Albp 22"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-23.svg",
+      "title": "Albp 23"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-24.svg",
+      "title": "Albp 24"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-01.svg",
+      "title": "Albp St 01"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-02.svg",
+      "title": "Albp St 02"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-03.svg",
+      "title": "Albp St 03"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-04.svg",
+      "title": "Albp St 04"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-05.svg",
+      "title": "Albp St 05"
+    },
+    {
+      "pack": "anti_love",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/albp-st-06.svg",
+      "title": "Albp St 06"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left-on-read-ritual-of-detach-2.mp3",
+      "title": "Left On Read Ritual Of Detach 2"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left-on-read-ritual-of-detach-3.mp3",
+      "title": "Left On Read Ritual Of Detach 3"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left-on-read-ritual-of-detach-alt.mp3",
+      "title": "Left On Read Ritual Of Detach Alt"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left-on-read-ritual-of-detach.mp3",
+      "title": "Left On Read Ritual Of Detach"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left_on_read_ritual_of_detach.mp3",
+      "title": "Left On Read Ritual Of Detach"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left_on_read_ritual_of_detach_2.mp3",
+      "title": "Left On Read Ritual Of Detach 2"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left_on_read_ritual_of_detach_3.mp3",
+      "title": "Left On Read Ritual Of Detach 3"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/left_on_read_ritual_of_detach_alt.mp3",
+      "title": "Left On Read Ritual Of Detach Alt"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no-valentine-hype-funny-2.mp3",
+      "title": "No Valentine Hype Funny 2"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no-valentine-hype-funny-alt.mp3",
+      "title": "No Valentine Hype Funny Alt"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no-valentine-hype-funny.mp3",
+      "title": "No Valentine Hype Funny"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no_valentine_hype__funny.mp3",
+      "title": "No Valentine Hype Funny"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no_valentine_hype__funny_2.mp3",
+      "title": "No Valentine Hype Funny 2"
+    },
+    {
+      "pack": "anti_love",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/no_valentine_hype__funny_alt.mp3",
+      "title": "No Valentine Hype Funny Alt"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-01.svg",
+      "title": "Al90 01"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-02.svg",
+      "title": "Al90 02"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-03.svg",
+      "title": "Al90 03"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-04.svg",
+      "title": "Al90 04"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-05.svg",
+      "title": "Al90 05"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-06.svg",
+      "title": "Al90 06"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-07.svg",
+      "title": "Al90 07"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-08.svg",
+      "title": "Al90 08"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-09.svg",
+      "title": "Al90 09"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-10.svg",
+      "title": "Al90 10"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-11.svg",
+      "title": "Al90 11"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-12.svg",
+      "title": "Al90 12"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-13.svg",
+      "title": "Al90 13"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-14.svg",
+      "title": "Al90 14"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-15.svg",
+      "title": "Al90 15"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-16.svg",
+      "title": "Al90 16"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-17.svg",
+      "title": "Al90 17"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-18.svg",
+      "title": "Al90 18"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-19.svg",
+      "title": "Al90 19"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-20.svg",
+      "title": "Al90 20"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-21.svg",
+      "title": "Al90 21"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-22.svg",
+      "title": "Al90 22"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-23.svg",
+      "title": "Al90 23"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-24.svg",
+      "title": "Al90 24"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-01.svg",
+      "title": "al90 St 01"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-02.svg",
+      "title": "al90 St 02"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-03.svg",
+      "title": "al90 St 03"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-04.svg",
+      "title": "al90 St 04"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-05.svg",
+      "title": "al90 St 05"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/al90-st-06.svg",
+      "title": "al90 St 06"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/alen_dude.png",
+      "title": "Alen Dude"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/kiss.png",
+      "title": "Kiss"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/incert_coin.mp3",
+      "title": "Incert Coin"
+    },
+    {
+      "pack": "arcade_love_90s",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/player_2_locked.mp3",
+      "title": "Player 2 Locked"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/card_01.svg",
+      "title": "Card 01"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-001.svg",
+      "title": "Ls 001"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-002.svg",
+      "title": "Ls 002"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-003.svg",
+      "title": "Ls 003"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-004.svg",
+      "title": "Ls 004"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-005.svg",
+      "title": "Ls 005"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-006.svg",
+      "title": "Ls 006"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-007.svg",
+      "title": "Ls 007"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-008.svg",
+      "title": "Ls 008"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-009.svg",
+      "title": "Ls 009"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-010.svg",
+      "title": "Ls 010"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-011.svg",
+      "title": "Ls 011"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-012.svg",
+      "title": "Ls 012"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-013.svg",
+      "title": "Ls 013"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-014.svg",
+      "title": "Ls 014"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-015.svg",
+      "title": "Ls 015"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-016.svg",
+      "title": "Ls 016"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-017.svg",
+      "title": "Ls 017"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-018.svg",
+      "title": "Ls 018"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-019.svg",
+      "title": "Ls 019"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-020.svg",
+      "title": "Ls 020"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-021.svg",
+      "title": "Ls 021"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-022.svg",
+      "title": "Ls 022"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-023.svg",
+      "title": "Ls 023"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-024.svg",
+      "title": "Ls 024"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-025.svg",
+      "title": "Ls 025"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-026.svg",
+      "title": "Ls 026"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-027.svg",
+      "title": "Ls 027"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-028.svg",
+      "title": "Ls 028"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-029.svg",
+      "title": "Ls 029"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-030.svg",
+      "title": "Ls 030"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-031.svg",
+      "title": "Ls 031"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-032.svg",
+      "title": "Ls 032"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-033.svg",
+      "title": "Ls 033"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-034.svg",
+      "title": "Ls 034"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-035.svg",
+      "title": "Ls 035"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-036.svg",
+      "title": "Ls 036"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-037.svg",
+      "title": "Ls 037"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-038.svg",
+      "title": "Ls 038"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-039.svg",
+      "title": "Ls 039"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-040.svg",
+      "title": "Ls 040"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-041.svg",
+      "title": "Ls 041"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-042.svg",
+      "title": "Ls 042"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-043.svg",
+      "title": "Ls 043"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-044.svg",
+      "title": "Ls 044"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-045.svg",
+      "title": "Ls 045"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-046.svg",
+      "title": "Ls 046"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-047.svg",
+      "title": "Ls 047"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-048.svg",
+      "title": "Ls 048"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-049.svg",
+      "title": "Ls 049"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-050.svg",
+      "title": "Ls 050"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-051.svg",
+      "title": "Ls 051"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-052.svg",
+      "title": "Ls 052"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-053.svg",
+      "title": "Ls 053"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-054.svg",
+      "title": "Ls 054"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-055.svg",
+      "title": "Ls 055"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-056.svg",
+      "title": "Ls 056"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-057.svg",
+      "title": "Ls 057"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-058.svg",
+      "title": "Ls 058"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-059.svg",
+      "title": "Ls 059"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-060.svg",
+      "title": "Ls 060"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-061.svg",
+      "title": "Ls 061"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-062.svg",
+      "title": "Ls 062"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-063.svg",
+      "title": "Ls 063"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-064.svg",
+      "title": "Ls 064"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-065.svg",
+      "title": "Ls 065"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-066.svg",
+      "title": "Ls 066"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-067.svg",
+      "title": "Ls 067"
+    },
+    {
+      "pack": "love_spell",
+      "file": "cards.json",
+      "action": "noop",
+      "src": "assets/cards/ls-068.svg",
+      "title": "Ls 068"
+    },
+    {
+      "pack": "love_spell",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/icon.svg",
+      "title": "Icon"
+    },
+    {
+      "pack": "love_spell",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/pattern.svg",
+      "title": "Pattern"
+    },
+    {
+      "pack": "love_spell",
+      "file": "stickers.json",
+      "action": "noop",
+      "src": "assets/stickers/sticker_01.svg",
+      "title": "Sticker 01"
+    },
+    {
+      "pack": "love_spell",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/love_spell.mp3",
+      "title": "Love Spell"
+    },
+    {
+      "pack": "love_spell",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/love_spell_alt.mp3",
+      "title": "Love Spell Alt"
+    },
+    {
+      "pack": "love_spell",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/spell_ambiance.mp3",
+      "title": "Spell Ambiance"
+    },
+    {
+      "pack": "love_spell",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/audio/spell_ambiance_alt.mp3",
+      "title": "Spell Ambiance Alt"
+    },
+    {
+      "pack": "love_spell",
+      "file": "tracks.json",
+      "action": "noop",
+      "src": "assets/video/loop_03.mp4",
+      "title": "Loop 03"
+    }
+  ]
+}

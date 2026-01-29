@@ -1,0 +1,17 @@
+[
+  {"id": "snn-st-01", "title": "Snn St 01", "src": "assets/cards/snn-st-01.svg"},
+  {"id": "snn-st-02", "title": "Snn St 02", "src": "assets/cards/snn-st-02.svg"},
+  {"id": "snn-st-03", "title": "Snn St 03", "src": "assets/cards/snn-st-03.svg"},
+  {"id": "snn-st-04", "title": "Snn St 04", "src": "assets/cards/snn-st-04.svg"},
+  {"id": "snn-st-05", "title": "Snn St 05", "src": "assets/cards/snn-st-05.svg"},
+  {"id": "snn-st-06", "title": "Snn St 06", "src": "assets/cards/snn-st-06.svg"},
+  {"id": "snn-st-07", "title": "Snn St 07", "src": "assets/cards/snn-st-07.svg"},
+  {"id": "snn-st-08", "title": "Snn St 08", "src": "assets/cards/snn-st-08.svg"},
+  {"id": "snn-st-09", "title": "Snn St 09", "src": "assets/cards/snn-st-09.svg"},
+  {"id": "snn-st-10", "title": "Snn St 10", "src": "assets/cards/snn-st-10.svg"},
+  {"id": "snn-st-11", "title": "Snn St 11", "src": "assets/cards/snn-st-11.svg"},
+  {"id": "snn-st-12", "title": "Snn St 12", "src": "assets/cards/snn-st-12.svg"},
+  {"id": "neon-heart", "title": "Neon Heart", "src": "assets/stickers/neon-heart.svg"},
+  {"id": "skullheart", "title": "Skullheart", "src": "assets/stickers/skullheart.svg"},
+  {"id": "starburst", "title": "Starburst", "src": "assets/stickers/starburst.svg"}
+]

@@ -1,0 +1,62 @@
+{
+  "v": 1,
+  "templates": [
+    {
+      "id": "rem_anti_classic",
+      "title": "Anti Classic",
+      "subtitle": "Bold anti-love message",
+      "cardId": "albp-01",
+      "stickerIds": ["albp-st-01"],
+      "trackId": "left-on-read-ritual-of-detach",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "No thanks. ✌️"
+      },
+      "tags": ["bold", "anti"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    },
+    {
+      "id": "rem_detach_vibes",
+      "title": "Detach Vibes",
+      "subtitle": "Time to move on",
+      "cardId": "albp-02",
+      "stickerIds": ["albp-st-02"],
+      "trackId": "left-on-read-ritual-of-detach-2",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "Left on read. Moving on. 💅"
+      },
+      "tags": ["detach", "moving-on"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    },
+    {
+      "id": "rem_no_hype",
+      "title": "No Hype",
+      "subtitle": "Funny anti-Valentine",
+      "cardId": "albp-01",
+      "stickerIds": ["albp-st-03"],
+      "trackId": "no-valentine-hype-funny",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "Not feeling the Valentine vibes this year 😎"
+      },
+      "tags": ["funny", "no-hype"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    }
+  ]
+}

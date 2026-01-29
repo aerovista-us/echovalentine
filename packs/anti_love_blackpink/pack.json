@@ -1,0 +1,29 @@
+{
+  "id": "anti_love_blackpink",
+  "name": "Anti Love Blackpink",
+  "title": "Anti Love Blackpink",
+  "tagline": "Anti-love vibes with attitude",
+  "description": "Edgy anti-love cards with bold graphics and attitude. Perfect for those who want to send a different kind of Valentine message.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "free"
+  },
+  "theme": {
+    "primary": "#ff1744",
+    "accent2": "#d50000",
+    "background": "#0b0d12",
+    "panel": "#121622",
+    "text": "#ffffff",
+    "muted": "rgba(255, 255, 255, 0.7)"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

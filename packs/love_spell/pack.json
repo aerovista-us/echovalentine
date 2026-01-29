@@ -1,0 +1,35 @@
+{
+  "id": "love_spell",
+  "name": "Love Spell",
+  "title": "Love Spell",
+  "tagline": "Valentine Pack · witchy warmth · playful devotion",
+  "description": "A soft witchy Valentine card pack—equal parts flirt, comfort, and real talk. Built for gifting, date nights, or solo self-love rituals.",
+  "version": "1.1.0",
+  "cards_count": 68,
+  "pricing": {
+    "tier": "free",
+    "price_usd": 0,
+    "unlock_code_required": false
+  },
+  "theme": {
+    "primary": "#ff4fa3",
+    "accent2": "#b86bff",
+    "background": "#0b0712",
+    "panel": "#140a22",
+    "text": "#f6f2ff",
+    "muted": "#c8b9e8"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  },
+  "legal": {
+    "original_art_only": true,
+    "notes": "Original card art and phrases."
+  }
+}

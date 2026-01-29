@@ -1,0 +1,10 @@
+[
+  {"id": "bayou-valentine", "title": "Bayou Valentine", "src": "assets/audio/bayou_valentine.mp3"},
+  {"id": "bayou-valentine-alt", "title": "Bayou Valentine Alt", "src": "assets/audio/bayou_valentine_alt.mp3"},
+  {"id": "loyalty-loop", "title": "Loyalty Loop", "src": "assets/audio/loyalty_loop.mp3"},
+  {"id": "loyalty-loop-alt", "title": "Loyalty Loop Alt", "src": "assets/audio/loyalty_loop_alt.mp3"},
+  {"id": "mud-moonlight", "title": "Mud Moonlight", "src": "assets/audio/mud_moonlight.mp3"},
+  {"id": "mud-moonlight-alt", "title": "Mud Moonlight Alt", "src": "assets/audio/mud_moonligh_alt.mp3"},
+  {"id": "porchlight-promise", "title": "Porchlight Promise", "src": "assets/audio/porchlight_promise.mp3"},
+  {"id": "porchlight-promise-alt", "title": "Porchlight Promise Alt", "src": "assets/audio/porchlight_promise_alt.mp3"}
+]

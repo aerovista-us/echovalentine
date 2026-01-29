@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#0a0a1a">
+  <defs>
+    <pattern id="arcadeScanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="2" fill="#00ff41" opacity="0.15"/>
+    </pattern>
+    <linearGradient id="arcadeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff41;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#1a1a2e"/>
+  <rect width="800" height="600" fill="url(#arcadeScanlines)"/>
+  
+  <!-- Border -->
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#00ffff" stroke-width="4"/>
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="#ff00ff" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="400" y="150" font-family="monospace" font-size="72" fill="url(#arcadeGrad)" text-anchor="middle" font-weight="bold">90s ARCADE</text>
+  <text x="400" y="220" font-family="monospace" font-size="72" fill="url(#arcadeGrad)" text-anchor="middle" font-weight="bold">LOVE</text>
+  
+  <!-- Pixel heart -->
+  <g transform="translate(400, 320)">
+    <rect x="-40" y="-20" width="20" height="20" fill="#00ff41"/>
+    <rect x="-20" y="-20" width="20" height="20" fill="#ff00ff"/>
+    <rect x="0" y="-20" width="20" height="20" fill="#00ffff"/>
+    <rect x="20" y="-20" width="20" height="20" fill="#ff00ff"/>
+    <rect x="40" y="-20" width="20" height="20" fill="#00ff41"/>
+    <rect x="-30" y="0" width="20" height="20" fill="#ff00ff"/>
+    <rect x="-10" y="0" width="20" height="20" fill="#00ffff"/>
+    <rect x="10" y="0" width="20" height="20" fill="#00ffff"/>
+    <rect x="30" y="0" width="20" height="20" fill="#ff00ff"/>
+    <rect x="-20" y="20" width="20" height="20" fill="#00ffff"/>
+    <rect x="0" y="20" width="20" height="20" fill="#00ffff"/>
+    <rect x="20" y="20" width="20" height="20" fill="#00ffff"/>
+    <rect x="-10" y="40" width="20" height="20" fill="#00ffff"/>
+    <rect x="10" y="40" width="20" height="20" fill="#00ffff"/>
+    <rect x="0" y="60" width="20" height="20" fill="#00ffff"/>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="400" y="480" font-family="monospace" font-size="32" fill="#00ffff" text-anchor="middle">INSERT COIN. WIN MY HEART.</text>
+  
+  <!-- Corner decorations -->
+  <rect x="40" y="40" width="60" height="60" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <rect x="700" y="40" width="60" height="60" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <rect x="40" y="500" width="60" height="60" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <rect x="700" y="500" width="60" height="60" fill="none" stroke="#00ff41" stroke-width="2"/>
+</svg>

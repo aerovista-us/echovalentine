@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset="1" stop-color="#7cffdf"/>
+    </linearGradient>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,.14)"/>
+      <circle cx="12" cy="10" r="1.2" fill="rgba(255,255,255,.10)"/>
+    </pattern>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <!-- Outer frame -->
+  <rect x="34" y="34" width="832" height="532" rx="40" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.18)"/>
+
+  <!-- Card face -->
+  <rect x="56" y="56" width="788" height="488" rx="30" fill="rgba(255,255,255,.06)" filter="url(#shadow)"/>
+  <rect x="56" y="56" width="788" height="488" rx="30" fill="url(#dots)"/>
+
+  <!-- Perforation vibe -->
+  <path d="M86 96h728" stroke="rgba(255,255,255,.18)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <path d="M86 502h728" stroke="rgba(255,255,255,.14)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+
+  
+  <g opacity=".95">
+    <path d="M220 200c-30 0-54 24-54 54 0 60 54 95 54 95s54-35 54-95c0-30-24-54-54-54z" fill="#ff4fd8" opacity=".75"/>
+    <path d="M700 180c-24 0-44 20-44 44 0 50 44 78 44 78s44-28 44-78c0-24-20-44-44-44z" fill="#7cffdf" opacity=".65"/>
+  </g>
+
+  <!-- Title pill -->
+  <rect x="82" y="108" width="436" height="58" rx="18" fill="rgba(0,0,0,.30)" stroke="rgba(255,255,255,.18)"/>
+  <text x="102" y="148" font-family="Arial Black, Arial" font-size="30" fill="rgba(255,255,255,.92)">XOXO, YOU KNOW</text>
+
+  <!-- To/From line hints -->
+  <text x="92" y="532" font-family="Arial" font-size="22" fill="rgba(255,255,255,.86)">To: ________   From: ________</text>
+</svg>

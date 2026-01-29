@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff4fa3"/>
+      <stop offset="60%" stop-color="#b86bff"/>
+      <stop offset="100%" stop-color="#55f0ff"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#140a22"/>
+      <stop offset="100%" stop-color="#0b0712"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+  
+  <!-- Outer ring with enhanced glow -->
+  <g transform="translate(256 256)" filter="url(#glow)">
+    <circle r="180" fill="none" stroke="url(#neon)" stroke-width="16" opacity="0.95"/>
+    <circle r="160" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.2"/>
+  </g>
+  
+  <!-- Enhanced heart sigil -->
+  <g transform="translate(256 256)" filter="url(#glow)">
+    <path d="M0,100 C-100,36 -110,-40 -55,-77 C-18,-105 0,-86 0,-63 C0,-86 18,-105 55,-77 C110,-40 100,36 0,100 Z"
+          fill="none" stroke="url(#neon)" stroke-width="20" opacity="0.98" stroke-linejoin="round"/>
+    <path d="M0,85 C-85,30 -95,-30 -48,-63 C-16,-88 0,-73 0,-56 C0,-73 16,-88 48,-63 C95,-30 85,30 0,85 Z"
+          fill="none" stroke="#f6f2ff" stroke-width="2.5" opacity="0.25"/>
+  </g>
+  
+  <!-- Mystical stars around heart -->
+  <g transform="translate(256 256)" opacity="0.6" filter="url(#softGlow)">
+    <path d="M-120 -80 L-115 -70 L-105 -70 L-113 -63 L-110 -53 L-120 -60 L-130 -53 L-127 -63 L-135 -70 L-125 -70 Z" fill="#b86bff"/>
+    <path d="M120 -80 L125 -70 L135 -70 L127 -63 L130 -53 L120 -60 L110 -53 L113 -63 L105 -70 L115 -70 Z" fill="#ff4fa3"/>
+    <path d="M-80 120 L-75 130 L-65 130 L-73 137 L-70 147 L-80 140 L-90 147 L-87 137 L-95 130 L-85 130 Z" fill="#55f0ff" opacity="0.8"/>
+    <path d="M80 120 L85 130 L95 130 L87 137 L90 147 L80 140 L70 147 L73 137 L65 130 L75 130 Z" fill="#b86bff" opacity="0.8"/>
+  </g>
+  
+  <!-- Crescent moon accents -->
+  <g transform="translate(256 256)" opacity="0.5" filter="url(#softGlow)">
+    <path d="M -140 0 C -160 -20, -180 0, -160 20 C -140 40, -120 20, -140 0" fill="none" stroke="#b86bff" stroke-width="3"/>
+    <path d="M 140 0 C 160 -20, 180 0, 160 20 C 140 40, 120 20, 140 0" fill="none" stroke="#ff4fa3" stroke-width="3"/>
+  </g>
+</svg>

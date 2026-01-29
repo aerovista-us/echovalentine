@@ -1,0 +1,21 @@
+{
+  "id": "sticker_galaxy_dreams",
+  "name": "Sticker Galaxy Dreams",
+  "title": "Sticker Galaxy Dreams",
+  "tagline": "Cosmic crush. Sparkle forever.",
+  "description": "Space-themed cards with cosmic aesthetics and dreamy vibes. For the stargazers, dreamers, and cosmic connections.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "free"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

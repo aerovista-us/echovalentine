@@ -1,0 +1,17 @@
+[
+  {
+    "id": "icon",
+    "title": "Icon",
+    "src": "assets/stickers/icon.svg"
+  },
+  {
+    "id": "pattern",
+    "title": "Pattern",
+    "src": "assets/stickers/pattern.svg"
+  },
+  {
+    "id": "sticker_01",
+    "title": "Sticker 01",
+    "src": "assets/stickers/sticker_01.svg"
+  }
+]

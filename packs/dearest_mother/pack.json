@@ -1,0 +1,25 @@
+{
+  "id": "dearest_mother",
+  "name": "Dearest Mother",
+  "version": "1.0.0",
+  "type": "family",
+  "tags": [
+    "mom",
+    "gratitude",
+    "support",
+    "proud",
+    "home"
+  ],
+  "description": "Warm, sincere, non-romance messages for mom. Gratitude, pride, and everyday love.",
+  "tagline": "Warm, sincere messages for mom",
+  "cards_count": 24,
+  "data": {
+    "cards": "cards/cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/cover.svg",
+    "og_image": "assets/cover.svg"
+  }
+}

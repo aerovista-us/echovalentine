@@ -1,0 +1,34 @@
+{
+  "stickers": [
+    {
+      "id": "s1",
+      "name": "spark",
+      "src": "assets/stickers/s1.svg"
+    },
+    {
+      "id": "s2",
+      "name": "heart",
+      "src": "assets/stickers/s2.svg"
+    },
+    {
+      "id": "s3",
+      "name": "bolt",
+      "src": "assets/stickers/s3.svg"
+    },
+    {
+      "id": "s4",
+      "name": "star",
+      "src": "assets/stickers/s4.svg"
+    },
+    {
+      "id": "s5",
+      "name": "rose",
+      "src": "assets/stickers/s5.svg"
+    },
+    {
+      "id": "s6",
+      "name": "wink",
+      "src": "assets/stickers/s6.svg"
+    }
+  ]
+}

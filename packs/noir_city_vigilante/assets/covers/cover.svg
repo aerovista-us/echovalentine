@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#07080b">
+  <defs>
+    <linearGradient id="noirGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0.6" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="rain" patternUnits="userSpaceOnUse" width="4" height="20">
+      <line x1="2" y1="0" x2="2" y2="15" stroke="#8b5cf6" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#07080b"/>
+  <rect width="800" height="600" fill="url(#rain)"/>
+  
+  <!-- City silhouette -->
+  <polygon points="0,600 0,400 100,380 150,420 200,350 250,400 300,320 350,380 400,300 450,360 500,280 550,340 600,250 650,300 700,220 750,280 800,200 800,600" fill="#111218" opacity="0.8"/>
+  
+  <!-- Border -->
+  <rect x="30" y="30" width="740" height="540" fill="none" stroke="url(#noirGrad)" stroke-width="4" rx="10" filter="url(#glow)"/>
+  
+  <!-- Title -->
+  <text x="400" y="220" font-family="Georgia, serif" font-size="64" fill="#ffffff" text-anchor="middle" font-weight="bold" filter="url(#glow)">Noir City</text>
+  <text x="400" y="280" font-family="Georgia, serif" font-size="64" fill="#ffffff" text-anchor="middle" font-weight="bold" filter="url(#glow)">Vigilante</text>
+  
+  <!-- Tagline -->
+  <text x="400" y="340" font-family="Georgia, serif" font-size="24" fill="#ffffff" text-anchor="middle" opacity="0.85">Midnight notes. Quiet loyalty.</text>
+  
+  <!-- Pack identifier -->
+  <text x="400" y="380" font-family="Georgia, serif" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.7">EchoValentines Pack</text>
+</svg>

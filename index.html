@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EchoValentines — Punch & Send</title>
+  <meta name="description" content="Pick a box. Punch a card. Send a vibe. Zero friction valentine sharing."/>
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000"/>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <div class="valentine-bg" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <button class="brand" type="button" id="brandBtn" aria-label="Home">
+        <img src="assets/img/logo-animated.svg" alt="EchoValentine" class="brand-logo-animated" aria-hidden="true"/>
+        <span class="brand-visual">
+          <span class="brandText" aria-hidden="true">EchoValentine</span>
+          <span class="brandTag" aria-hidden="true">Punch & Send</span>
+        </span>
+      </button>
+
+      <div class="topbarRight">
+        <div class="pill" title="Local streak">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="streakText">0 punched</span>
+        </div>
+        <button class="btn ghost" type="button" id="pasteLinkBtn" title="Open a link">Paste link</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="app" class="app" aria-live="polite"></div>
+
+    <footer class="footer">
+      <span>Static. No accounts. Your data stays in the link + your device.</span>
+      <span class="sep">•</span>
+      <a href="#/about" class="link">About</a>
+    </footer>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/share.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/router.js"></script>
+  <script src="assets/js/player.js"></script>
+  <script src="assets/js/envelope.js"></script>
+  <script src="assets/js/dragdrop.js"></script>
+  <script src="assets/js/splash.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app_bootstrap.js"></script>
+</body>
+</html>

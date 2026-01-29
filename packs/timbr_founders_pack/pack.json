@@ -1,0 +1,23 @@
+{
+  "id": "timbr_founders_pack",
+  "name": "Timbr Founders Pack",
+  "title": "Timbr Founders Pack",
+  "tagline": "Founder's exclusive collection",
+  "description": "Exclusive founder's pack with unique cards and special designs. A limited collection for early supporters.",
+  "version": "1.0.0",
+  "cards_count": 12,
+  "pricing": {
+    "tier": "premium",
+    "price_usd": 5,
+    "unlock_code_required": true
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

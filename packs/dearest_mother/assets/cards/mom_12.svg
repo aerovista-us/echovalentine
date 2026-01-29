@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1f2a4a"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd54a"/>
+      <stop offset="1" stop-color="#ff7ad9"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="1200" fill="url(#bg)"/>
+
+  <g opacity="0.20">
+    <circle cx="120" cy="210" r="140" fill="#ffd54a"/>
+    <circle cx="690" cy="980" r="180" fill="#ff7ad9"/>
+    <path d="M0 980 C180 910, 300 1200, 520 1100 S710 980, 800 1080 V1200 H0 Z" fill="#ffd54a"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <text x="70" y="420" font-family="system-ui,Segoe UI,Arial" font-size="66" font-weight="850" fill="url(#grad)">
+      Your strength is quiet.
+    </text>
+  </g>
+
+  <text x="72" y="500" font-family="system-ui,Segoe UI,Arial" font-size="26" fill="#e7ecff" opacity="0.92">
+    Gentle Strength
+  </text>
+
+  <g opacity="0.9">
+    <rect x="70" y="560" width="660" height="480" rx="28" fill="#0b0b12" opacity="0.28"/>
+    <text x="100" y="640" font-family="system-ui,Segoe UI,Arial" font-size="22" fill="#c7d2fe" opacity="0.95">
+      Inside message goes here →
+    </text>
+    <text x="100" y="680" font-family="system-ui,Segoe UI,Arial" font-size="20" fill="#c7d2fe" opacity="0.75">
+      (User-customizable in composer)
+    </text>
+  </g>
+
+  <text x="70" y="1135" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="#9fb0ff" opacity="0.9">DEAREST MOTHER</text>
+</svg>

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "stickers": [
+    {
+      "id": "albp-st-01",
+      "name": "Albp St 01",
+      "src": "assets/stickers/albp-st-01.svg"
+    },
+    {
+      "id": "albp-st-02",
+      "name": "Albp St 02",
+      "src": "assets/stickers/albp-st-02.svg"
+    },
+    {
+      "id": "albp-st-03",
+      "name": "Albp St 03",
+      "src": "assets/stickers/albp-st-03.svg"
+    },
+    {
+      "id": "albp-st-04",
+      "name": "Albp St 04",
+      "src": "assets/stickers/albp-st-04.svg"
+    },
+    {
+      "id": "albp-st-05",
+      "name": "Albp St 05",
+      "src": "assets/stickers/albp-st-05.svg"
+    },
+    {
+      "id": "albp-st-06",
+      "name": "Albp St 06",
+      "src": "assets/stickers/albp-st-06.svg"
+    },
+    {
+      "id": "albp-blender",
+      "name": "Blender",
+      "src": "assets/stickers/sticker.pk.1/blender_sticker.png"
+    },
+    {
+      "id": "albp-business",
+      "name": "Business",
+      "src": "assets/stickers/sticker.pk.1/business.png"
+    },
+    {
+      "id": "albp-business2",
+      "name": "Business 2",
+      "src": "assets/stickers/sticker.pk.1/business2.png"
+    },
+    {
+      "id": "albp-business3",
+      "name": "Business 3",
+      "src": "assets/stickers/sticker.pk.1/business3.png"
+    },
+    {
+      "id": "albp-business4",
+      "name": "Business 4",
+      "src": "assets/stickers/sticker.pk.1/business4.png"
+    },
+    {
+      "id": "albp-business5",
+      "name": "Business 5",
+      "src": "assets/stickers/sticker.pk.1/business5.png"
+    },
+    {
+      "id": "albp-business6",
+      "name": "Business 6",
+      "src": "assets/stickers/sticker.pk.1/business6.png"
+    },
+    {
+      "id": "albp-business7",
+      "name": "Business 7",
+      "src": "assets/stickers/sticker.pk.1/business7.png"
+    },
+    {
+      "id": "albp-business8",
+      "name": "Business 8",
+      "src": "assets/stickers/sticker.pk.1/business8.png"
+    },
+    {
+      "id": "albp-microwave",
+      "name": "Microwave",
+      "src": "assets/stickers/sticker.pk.1/microwave_sticker.png"
+    }
+  ]
+}

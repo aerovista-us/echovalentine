@@ -1,0 +1,34 @@
+{
+  "cards": [
+    {
+      "id": "c1",
+      "title": "Card 1",
+      "front_svg": "assets/cards/c1.svg"
+    },
+    {
+      "id": "c2",
+      "title": "Card 2",
+      "front_svg": "assets/cards/c2.svg"
+    },
+    {
+      "id": "c3",
+      "title": "Card 3",
+      "front_svg": "assets/cards/c3.svg"
+    },
+    {
+      "id": "c4",
+      "title": "Card 4",
+      "front_svg": "assets/cards/c4.svg"
+    },
+    {
+      "id": "c5",
+      "title": "Card 5",
+      "front_svg": "assets/cards/c5.svg"
+    },
+    {
+      "id": "c6",
+      "title": "Card 6",
+      "front_svg": "assets/cards/c6.svg"
+    }
+  ]
+}

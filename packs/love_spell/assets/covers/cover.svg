@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#261042"/>
+      <stop offset="40%" stop-color="#140a22"/>
+      <stop offset="70%" stop-color="#0b0712"/>
+      <stop offset="100%" stop-color="#05030a"/>
+    </radialGradient>
+    <linearGradient id="neonGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff4fa3"/>
+      <stop offset="50%" stop-color="#b86bff"/>
+      <stop offset="100%" stop-color="#55f0ff"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4fa3" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#b86bff" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="starPattern" width="89" height="104" patternUnits="userSpaceOnUse">
+      <circle cx="22" cy="22" r="0.7" fill="#f6f2ff" opacity="0.3"/>
+      <circle cx="67" cy="35" r="0.5" fill="#b86bff" opacity="0.25"/>
+      <circle cx="44" cy="65" r="0.4" fill="#ff4fa3" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="520" fill="url(#bgGrad)"/>
+  <rect width="800" height="520" fill="url(#starPattern)"/>
+  
+  <!-- Subtle mystical stars -->
+  <g opacity="0.4" filter="url(#softGlow)">
+    <circle cx="98" cy="52" r="0.5" fill="#f6f2ff"/><circle cx="186" cy="113" r="0.4" fill="#b86bff"/>
+    <circle cx="435" cy="56" r="0.5" fill="#ff4fa3"/><circle cx="640" cy="82" r="0.5" fill="#f6f2ff"/>
+    <circle cx="675" cy="178" r="0.4" fill="#b86bff"/><circle cx="142" cy="213" r="0.4" fill="#ff4fa3"/>
+    <circle cx="382" cy="243" r="0.4" fill="#f6f2ff"/><circle cx="586" cy="277" r="0.4" fill="#b86bff"/>
+    <circle cx="231" cy="343" r="0.4" fill="#ff4fa3"/><circle cx="524" cy="386" r="0.5" fill="#f6f2ff"/>
+    <!-- Additional stars for richness -->
+    <circle cx="302" cy="91" r="0.3" fill="#55f0ff" opacity="0.6"/>
+    <circle cx="533" cy="148" r="0.4" fill="#b86bff" opacity="0.7"/>
+    <circle cx="124" cy="304" r="0.3" fill="#ff4fa3" opacity="0.6"/>
+  </g>
+  
+  <!-- Mystical ring with enhanced glow -->
+  <g transform="translate(400 212)" filter="url(#glow)">
+    <circle r="95" fill="none" stroke="url(#neonGrad)" stroke-width="3" opacity="0.95"/>
+    <circle r="89" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.25"/>
+    <circle r="102" fill="none" stroke="#ffffff" stroke-width="0.4" opacity="0.15"/>
+    <!-- Inner decorative ring -->
+    <circle r="82" fill="none" stroke="url(#neonGrad)" stroke-width="0.2" opacity="0.3"/>
+  </g>
+  
+  <!-- Enhanced heart sigil -->
+  <g transform="translate(400 212)" filter="url(#glow)">
+    <path d="M0,48 C-48,17 -52,-17 -26,-37 C-9,-50 0,-41 0,-30 C0,-41 9,-50 26,-37 C52,-17 48,17 0,48 Z"
+          fill="none" stroke="url(#neonGrad)" stroke-width="4" opacity="0.98" stroke-linejoin="round"/>
+    <path d="M0,41 C-41,15 -45,-15 -23,-31 C-8,-42 0,-36 0,-27 C0,-36 8,-42 23,-31 C45,-15 41,15 0,41 Z"
+          fill="none" stroke="#f6f2ff" stroke-width="0.5" opacity="0.22"/>
+    <!-- Inner glow -->
+    <path d="M0,43 C-43,15 -48,-13 -24,-32 C-8,-43 0,-37 0,-28 C0,-37 8,-43 24,-32 C48,-13 43,15 0,43 Z"
+          fill="none" stroke="url(#neonGrad)" stroke-width="0.2" opacity="0.4"/>
+  </g>
+  
+  <!-- Crescent moons for mystical theme -->
+  <g transform="translate(178 152)" opacity="0.6" filter="url(#softGlow)">
+    <path d="M 0 0 C -7 -4, -11 0, -7 4 C -2 9, 2 4, 0 0" fill="none" stroke="#b86bff" stroke-width="0.9"/>
+    <path d="M -4 0 C -5 -1, -5 1, -4 0" fill="none" stroke="#ff4fa3" stroke-width="0.4"/>
+  </g>
+  <g transform="translate(622 152)" opacity="0.5" filter="url(#softGlow)">
+    <path d="M 0 0 C 7 -4, 11 0, 7 4 C 2 9, -2 4, 0 0" fill="none" stroke="#ff4fa3" stroke-width="0.9"/>
+    <path d="M 4 0 C 5 -1, 5 1, 4 0" fill="none" stroke="#b86bff" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Enhanced title with better typography -->
+  <g fill="#f6f2ff" text-anchor="middle" filter="url(#glow)">
+    <text x="400" y="334" font-family="Arial Black, Arial, sans-serif" font-size="53" font-weight="900" letter-spacing="0.7" fill="url(#accentGrad)">
+      LOVE SPELL
+    </text>
+    <text x="400" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="18" opacity="0.85" letter-spacing="1.7" fill="#c8b9e8">
+      ECHOSTORY · VALENTINE PACK
+    </text>
+    <text x="400" y="367" font-family="system-ui, sans-serif" font-size="12" opacity="0.7" letter-spacing="0.4" fill="#c8b9e8">
+      witchy warmth · playful devotion
+    </text>
+  </g>
+  
+  <!-- Enhanced footer rune with more detail -->
+  <g transform="translate(400 443)" opacity="0.9" filter="url(#softGlow)">
+    <path d="M-107 0 L-53 -9 L0 0 L53 -9 L107 0" fill="none" stroke="url(#neonGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-107" cy="0" r="2.6" fill="#ff4fa3" filter="url(#softGlow)"/>
+    <circle cx="107" cy="0" r="2.6" fill="#b86bff" filter="url(#softGlow)"/>
+    <circle cx="0" cy="0" r="1.7" fill="#55f0ff" opacity="0.8"/>
+    <!-- Additional decorative elements -->
+    <path d="M-80 -4 L-80 4 M80 -4 L80 4" stroke="url(#neonGrad)" stroke-width="0.4" opacity="0.6"/>
+  </g>
+  
+  <!-- Mystical symbols in corners -->
+  <g transform="translate(89 87)" opacity="0.4" filter="url(#softGlow)">
+    <circle r="4.3" fill="none" stroke="#b86bff" stroke-width="0.4"/>
+    <path d="M -3.2 -3.2 L 3.2 3.2 M 3.2 -3.2 L -3.2 3.2" stroke="#ff4fa3" stroke-width="0.3"/>
+  </g>
+  <g transform="translate(711 87)" opacity="0.4" filter="url(#softGlow)">
+    <circle r="4.3" fill="none" stroke="#ff4fa3" stroke-width="0.4"/>
+    <path d="M 0 -4.3 L 0 4.3 M -4.3 0 L 4.3 0" stroke="#b86bff" stroke-width="0.3"/>
+  </g>
+</svg>

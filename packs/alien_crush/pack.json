@@ -1,0 +1,21 @@
+{
+  "id": "alien_crush",
+  "name": "Alien Crush",
+  "title": "Alien Crush",
+  "tagline": "Out of this world love",
+  "description": "Space-themed Valentine cards with alien aesthetics.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "free"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

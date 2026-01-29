@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background:#07101d">
+  <defs>
+    <!-- Vaporwave title gradient -->
+    <linearGradient id="vaporwaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff2fd6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b86bff;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Radial glow for vaporwave elements -->
+    <radialGradient id="vaporGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff2fd6;stop-opacity:0.8" />
+      <stop offset="40%" style="stop-color:#00f0ff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#b86bff;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Retro sun gradient -->
+    <radialGradient id="retroSun" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff2fd6;stop-opacity:0.6" />
+      <stop offset="30%" style="stop-color:#00f0ff;stop-opacity:0.4" />
+      <stop offset="70%" style="stop-color:#b86bff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#07101d;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="2" fill="#00f0ff" opacity="0.1"/>
+    </pattern>
+    
+    <!-- Tech grid pattern -->
+    <pattern id="techGrid" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M 0 0 L 40 0 M 0 0 L 0 40" stroke="#00f0ff" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+    
+    <!-- Glitch pattern -->
+    <pattern id="glitchPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="1" fill="#ff2fd6" opacity="0.3"/>
+      <rect y="19" width="20" height="1" fill="#00f0ff" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Strong glow for main elements -->
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Vaporwave grid lines -->
+    <pattern id="vaporGrid" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M 0 0 L 100 100 M 100 0 L 0 100" stroke="#00f0ff" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#07101d"/>
+  <rect width="800" height="600" fill="url(#vaporGrid)" opacity="0.3"/>
+  <rect width="800" height="600" fill="url(#techGrid)" opacity="0.2"/>
+  <rect width="800" height="600" fill="url(#scanlines)"/>
+  
+  <!-- Retro sun (vaporwave aesthetic) -->
+  <circle cx="400" cy="300" r="200" fill="url(#retroSun)" opacity="0.4"/>
+  <circle cx="400" cy="300" r="150" fill="url(#retroSun)" opacity="0.3"/>
+  
+  <!-- Outer border with tech aesthetic -->
+  <rect x="15" y="15" width="770" height="570" fill="none" stroke="#00f0ff" stroke-width="3" stroke-dasharray="12 6" opacity="0.8"/>
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#ff2fd6" stroke-width="2" stroke-dasharray="8 4" opacity="0.6"/>
+  <rect x="25" y="25" width="750" height="550" fill="none" stroke="#b86bff" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Corner tech brackets -->
+  <g opacity="0.8">
+    <!-- Top left -->
+    <path d="M 40 40 L 40 80 L 80 80" stroke="#00f0ff" stroke-width="3" fill="none" filter="url(#glow)"/>
+    <path d="M 40 40 L 80 40 L 80 80" stroke="#ff2fd6" stroke-width="2" fill="none"/>
+    <!-- Top right -->
+    <path d="M 760 40 L 760 80 L 720 80" stroke="#00f0ff" stroke-width="3" fill="none" filter="url(#glow)"/>
+    <path d="M 760 40 L 720 40 L 720 80" stroke="#ff2fd6" stroke-width="2" fill="none"/>
+    <!-- Bottom left -->
+    <path d="M 40 560 L 40 520 L 80 520" stroke="#00f0ff" stroke-width="3" fill="none" filter="url(#glow)"/>
+    <path d="M 40 560 L 80 560 L 80 520" stroke="#ff2fd6" stroke-width="2" fill="none"/>
+    <!-- Bottom right -->
+    <path d="M 760 560 L 760 520 L 720 520" stroke="#00f0ff" stroke-width="3" fill="none" filter="url(#glow)"/>
+    <path d="M 760 560 L 720 560 L 720 520" stroke="#ff2fd6" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Background vaporwave elements -->
+  <g opacity="0.3">
+    <!-- Left side geometric shapes -->
+    <polygon points="100,150 150,120 180,150 150,180" fill="#00f0ff" opacity="0.2" filter="url(#glow)"/>
+    <rect x="120" y="200" width="60" height="60" fill="none" stroke="#ff2fd6" stroke-width="2" opacity="0.3" transform="rotate(45 150 230)"/>
+    
+    <!-- Right side geometric shapes -->
+    <polygon points="700,180 750,150 780,180 750,210" fill="#b86bff" opacity="0.2" filter="url(#glow)"/>
+    <circle cx="720" cy="250" r="30" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.3"/>
+  </g>
+  
+  <!-- Main title with vaporwave styling -->
+  <text x="400" y="140" font-family="monospace" font-size="88" fill="url(#vaporwaveGrad)" text-anchor="middle" font-weight="bold" filter="url(#strongGlow)" letter-spacing="6">ECHO//RESET</text>
+  
+  <!-- Glitch effect overlay on title (subtle) -->
+  <text x="402" y="142" font-family="monospace" font-size="88" fill="#ff2fd6" text-anchor="middle" font-weight="bold" opacity="0.3" letter-spacing="6">ECHO//RESET</text>
+  <text x="398" y="138" font-family="monospace" font-size="88" fill="#00f0ff" text-anchor="middle" font-weight="bold" opacity="0.3" letter-spacing="6">ECHO//RESET</text>
+  
+  <!-- Central vaporwave element (retro monitor/screen) -->
+  <g transform="translate(400, 280)" filter="url(#strongGlow)">
+    <!-- Monitor frame -->
+    <rect x="-120" y="-60" width="240" height="120" fill="rgba(7,16,29,0.8)" stroke="#00f0ff" stroke-width="3" rx="8"/>
+    <rect x="-110" y="-50" width="220" height="100" fill="rgba(0,240,255,0.1)" stroke="#ff2fd6" stroke-width="1"/>
+    
+    <!-- Screen content (abstract) -->
+    <rect x="-100" y="-40" width="200" height="80" fill="url(#vaporwaveGrad)" opacity="0.3"/>
+    <text x="0" y="10" font-family="monospace" font-size="24" fill="#00f0ff" text-anchor="middle" opacity="0.8">RESET</text>
+    <text x="0" y="35" font-family="monospace" font-size="16" fill="#ff2fd6" text-anchor="middle" opacity="0.6">///</text>
+    
+    <!-- Scanlines on screen -->
+    <rect x="-100" y="-40" width="200" height="80" fill="url(#scanlines)" opacity="0.4"/>
+  </g>
+  
+  <!-- Side decorative elements -->
+  <g transform="translate(200, 400)" opacity="0.5" filter="url(#glow)">
+    <!-- Vaporwave palm tree silhouette -->
+    <path d="M 0 0 L -20 40 L 20 40 Z" fill="#00f0ff" opacity="0.3"/>
+    <path d="M 0 20 L -15 50 L 15 50 Z" fill="#ff2fd6" opacity="0.3"/>
+    <rect x="-2" y="50" width="4" height="30" fill="#b86bff" opacity="0.4"/>
+  </g>
+  
+  <g transform="translate(600, 400)" opacity="0.5" filter="url(#glow)">
+    <!-- Geometric shape -->
+    <polygon points="0,-20 20,0 0,20 -20,0" fill="#b86bff" opacity="0.3"/>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.4"/>
+  </g>
+  
+  <!-- Tagline with glow -->
+  <text x="400" y="480" font-family="monospace" font-size="28" fill="#00f0ff" text-anchor="middle" font-weight="bold" filter="url(#glow)" letter-spacing="3">NEON REFLECTIONS OF WHO WE USED TO BE.</text>
+  
+  <!-- Pack info -->
+  <text x="400" y="520" font-family="monospace" font-size="16" fill="#ff2fd6" text-anchor="middle" opacity="0.7">24 CARDS • PREMIUM PACK • ECHO VALENTINES</text>
+  
+  <!-- Bottom decorative line -->
+  <line x1="200" y1="550" x2="600" y2="550" stroke="url(#vaporwaveGrad)" stroke-width="2" opacity="0.5" filter="url(#glow)"/>
+  
+  <!-- Glitch overlay pattern (subtle) -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#glitchPattern)" opacity="0.1"/>
+</svg>

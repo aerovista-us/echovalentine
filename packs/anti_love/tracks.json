@@ -1,0 +1,79 @@
+[
+  {
+    "id": "left-on-read-ritual-of-detach-2",
+    "title": "Left On Read Ritual Of Detach 2",
+    "src": "assets/audio/left-on-read-ritual-of-detach-2.mp3"
+  },
+  {
+    "id": "left-on-read-ritual-of-detach-3",
+    "title": "Left On Read Ritual Of Detach 3",
+    "src": "assets/audio/left-on-read-ritual-of-detach-3.mp3"
+  },
+  {
+    "id": "left-on-read-ritual-of-detach-alt",
+    "title": "Left On Read Ritual Of Detach Alt",
+    "src": "assets/audio/left-on-read-ritual-of-detach-alt.mp3"
+  },
+  {
+    "id": "left-on-read-ritual-of-detach",
+    "title": "Left On Read Ritual Of Detach",
+    "src": "assets/audio/left-on-read-ritual-of-detach.mp3"
+  },
+  {
+    "id": "left_on_read_ritual_of_detach",
+    "title": "Left On Read Ritual Of Detach",
+    "type": "audio",
+    "src": "assets/audio/left_on_read_ritual_of_detach.mp3"
+  },
+  {
+    "id": "left_on_read_ritual_of_detach_2",
+    "title": "Left On Read Ritual Of Detach 2",
+    "type": "audio",
+    "src": "assets/audio/left_on_read_ritual_of_detach_2.mp3"
+  },
+  {
+    "id": "left_on_read_ritual_of_detach_3",
+    "title": "Left On Read Ritual Of Detach 3",
+    "type": "audio",
+    "src": "assets/audio/left_on_read_ritual_of_detach_3.mp3"
+  },
+  {
+    "id": "left_on_read_ritual_of_detach_alt",
+    "title": "Left On Read Ritual Of Detach Alt",
+    "type": "audio",
+    "src": "assets/audio/left_on_read_ritual_of_detach_alt.mp3"
+  },
+  {
+    "id": "no-valentine-hype-funny-2",
+    "title": "No Valentine Hype Funny 2",
+    "src": "assets/audio/no-valentine-hype-funny-2.mp3"
+  },
+  {
+    "id": "no-valentine-hype-funny-alt",
+    "title": "No Valentine Hype Funny Alt",
+    "src": "assets/audio/no-valentine-hype-funny-alt.mp3"
+  },
+  {
+    "id": "no-valentine-hype-funny",
+    "title": "No Valentine Hype Funny",
+    "src": "assets/audio/no-valentine-hype-funny.mp3"
+  },
+  {
+    "id": "no_valentine_hype__funny",
+    "title": "No Valentine Hype Funny",
+    "type": "audio",
+    "src": "assets/audio/no_valentine_hype__funny.mp3"
+  },
+  {
+    "id": "no_valentine_hype__funny_2",
+    "title": "No Valentine Hype Funny 2",
+    "type": "audio",
+    "src": "assets/audio/no_valentine_hype__funny_2.mp3"
+  },
+  {
+    "id": "no_valentine_hype__funny_alt",
+    "title": "No Valentine Hype Funny Alt",
+    "type": "audio",
+    "src": "assets/audio/no_valentine_hype__funny_alt.mp3"
+  }
+]

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#121a36"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" x2="1">
+      <stop offset="0" stop-color="#00e5ff"/>
+      <stop offset="0.5" stop-color="#9b5cff"/>
+      <stop offset="1" stop-color="#ff4fd8"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <g opacity="0.2">
+    <path d="M0 420 C160 360, 260 520, 420 460 S700 380, 800 450 V520 H0 Z" fill="#00e5ff"/>
+    <path d="M0 460 C180 410, 280 560, 460 490 S690 430, 800 500 V520 H0 Z" fill="#ff4fd8"/>
+  </g>
+  <g filter="url(#glow)">
+    <text x="60" y="210" font-family="system-ui,Segoe UI,Arial" font-size="86" font-weight="800" fill="url(#neon)">YO, BRO</text>
+    <text x="62" y="270" font-family="system-ui,Segoe UI,Arial" font-size="22" letter-spacing="2" fill="#cbd5ff" opacity="0.9">PLATONIC HYPE • REAL RESPECT • ZERO CRINGE</text>
+  </g>
+  <g opacity="0.9">
+    <circle cx="650" cy="150" r="70" fill="none" stroke="url(#neon)" stroke-width="10"/>
+    <path d="M620 150h60" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M650 120v60" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+  </g>
+  <text x="60" y="470" font-family="system-ui,Segoe UI,Arial" font-size="16" fill="#9fb0ff" opacity="0.85">24 cards • send to the crew • no romance • all vibes</text>
+</svg>

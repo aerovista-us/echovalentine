@@ -1,0 +1,148 @@
+{
+  "cards": [
+    {
+      "id": "bro_01",
+      "title": "Respect Receipt",
+      "front": "Yo, bro.",
+      "inside": "Just logging this officially: you’re a real one. Appreciate you."
+    },
+    {
+      "id": "bro_02",
+      "title": "Solid Human Alert",
+      "front": "Certified solid.",
+      "inside": "Not everyone shows up like you do. That’s rare. Respect."
+    },
+    {
+      "id": "bro_03",
+      "title": "No Notes",
+      "front": "Zero notes.",
+      "inside": "You handled that perfectly. I’m impressed and I’m stealing your calm."
+    },
+    {
+      "id": "bro_04",
+      "title": "Hype Token",
+      "front": "Take this hype.",
+      "inside": "Cash it in whenever you need it. You’ve earned it."
+    },
+    {
+      "id": "bro_05",
+      "title": "Thank You (No Essay)",
+      "front": "Quick one:",
+      "inside": "Thanks for having my back. That’s it. That’s the message."
+    },
+    {
+      "id": "bro_06",
+      "title": "Legend Behavior",
+      "front": "Legend behavior.",
+      "inside": "You made it look easy. I noticed. Respect."
+    },
+    {
+      "id": "bro_07",
+      "title": "Quiet Support",
+      "front": "Not loud. Still real.",
+      "inside": "I’m in your corner. Always. No big speech."
+    },
+    {
+      "id": "bro_08",
+      "title": "Victory Lap",
+      "front": "W.",
+      "inside": "That’s a win. Take a lap and enjoy it—you earned it."
+    },
+    {
+      "id": "bro_09",
+      "title": "Keep Going",
+      "front": "Don’t stop.",
+      "inside": "You’re closer than you think. Keep moving. I’m rooting for you."
+    },
+    {
+      "id": "bro_10",
+      "title": "The Check-In",
+      "front": "You good?",
+      "inside": "No pressure to perform. Just checking on my guy. I’m here."
+    },
+    {
+      "id": "bro_11",
+      "title": "Peak Reliability",
+      "front": "Always clutch.",
+      "inside": "When it matters, you show up. That’s rare. I appreciate it."
+    },
+    {
+      "id": "bro_12",
+      "title": "Good Call",
+      "front": "That was the move.",
+      "inside": "You made the right call. Solid judgment."
+    },
+    {
+      "id": "bro_13",
+      "title": "New Era",
+      "front": "We levelin’ up.",
+      "inside": "Different season. Same crew. Bigger wins."
+    },
+    {
+      "id": "bro_14",
+      "title": "Energy Match",
+      "front": "Same energy.",
+      "inside": "I see you. I respect the grind. Let’s keep it pushing."
+    },
+    {
+      "id": "bro_15",
+      "title": "Bro Science",
+      "front": "Official diagnosis:",
+      "inside": "You’re built different. Results may vary for others."
+    },
+    {
+      "id": "bro_16",
+      "title": "Accountability Ping",
+      "front": "Reminder:",
+      "inside": "You said you’d do the thing. Go do the thing. I believe in you."
+    },
+    {
+      "id": "bro_17",
+      "title": "Low Battery?",
+      "front": "If you’re tired—",
+      "inside": "Rest. Reset. Then we run it back. You don’t have to carry it alone."
+    },
+    {
+      "id": "bro_18",
+      "title": "Strong Quiet",
+      "front": "I noticed.",
+      "inside": "You’ve been handling a lot without talking about it. Respect."
+    },
+    {
+      "id": "bro_19",
+      "title": "The Invite",
+      "front": "Pull up.",
+      "inside": "Food / game / walk / whatever. No agenda. Just homie time."
+    },
+    {
+      "id": "bro_20",
+      "title": "Big Thanks",
+      "front": "Appreciate you.",
+      "inside": "For real. For the advice, the time, the patience—thank you."
+    },
+    {
+      "id": "bro_21",
+      "title": "No Cap",
+      "front": "No cap:",
+      "inside": "You’ve helped me more than you know. Respect forever."
+    },
+    {
+      "id": "bro_22",
+      "title": "Keep It Simple",
+      "front": "You’re my guy.",
+      "inside": "That’s it. That’s the whole card."
+    },
+    {
+      "id": "bro_23",
+      "title": "The Compliment",
+      "front": "Bro-to-bro:",
+      "inside": "Your character is solid. That matters more than anything."
+    },
+    {
+      "id": "bro_24",
+      "title": "Ride or Ride",
+      "front": "All good.",
+      "inside": "Whatever it is, we’ll handle it. You’re not alone."
+    }
+  ]
+}

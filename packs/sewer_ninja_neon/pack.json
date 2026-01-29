@@ -1,0 +1,31 @@
+{
+  "id": "sewer_ninja_neon",
+  "name": "Sewer Ninja Neon",
+  "title": "Sewer Ninja Neon",
+  "tagline": "Midnight missions. Neon kisses.",
+  "description": "Cyberpunk ninja vibes with neon aesthetics and urban edge.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "premium",
+    "price_usd": 5,
+    "unlock_code_required": true
+  },
+  "theme": {
+    "background": "#0a0a1a",
+    "panel": "#1a1a2e",
+    "primary": "#00ffff",
+    "accent2": "#ff00ff",
+    "text": "#00ff41",
+    "muted": "rgba(0, 255, 65, 0.7)"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

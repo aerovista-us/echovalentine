@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fd8" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#4fe3ff" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" rx="28" fill="#0b0a10"/>
+  <rect x="22" y="22" width="856" height="556" rx="22" fill="url(#g)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <text x="54" y="90" font-family="system-ui" font-size="26" fill="rgba(255,255,255,0.92)" font-weight="800">Card 01</text>
+  <text x="54" y="120" font-family="system-ui" font-size="14" fill="rgba(255,255,255,0.70)">scaffold card</text>
+</svg>

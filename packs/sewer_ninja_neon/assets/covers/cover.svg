@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" style="background:#0a0a1a">
+  <defs>
+    <linearGradient id="neonGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00ff7a"/>
+      <stop offset="0.5" stop-color="#00ffff"/>
+      <stop offset="1" stop-color="#b84dff"/>
+    </linearGradient>
+    <linearGradient id="neonGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00ff7a" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#b84dff" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background frame -->
+  <rect x="25" y="25" width="450" height="650" rx="40" fill="rgba(0,0,0,.4)" stroke="url(#neonGrad)" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Main card background -->
+  <rect x="50" y="50" width="400" height="600" rx="30" fill="url(#neonGrad2)" opacity="0.15"/>
+  
+  <!-- Grid pattern for tech feel -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#neonGrad)" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect x="50" y="50" width="400" height="600" rx="30" fill="url(#grid)"/>
+  
+  <!-- Title - neon style -->
+  <text x="250" y="180" font-family="Arial Black, Arial" font-size="42" fill="#00ff7a" text-anchor="middle" font-weight="900" filter="url(#strongGlow)">SEWER</text>
+  <text x="250" y="240" font-family="Arial Black, Arial" font-size="42" fill="#00ffff" text-anchor="middle" font-weight="900" filter="url(#strongGlow)">NINJA</text>
+  <text x="250" y="300" font-family="Arial Black, Arial" font-size="42" fill="#b84dff" text-anchor="middle" font-weight="900" filter="url(#strongGlow)">NEON</text>
+  
+  <!-- Tagline -->
+  <text x="250" y="360" font-family="Arial" font-size="22" fill="#00ff7a" text-anchor="middle" filter="url(#glow)">Midnight missions</text>
+  <text x="250" y="390" font-family="Arial" font-size="22" fill="#b84dff" text-anchor="middle" filter="url(#glow)">Neon kisses</text>
+  
+  <!-- Decorative ninja star / tech elements -->
+  <g transform="translate(250, 480)">
+    <polygon points="-30,-10 -10,-30 10,-10 30,-30 10,10 30,30 10,10 -10,30 -30,10 -10,30 -30,10" 
+             fill="none" 
+             stroke="url(#neonGrad)" 
+             stroke-width="3" 
+             filter="url(#glow)"
+             opacity="0.8"/>
+  </g>
+  
+  <!-- Card count -->
+  <text x="250" y="600" font-family="Arial" font-size="18" fill="#00ffff" text-anchor="middle" filter="url(#glow)">24 CARDS</text>
+</svg>

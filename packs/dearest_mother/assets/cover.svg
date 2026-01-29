@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1f2a4a"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd54a"/>
+      <stop offset="0.5" stop-color="#ff7ad9"/>
+      <stop offset="1" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <g opacity="0.18">
+    <circle cx="160" cy="150" r="120" fill="#ffd54a"/>
+    <circle cx="620" cy="380" r="150" fill="#ff7ad9"/>
+    <circle cx="720" cy="120" r="90" fill="#00e5ff"/>
+  </g>
+  <g filter="url(#soft)">
+    <text x="60" y="210" font-family="system-ui,Segoe UI,Arial" font-size="72" font-weight="800" fill="url(#warm)">DEAREST MOTHER</text>
+    <text x="62" y="270" font-family="system-ui,Segoe UI,Arial" font-size="22" letter-spacing="1.2" fill="#e7ecff" opacity="0.9">GRATITUDE • HOME • PROUD OF YOU • THANK YOU</text>
+  </g>
+  <path d="M620 150c18-26 38-40 68-40s50 14 68 40c-14 26-36 44-68 44s-54-18-68-44z" fill="#ffffff" opacity="0.16"/>
+  <text x="60" y="470" font-family="system-ui,Segoe UI,Arial" font-size="16" fill="#c7d2fe" opacity="0.9">24 cards • family-safe • warm • non-romance</text>
+</svg>

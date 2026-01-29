@@ -1,0 +1,10 @@
+[
+  {"id": "ooze-glow-crush", "title": "Ooze Glow Crush", "src": "assets/audio/ooze_glow_crush.mp3"},
+  {"id": "ooze-glow-crush-alt", "title": "Ooze Glow Crush Alt", "src": "assets/audio/ooze_glow_crush-alt.mp3"},
+  {"id": "pizza-heart-slice", "title": "Pizza Heart Slice", "src": "assets/audio/pizza_heart_slice.mp3"},
+  {"id": "pizza-heart-slice-alt", "title": "Pizza Heart Slice Alt", "src": "assets/audio/pizza_heart_slicealt.mp3"},
+  {"id": "sewer-ninja-neon", "title": "Sewer Ninja Neon", "src": "assets/audio/sewer_ninja_neon.mp3"},
+  {"id": "sewer-ninja-neon-alt", "title": "Sewer Ninja Neon Alt", "src": "assets/audio/sewer_ninja_neon-alt.mp3"},
+  {"id": "undercover-valentine", "title": "Undercover Valentine", "src": "assets/audio/undercover_valentine.mp3"},
+  {"id": "undercover-valentine-alt", "title": "Undercover Valentine Alt", "src": "assets/audio/undercover_valentine_alt.mp3"}
+]

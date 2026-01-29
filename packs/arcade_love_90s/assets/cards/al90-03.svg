@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="background:#0a0a1a">
+  <rect width="900" height="600" fill="#1a1a2e"/>
+  <defs>
+    <pattern id="scanlinesAL9003" patternUnits="userSpaceOnUse" width="2" height="2">
+      <rect width="2" height="1" fill="#00ff41" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="600" fill="url(#scanlinesAL9003)"/>
+  
+  <!-- Side decorative frames -->
+  <rect x="50" y="50" width="250" height="500" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  <rect x="600" y="50" width="250" height="500" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  
+  <!-- Main border frame -->
+  <rect x="50" y="30" width="800" height="540" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="100" y="50" width="700" height="500" fill="none" stroke="#ff00ff" stroke-width="1"/>
+  
+  <!-- Center heart -->
+  <rect x="400" y="380" width="100" height="80" fill="none" stroke="#00ff41" stroke-width="2"/>
+  <path d="M 450 380 L 470 420 L 510 430 L 480 460 L 490 500 L 450 480 L 410 500 L 420 460 L 390 430 L 430 420 Z" fill="#00ff41" opacity="0.3"/>
+  
+  <!-- Side hearts -->
+  <path d="M 200 380 L 220 420 L 260 430 L 230 460 L 240 500 L 200 480 L 160 500 L 170 460 L 140 430 L 180 420 Z" fill="#00ff41" opacity="0.2"/>
+  <path d="M 700 380 L 720 420 L 760 430 L 730 460 L 740 500 L 700 480 L 660 500 L 670 460 L 640 430 L 680 420 Z" fill="#00ff41" opacity="0.2"/>
+  
+  <!-- Main text -->
+  <text x="450" y="280" font-family="monospace" font-size="36" fill="#00ffff" text-anchor="middle" font-weight="bold">You're My High Score</text>
+  <text x="450" y="550" font-family="monospace" font-size="14" fill="#00ff41" text-anchor="middle" opacity="0.6">HAPPY VALENTINE'S</text>
+</svg>

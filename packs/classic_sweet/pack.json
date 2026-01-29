@@ -1,0 +1,21 @@
+{
+  "id": "classic_sweet",
+  "name": "Classic Sweet",
+  "title": "Classic Sweet",
+  "tagline": "Timeless romance",
+  "description": "Classic Valentine cards with sweet, romantic themes.",
+  "version": "1.0.0",
+  "cards_count": 15,
+  "pricing": {
+    "tier": "free"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

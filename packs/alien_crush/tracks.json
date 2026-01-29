@@ -1,0 +1,8 @@
+[
+  {"id": "beam-me-close", "title": "Beam Me Close", "src": "assets/audio/beam_me_close.mp3"},
+  {"id": "beam-me-close-alt", "title": "Beam Me Close Alt", "src": "assets/audio/beam_me_close_alt.mp3"},
+  {"id": "classified-love-file", "title": "Classified Love File", "src": "assets/audio/classified_love_file.mp3"},
+  {"id": "classified-love-file-alt", "title": "Classified Love File Alt", "src": "assets/audio/classified_love_file_alt.mp3"},
+  {"id": "ufo-found-one", "title": "Ufo Found One", "src": "assets/audio/ufo_found_one.mp3"},
+  {"id": "ufo-found-one-1", "title": "Ufo Found One 1", "src": "assets/audio/ufo_found_one-1.mp3"}
+]

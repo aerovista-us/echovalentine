@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <!-- Gradient for title -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4fd8" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#4dffb5" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff4fd8" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Gradient animation - animated gradient stops -->
+    <linearGradient id="titleGradAnim" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#ff4fd8" stop-opacity="1">
+        <animate attributeName="stop-color" values="#ff4fd8;#4dffb5;#ff4fd8" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#4dffb5" stop-opacity="1">
+        <animate attributeName="stop-color" values="#4dffb5;#ff4fd8;#4dffb5" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff4fd8" stop-opacity="1">
+        <animate attributeName="stop-color" values="#ff4fd8;#4dffb5;#ff4fd8" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Pulse animation -->
+    <filter id="pulseGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Title: EchoValentine -->
+  <text x="200" y="50" font-family="Arial Black, Arial, sans-serif" font-size="42" font-weight="900" 
+        fill="url(#titleGradAnim)" 
+        text-anchor="middle"
+        filter="url(#pulseGlow)"
+        letter-spacing="2px">
+    EchoValentine
+    <animate attributeName="opacity" values="1;0.95;1" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Tagline: Punch & Send -->
+  <text x="200" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="600" 
+        fill="rgba(255,255,255,.75)" 
+        text-anchor="middle"
+        letter-spacing="3px">
+    PUNCH &amp; SEND
+    <animate attributeName="opacity" values="0.75;0.9;0.75" dur="2.5s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Decorative hearts -->
+  <g opacity="0.6">
+    <path d="M 80 30 Q 70 20 60 25 Q 60 35 70 40 Q 80 35 80 30" fill="#ff4fd8">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 5,-5; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 320 30 Q 310 20 300 25 Q 300 35 310 40 Q 320 35 320 30" fill="#4dffb5">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -5,-5; 0,0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

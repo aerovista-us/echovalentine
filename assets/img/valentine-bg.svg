@@ -1,0 +1,317 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradient definitions -->
+    <!-- Hot pink gradient for hearts -->
+    <linearGradient id="heartGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF1493;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF69B4;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="heartGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FF1493;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:0.9" />
+    </linearGradient>
+    <radialGradient id="sparkleGrad">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#FF1493;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Heart shape -->
+    <path id="heart" d="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5 C2,5.42,4.42,3,7.5,3c1.74,0,3.41,0.81,4.5,2.09C13.09,3.81,14.76,3,16.5,3 C19.58,3,22,5.42,22,8.5c0,3.78-3.4,6.86-8.55,11.54L12,21.35z" transform="translate(-12,-3) scale(1)"/>
+  </defs>
+  
+  <!-- Void black - far back (base) -->
+  <rect width="100%" height="100%" fill="#000000"/>
+  
+  <!-- Lighter pink layer (4 shades lighter than button) - subtle -->
+  <rect width="100%" height="100%" fill="#ffb3e6" opacity="0.12"/>
+  <rect width="100%" height="100%" fill="#ffc0f3" opacity="0.08"/>
+  
+  <!-- Baby blue layer - top (very subtle) -->
+  <rect width="100%" height="100%" fill="#87CEEB" opacity="0.08"/>
+  <rect width="100%" height="100%" fill="#B0E0E6" opacity="0.06"/>
+  
+  <!-- Floating hearts - Layer 1 - hot pink (increased count) -->
+  <g opacity="0.85">
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(200,150) scale(0.8)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="200,150; 250,200; 200,250; 150,200; 200,150" 
+        dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="8s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(800,300) scale(0.6)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="800,300; 850,250; 900,300; 850,350; 800,300" 
+        dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(1400,200) scale(0.7)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1400,200; 1350,250; 1300,200; 1350,150; 1400,200" 
+        dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.55;0.25" dur="9s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(500,600) scale(0.5)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="500,600; 550,550; 600,600; 550,650; 500,600" 
+        dur="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="12s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(1200,700) scale(0.65)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1200,700; 1150,750; 1100,700; 1150,650; 1200,700" 
+        dur="24s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="11s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(1600,800) scale(0.55)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1600,800; 1650,750; 1700,800; 1650,850; 1600,800" 
+        dur="26s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="13s" repeatCount="indefinite"/>
+    </use>
+    
+    <!-- Additional hearts -->
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(400,250) scale(0.55)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="400,250; 450,200; 500,250; 450,300; 400,250" 
+        dur="27s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.55;0.25" dur="9.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(1000,150) scale(0.65)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1000,150; 1050,100; 1100,150; 1050,200; 1000,150" 
+        dur="23s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(300,750) scale(0.6)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="300,750; 350,700; 400,750; 350,800; 300,750" 
+        dur="29s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="11.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(1500,500) scale(0.7)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1500,500; 1450,550; 1400,500; 1450,450; 1500,500" 
+        dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="8.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(600,450) scale(0.5)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="600,450; 650,400; 700,450; 650,500; 600,450" 
+        dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="12.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(1300,850) scale(0.6)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1300,850; 1350,800; 1400,850; 1350,900; 1300,850" 
+        dur="26.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="10s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad1)" transform="translate(1700,350) scale(0.55)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1700,350; 1750,300; 1800,350; 1750,400; 1700,350" 
+        dur="24.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="9s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="url(#heartGrad2)" transform="translate(100,400) scale(0.5)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="100,400; 150,350; 200,400; 150,450; 100,400" 
+        dur="31s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.45;0.25" dur="13s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  
+  <!-- Sparkles/Stars -->
+  <g opacity="0.6">
+    <!-- Sparkle 1 -->
+    <circle cx="300" cy="400" r="3" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 20,-30; 0,0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 2 -->
+    <circle cx="700" cy="500" r="2.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -15,25; 0,0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 3 -->
+    <circle cx="1100" cy="350" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 25,20; 0,0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 4 -->
+    <circle cx="1500" cy="600" r="3.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite" begin="2s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -20,-15; 0,0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 5 -->
+    <circle cx="400" cy="800" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 18,22; 0,0" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 6 -->
+    <circle cx="900" cy="900" r="2.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -22,18; 0,0" dur="8.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 7 -->
+    <circle cx="1300" cy="450" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 15,-20; 0,0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sparkle 8 -->
+    <circle cx="1700" cy="550" r="3" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -18,-25; 0,0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Additional sparkles -->
+    <circle cx="200" cy="600" r="2.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.2s" repeatCount="indefinite" begin="0.8s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 22,-18; 0,0" dur="6.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="500" cy="300" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.8s" repeatCount="indefinite" begin="1.2s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -19,24; 0,0" dur="7.2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1200" cy="200" r="3" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4.2s" repeatCount="indefinite" begin="0.3s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 21,19; 0,0" dur="8.2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1800" cy="700" r="2.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.6s" repeatCount="indefinite" begin="1.8s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -17,-22; 0,0" dur="7.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="250" cy="250" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.4s" repeatCount="indefinite" begin="2.2s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 18,-26; 0,0" dur="6.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1550" cy="300" r="3.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4.4s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -23,17; 0,0" dur="8.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="750" cy="750" r="2" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.3s" repeatCount="indefinite" begin="0.7s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; 20,21; 0,0" dur="7.3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1650" cy="950" r="2.5" fill="url(#sparkleGrad)">
+      <animate attributeName="opacity" values="0;1;0" dur="4.1s" repeatCount="indefinite" begin="2.8s"/>
+      <animateTransform attributeName="transform" type="translate" 
+        values="0,0; -16,23; 0,0" dur="8.1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Additional floating hearts - smaller, hot pink (increased count) -->
+  <g opacity="0.5">
+    <use href="#heart" fill="#FF1493" transform="translate(100,500) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="100,500; 120,480; 140,500; 120,520; 100,500" 
+        dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="15s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF69B4" transform="translate(1800,400) scale(0.35)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1800,400; 1780,420; 1760,400; 1780,380; 1800,400" 
+        dur="32s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="16s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF1493" transform="translate(600,100) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="600,100; 620,80; 640,100; 620,120; 600,100" 
+        dur="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="17s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF69B4" transform="translate(1000,950) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1000,950; 1020,930; 1040,950; 1020,970; 1000,950" 
+        dur="33s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="18s" repeatCount="indefinite"/>
+    </use>
+    
+    <!-- More small hearts -->
+    <use href="#heart" fill="#FF1493" transform="translate(350,350) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="350,350; 370,330; 390,350; 370,370; 350,350" 
+        dur="34s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="16.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF69B4" transform="translate(1450,650) scale(0.35)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="1450,650; 1430,670; 1410,650; 1430,630; 1450,650" 
+        dur="31s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="15.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF1493" transform="translate(850,50) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="850,50; 870,30; 890,50; 870,70; 850,50" 
+        dur="36s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="17.5s" repeatCount="indefinite"/>
+    </use>
+    
+    <use href="#heart" fill="#FF69B4" transform="translate(50,800) scale(0.3)">
+      <animateTransform attributeName="transform" type="translate" 
+        values="50,800; 70,780; 90,800; 70,820; 50,800" 
+        dur="37s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.15;0.3;0.15" dur="18.5s" repeatCount="indefinite"/>
+    </use>
+  </g>
+  
+  <!-- Pulsing glow effect - hot pink -->
+  <circle cx="960" cy="540" r="600" fill="#FF1493" opacity="0.2">
+    <animate attributeName="opacity" values="0.1;0.25;0.1" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" 
+      values="1;1.1;1" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="960" cy="540" r="400" fill="#FF69B4" opacity="0.15">
+    <animate attributeName="opacity" values="0.08;0.2;0.08" dur="10s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="scale" 
+      values="1;1.15;1" dur="10s" repeatCount="indefinite"/>
+  </circle>
+</svg>

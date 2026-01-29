@@ -1,0 +1,25 @@
+{
+  "id": "yo_bro",
+  "name": "Yo, Bro",
+  "version": "1.0.0",
+  "type": "platonic",
+  "tags": [
+    "bros",
+    "friends",
+    "hype",
+    "gratitude",
+    "funny"
+  ],
+  "description": "Low-cringe, high-respect cards for the guys. Hype, gratitude, and inside-joke energy—no romance.",
+  "tagline": "Low-cringe, high-respect cards for the guys",
+  "cards_count": 24,
+  "data": {
+    "cards": "cards/cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/cover.svg",
+    "og_image": "assets/cover.svg"
+  }
+}

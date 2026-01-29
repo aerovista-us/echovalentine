@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a1a"/>
+  <rect x="30" y="80" width="140" height="40" fill="#000000" stroke="#ff1493" stroke-width="2"/>
+  <text x="100" y="105" font-family="sans-serif" font-size="18" fill="#ff1493" text-anchor="middle" font-weight="bold">UNBOTHERED</text>
+</svg>

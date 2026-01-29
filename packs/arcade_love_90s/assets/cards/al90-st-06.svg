@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a2e"/>
+  <rect x="30" y="80" width="140" height="40" fill="none" stroke="#00ff41" stroke-width="3"/>
+  <rect x="40" y="85" width="20" height="30" fill="#00ff41"/>
+  <rect x="70" y="85" width="20" height="30" fill="#00ff41"/>
+  <rect x="100" y="85" width="20" height="30" fill="#00ff41"/>
+  <rect x="130" y="85" width="20" height="30" fill="#00ff41"/>
+  <text x="100" y="150" font-family="monospace" font-size="16" fill="#00ffff" text-anchor="middle">COMBO</text>
+</svg>

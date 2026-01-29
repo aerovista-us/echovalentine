@@ -1,0 +1,12 @@
+{
+  "id": "sample_love",
+  "name": "Sample Love",
+  "tagline": "Neon sweetness + soft chaos.",
+  "description": "A sample pack showcasing the EchoValentines experience. Bright neon aesthetics with playful, chaotic energy.",
+  "cards_count": 6,
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  }
+}

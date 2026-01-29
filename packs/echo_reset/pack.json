@@ -1,0 +1,21 @@
+{
+  "id": "echo_reset",
+  "name": "Echo Reset",
+  "title": "Echo Reset",
+  "tagline": "Reflections of who we used to be",
+  "description": "Nostalgic reset vibes with reflective themes. Cards for moments of pause, growth, and remembering who you are.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "free"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4fd8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4fe3ff" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="24" fill="#0b0a10"/>
+  <rect x="18" y="18" width="764" height="484" rx="22" fill="url(#g)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <circle cx="400" cy="250" r="120" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.20)" stroke-width="2"/>
+  <text x="400" y="258" text-anchor="middle" font-family="system-ui" font-size="34" fill="rgba(255,255,255,0.92)" font-weight="800">Love Spell</text>
+  <text x="400" y="292" text-anchor="middle" font-family="system-ui" font-size="13" fill="rgba(255,255,255,0.70)">scaffold pack cover</text>
+</svg>

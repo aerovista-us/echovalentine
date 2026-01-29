@@ -1,0 +1,23 @@
+{
+  "id": "noir_city_vigilante",
+  "name": "Noir City Vigilante",
+  "title": "Noir City Vigilante",
+  "tagline": "Midnight notes. Quiet loyalty.",
+  "description": "Film noir aesthetics with shadowy vibes and quiet devotion. Cards for the mysterious, the loyal, and the ones who have your back in the dark.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "premium",
+    "price_usd": 5,
+    "unlock_code_required": true
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  }
+}

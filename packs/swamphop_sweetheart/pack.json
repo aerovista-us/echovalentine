@@ -1,0 +1,36 @@
+{
+  "id": "swamphop_sweetheart",
+  "name": "SwampHop Sweetheart",
+  "title": "SwampHop Sweetheart",
+  "tagline": "Bayou beats & loyal love.",
+  "description": "Warm bayou vibes with hand-drawn aesthetics, swamp greens, and porch-light glow. Original art inspired by Southern bayou culture.",
+  "version": "1.0.0",
+  "cards_count": 24,
+  "pricing": {
+    "tier": "premium",
+    "price_usd": 5,
+    "unlock_code_required": true
+  },
+  "theme": {
+    "background": "#0f1a0f",
+    "panel": "#1a2e1a",
+    "primary": "#8b9a5b",
+    "accent2": "#d4af37",
+    "text": "#e8d5b7",
+    "muted": "rgba(232, 213, 183, 0.7)"
+  },
+  "data": {
+    "cards": "cards.json",
+    "stickers": "stickers.json",
+    "tracks": "tracks.json"
+  },
+  "assets": {
+    "box_art": "assets/covers/cover.svg",
+    "og_image": "assets/covers/cover.svg"
+  },
+  "legal": {
+    "original_art_only": true,
+    "no_brand_names": true,
+    "notes": "Original art inspired by bayou aesthetics. Hand-drawn style with warm, earthy tones."
+  }
+}

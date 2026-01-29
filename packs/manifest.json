@@ -1,0 +1,68 @@
+{
+  "packs": [
+    {
+      "id": "sample_love",
+      "packPath": "sample_love/pack.json"
+    },
+    {
+      "id": "alien_crush",
+      "packPath": "alien_crush/pack.json"
+    },
+    {
+      "id": "anti_love_blackpink",
+      "packPath": "anti_love_blackpink/pack.json"
+    },
+    {
+      "id": "arcade_love_90s",
+      "packPath": "arcade_love_90s/pack.json"
+    },
+    {
+      "id": "classic_sweet",
+      "packPath": "classic_sweet/pack.json"
+    },
+    {
+      "id": "echo_reset",
+      "packPath": "echo_reset/pack.json"
+    },
+    {
+      "id": "found_family",
+      "packPath": "found_family/pack.json"
+    },
+    {
+      "id": "love_spell",
+      "packPath": "love_spell/pack.json"
+    },
+    {
+      "id": "neon_squad_heroes",
+      "packPath": "neon_squad_heroes/pack.json"
+    },
+    {
+      "id": "noir_city_vigilante",
+      "packPath": "noir_city_vigilante/pack.json"
+    },
+    {
+      "id": "sewer_ninja_neon",
+      "packPath": "sewer_ninja_neon/pack.json"
+    },
+    {
+      "id": "sticker_galaxy_dreams",
+      "packPath": "sticker_galaxy_dreams/pack.json"
+    },
+    {
+      "id": "swamphop_sweetheart",
+      "packPath": "swamphop_sweetheart/pack.json"
+    },
+    {
+      "id": "timbr_founders_pack",
+      "packPath": "timbr_founders_pack/pack.json"
+    },
+    {
+      "id": "yo_bro",
+      "packPath": "yo_bro/pack.json"
+    },
+    {
+      "id": "dearest_mother",
+      "packPath": "dearest_mother/pack.json"
+    }
+  ]
+}

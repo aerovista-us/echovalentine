@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Main heart gradient with depth -->
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9ae8" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ff7ad9" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#ff4fd8" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff006e" stop-opacity="1"/>
+    </linearGradient>
+    
+    <!-- Highlight gradient for top/left edge -->
+    <linearGradient id="heartHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Shadow gradient for bottom/right edge -->
+    <linearGradient id="heartShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </linearGradient>
+    
+    <!-- Radial gradient for glow -->
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7ad9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff006e" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="4" dy="6" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Soft shadow for floating hearts -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background glow -->
+  <circle cx="200" cy="200" r="120" fill="url(#glowGrad)" opacity="0.6">
+    <animate attributeName="r" values="120;140;120" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Main heart with depth -->
+  <g id="mainHeart" transform="translate(200, 200)">
+    <!-- Shadow layer -->
+    <path d="M 0,-40 C -20,-60 -40,-50 -40,-30 C -40,-10 -20,10 0,30 C 20,10 40,-10 40,-30 C 40,-50 20,-60 0,-40 Z" 
+          fill="url(#heartShadow)" 
+          opacity="0"
+          transform="translate(3, 4)">
+      <animate attributeName="opacity" values="0;0.6;0.6" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" 
+                        type="scale" 
+                        values="0;1.2;1" 
+                        dur="0.6s" 
+                        additive="sum"
+                        fill="freeze"/>
+    </path>
+    
+    <!-- Base heart -->
+    <path d="M 0,-40 C -20,-60 -40,-50 -40,-30 C -40,-10 -20,10 0,30 C 20,10 40,-10 40,-30 C 40,-50 20,-60 0,-40 Z" 
+          fill="url(#heartGrad)" 
+          filter="url(#dropShadow)"
+          opacity="0">
+      <animate attributeName="opacity" values="0;1;1" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" 
+                        type="scale" 
+                        values="0;1.2;1" 
+                        dur="0.6s" 
+                        fill="freeze"/>
+    </path>
+    
+    <!-- Highlight layer for 3D effect -->
+    <path d="M 0,-40 C -20,-60 -40,-50 -40,-30 C -40,-10 -20,10 0,30 C 20,10 40,-10 40,-30 C 40,-50 20,-60 0,-40 Z" 
+          fill="url(#heartHighlight)" 
+          opacity="0"
+          filter="url(#glow)">
+      <animate attributeName="opacity" values="0;1;1" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" 
+                        type="scale" 
+                        values="0;1.2;1" 
+                        dur="0.6s" 
+                        fill="freeze"/>
+    </path>
+  </g>
+  
+  <!-- Floating hearts -->
+  <g id="floatingHearts" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.6s" fill="freeze"/>
+    
+    <!-- Top left heart -->
+    <g filter="url(#softShadow)">
+      <path d="M 80,80 C 70,60 50,70 50,90 C 50,110 70,130 80,150 C 90,130 110,110 110,90 C 110,70 90,60 80,80 Z" 
+            fill="url(#heartGrad)" opacity="0.7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; -10,-15; 0,0" 
+                          dur="2s" 
+                          begin="0.9s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 80,80 C 70,60 50,70 50,90 C 50,110 70,130 80,150 C 90,130 110,110 110,90 C 110,70 90,60 80,80 Z" 
+            fill="url(#heartHighlight)" opacity="0.3">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; -10,-15; 0,0" 
+                          dur="2s" 
+                          begin="0.9s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Top right heart -->
+    <g filter="url(#softShadow)">
+      <path d="M 320,80 C 310,60 290,70 290,90 C 290,110 310,130 320,150 C 330,130 350,110 350,90 C 350,70 330,60 320,80 Z" 
+            fill="url(#heartGrad)" opacity="0.7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; 10,-15; 0,0" 
+                          dur="2.2s" 
+                          begin="1s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 320,80 C 310,60 290,70 290,90 C 290,110 310,130 320,150 C 330,130 350,110 350,90 C 350,70 330,60 320,80 Z" 
+            fill="url(#heartHighlight)" opacity="0.3">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; 10,-15; 0,0" 
+                          dur="2.2s" 
+                          begin="1s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Bottom left heart -->
+    <g filter="url(#softShadow)">
+      <path d="M 100,320 C 90,300 70,310 70,330 C 70,350 90,370 100,390 C 110,370 130,350 130,330 C 130,310 110,300 100,320 Z" 
+            fill="url(#heartGrad)" opacity="0.7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; -15,10; 0,0" 
+                          dur="2.1s" 
+                          begin="1.1s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="2.1s" begin="1.1s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 100,320 C 90,300 70,310 70,330 C 70,350 90,370 100,390 C 110,370 130,350 130,330 C 130,310 110,300 100,320 Z" 
+            fill="url(#heartHighlight)" opacity="0.3">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; -15,10; 0,0" 
+                          dur="2.1s" 
+                          begin="1.1s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Bottom right heart -->
+    <g filter="url(#softShadow)">
+      <path d="M 300,320 C 290,300 270,310 270,330 C 270,350 290,370 300,390 C 310,370 330,350 330,330 C 330,310 310,300 300,320 Z" 
+            fill="url(#heartGrad)" opacity="0.7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; 15,10; 0,0" 
+                          dur="2.3s" 
+                          begin="1.2s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="2.3s" begin="1.2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 300,320 C 290,300 270,310 270,330 C 270,350 290,370 300,390 C 310,370 330,350 330,330 C 330,310 310,300 300,320 Z" 
+            fill="url(#heartHighlight)" opacity="0.3">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          values="0,0; 15,10; 0,0" 
+                          dur="2.3s" 
+                          begin="1.2s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Sparkles -->
+  <g id="sparkles" opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.8s" fill="freeze"/>
+    
+    <circle cx="150" cy="150" r="3" fill="#fff">
+      <animate attributeName="r" values="3;5;3" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="150" r="3" fill="#fff">
+      <animate attributeName="r" values="3;5;3" dur="1.6s" begin="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="250" r="3" fill="#fff">
+      <animate attributeName="r" values="3;5;3" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="250" r="3" fill="#fff">
+      <animate attributeName="r" values="3;5;3" dur="1.4s" begin="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" begin="1.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Pulse animation on main heart -->
+  <circle cx="200" cy="200" r="60" fill="none" stroke="#ff7ad9" stroke-width="2" opacity="0">
+    <animate attributeName="r" values="60;90;60" dur="2s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>

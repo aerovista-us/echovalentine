@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101225"/>
+      <stop offset="1" stop-color="#07080d"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-opacity=".42"/>
+    </filter>
+    <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.07)"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <rect x="40" y="40" width="820" height="520" rx="42" fill="rgba(16,18,37,.72)" filter="url(#shadow)" stroke="rgba(255,255,255,.12)"/>
+  <rect x="40" y="40" width="820" height="520" rx="42" fill="url(#grain)" opacity=".8"/>
+  <path d="M92 92h716" stroke="rgba(255,255,255,.14)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <path d="M92 512h716" stroke="rgba(255,255,255,.14)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <rect x="96" y="122" width="520" height="70" rx="22" fill="rgba(0,0,0,.32)" stroke="rgba(255,255,255,.12)"/>
+  <text x="118" y="170" font-family="Arial Black, Arial" font-size="34" fill="rgba(234,241,255,.94)">Built Different</text>
+  <text x="96" y="240" font-family="Arial, sans-serif" font-size="22" fill="rgba(234,241,255,.82)">To: ____________</text>
+  <text x="96" y="280" font-family="Arial, sans-serif" font-size="22" fill="rgba(234,241,255,.82)">From: __________</text>
+  <g opacity=".9">
+    <circle cx="760" cy="152" r="44" fill="rgba(0,245,255,.14)" stroke="rgba(0,245,255,.75)" stroke-width="3"/>
+    <path d="M732 152h56" stroke="rgba(255,43,214,.85)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M760 124v56" stroke="rgba(255,43,214,.85)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="96" y="540" font-family="Arial, sans-serif" font-size="18" fill="rgba(142,160,200,.9)">TFP · Founder Pack</text>
+</svg>

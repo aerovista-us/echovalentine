@@ -1,0 +1,62 @@
+{
+  "v": 1,
+  "templates": [
+    {
+      "id": "rem_seal_the_night",
+      "title": "Seal the Night",
+      "subtitle": "Soft + witchy",
+      "cardId": "ls-014",
+      "stickerIds": ["sticker_01"],
+      "trackId": "love-spell",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "Seal the night. Keep the magic. 💜"
+      },
+      "tags": ["soft", "witchy"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    },
+    {
+      "id": "rem_simple_love",
+      "title": "Simple Love",
+      "subtitle": "Classic card with icon",
+      "cardId": "card_01",
+      "stickerIds": ["icon"],
+      "trackId": "love-spell",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "Thinking of you 💕"
+      },
+      "tags": ["classic", "simple"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    },
+    {
+      "id": "rem_pattern_dream",
+      "title": "Pattern Dream",
+      "subtitle": "Pattern sticker on card",
+      "cardId": "ls-001",
+      "stickerIds": ["pattern"],
+      "trackId": "spell-ambiance",
+      "defaults": {
+        "to": "",
+        "from": "",
+        "message": "You're in my dreams ✨"
+      },
+      "tags": ["dreamy", "pattern"],
+      "ui": {
+        "allowStickerSwap": true,
+        "allowTrackSwap": true,
+        "allowTextEdit": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+﻿<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-FF-001" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3ef0d0" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#ffd166" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff6b6b" stop-opacity="0.2"/>
+    </linearGradient>
+    <pattern id="dots-FF-001" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,.14)"/>
+      <circle cx="12" cy="10" r="1.2" fill="rgba(255,255,255,.10)"/>
+      <circle cx="8" cy="14" r="0.8" fill="rgba(255,255,255,.08)"/>
+    </pattern>
+    <pattern id="grain-FF-001" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="rgba(255,255,255,.02)"/>
+      <circle cx="1" cy="2" r="0.6" fill="rgba(0,0,0,.12)"/>
+      <circle cx="5" cy="4" r="0.6" fill="rgba(0,0,0,.10)"/>
+    </pattern>
+    <filter id="shadow-FF-001" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-opacity=".35"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-opacity=".25"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="1" flood-opacity=".15"/>
+    </filter>
+    <filter id="glow-FF-001" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow-FF-001">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="rarityGlow-FF-001" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feColorMatrix type="matrix" values="0 0.8 1 0 0  0 0.9 0.5 0 0  1 0.3 0 0 0  0 0 0 1 0"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="900" height="600" fill="#06121a"/>
+  <rect width="900" height="600" fill="url(#grad-FF-001)"/>
+  
+  <!-- Outer frame with layered depth -->
+  <rect x="34" y="34" width="832" height="532" rx="40" fill="rgba(0,0,0,.18)" stroke="rgba(62,240,208,.25)" stroke-width="2"/>
+  <rect x="38" y="38" width="824" height="524" rx="36" fill="none" stroke="rgba(255,209,102,.15)" stroke-width="1"/>
+  
+  <!-- Card face with multi-layer shadow and texture -->
+  <rect x="56" y="56" width="788" height="488" rx="30" fill="#0b1c28" filter="url(#shadow-FF-001)" opacity="0.95"/>
+  <rect x="56" y="56" width="788" height="488" rx="30" fill="url(#dots-FF-001)"/>
+  <rect x="56" y="56" width="788" height="488" rx="30" fill="url(#grain-FF-001)"/>
+  
+  <!-- Inner frame detail -->
+  <rect x="78" y="78" width="744" height="444" rx="22" fill="none" stroke="rgba(241,251,255,.08)" stroke-width="1.5"/>
+  
+  <!-- Perforation edges (top and bottom) -->
+  <path d="M86 96h728" stroke="rgba(255,255,255,.18)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+  <path d="M86 502h728" stroke="rgba(255,255,255,.14)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
+  
+  <!-- Richer corner decorations -->
+  <g opacity=".85" filter="url(#softGlow-FF-001)">
+    <!-- Top-left: Geometric pattern -->
+    <g transform="translate(120 140)">
+      <circle r="12" fill="none" stroke="#3ef0d0" stroke-width="2" opacity="0.5"/>
+      <circle r="8" fill="none" stroke="#ffd166" stroke-width="1.5" opacity="0.4"/>
+      <path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#ff6b6b" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <!-- Top-right: Star pattern -->
+    <g transform="translate(780 140)">
+      <path d="M0,-10 L3,3 L10,3 L5,8 L7,15 L0,11 L-7,15 L-5,8 L-10,3 L-3,3 Z" fill="#ffd166" opacity="0.5"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="#3ef0d0" stroke-width="1" opacity="0.4"/>
+    </g>
+    
+    <!-- Bottom-left: Wave/flow pattern -->
+    <g transform="translate(120 460)">
+      <path d="M-10,0 Q0,-8 10,0 Q0,8 -10,0" fill="none" stroke="#3ef0d0" stroke-width="2" opacity="0.5"/>
+      <path d="M-8,0 Q0,-5 8,0" fill="none" stroke="#ffd166" stroke-width="1.5" opacity="0.4"/>
+    </g>
+    
+    <!-- Bottom-right: Diamond/crystal -->
+    <g transform="translate(780 460)">
+      <path d="M0,-8 L6,0 L0,8 L-6,0 Z" fill="#ff6b6b" opacity="0.5"/>
+      <circle cx="0" cy="0" r="3" fill="#3ef0d0" opacity="0.6"/>
+    </g>
+  </g>
+  
+  <!-- Ornate title badge with layered styling -->
+  <g filter="url(#glow-FF-001)">
+    <rect x="82" y="108" width="436" height="58" rx="18" fill="rgba(0,0,0,.45)" stroke="rgba(62,240,208,.5)" stroke-width="2"/>
+    <rect x="84" y="110" width="432" height="54" rx="16" fill="url(#grad-FF-001)" opacity="0.25"/>
+    <rect x="86" y="112" width="428" height="50" rx="14" fill="rgba(11,28,40,.6)"/>
+    <text x="300" y="148" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="900" fill="#3ef0d0" text-anchor="middle" filter="url(#glow-FF-001)" letter-spacing="0.5">The Hello</text>
+  </g>
+  
+  <!-- Tag icon/glyph in top-right corner -->
+  <g transform="translate(820 90)" filter="url(#softGlow-FF-001)">
+    <circle cx="0" cy="0" r="4" fill="#3ef0d0" opacity="0.8"/><path d="M-2,0 L2,0 M0,-2 L0,2" stroke="#ffd166" stroke-width="1.5"/>
+  </g>
+  
+    <!-- Body text area - REMOVED: Text is rendered by HTML overlay in app.js, not in SVG -->
+  <!-- This prevents double-printing of text -->
+  
+  <!-- Rarity glow treatment (if rare) -->
+
+</svg>
