@@ -1,0 +1,28 @@
+{
+  "packs": [
+    {
+      "id": "neon_hearts",
+      "packPath": "neon_hearts/sticker-pack.json"
+    },
+    {
+      "id": "arcade_icons",
+      "packPath": "arcade_icons/sticker-pack.json"
+    },
+    {
+      "id": "witchy_moods",
+      "packPath": "witchy_moods/sticker-pack.json"
+    },
+    {
+      "id": "cyberpunk_vibes",
+      "packPath": "cyberpunk_vibes/sticker-pack.json"
+    },
+    {
+      "id": "cute_critters",
+      "packPath": "cute_critters/sticker-pack.json"
+    },
+    {
+      "id": "cosmic_dreams",
+      "packPath": "cosmic_dreams/sticker-pack.json"
+    }
+  ]
+}

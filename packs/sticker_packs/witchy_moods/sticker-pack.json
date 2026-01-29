@@ -1,0 +1,19 @@
+{
+  "id": "witchy_moods",
+  "name": "Witchy Moods",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "moon", "src": "stickers/moon.svg", "w": 256, "h": 256, "tags": ["moon","night"] },
+    { "id": "candle", "src": "stickers/candle.svg", "w": 256, "h": 256, "tags": ["candle","spell"] },
+    { "id": "crystal", "src": "stickers/crystal.svg", "w": 256, "h": 256, "tags": ["crystal"] },
+    { "id": "star_charm", "src": "stickers/star_charm.svg", "w": 256, "h": 256, "tags": ["charm","star"] },
+    { "id": "herb_bundle", "src": "stickers/herb_bundle.svg", "w": 256, "h": 256, "tags": ["herbs","sage"] },
+    { "id": "cauldron", "src": "stickers/cauldron.svg", "w": 256, "h": 256, "tags": ["cauldron","brew"] },
+    { "id": "eye", "src": "stickers/eye.svg", "w": 256, "h": 256, "tags": ["eye","protection"] },
+    { "id": "sigil", "src": "stickers/sigil.svg", "w": 256, "h": 256, "tags": ["sigil","glyph"] },
+    { "id": "spellbook", "src": "stickers/spellbook.svg", "w": 256, "h": 256, "tags": ["book","spell"] },
+    { "id": "black_cat", "src": "stickers/black_cat.svg", "w": 256, "h": 256, "tags": ["cat","familiar"] },
+    { "id": "broom", "src": "stickers/broom.svg", "w": 256, "h": 256, "tags": ["broom"] },
+    { "id": "potion", "src": "stickers/potion.svg", "w": 256, "h": 256, "tags": ["potion"] }
+  ]
+}

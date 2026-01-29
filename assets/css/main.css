@@ -558,6 +558,41 @@ textarea.input{min-height: 110px; resize: vertical;}
 .pickerSection{
   margin: 14px 0;
 }
+.pickerTabs{
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.pickerTab{
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.pickerTab:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.16);
+}
+.pickerTab.active{
+  background: rgba(255,79,216,.12);
+  border-color: var(--accent);
+  color: var(--text);
+}
+.pickerContents{
+  position: relative;
+}
+.pickerContent{
+  display: block;
+}
+.pickerContent:not(.active){
+  display: none;
+}
 .pickerGrid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);

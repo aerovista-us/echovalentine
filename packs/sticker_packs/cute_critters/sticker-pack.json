@@ -1,0 +1,19 @@
+{
+  "id": "cute_critters",
+  "name": "Cute Critters",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "puppy", "src": "stickers/puppy.svg", "w": 256, "h": 256, "tags": ["dog","puppy","cute"] },
+    { "id": "kitten", "src": "stickers/kitten.svg", "w": 256, "h": 256, "tags": ["cat","kitten","cute"] },
+    { "id": "bunny", "src": "stickers/bunny.svg", "w": 256, "h": 256, "tags": ["bunny","rabbit","cute"] },
+    { "id": "panda", "src": "stickers/panda.svg", "w": 256, "h": 256, "tags": ["panda","bear","cute"] },
+    { "id": "fox", "src": "stickers/fox.svg", "w": 256, "h": 256, "tags": ["fox","animal","cute"] },
+    { "id": "owl", "src": "stickers/owl.svg", "w": 256, "h": 256, "tags": ["owl","bird","wise"] },
+    { "id": "bear_hug", "src": "stickers/bear_hug.svg", "w": 256, "h": 256, "tags": ["bear","hug","love"] },
+    { "id": "sloth", "src": "stickers/sloth.svg", "w": 256, "h": 256, "tags": ["sloth","lazy","cute"] },
+    { "id": "penguin", "src": "stickers/penguin.svg", "w": 256, "h": 256, "tags": ["penguin","bird","cute"] },
+    { "id": "hedgehog", "src": "stickers/hedgehog.svg", "w": 256, "h": 256, "tags": ["hedgehog","spike","cute"] },
+    { "id": "raccoon", "src": "stickers/raccoon.svg", "w": 256, "h": 256, "tags": ["raccoon","mask","cute"] },
+    { "id": "whale", "src": "stickers/whale.svg", "w": 256, "h": 256, "tags": ["whale","ocean","big"] }
+  ]
+}

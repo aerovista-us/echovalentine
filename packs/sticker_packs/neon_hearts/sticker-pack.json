@@ -1,0 +1,19 @@
+{
+  "id": "neon_hearts",
+  "name": "Neon Hearts",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "heart_glow", "src": "stickers/heart_glow.svg", "w": 256, "h": 256, "tags": ["heart","neon","love"] },
+    { "id": "heart_broken", "src": "stickers/heart_broken.svg", "w": 256, "h": 256, "tags": ["heart","broken","anti"] },
+    { "id": "sparkle_heart", "src": "stickers/sparkle_heart.svg", "w": 256, "h": 256, "tags": ["heart","sparkle"] },
+    { "id": "double_hearts", "src": "stickers/double_hearts.svg", "w": 256, "h": 256, "tags": ["hearts","cute"] },
+    { "id": "heartbeat", "src": "stickers/heartbeat.svg", "w": 256, "h": 256, "tags": ["ekg","pulse"] },
+    { "id": "kiss_mark", "src": "stickers/kiss_mark.svg", "w": 256, "h": 256, "tags": ["kiss","lipstick"] },
+    { "id": "rose", "src": "stickers/rose.svg", "w": 256, "h": 256, "tags": ["rose","flower"] },
+    { "id": "arrow", "src": "stickers/arrow.svg", "w": 256, "h": 256, "tags": ["cupid","arrow"] },
+    { "id": "love_note", "src": "stickers/love_note.svg", "w": 256, "h": 256, "tags": ["note","message"] },
+    { "id": "crown", "src": "stickers/crown.svg", "w": 256, "h": 256, "tags": ["crown","queen","king"] },
+    { "id": "glitter_stars", "src": "stickers/glitter_stars.svg", "w": 256, "h": 256, "tags": ["stars","sparkle"] },
+    { "id": "halo", "src": "stickers/halo.svg", "w": 256, "h": 256, "tags": ["halo","angel"] }
+  ]
+}

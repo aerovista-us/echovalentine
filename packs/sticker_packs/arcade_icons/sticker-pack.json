@@ -1,0 +1,19 @@
+{
+  "id": "arcade_icons",
+  "name": "Arcade Icons",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "pixel_star", "src": "stickers/pixel_star.svg", "w": 256, "h": 256, "tags": ["pixel","star"] },
+    { "id": "coin", "src": "stickers/coin.svg", "w": 256, "h": 256, "tags": ["coin","gold"] },
+    { "id": "heart_pixel", "src": "stickers/heart_pixel.svg", "w": 256, "h": 256, "tags": ["pixel","heart"] },
+    { "id": "controller", "src": "stickers/controller.svg", "w": 256, "h": 256, "tags": ["game","controller"] },
+    { "id": "sword", "src": "stickers/sword.svg", "w": 256, "h": 256, "tags": ["rpg","blade"] },
+    { "id": "shield", "src": "stickers/shield.svg", "w": 256, "h": 256, "tags": ["rpg","shield"] },
+    { "id": "cherry", "src": "stickers/cherry.svg", "w": 256, "h": 256, "tags": ["arcade","fruit"] },
+    { "id": "bolt", "src": "stickers/bolt.svg", "w": 256, "h": 256, "tags": ["energy","zap"] },
+    { "id": "skull", "src": "stickers/skull.svg", "w": 256, "h": 256, "tags": ["danger","boss"] },
+    { "id": "portal", "src": "stickers/portal.svg", "w": 256, "h": 256, "tags": ["portal","warp"] },
+    { "id": "chat_bubble", "src": "stickers/chat_bubble.svg", "w": 256, "h": 256, "tags": ["bubble","msg"] },
+    { "id": "music_note", "src": "stickers/music_note.svg", "w": 256, "h": 256, "tags": ["music","note"] }
+  ]
+}

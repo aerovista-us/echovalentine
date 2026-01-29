@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="256" height="256" fill="#fff5f9"/>
+  <circle cx="128" cy="100" r="45" fill="#8b4513"/>
+  <circle cx="110" cy="95" r="8" fill="#000"/>
+  <circle cx="146" cy="95" r="8" fill="#000"/>
+  <ellipse cx="128" cy="110" rx="15" ry="10" fill="#000"/>
+  <circle cx="128" cy="180" r="50" fill="#8b4513"/>
+</svg>

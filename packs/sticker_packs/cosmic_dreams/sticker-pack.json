@@ -1,0 +1,19 @@
+{
+  "id": "cosmic_dreams",
+  "name": "Cosmic Dreams",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "shooting_star", "src": "stickers/shooting_star.svg", "w": 256, "h": 256, "tags": ["star","shooting","wish"] },
+    { "id": "galaxy_spiral", "src": "stickers/galaxy_spiral.svg", "w": 256, "h": 256, "tags": ["galaxy","spiral","space"] },
+    { "id": "crescent_moon", "src": "stickers/crescent_moon.svg", "w": 256, "h": 256, "tags": ["moon","crescent","night"] },
+    { "id": "planet_ring", "src": "stickers/planet_ring.svg", "w": 256, "h": 256, "tags": ["planet","ring","saturn"] },
+    { "id": "constellation", "src": "stickers/constellation.svg", "w": 256, "h": 256, "tags": ["stars","constellation","connect"] },
+    { "id": "comet", "src": "stickers/comet.svg", "w": 256, "h": 256, "tags": ["comet","tail","space"] },
+    { "id": "nebula", "src": "stickers/nebula.svg", "w": 256, "h": 256, "tags": ["nebula","cloud","colorful"] },
+    { "id": "astronaut", "src": "stickers/astronaut.svg", "w": 256, "h": 256, "tags": ["astronaut","space","explore"] },
+    { "id": "rocket", "src": "stickers/rocket.svg", "w": 256, "h": 256, "tags": ["rocket","launch","adventure"] },
+    { "id": "meteor", "src": "stickers/meteor.svg", "w": 256, "h": 256, "tags": ["meteor","fire","falling"] },
+    { "id": "solar_system", "src": "stickers/solar_system.svg", "w": 256, "h": 256, "tags": ["planets","system","orbits"] },
+    { "id": "aurora", "src": "stickers/aurora.svg", "w": 256, "h": 256, "tags": ["aurora","lights","northern"] }
+  ]
+}

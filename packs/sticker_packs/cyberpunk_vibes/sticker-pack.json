@@ -1,0 +1,19 @@
+{
+  "id": "cyberpunk_vibes",
+  "name": "Cyberpunk Vibes",
+  "version": "1.0.0",
+  "stickers": [
+    { "id": "neon_grid", "src": "stickers/neon_grid.svg", "w": 256, "h": 256, "tags": ["grid","tech","neon"] },
+    { "id": "circuit_heart", "src": "stickers/circuit_heart.svg", "w": 256, "h": 256, "tags": ["heart","circuit","tech"] },
+    { "id": "hologram_star", "src": "stickers/hologram_star.svg", "w": 256, "h": 256, "tags": ["star","hologram","glitch"] },
+    { "id": "data_stream", "src": "stickers/data_stream.svg", "w": 256, "h": 256, "tags": ["data","stream","code"] },
+    { "id": "neon_arrow", "src": "stickers/neon_arrow.svg", "w": 256, "h": 256, "tags": ["arrow","neon","direction"] },
+    { "id": "cyber_eye", "src": "stickers/cyber_eye.svg", "w": 256, "h": 256, "tags": ["eye","cyber","tech"] },
+    { "id": "glitch_heart", "src": "stickers/glitch_heart.svg", "w": 256, "h": 256, "tags": ["heart","glitch","error"] },
+    { "id": "neon_diamond", "src": "stickers/neon_diamond.svg", "w": 256, "h": 256, "tags": ["diamond","neon","gem"] },
+    { "id": "circuit_pattern", "src": "stickers/circuit_pattern.svg", "w": 256, "h": 256, "tags": ["circuit","pattern","tech"] },
+    { "id": "hologram_text", "src": "stickers/hologram_text.svg", "w": 256, "h": 256, "tags": ["text","hologram","message"] },
+    { "id": "neon_bolt", "src": "stickers/neon_bolt.svg", "w": 256, "h": 256, "tags": ["bolt","energy","power"] },
+    { "id": "cyber_skull", "src": "stickers/cyber_skull.svg", "w": 256, "h": 256, "tags": ["skull","cyber","tech"] }
+  ]
+}

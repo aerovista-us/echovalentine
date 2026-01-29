@@ -226,6 +226,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     const card = (data.cards?.cards || []).find(x => String(x.id) === String(cardId));
     if(!card) return renderNotFound(appEl);
 
+    // Load sticker packs
+    const stickerPacks = await window.EV_LOADER.loadStickerPacks();
+
     window.EV_STORE.setPrefs({ lastPack: packId, lastCard: cardId });
 
     const prefs = window.EV_STORE.getPrefs();
@@ -233,8 +236,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       to: prefs.to || "",
       from: prefs.from || "",
       msg: params.get("t") || "",
-      stickers: [], // Array of {src, x, y, w, h}
-      track: ""
+      stickers: [], // Array of {src, x, y, w, h, packId}
+      track: "",
+      selectedStickerPack: null // Currently selected sticker pack ID
     };
 
     const stage = h("div",{class:"previewStage composeStage"},[
@@ -242,8 +246,13 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]);
 
     function createStickerElement(stickerData){
+      // Determine sticker path based on whether it's from a sticker pack or pack stickers
+      const stickerPath = stickerData.packId 
+        ? `packs/sticker_packs/${stickerData.packId}/${stickerData.src}`
+        : `packs/${packDir}/${stickerData.src}`;
+      
       const el = h("div",{class:"stickerElement"},[
-        h("img",{src:`packs/${packDir}/${stickerData.src}`, alt:"Sticker", style:"width:100%; height:100%; object-fit:contain"}),
+        h("img",{src:stickerPath, alt:"Sticker", style:"width:100%; height:100%; object-fit:contain"}),
         h("div",{class:"stickerResizer"})
       ]);
       el.style.position = "absolute";
@@ -284,9 +293,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       });
     }
 
-    function addSticker(stickerSrc){
+    function addSticker(stickerSrc, stickerPackId = null){
       const stickerData = {
         src: stickerSrc,
+        packId: stickerPackId, // null for pack stickers, pack ID for sticker pack stickers
         x: Math.random() * 200 + 50,
         y: Math.random() * 200 + 50,
         w: 84,
@@ -299,14 +309,24 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     }
 
     function randomSticker(){
-      const list = (data.stickers?.stickers || []);
-      const s = randPick(list);
+      // Combine pack stickers and sticker pack stickers for random selection
+      const packStickerList = (data.stickers?.stickers || []).map(s => ({...s, packId: null}));
+      const allStickerList = [...packStickerList];
+      
+      // Add all sticker pack stickers
+      (stickerPacks || []).forEach(sp => {
+        (sp.stickers || []).forEach(s => {
+          allStickerList.push({...s, packId: sp.id});
+        });
+      });
+      
+      const s = randPick(allStickerList);
       if(s && s.src){
-        addSticker(s.src);
+        addSticker(s.src, s.packId || null);
         toast("Sparkle added ✨", "good");
-        track("sticker_random", { pack: packId });
+        track("sticker_random", { pack: packId, stickerPack: s.packId || "pack" });
       } else {
-        toast("No stickers in this pack", "bad");
+        toast("No stickers available", "bad");
       }
     }
 
@@ -319,8 +339,8 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       toast("Sparkles cleared", "good");
     }
 
-    function selectSticker(stickerSrc){
-      addSticker(stickerSrc);
+    function selectSticker(stickerSrc, stickerPackId = null){
+      addSticker(stickerSrc, stickerPackId);
       toast("Sticker added", "good");
     }
 
@@ -338,7 +358,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         to: (state.to||"").slice(0, 42),
         from: (state.from||"").slice(0, 42),
         msg: (state.msg||"").slice(0, 160),
-        sticker: state.stickers.length > 0 ? JSON.stringify(state.stickers.map(s => ({src: s.src, x: s.x, y: s.y, w: s.w, h: s.h}))) : "",
+        sticker: state.stickers.length > 0 ? JSON.stringify(state.stickers.map(s => ({src: s.src, packId: s.packId || null, x: s.x, y: s.y, w: s.w, h: s.h}))) : "",
         track: state.track || "",
         ts: Date.now()
       };
@@ -368,16 +388,108 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]);
     const out = outWrap.querySelector("#outLink");
 
-    // Sticker picker
-    const stickers = (data.stickers?.stickers || []);
-    const stickerPicker = stickers.length > 0 ? h("div",{class:"pickerSection"},[
-      h("div",{class:"small", html:"Stickers"}),
-      h("div",{class:"pickerGrid"}, stickers.slice(0, 12).map(s => 
-        h("div",{class:"pickerItem", onclick:()=>selectSticker(s.src)},[
-          h("img",{src:`packs/${packDir}/${s.src}`, alt:"Sticker"})
-        ])
-      ))
-    ]) : null;
+    // Sticker picker - combine pack stickers and sticker packs
+    const packStickers = (data.stickers?.stickers || []);
+    const allStickerPacks = stickerPacks || [];
+    
+    // Build sticker picker UI with tabs for each pack
+    let stickerPicker = null;
+    if(packStickers.length > 0 || allStickerPacks.length > 0){
+      const tabs = [];
+      const contents = [];
+      
+      // Function to update sticker picker tabs and content visibility
+      function updateStickerPicker(){
+        const tabsEl = document.querySelector(".pickerTabs");
+        const contentsEl = document.querySelector(".pickerContents");
+        if(!tabsEl || !contentsEl) return;
+        
+        // Update tab active states
+        const tabButtons = tabsEl.querySelectorAll(".pickerTab");
+        tabButtons.forEach((tab, idx) => {
+          let shouldBeActive = false;
+          if(packStickers.length > 0){
+            if(idx === 0){
+              shouldBeActive = !state.selectedStickerPack;
+            } else {
+              shouldBeActive = state.selectedStickerPack === allStickerPacks[idx - 1]?.id;
+            }
+          } else {
+            shouldBeActive = state.selectedStickerPack === allStickerPacks[idx]?.id;
+          }
+          tab.classList.toggle("active", shouldBeActive);
+        });
+        
+        // Update content visibility
+        const contentDivs = contentsEl.querySelectorAll(".pickerContent");
+        contentDivs.forEach((content, idx) => {
+          let shouldBeActive = false;
+          if(packStickers.length > 0){
+            if(idx === 0){
+              shouldBeActive = !state.selectedStickerPack;
+            } else {
+              shouldBeActive = state.selectedStickerPack === allStickerPacks[idx - 1]?.id;
+            }
+          } else {
+            shouldBeActive = state.selectedStickerPack === allStickerPacks[idx]?.id;
+          }
+          content.style.display = shouldBeActive ? "" : "none";
+          content.classList.toggle("active", shouldBeActive);
+        });
+      }
+      
+      // Pack stickers tab (if available)
+      if(packStickers.length > 0){
+        const isActive = !state.selectedStickerPack;
+        tabs.push(h("button",{
+          class:`pickerTab ${isActive ? "active" : ""}`,
+          onclick:()=>{
+            state.selectedStickerPack = null;
+            updateStickerPicker();
+          }
+        },[document.createTextNode("Pack")]));
+        
+        contents.push(h("div",{
+          class:`pickerContent ${isActive ? "active" : ""}`,
+          style: !isActive ? "display:none" : ""
+        },[
+          h("div",{class:"pickerGrid"}, packStickers.slice(0, 12).map(s => 
+            h("div",{class:"pickerItem", onclick:()=>selectSticker(s.src)},[
+              h("img",{src:`packs/${packDir}/${s.src}`, alt:"Sticker"})
+            ])
+          ))
+        ]));
+      }
+      
+      // Sticker pack tabs
+      allStickerPacks.forEach((sp, idx) => {
+        const isActive = state.selectedStickerPack === sp.id || (!state.selectedStickerPack && packStickers.length === 0 && idx === 0);
+        tabs.push(h("button",{
+          class:`pickerTab ${isActive ? "active" : ""}`,
+          onclick:()=>{
+            state.selectedStickerPack = sp.id;
+            updateStickerPicker();
+          }
+        },[document.createTextNode(sp.name || sp.id)]));
+        
+        contents.push(h("div",{
+          class:`pickerContent ${isActive ? "active" : ""}`,
+          style: !isActive ? "display:none" : ""
+        },[
+          h("div",{class:"pickerGrid"}, (sp.stickers || []).slice(0, 12).map(s => 
+            h("div",{class:"pickerItem", onclick:()=>selectSticker(s.src, sp.id)},[
+              h("img",{src:`packs/sticker_packs/${sp.id}/${s.src}`, alt:"Sticker"})
+            ])
+          ))
+        ]));
+      });
+      
+      stickerPicker = h("div",{class:"pickerSection"},[
+        h("div",{class:"small", html:"Stickers"}),
+        tabs.length > 1 ? h("div",{class:"pickerTabs"}, tabs) : null,
+        h("div",{class:"pickerContents"}, contents)
+      ]);
+    }
 
     // Track picker
     const tracks = (data.tracks?.tracks || []);
@@ -447,7 +559,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         const rect = stage.getBoundingClientRect();
         const x = e.clientX - rect.left - 42;
         const y = e.clientY - rect.top - 42;
-        addSticker(item.src);
+        addSticker(item.src, item.packId || null);
       }
     });
 
@@ -560,7 +672,12 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     
     // Add stickers with preserved positions
     stickers.forEach(s => {
-      const st = h("img",{class:"stickerOverlay", src:`packs/${packDir}/${s.src}`, alt:"Sticker"});
+      // Determine sticker path based on whether it's from a sticker pack or pack stickers
+      const stickerPath = s.packId 
+        ? `packs/sticker_packs/${s.packId}/${s.src}`
+        : `packs/${packDir}/${s.src}`;
+      
+      const st = h("img",{class:"stickerOverlay", src:stickerPath, alt:"Sticker"});
       st.style.position = "absolute";
       // Use the exact saved coordinates
       st.style.left = (s.x || 10) + "px";
