@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4">
-        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/> result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur stdDeviation="4" result="b">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      
+</feGaussianBlur>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   <rect width="256" height="256" fill="#fff5f9"/>
@@ -17,4 +19,7 @@
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path d="M128 160 L120 200 L128 190 L136 200 Z" fill="#6b4423"/>
   </g>
+</g>
 </svg>
+
+

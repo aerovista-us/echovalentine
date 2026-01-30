@@ -1,4 +1,4 @@
-<svg>
+﻿<svg>
   <defs>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="4" result="blur">
@@ -14,7 +14,7 @@
   <circle cx="128" cy="128" r="62" fill="#ffd54a"/>
   <g transform-origin="128 128">
     <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2.5s" repeatCount="indefinite"/>
-    <path fill="#ffb300" d="M120 78h16v20h20v16h-20v20h20v16h-20v20h-16v-20H100v-16h20v-20H100V98h20z"/ filter="url(#glow)">
+    <path fill="#ffb300" d="M120 78h16v20h20v16h-20v20h20v16h-20v20h-16v-20H100v-16h20v-20H100V98h20z" filter="url(#glow)"/>
   </g>
 
   <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
@@ -25,3 +25,4 @@
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
   </circle>
 </svg>
+

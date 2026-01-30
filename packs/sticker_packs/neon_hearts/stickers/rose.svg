@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <g transform-origin="128 128">
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path fill="#1b7f4a" d="M126 242c18-62 10-120-10-160l14-8c24 52 30 114 10 168z"/>
@@ -12,4 +12,8 @@
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path fill="#ff7ad9" opacity="0.7" d="M138 56c16 0 28 12 28 28 0 20-18 34-34 44-14-10-34-24-34-44 0-16 12-28 40-28z"/>
   </g>
+</g>
+</g>
+</g>
 </svg>
+

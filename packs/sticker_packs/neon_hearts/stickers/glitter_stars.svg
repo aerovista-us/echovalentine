@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <g fill="#ffffff" opacity="0.95">
     <g transform-origin="128 128">
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
@@ -13,4 +13,7 @@
   <circle cx="172" cy="72" r="6" fill="#00e5ff"/>
   <circle cx="92" cy="206" r="6" fill="#ff4fd8"/>
   </g>
+</g>
+</g>
 </svg>
+

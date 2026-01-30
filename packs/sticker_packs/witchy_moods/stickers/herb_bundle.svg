@@ -1,5 +1,5 @@
-<svg>
-  <defs>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<defs>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="4" result="blur">
         <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/>
@@ -9,13 +9,14 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-  </defs> xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  </defs>
   <g transform-origin="128 128">
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
     <path fill="#2ad37a" d="M78 170c24-26 36-54 36-88-28 10-46 36-56 64 6-34-2-64-22-88-10 34 0 74 18 100-14-12-34-18-60-16 26 20 54 32 84 28z"/>
   <path fill="#ff4fd8" d="M150 198l-14-10 26-36 14 10z"/>
-  <path fill="#101026" opacity="0.5">
-      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/> d="M118 150l52 38 16-22-52-38z"/>
+  <path d="">
+  
+
   </g>
 
   <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
@@ -26,3 +27,5 @@
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
   </circle>
 </svg>
+
+
