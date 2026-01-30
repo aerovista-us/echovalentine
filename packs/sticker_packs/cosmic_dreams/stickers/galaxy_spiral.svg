@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feGaussianBlur stdDeviation="4">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/> result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <radialGradient id="galaxyGrad">
@@ -11,8 +12,10 @@
     </radialGradient>
   </defs>
   <rect width="256" height="256" fill="#0a0a1a"/>
-  <circle cx="128" cy="128" r="80">
-      <animateTransform attributeName="transform" type="rotate" values="0 128 128;360 128 128" dur="20s" repeatCount="indefinite"/> fill="url(#galaxyGrad)" filter="url(#glow)"/>
-  <circle cx="100" cy="100" r="20" fill="#b86bff" opacity="0.6" filter="url(#glow)"/>
-  <circle cx="156" cy="156" r="25" fill="#00f0ff" opacity="0.5" filter="url(#glow)"/>
+  <circle>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/> cx="128" cy="128" r="80" fill="url(#galaxyGrad)" filter="url(#glow)"/>
+  <circle>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/> cx="100" cy="100" r="20" fill="#b86bff" opacity="0.6" filter="url(#glow)"/>
+  <circle>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/> cx="156" cy="156" r="25" fill="#00f0ff" opacity="0.5" filter="url(#glow)"/>
 </svg>

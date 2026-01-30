@@ -454,10 +454,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           style: !isActive ? "display:none" : ""
         },[
           h("div",{class:"pickerGrid"}, packStickers.slice(0, 12).map(s => 
-            h("div",{class:"pickerItem", onclick:()=>selectSticker(s.src)},[
-              h("img",{src:`packs/${packDir}/${s.src}`, alt:"Sticker"})
-            ])
-          ))
+        h("div",{class:"pickerItem", onclick:()=>selectSticker(s.src)},[
+          h("img",{src:`packs/${packDir}/${s.src}`, alt:"Sticker"})
+        ])
+      ))
         ]));
       }
       
@@ -639,7 +639,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       h("div",{html:`To: <b>${esc(payload.to || "")}</b>`}),
       h("div",{html:`From: <b>${esc(payload.from || "")}</b>`})
     ]);
-    
+
     const stage = h("div",{class:"previewStage cardReveal"},[
       h("img",{src:`packs/${packDir}/${getCardImage(card)}`, alt:"Card", class:"cardImage"}),
       // To/From overlays on the card - visible when closed, animated
@@ -763,7 +763,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     if(playerEl){
       innerEl.insertBefore(playerEl, innerEl.querySelector(".row"));
     }
-    
+
     const cardEl = h("div",{class:"card"},[innerEl]);
 
     appEl.appendChild(cardEl);

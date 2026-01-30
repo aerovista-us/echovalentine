@@ -1,6 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <path fill="#ffffff" d="M128 44c44 0 80 32 80 72 0 28-14 52-36 64v28c0 12-10 22-22 22H106c-12 0-22-10-22-22v-28c-22-12-36-36-36-64 0-40 36-72 80-72z"/>
+<svg>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs> xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2.5s" repeatCount="indefinite"/>
+    <path fill="#ffffff" d="M128 44c44 0 80 32 80 72 0 28-14 52-36 64v28c0 12-10 22-22 22H106c-12 0-22-10-22-22v-28c-22-12-36-36-36-64 0-40 36-72 80-72z"/ filter="url(#glow)">
   <circle cx="98" cy="120" r="16" fill="#101026"/>
   <circle cx="158" cy="120" r="16" fill="#101026"/>
   <rect x="118" y="150" width="20" height="14" rx="6" fill="#101026"/>
+  </g>
+
+  <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="176" cy="176" r="1.5" fill="#fff" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+  </circle>
 </svg>

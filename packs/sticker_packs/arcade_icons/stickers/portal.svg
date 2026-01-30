@@ -7,5 +7,16 @@
   </defs>
   <circle cx="128" cy="128" r="82" fill="none" stroke="url(#p)" stroke-width="16"/>
   <circle cx="128" cy="128" r="52" fill="#101026" opacity="0.9"/>
-  <path d="M96 128c18-18 46-18 64 0" fill="none" stroke="#fff" stroke-width="8" opacity="0.6" stroke-linecap="round"/>
+  <g transform-origin="128 128">
+    <animateTransform attributeName="transform" type="scale" values="1;1.05;1" dur="2.5s" repeatCount="indefinite"/>
+    <path d="M96 128c18-18 46-18 64 0" fill="none" stroke="#fff" stroke-width="8" opacity="0.6" stroke-linecap="round"/ filter="url(#glow)">
+  </g>
+
+  <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="176" cy="176" r="1.5" fill="#fff" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+  </circle>
 </svg>
