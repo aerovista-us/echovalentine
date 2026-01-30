@@ -49,7 +49,7 @@ body{
   background-position:center;
   background-repeat:no-repeat;
   pointer-events:none;
-  opacity:1;
+  opacity: 0.9;
 }
 
 .container{max-width:var(--max); margin:0 auto; padding: 0 14px; position:relative; z-index:1;}
@@ -826,7 +826,10 @@ textarea.input{min-height: 110px; resize: vertical;}
 .envelope{
   position: relative;
   z-index: 10;
-  transition: opacity 300ms ease, transform 300ms ease;
+  /* Delay fade-out so the flap/paper animation can be seen */
+  transition:
+    opacity 300ms ease 420ms,
+    transform 300ms ease 420ms;
 }
 .envelope-open{
   opacity: 0;
@@ -878,15 +881,14 @@ textarea.input{min-height: 110px; resize: vertical;}
   display:flex; align-items:center; gap:8px; flex-wrap:wrap;
 }
 .player-btn{
-  border:1px solid var(--line);
+  border: 1px solid var(--line);
   background: rgba(255,255,255,.06);
   color: var(--text);
   padding: 8px 12px;
   border-radius: 12px;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 16px;
   min-width: 40px;
-  border:0;
 }
 .player-btn:hover{background: rgba(255,255,255,.09)}
 .player-btn:disabled{opacity:.4; cursor:not-allowed}
@@ -938,8 +940,9 @@ textarea.input{min-height: 110px; resize: vertical;}
   height: 100%;
 }
 .splash-svg-container{
-  width: 600px;
-  height: 600px;
+  width: min(80vw, 600px);
+  height: min(80vw, 600px);
+  max-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -956,8 +959,9 @@ textarea.input{min-height: 110px; resize: vertical;}
 }
 @media (max-width: 600px){
   .splash-svg-container{
-    width: 450px;
-    height: 450px;
+    width: min(86vw, 450px);
+    height: min(86vw, 450px);
+    max-height: 60vh;
   }
   .brand-logo-animated{
     height: 50px;

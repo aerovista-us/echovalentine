@@ -18,8 +18,7 @@
       <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
   
 
-
-</path></g>
+</g>
 
   <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
     <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
@@ -29,7 +28,6 @@
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
   </circle>
 </svg>
-
 
 
 

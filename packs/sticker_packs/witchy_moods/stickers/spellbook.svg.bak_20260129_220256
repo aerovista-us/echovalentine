@@ -12,14 +12,13 @@
   </defs> xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <g transform-origin="128 128">
     <animateTransform attributeName="transform" type="scale" values="1;1.03;1" dur="3s" repeatCount="indefinite"/>
-    <path fill="#ff7ad9" d="M128 34c14 18 18 32 0 52-18-20-14-34 0-52z"/>
-  <rect x="92" y="84" width="72" height="128" rx="20" fill="#101026"/>
-  <path d="M106 120h44" stroke="#00e5ff" stroke-width="8" stroke-linecap="round" opacity="0.8">
+    <path fill="#101026" d="M72 54h112c14 0 26 12 26 26v132c-18-10-40-10-56 0-16-10-38-10-56 0-16-10-38-10-56 0V80c0-14 12-26 26-26z"/>
+  <path d="M128 78h54" stroke="#00e5ff" stroke-width="8" stroke-linecap="round" opacity="0.8">
       <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  <path fill="#ffd54a" d="M96 112l12 24 26 4-19 18 4 26-23-12-23 12 4-26-19-18 26-4z"/>
   
 
-
-</path></g>
+</g>
 
   <circle cx="80" cy="80" r="2" fill="#fff" opacity="0.6">
     <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
@@ -29,7 +28,6 @@
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
   </circle>
 </svg>
-
 
 
 
