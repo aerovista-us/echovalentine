@@ -4,6 +4,7 @@
     packs: [],       // [{id, packPath, pack}]
     packIndex: {},   // id -> pack
     dataCache: {},   // id -> {cards, stickers, tracks}
+    renderSeq: 0,    // Race condition guard for async renders
   };
 
 const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
@@ -46,18 +47,65 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     return data;
   }
 
-  function render(appEl){
+  async function render(appEl){
+    const mySeq = ++S.renderSeq;
+
     const r = window.EV_ROUTER.parseHash();
     const route = r.parts[0] || "boxes";
 
+    // Clear immediately
     appEl.innerHTML = "";
 
-    if(route === "boxes") return renderBoxes(appEl);
-    if(route === "box") return renderBox(appEl, decodeURIComponent(r.parts[1]||""));
-    if(route === "compose") return renderCompose(appEl, r.params);
-    if(route === "open") return renderOpen(appEl, r.params);
-    if(route === "about") return renderAbout(appEl);
-    return renderNotFound(appEl);
+    // Small loading card for async routes (prevents "blank" feeling)
+    const showLoading = () => {
+      if(mySeq !== S.renderSeq) return;
+      appEl.innerHTML = "";
+      appEl.appendChild(h("div",{class:"card"},[
+        h("div",{class:"inner"},[
+          h("div",{class:"h1", html:"Loading…"}),
+          h("p",{class:"p", html:"Warming up the card composer."})
+        ])
+      ]));
+    };
+
+    try{
+      if(route === "boxes") return renderBoxes(appEl);
+
+      // Async routes: show loading immediately
+      if(route === "box"){
+        showLoading();
+        await renderBox(appEl, decodeURIComponent(r.parts[1]||""));
+        return;
+      }
+      if(route === "compose"){
+        showLoading();
+        await renderCompose(appEl, r.params);
+        return;
+      }
+      if(route === "open"){
+        showLoading();
+        await renderOpen(appEl, r.params);
+        return;
+      }
+
+      if(route === "about") return renderAbout(appEl);
+      return renderNotFound(appEl);
+
+    } catch(err){
+      console.error("Route render failed:", route, err);
+      if(mySeq !== S.renderSeq) return;
+      appEl.innerHTML = "";
+      appEl.appendChild(h("div",{class:"card"},[
+        h("div",{class:"inner"},[
+          h("div",{class:"h1", html:"Render error"}),
+          h("p",{class:"p", html: esc(String(err && err.message ? err.message : err))}),
+          h("div",{style:"height:10px"}),
+          h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
+            document.createTextNode("Go home")
+          ])
+        ])
+      ]));
+    }
   }
 
   function renderBoxes(appEl){
@@ -241,9 +289,21 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       selectedStickerPack: null // Currently selected sticker pack ID
     };
 
-    const stage = h("div",{class:"previewStage composeStage"},[
-      h("img",{src:`packs/${packDir}/${getCardImage(card)}`, alt:"Card preview", style:"display:block; width:100%; height:auto"})
-    ]);
+    const img = h("img",{
+      src: `packs/${packDir}/${getCardImage(card)}`,
+      alt: "Card preview"
+    });
+
+    const stage = h("div",{class:"previewStage composeStage"},[ img ]);
+
+    // Auto-fit stage ratio to the actual card image (portrait or landscape)
+    img.addEventListener("load", ()=>{
+      const w = img.naturalWidth;
+      const hgt = img.naturalHeight;
+      if(w && hgt){
+        stage.style.aspectRatio = `${w} / ${hgt}`;
+      }
+    });
 
     function createStickerElement(stickerData){
       // Determine sticker path based on whether it's from a sticker pack or pack stickers

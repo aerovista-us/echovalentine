@@ -13,7 +13,25 @@
       else if(k === "readonly" && tag === "input") el.readOnly = v;
       else el.setAttribute(k, String(v));
     }
-    (children||[]).forEach(c => el.appendChild(c));
+    // --- children (handle non-Node values safely) ---
+    const add = (ch) => {
+      if(ch === null || ch === undefined || ch === false) return;
+      // Flatten arrays (so you can pass nested arrays safely)
+      if(Array.isArray(ch)) { ch.forEach(add); return; }
+      // Allow strings/numbers directly
+      if(typeof ch === "string" || typeof ch === "number") {
+        el.appendChild(document.createTextNode(String(ch)));
+        return;
+      }
+      // Must be a Node at this point
+      if(ch instanceof Node) {
+        el.appendChild(ch);
+        return;
+      }
+      // Last resort: stringify weird values so it doesn't crash rendering
+      el.appendChild(document.createTextNode(String(ch)));
+    };
+    (children||[]).forEach(add);
     return el;
   }
 

@@ -515,13 +515,16 @@ textarea.input{min-height: 110px; resize: vertical;}
 
 /* Compose stage */
 .composeStage{
-  min-height: 400px;
   position: relative;
-  aspect-ratio: 900 / 600;
+  aspect-ratio: 900 / 600; /* default fallback */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Critical: don't force portrait-ish sizing */
+  min-height: 0;
+  /* Optional: keep it from getting ridiculously tall */
+  max-height: 75vh;
 }
 .composeStage img{
   width: 100%;
