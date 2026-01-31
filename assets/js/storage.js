@@ -10,7 +10,7 @@
   }
   function jset(key, val){ localStorage.setItem(key, JSON.stringify(val)); }
 
-  function getPrefs(){ return jget(PREF_KEY, { to:"", from:"", lastPack:"", lastCard:"" }); }
+  function getPrefs(){ return jget(PREF_KEY, { to:"", from:"", lastPack:"", lastCard:"", tutorialDismissed:false }); }
   function setPrefs(p){ jset(PREF_KEY, { ...getPrefs(), ...(p||{}) }); }
 
   function getStats(){ return jget(STAT_KEY, { punched:0, lastPunchTs:0 }); }

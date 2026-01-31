@@ -166,6 +166,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
   }
 
   async function renderBox(appEl, packId){
+    appEl.innerHTML = ""; // ✅ ensures loading card disappears
     if(!packId || !S.packIndex[packId]) return renderNotFound(appEl);
     const pack = S.packIndex[packId];
     const packDir = getPackDir(packId);
@@ -263,6 +264,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
   }
 
   async function renderCompose(appEl, params){
+    appEl.innerHTML = ""; // ✅ ensures loading card disappears
     const packId = params.get("pack");
     const cardId = params.get("card");
     if(!packId || !cardId) return renderNotFound(appEl);
@@ -561,6 +563,18 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       ])
     ]) : null;
 
+    // Build the top action bar
+    const actionBar = h("div",{class:"actionBar"},[
+      h("div",{class:"row wrap"},[
+        h("button",{class:"btn", onclick:randomSticker},["Random ✨"]),
+        h("button",{class:"btn", onclick:clearStickers},["Clear"]),
+        h("button",{class:"btn", onclick:()=>shuffleAndCompose(packId)},["Shuffle card"])
+      ]),
+      h("button",{class:"btn primary", id:"btnPunch", onclick:punchAndCopy},[
+        "Punch & Copy Link"
+      ])
+    ]);
+
     const left = h("section",{class:"card"},[
       h("div",{class:"inner"},[
         h("div",{class:"row spread"},[
@@ -573,6 +587,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           ])
         ]),
         h("div",{class:"hr"}),
+        actionBar,
+        outWrap,
+        h("div",{class:"hr"}),
         h("label",{class:"small", html:"To"}),
         h("input",{class:"input", placeholder:"Name", value: state.to, oninput:(e)=>{state.to=e.target.value;sync();}}),
         h("div",{style:"height:10px"}),
@@ -584,21 +601,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           const ta = h("textarea",{class:"input", placeholder:"Keep it short…", value: state.msg || "", oninput:(e)=>{state.msg=e.target.value;sync();}});
           return ta;
         })(),
-        h("div",{class:"hr"}),
-        stickerPicker,
+        trackPicker ? h("div",{style:"height:10px"}) : null,
         trackPicker,
         h("div",{class:"hr"}),
-        h("div",{class:"row"},[
-          h("button",{class:"btn", onclick:randomSticker},[document.createTextNode("Random ✨")]),
-          h("button",{class:"btn", onclick:clearStickers},[document.createTextNode("Clear")]),
-          h("button",{class:"btn", onclick:()=>shuffleAndCompose(packId)},[document.createTextNode("Shuffle card")]),
-        ]),
-        h("div",{style:"height:12px"}),
-        h("button",{class:"btn primary", onclick:punchAndCopy},[
-          document.createTextNode("Punch & Copy Link")
-        ]),
-        h("div",{style:"height:10px"}),
-        outWrap
+        stickerPicker
       ])
     ]);
 
@@ -625,9 +631,69 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     appEl.appendChild(h("div",{class:"grid two"},[left, right]));
     sync();
+
+    // First-run tutorial
+    (function maybeTutorial(){
+      const prefs = window.EV_STORE.getPrefs();
+      if(prefs.tutorialDismissed) return;
+
+      const steps = [
+        {t:"Write it", b:"Fill To/From and a short message."},
+        {t:"Add stickers", b:"Use Random ✨ or choose stickers. Drag to move. Double-click to remove."},
+        {t:"Add a track (optional)", b:"Pick a track under the message box (if this pack includes music)."},
+        {t:"Send it", b:"Hit Punch & Copy Link, paste it into text/social, and they open instantly."}
+      ];
+
+      let i = 0;
+
+      const overlay = h("div",{class:"tourOverlay"},[]);
+      const card = h("div",{class:"tourCard"},[]);
+      overlay.appendChild(card);
+
+      function draw(){
+        card.innerHTML = "";
+        card.appendChild(h("div",{class:"tourTitle", html: esc(steps[i].t)}));
+        card.appendChild(h("div",{class:"tourBody", html: esc(steps[i].b)}));
+
+        const dont = h("label",{class:"tourCheck"},[
+          h("input",{type:"checkbox", id:"tourDont"}),
+          "Don't show again"
+        ]);
+
+        const btnNext = h("button",{class:"btn primary", onclick:()=>{
+          const checked = !!card.querySelector("#tourDont")?.checked;
+          if(checked) window.EV_STORE.setPrefs({tutorialDismissed:true});
+
+          if(i < steps.length-1){ i++; draw(); }
+          else overlay.remove();
+        }},[ i < steps.length-1 ? "Next" : "Got it" ]);
+
+        const btnSkip = h("button",{class:"btn", onclick:()=>{
+          const checked = !!card.querySelector("#tourDont")?.checked;
+          if(checked) window.EV_STORE.setPrefs({tutorialDismissed:true});
+          overlay.remove();
+        }},["Skip"]);
+
+        card.appendChild(h("div",{class:"tourRow"},[
+          dont,
+          h("div",{class:"row", style:"gap:10px;"},[
+            btnSkip,
+            btnNext
+          ])
+        ]));
+      }
+
+      draw();
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click",(e)=>{
+        if(e.target === overlay) overlay.remove();
+      });
+    })();
   }
 
   async function renderOpen(appEl, params){
+    appEl.innerHTML = ""; // ✅ ensures loading card disappears
     // Show splash screen for card opening
     if(window.EV_SPLASH){
       window.EV_SPLASH.show();
@@ -783,9 +849,22 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     // Wrap stage in envelope container - card hidden until envelope opens
     const cardContainer = h("div",{class:"cardContainer"},[stage]);
     
+    // Create top action bar
+    const topActions = h("div",{class:"actionBar"},[
+      h("div",{class:"row wrap"},[
+        h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[
+          "Punch one back"
+        ]),
+        h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
+          "Browse boxes"
+        ])
+      ])
+    ]);
+
     const innerEl = h("div",{class:"inner"},[
       h("div",{class:"h1", html: esc(pack.name || "EchoValentines")}),
       h("div",{class:"small", style:"margin-bottom:14px;", html:`You have a sealed envelope`}),
+      topActions,
       h("div",{class:"hr"}),
       h("div",{class:"envelopeWrapper", style:"position:relative;"},[
         envelopeEl,
@@ -812,11 +891,6 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           }
         }},[document.createTextNode("Open envelope")])
       ]),
-      h("div",{class:"hr", style:"margin-top:14px;"}),
-      h("div",{class:"row"},[
-        h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[document.createTextNode("Punch one back")]),
-        h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[document.createTextNode("Browse boxes")])
-      ])
     ]);
     
     // Insert player after envelope wrapper if tracks exist
