@@ -1,154 +1,124 @@
 {
   "cards": [
     {
-      "id": "shs-01",
-      "title": "Shs 01",
-      "src": "assets/cards/shs-01.svg"
+      "id": "sb01",
+      "title": "Bayou Beats",
+      "front_svg": "assets/cards/card_01.svg"
     },
     {
-      "id": "shs-02",
-      "title": "Shs 02",
-      "src": "assets/cards/shs-02.svg"
+      "id": "sb02",
+      "title": "Loyal Love",
+      "front_svg": "assets/cards/card_02.svg"
     },
     {
-      "id": "shs-03",
-      "title": "Shs 03",
-      "src": "assets/cards/shs-03.svg"
+      "id": "sb03",
+      "title": "Cypress Kiss",
+      "front_svg": "assets/cards/card_03.svg"
     },
     {
-      "id": "shs-04",
-      "title": "Shs 04",
-      "src": "assets/cards/shs-04.svg"
+      "id": "sb04",
+      "title": "Moss & Magic",
+      "front_svg": "assets/cards/card_04.svg"
     },
     {
-      "id": "shs-05",
-      "title": "Shs 05",
-      "src": "assets/cards/shs-05.svg"
+      "id": "sb05",
+      "title": "Firefly Flicker",
+      "front_svg": "assets/cards/card_05.svg"
     },
     {
-      "id": "shs-06",
-      "title": "Shs 06",
-      "src": "assets/cards/shs-06.svg"
+      "id": "sb06",
+      "title": "Gator Guard",
+      "front_svg": "assets/cards/card_06.svg"
     },
     {
-      "id": "shs-07",
-      "title": "Shs 07",
-      "src": "assets/cards/shs-07.svg"
+      "id": "sb07",
+      "title": "Vinyl Vows",
+      "front_svg": "assets/cards/card_07.svg"
     },
     {
-      "id": "shs-08",
-      "title": "Shs 08",
-      "src": "assets/cards/shs-08.svg"
+      "id": "sb08",
+      "title": "Neon Bayou Sign",
+      "front_svg": "assets/cards/card_08.svg"
     },
     {
-      "id": "shs-09",
-      "title": "Shs 09",
-      "src": "assets/cards/shs-09.svg"
+      "id": "sb09",
+      "title": "Gumbo Groove",
+      "front_svg": "assets/cards/card_09.svg"
     },
     {
-      "id": "shs-10",
-      "title": "Shs 10",
-      "src": "assets/cards/shs-10.svg"
+      "id": "sb10",
+      "title": "Moonlit Mudslide",
+      "front_svg": "assets/cards/card_10.svg"
     },
     {
-      "id": "shs-11",
-      "title": "Shs 11",
-      "src": "assets/cards/shs-11.svg"
+      "id": "sb11",
+      "title": "Swamp Serenade",
+      "front_svg": "assets/cards/card_11.svg"
     },
     {
-      "id": "shs-12",
-      "title": "Shs 12",
-      "src": "assets/cards/shs-12.svg"
+      "id": "sb12",
+      "title": "Boots on the Boardwalk",
+      "front_svg": "assets/cards/card_12.svg"
     },
     {
-      "id": "shs-13",
-      "title": "Shs 13",
-      "src": "assets/cards/shs-13.svg"
+      "id": "sb13",
+      "title": "River Letter",
+      "front_svg": "assets/cards/card_13.svg"
     },
     {
-      "id": "shs-14",
-      "title": "Shs 14",
-      "src": "assets/cards/shs-14.svg"
+      "id": "sb14",
+      "title": "Lantern Lullaby",
+      "front_svg": "assets/cards/card_14.svg"
     },
     {
-      "id": "shs-15",
-      "title": "Shs 15",
-      "src": "assets/cards/shs-15.svg"
+      "id": "sb15",
+      "title": "Catfish & Candy",
+      "front_svg": "assets/cards/card_15.svg"
     },
     {
-      "id": "shs-16",
-      "title": "Shs 16",
-      "src": "assets/cards/shs-16.svg"
+      "id": "sb16",
+      "title": "Tape Deck Devotion",
+      "front_svg": "assets/cards/card_16.svg"
     },
     {
-      "id": "shs-17",
-      "title": "Shs 17",
-      "src": "assets/cards/shs-17.svg"
+      "id": "sb17",
+      "title": "Wildflower Whiskey",
+      "front_svg": "assets/cards/card_17.svg"
     },
     {
-      "id": "shs-18",
-      "title": "Shs 18",
-      "src": "assets/cards/shs-18.svg"
+      "id": "sb18",
+      "title": "Mossy Halo",
+      "front_svg": "assets/cards/card_18.svg"
     },
     {
-      "id": "shs-19",
-      "title": "Shs 19",
-      "src": "assets/cards/shs-19.svg"
+      "id": "sb19",
+      "title": "Siren in the Cypress",
+      "front_svg": "assets/cards/card_19.svg"
     },
     {
-      "id": "shs-20",
-      "title": "Shs 20",
-      "src": "assets/cards/shs-20.svg"
+      "id": "sb20",
+      "title": "Drumline in the Fog",
+      "front_svg": "assets/cards/card_20.svg"
     },
     {
-      "id": "shs-21",
-      "title": "Shs 21",
-      "src": "assets/cards/shs-21.svg"
+      "id": "sb21",
+      "title": "Bayou Bouquet",
+      "front_svg": "assets/cards/card_21.svg"
     },
     {
-      "id": "shs-22",
-      "title": "Shs 22",
-      "src": "assets/cards/shs-22.svg"
+      "id": "sb22",
+      "title": "Lily Pad Promise",
+      "front_svg": "assets/cards/card_22.svg"
     },
     {
-      "id": "shs-23",
-      "title": "Shs 23",
-      "src": "assets/cards/shs-23.svg"
+      "id": "sb23",
+      "title": "Glowstick Gospel",
+      "front_svg": "assets/cards/card_23.svg"
     },
     {
-      "id": "shs-24",
-      "title": "Shs 24",
-      "src": "assets/cards/shs-24.svg"
-    },
-    {
-      "id": "shs_st_01",
-      "title": "Shs St 01",
-      "src": "assets/cards/shs-st-01.svg"
-    },
-    {
-      "id": "shs_st_02",
-      "title": "Shs St 02",
-      "src": "assets/cards/shs-st-02.svg"
-    },
-    {
-      "id": "shs_st_03",
-      "title": "Shs St 03",
-      "src": "assets/cards/shs-st-03.svg"
-    },
-    {
-      "id": "shs_st_04",
-      "title": "Shs St 04",
-      "src": "assets/cards/shs-st-04.svg"
-    },
-    {
-      "id": "shs_st_05",
-      "title": "Shs St 05",
-      "src": "assets/cards/shs-st-05.svg"
-    },
-    {
-      "id": "shs_st_06",
-      "title": "Shs St 06",
-      "src": "assets/cards/shs-st-06.svg"
+      "id": "sb24",
+      "title": "Sweetheart Bayou",
+      "front_svg": "assets/cards/card_24.svg"
     }
   ]
 }

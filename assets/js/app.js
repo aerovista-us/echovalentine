@@ -47,6 +47,103 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     return data;
   }
 
+  // Shared Card Stage Renderer - used by both Compose and Open
+  function clamp01(n){ return Math.max(0, Math.min(1, n)); }
+
+  function normalizeSticker(st, meta){
+    // Supports multiple formats:
+    // - percent: xp/yp in [0..1]
+    // - percent100: xp/yp in [0..100]
+    // - px: x/y with meta.cw/ch available
+    if(!st) return null;
+
+    // Percent format
+    if(typeof st.xp === "number" && typeof st.yp === "number"){
+      const xp = st.xp > 1 ? st.xp/100 : st.xp;
+      const yp = st.yp > 1 ? st.yp/100 : st.yp;
+      return {
+        ...st,
+        xp: clamp01(xp),
+        yp: clamp01(yp),
+        sp: typeof st.sp === "number" ? st.sp : 1,
+        rot: typeof st.rot === "number" ? st.rot : 0
+      };
+    }
+
+    // Pixel format + compose stage width/height in payload
+    if(typeof st.x === "number" && typeof st.y === "number" && meta && meta.cw && meta.ch){
+      return {
+        ...st,
+        xp: clamp01(st.x / meta.cw),
+        yp: clamp01(st.y / meta.ch),
+        sp: typeof st.s === "number" ? st.s : (typeof st.sp === "number" ? st.sp : 1),
+        rot: typeof st.rot === "number" ? st.rot : 0
+      };
+    }
+
+    // Fallback guess: treat x/y as 0..1 if it looks like it
+    if(typeof st.x === "number" && typeof st.y === "number" && st.x <= 1.2 && st.y <= 1.2){
+      return {...st, xp: clamp01(st.x), yp: clamp01(st.y), sp: st.sp ?? 1, rot: st.rot ?? 0};
+    }
+
+    return null;
+  }
+
+  function renderCardStage({ cardSrc, stickers = [], meta = {}, stageId = "", packDir = "", interactive = false }){
+    const img = h("img", { src: cardSrc, alt: "Card preview" });
+
+    const stage = h("div", { class: interactive ? "cardStage composeStage" : "cardStage", id: stageId }, [
+      img,
+      h("div", { class: "stickerLayer" }, [])
+    ]);
+
+    const layer = stage.querySelector(".stickerLayer");
+
+    // Set stage aspect ratio from real image dimensions
+    img.addEventListener("load", () => {
+      const w = img.naturalWidth, ht = img.naturalHeight;
+      if(w && ht) stage.style.aspectRatio = `${w} / ${ht}`;
+    });
+
+    // Render stickers
+    stickers
+      .map(st => normalizeSticker(st, meta))
+      .filter(Boolean)
+      .forEach(st => {
+        // Determine sticker path
+        const stickerPath = st.packId 
+          ? `packs/sticker_packs/${st.packId}/${st.src || st.url || st.path}`
+          : `packs/${packDir}/${st.src || st.url || st.path}`;
+
+        const el = h("img", {
+          class: "stickerEl",
+          src: stickerPath,
+          alt: "Sticker",
+          draggable: "false"
+        });
+
+        // xp/yp are normalized; sp is scale; rot degrees
+        el.style.left = `${st.xp * 100}%`;
+        el.style.top  = `${st.yp * 100}%`;
+
+        // IMPORTANT: translate(-50%,-50%) keeps scaling centered.
+        el.style.transform =
+          `translate(-50%,-50%) rotate(${st.rot || 0}deg) scale(${st.sp || 1})`;
+
+        // Use percent-based base size for better cross-device consistency
+        el.style.width = `clamp(34px, ${(st.wv || 9)}vw, 110px)`;
+
+        if(interactive){
+          el.style.cursor = "move";
+          el.style.filter = "drop-shadow(0 10px 22px rgba(0,0,0,.5))";
+        }
+
+        layer.appendChild(el);
+      });
+
+    return stage;
+  }
+
   async function render(appEl){
     const mySeq = ++S.renderSeq;
 
@@ -291,21 +388,22 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       selectedStickerPack: null // Currently selected sticker pack ID
     };
 
-    const img = h("img",{
-      src: `packs/${packDir}/${getCardImage(card)}`,
-      alt: "Card preview"
+    // Use shared card stage renderer for base structure
+    const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
+    const stage = renderCardStage({
+      cardSrc,
+      stickers: [],
+      meta: {},
+      stageId: "composeStage",
+      packDir,
+      interactive: true
     });
-
-    const stage = h("div",{class:"previewStage composeStage"},[ img ]);
-
-    // Auto-fit stage ratio to the actual card image (portrait or landscape)
-    img.addEventListener("load", ()=>{
-      const w = img.naturalWidth;
-      const hgt = img.naturalHeight;
-      if(w && hgt){
-        stage.style.aspectRatio = `${w} / ${hgt}`;
-      }
-    });
+    
+    // Get the sticker layer for interactive editing
+    const stickerLayer = stage.querySelector(".stickerLayer");
+    
+    // Make sure sticker layer is interactive in compose mode
+    if(stickerLayer) stickerLayer.style.pointerEvents = "auto";
 
     function createStickerElement(stickerData){
       // Determine sticker path based on whether it's from a sticker pack or pack stickers
@@ -317,11 +415,19 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("img",{src:stickerPath, alt:"Sticker", style:"width:100%; height:100%; object-fit:contain"}),
         h("div",{class:"stickerResizer"})
       ]);
+      
+      const rect = stage.getBoundingClientRect();
+      // Convert percent to pixels for interactive editing
+      const xPx = (stickerData.xp || 0) * rect.width;
+      const yPx = (stickerData.yp || 0) * rect.height;
+      const sizePx = (stickerData.wv || 9) * (rect.width / 100); // Convert vw to px
+      
       el.style.position = "absolute";
-      el.style.left = (stickerData.x || 10) + "px";
-      el.style.top = (stickerData.y || 10) + "px";
-      el.style.width = (stickerData.w || 84) + "px";
-      el.style.height = (stickerData.h || 84) + "px";
+      el.style.left = xPx + "px";
+      el.style.top = yPx + "px";
+      el.style.width = sizePx + "px";
+      el.style.height = sizePx + "px";
+      el.style.transform = `translate(-50%,-50%) rotate(${stickerData.rot || 0}deg) scale(${stickerData.sp || 1})`;
       el.style.cursor = "move";
       el.style.zIndex = "10";
       el.style.filter = "drop-shadow(0 10px 22px rgba(0,0,0,.5))";
@@ -344,29 +450,38 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     function sync(){
       window.EV_STORE.setPrefs({ to: state.to, from: state.from });
-      // Update sticker positions
+      // Update sticker positions as percentages
+      const rect = stage.getBoundingClientRect();
       state.stickers.forEach(s => {
         if(s.el){
-          s.x = parseFloat(s.el.style.left || "0");
-          s.y = parseFloat(s.el.style.top || "0");
-          s.w = parseFloat(s.el.style.width || "84");
-          s.h = parseFloat(s.el.style.height || "84");
+          const elRect = s.el.getBoundingClientRect();
+          const stageRect = stage.getBoundingClientRect();
+          // Calculate center position as percentage
+          s.xp = clamp01((elRect.left + elRect.width/2 - stageRect.left) / stageRect.width);
+          s.yp = clamp01((elRect.top + elRect.height/2 - stageRect.top) / stageRect.height);
+          // Store scale and size
+          s.sp = s.sp || 1;
+          s.rot = s.rot || 0;
+          // Store size as viewport width percentage for responsive scaling
+          s.wv = (elRect.width / stageRect.width) * 100;
         }
       });
     }
 
     function addSticker(stickerSrc, stickerPackId = null){
+      const rect = stage.getBoundingClientRect();
       const stickerData = {
         src: stickerSrc,
         packId: stickerPackId, // null for pack stickers, pack ID for sticker pack stickers
-        x: Math.random() * 200 + 50,
-        y: Math.random() * 200 + 50,
-        w: 84,
-        h: 84
+        xp: Math.random() * 0.6 + 0.2, // 20-80% of stage width
+        yp: Math.random() * 0.6 + 0.2, // 20-80% of stage height
+        sp: 1,
+        rot: 0,
+        wv: 9 // 9vw base size
       };
       state.stickers.push(stickerData);
       const el = createStickerElement(stickerData);
-      stage.appendChild(el);
+      if(stickerLayer) stickerLayer.appendChild(el);
       sync();
     }
 
@@ -413,6 +528,20 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     }
 
     async function punchAndCopy(){
+      // Get stage dimensions for backward compatibility
+      const rect = stage.getBoundingClientRect();
+      
+      // Convert stickers to percent format
+      const stickerPayload = state.stickers.length > 0 ? JSON.stringify(state.stickers.map(s => ({
+        src: s.src,
+        packId: s.packId || null,
+        xp: s.xp || 0,
+        yp: s.yp || 0,
+        sp: s.sp || 1,
+        rot: s.rot || 0,
+        wv: s.wv || 9
+      }))) : "";
+
       const payload = {
         v: 1,
         pack: packId,
@@ -420,8 +549,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         to: (state.to||"").slice(0, 42),
         from: (state.from||"").slice(0, 42),
         msg: (state.msg||"").slice(0, 160),
-        sticker: state.stickers.length > 0 ? JSON.stringify(state.stickers.map(s => ({src: s.src, packId: s.packId || null, x: s.x, y: s.y, w: s.w, h: s.h}))) : "",
+        sticker: stickerPayload,
         track: state.track || "",
+        cw: Math.round(rect.width), // Store for backward compat
+        ch: Math.round(rect.height), // Store for backward compat
         ts: Date.now()
       };
       const token = window.EV_SHARE.encode(payload);
@@ -603,10 +734,14 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         })(),
         trackPicker ? h("div",{style:"height:10px"}) : null,
         trackPicker,
+        trackPreviewEl,
         h("div",{class:"hr"}),
         stickerPicker
       ])
     ]);
+    
+    // Initialize track preview if track is already selected
+    if(state.track) updateTrackPreview();
 
     const right = h("section",{class:"card"},[
       h("div",{class:"inner"},[
@@ -623,9 +758,21 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     window.EV_DRAGDROP.enableDropZone(stage, (item, e) => {
       if(item.type === "sticker" && item.src){
         const rect = stage.getBoundingClientRect();
-        const x = e.clientX - rect.left - 42;
-        const y = e.clientY - rect.top - 42;
-        addSticker(item.src, item.packId || null);
+        const xp = (e.clientX - rect.left) / rect.width;
+        const yp = (e.clientY - rect.top) / rect.height;
+        const stickerData = {
+          src: item.src,
+          packId: item.packId || null,
+          xp: clamp01(xp),
+          yp: clamp01(yp),
+          sp: 1,
+          rot: 0,
+          wv: 9
+        };
+        state.stickers.push(stickerData);
+        const el = createStickerElement(stickerData);
+        if(stickerLayer) stickerLayer.appendChild(el);
+        sync();
       }
     });
 
@@ -755,30 +902,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       }
     }
 
-    // Message display element (shown on card when open)
-    const messageEl = payload.msg ? h("div",{class:"cardMessage", style:"position:absolute; bottom:80px; left:20px; right:20px; color:var(--text); font-size:14px; opacity:0.95; background:rgba(0,0,0,.5); padding:14px; border-radius:10px; backdrop-filter:blur(6px); max-width:calc(100% - 40px);"},[
-      h("div",{style:"line-height:1.6; word-wrap:break-word;", html: esc(payload.msg)})
-    ]) : null;
+    // Use shared card stage renderer
+    const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
     
-    // To/From for when card is open (visible after envelope opens)
-    const openToFrom = h("div",{class:"cardToFrom", style:"position:absolute; bottom:20px; left:20px; right:20px; color:var(--text); font-size:12px; opacity:0.95; display:none; justify-content:space-between; align-items:flex-end; z-index:10;"},[
-      h("div",{html:`To: <b>${esc(payload.to || "")}</b>`}),
-      h("div",{html:`From: <b>${esc(payload.from || "")}</b>`})
-    ]);
-
-    const stage = h("div",{class:"previewStage cardReveal"},[
-      h("img",{src:`packs/${packDir}/${getCardImage(card)}`, alt:"Card", class:"cardImage"}),
-      // To/From overlays on the card - visible when closed, animated
-      h("div",{class:"cardToFrom cardToFrom-closed", style:"position:absolute; bottom:20px; left:20px; right:20px; color:var(--text); font-size:12px; opacity:0.95; display:flex; justify-content:space-between; align-items:flex-end; animation:fadeInUp 0.6s ease-out; z-index:10;"},[
-        h("div",{html:`To: <b>${esc(payload.to || "")}</b>`}),
-        h("div",{html:`From: <b>${esc(payload.from || "")}</b>`})
-      ]),
-      // To/From for when open
-      openToFrom,
-      // Message on card (only when open)
-      messageEl
-    ]);
-
     // Handle stickers - support both old format (single string) and new format (JSON array)
     let stickers = [];
     if(payload.sticker){
@@ -795,24 +921,36 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
       }
     }
-    
-    // Add stickers with preserved positions
-    stickers.forEach(s => {
-      // Determine sticker path based on whether it's from a sticker pack or pack stickers
-      const stickerPath = s.packId 
-        ? `packs/sticker_packs/${s.packId}/${s.src}`
-        : `packs/${packDir}/${s.src}`;
-      
-      const st = h("img",{class:"stickerOverlay", src:stickerPath, alt:"Sticker"});
-      st.style.position = "absolute";
-      // Use the exact saved coordinates
-      st.style.left = (s.x || 10) + "px";
-      st.style.top = (s.y || 10) + "px";
-      st.style.width = (s.w || 84) + "px";
-      st.style.height = (s.h || 84) + "px";
-      st.style.objectFit = "contain";
-      stage.appendChild(st);
+
+    // Meta for backward compatibility with pixel-based stickers
+    const meta = {
+      cw: Number(payload.cw || 0),
+      ch: Number(payload.ch || 0)
+    };
+
+    const stage = renderCardStage({
+      cardSrc,
+      stickers,
+      meta,
+      stageId: "openStage",
+      packDir,
+      interactive: false
     });
+
+    // Text panel (single source of truth - not stamped on card)
+    const panel = h("div",{class:"openTextPanel"},[
+      h("div",{class:"line"},[
+        h("span",{class:"label"},["To:"]),
+        h("span",{},[ payload.to || "—" ])
+      ]),
+      h("div",{class:"line"},[
+        h("span",{class:"label"},["From:"]),
+        h("span",{},[ payload.from || "—" ])
+      ]),
+      payload.msg ? h("div",{class:"msg"},[
+        document.createTextNode(payload.msg)
+      ]) : null
+    ]);
 
     const replyPack = packId;
     const replyCard = cardId;
@@ -847,6 +985,21 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]) : null;
 
     // Wrap stage in envelope container - card hidden until envelope opens
+    // Text panel (single source of truth - not stamped on card)
+    const panel = h("div",{class:"openTextPanel"},[
+      h("div",{class:"line"},[
+        h("span",{class:"label"},["To:"]),
+        h("span",{},[ payload.to || "—" ])
+      ]),
+      h("div",{class:"line"},[
+        h("span",{class:"label"},["From:"]),
+        h("span",{},[ payload.from || "—" ])
+      ]),
+      payload.msg ? h("div",{class:"msg"},[
+        document.createTextNode(payload.msg)
+      ]) : null
+    ]);
+
     const cardContainer = h("div",{class:"cardContainer"},[stage]);
     
     // Create top action bar
@@ -862,7 +1015,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]);
 
     const innerEl = h("div",{class:"inner"},[
-      h("div",{class:"h1", html: esc(pack.name || "EchoValentines")}),
+      h("div",{class:"h1 openTitle", html: esc(pack.name || "EchoValentines")}),
       h("div",{class:"small", style:"margin-bottom:14px;", html:`You have a sealed envelope`}),
       topActions,
       h("div",{class:"hr"}),
@@ -870,6 +1023,8 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         envelopeEl,
         cardContainer
       ]),
+      // Text panel - always visible, not on card
+      panel,
       // Player UI - always visible when tracks exist
       playerEl,
       h("div",{class:"row", style:"margin-top:14px;"},[
@@ -877,14 +1032,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           if(!envelopeOpen){
             window.EV_ENVELOPE.open(envelopeEl, cardContainer);
             envelopeOpen = true;
-            // Hide closed To/From, show open To/From
-            const closedToFrom = cardContainer.querySelector(".cardToFrom-closed");
-            if(closedToFrom) closedToFrom.style.display = "none";
-            const openToFromEl = cardContainer.querySelector(".cardToFrom:not(.cardToFrom-closed)");
-            if(openToFromEl) openToFromEl.style.display = "flex";
-            // Show message if it exists
-            const msgEl = cardContainer.querySelector(".cardMessage");
-            if(msgEl) msgEl.style.display = "block";
+            // Text panel is always visible, no need to show/hide elements on card
             // Hide the button after opening
             const btn = document.getElementById("openEnvelopeBtn");
             if(btn) btn.style.display = "none";

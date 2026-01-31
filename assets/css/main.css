@@ -490,6 +490,7 @@ textarea.input{min-height: 110px; resize: vertical;}
   padding: 2px 8px; border-radius: 8px; font-size: 12px; color: #333333;
 }
 
+/* Legacy previewStage - kept for backward compat */
 .previewStage{
   position:relative;
   border:1px solid var(--line);
@@ -498,38 +499,91 @@ textarea.input{min-height: 110px; resize: vertical;}
   background: rgba(0,0,0,.22);
 }
 .previewStage img{display:block; width:100%; height:auto}
-.cardToFrom{
-  pointer-events: none;
-  z-index: 5;
-  text-shadow: 0 2px 4px rgba(0,0,0,.5);
-  display: none;
-}
-.cardContainer.revealed .cardToFrom:not(.cardToFrom-closed){
-  display: flex;
-}
-.stickerOverlay{
-  position:absolute; right:10px; bottom:10px;
-  width: 84px; height: 84px;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,.5));
+
+/* Received text panel = larger, readable */
+.openTextPanel{
+  width: min(96vw, 860px);
+  margin: 14px auto 0;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  padding: 18px 20px;
 }
 
-/* Compose stage */
-.composeStage{
+.openTextPanel .line{
+  font-size: clamp(16px, 2.3vw, 20px);
+  line-height: 1.45;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.openTextPanel .label{
+  opacity: .7;
+  font-size: clamp(12px, 1.8vw, 14px);
+  margin-right: 8px;
+  color: var(--muted);
+}
+
+.openTextPanel .msg{
+  margin-top: 14px;
+  font-size: clamp(17px, 2.6vw, 22px);
+  line-height: 1.5;
+  color: var(--text);
+  word-wrap: break-word;
+}
+
+.openTitle{
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+/* Shared stage (Compose + Open) */
+.cardStage{
   position: relative;
+  width: min(96vw, 860px);
+  max-width: 860px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.14);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+.cardStage > img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Sticker overlay layer */
+.stickerLayer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* received page shouldn't drag */
+}
+
+.cardStage.composeStage .stickerLayer{
+  pointer-events: auto; /* compose page should allow dragging */
+}
+
+.stickerEl{
+  position: absolute;
+  transform-origin: center;
+  image-rendering: auto;
+  user-select: none;
+}
+
+/* Compose stage specific */
+.composeStage{
   aspect-ratio: 900 / 600; /* default fallback */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   /* Critical: don't force portrait-ish sizing */
   min-height: 0;
   /* Optional: keep it from getting ridiculously tall */
   max-height: 75vh;
-}
-.composeStage img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 .composeStage.drop-active{
   border-color: var(--accent);

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+
+  <defs>
+    <linearGradient id="gMain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07110e"/>
+      <stop offset="1" stop-color="#0b1f18"/>
+    </linearGradient>
+
+    <radialGradient id="gGlow" cx="50%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#00e7ff" stop-opacity="0.22"/>
+      <stop offset="0.55" stop-color="#ff4fd8" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#07110e" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="gNeon" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset="1" stop-color="#2cff9a"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+
+    <filter id="swampNoise" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="1592" result="n"/>
+      <feColorMatrix in="n" type="matrix"
+        values="0.2 0 0 0 0
+                0 0.35 0 0 0
+                0 0 0.3 0 0
+                0 0 0 0.35 0" result="t"/>
+      <feComposite in="t" in2="SourceGraphic" operator="overlay"/>
+    </filter>
+
+    <filter id="goo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feColorMatrix in="b" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -7" result="g"/>
+      <feComposite in="g" in2="SourceGraphic" operator="atop"/>
+    </filter>
+
+    <style>
+      .frame { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.14); stroke-width: 2; }
+      .tiny { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size: 16px; fill: rgba(255,255,255,0.72); letter-spacing: 0.2px; }
+      .micro { font-family: ui-sans-serif, system-ui; font-size: 13px; fill: rgba(255,255,255,0.58); }
+      .neon { fill: none; stroke: url(#gNeon); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; filter: url(#goo); opacity: 0.92; }
+      .neon2 { fill: none; stroke: rgba(0,231,255,0.8); stroke-width: 2.6; stroke-linecap: round; opacity: 0.7; }
+      .mist { fill: rgba(167,255,216,0.08); }
+      .fire { fill: #ffcf4d; opacity: 0.85; }
+    </style>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#gMain)"/>
+  <rect width="800" height="520" fill="url(#gGlow)"/>
+
+  <circle cx="375" cy="153" r="134" fill="#ff4fd8" opacity="0.10"/>
+  <circle cx="218" cy="384" r="149" fill="#00e7ff" opacity="0.10"/>
+
+  <circle cx="470" cy="95" r="61" fill="#d8e7ff" opacity="0.16"/>
+  <circle cx="485.2" cy="82.8" r="21.3" fill="#d8e7ff" opacity="0.07"/>
+
+  <path class="mist" d="M0 206 C200 176 420 236 800 196 L800 246 C420 276 200 226 0 256 Z"/>
+  <path class="mist" d="M0 306 C220 276 440 336 800 296 L800 351 C440 386 220 326 0 361 Z"/>
+
+  <path d="M546 467 C498.0 433.5, 518.0 366.5, 546 333 C574.0 366.5, 594.0 433.5, 546 467 Z" fill="rgba(0,0,0,0.35)"/><path d="M467 377 C419.6 346.5, 439.35 285.5, 467 255 C494.65 285.5, 514.4 346.5, 467 377 Z" fill="rgba(0,0,0,0.35)"/>
+
+  <path class="neon" d="M 164.0 266.0 L 203.2 266.0 L 242.5 266.0 L 281.8 266.0 L 321.0 266.0 L 360.2 266.0 L 399.5 266.0 L 438.8 266.0 L 478.0 266.0 L 517.2 266.0 L 556.5 266.0 L 595.8 266.0 L 635.0 266.0 "/>
+  <path class="neon" d="M 455 297.60249962664466 C 390.1925011200661 247.1966671644738, 418.9958339555923 189.59000149342148, 455 225.59416753782918 C 491.0041660444077 189.59000149342148, 519.8074988799339 247.1966671644738, 455 297.60249962664466 Z"/>
+  
+  <path class="neon2" d="M70 90 L70 60 L100 60"/>
+  <path class="neon2" d="M730 90 L730 60 L700 60"/>
+  <path class="neon2" d="M70 430 L70 460 L100 460"/>
+  <path class="neon2" d="M730 430 L730 460 L700 460"/>
+
+
+  <circle class="fire" cx="478" cy="174" r="1.8"/><circle class="fire" cx="89" cy="175" r="2.1"/><circle class="fire" cx="529" cy="95" r="2.3"/><circle class="fire" cx="506" cy="130" r="2.7"/><circle class="fire" cx="591" cy="126" r="1.6"/><circle class="fire" cx="431" cy="223" r="2.0"/><circle class="fire" cx="177" cy="409" r="1.8"/><circle class="fire" cx="584" cy="375" r="1.6"/><circle class="fire" cx="506" cy="143" r="2.2"/><circle class="fire" cx="215" cy="288" r="2.1"/><circle class="fire" cx="382" cy="373" r="1.7"/><circle class="fire" cx="727" cy="102" r="2.9"/><circle class="fire" cx="512" cy="404" r="1.7"/><circle class="fire" cx="602" cy="370" r="2.9"/><circle class="fire" cx="698" cy="293" r="2.5"/><circle class="fire" cx="688" cy="92" r="1.6"/>
+
+  <rect x="32" y="26" width="736" height="468" rx="26" class="frame" filter="url(#shadow)"/>
+
+  <text x="56" y="66" class="micro">SwampHop • Sweetheart Bayou</text>
+  <text x="56" y="484" class="tiny">Tape Deck Devotion</text>
+  <text x="56" y="506" class="micro">Rewind to my favorite part.</text>
+
+  <g filter="url(#swampNoise)"><rect width="800" height="520" fill="transparent"/></g>
+</svg>
