@@ -892,11 +892,6 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         }},[document.createTextNode("Open envelope")])
       ]),
     ]);
-    
-    // Insert player after envelope wrapper if tracks exist
-    if(playerEl){
-      innerEl.insertBefore(playerEl, innerEl.querySelector(".row"));
-    }
 
     const cardEl = h("div",{class:"card"},[innerEl]);
 

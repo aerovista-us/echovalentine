@@ -679,17 +679,20 @@ textarea.input{min-height: 110px; resize: vertical;}
   z-index: 9000;
 }
 
-/* Envelope */
+/* Envelope (taller + responsive) */
 .envelope{
   position:relative;
   width: 100%;
-  min-height: 320px;
+  /* taller, scales with viewport but stays sane */
+  --env-h: clamp(380px, 58vw, 520px);
+  --flap-h: clamp(175px, 26vw, 240px);
+  min-height: var(--env-h);
   margin: 14px 0;
 }
 .envelope-shell{
   position: relative;
   width: 100%;
-  height: 320px;
+  height: var(--env-h);
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -703,7 +706,8 @@ textarea.input{min-height: 110px; resize: vertical;}
   border: 1px solid rgba(255,255,255,.12);
 }
 .envelope-paper{
-  position:absolute; left:16px; right:16px; bottom:16px; top:72px;
+  position:absolute; left:16px; right:16px; bottom:16px;
+  top: calc(16px + (var(--flap-h) * 0.42));
   border-radius: 12px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.10);
@@ -717,7 +721,8 @@ textarea.input{min-height: 110px; resize: vertical;}
   align-items: flex-start;
 }
 .envelope-flap{
-  position:absolute; left:10px; right:10px; top:10px; height: 160px;
+  position:absolute; left:10px; right:10px; top:10px;
+  height: var(--flap-h);
   transform-origin: 50% 0%;
   transform: rotateX(0deg);
   transition: transform 420ms cubic-bezier(.2,.9,.2,1);
@@ -731,7 +736,8 @@ textarea.input{min-height: 110px; resize: vertical;}
   border: 1px solid rgba(255,255,255,.12);
 }
 .envelope-front{
-  position:absolute; left:10px; right:10px; bottom:10px; top:112px;
+  position:absolute; left:10px; right:10px; bottom:10px;
+  top: calc(10px + (var(--flap-h) * 0.65));
   clip-path: polygon(0% 0%, 50% 65%, 100% 0%, 100% 100%, 0% 100%);
   border-radius: 12px;
   background: rgba(0,0,0,.16);
@@ -810,7 +816,8 @@ textarea.input{min-height: 110px; resize: vertical;}
 /* Card container - hidden behind envelope until opened */
 .envelopeWrapper{
   position: relative;
-  min-height: 400px;
+  min-height: clamp(420px, 62vw, 560px);
+  max-height: 78vh;
   aspect-ratio: 900 / 600;
   display: flex;
   align-items: center;
