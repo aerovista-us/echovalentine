@@ -985,21 +985,6 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]) : null;
 
     // Wrap stage in envelope container - card hidden until envelope opens
-    // Text panel (single source of truth - not stamped on card)
-    const panel = h("div",{class:"openTextPanel"},[
-      h("div",{class:"line"},[
-        h("span",{class:"label"},["To:"]),
-        h("span",{},[ payload.to || "—" ])
-      ]),
-      h("div",{class:"line"},[
-        h("span",{class:"label"},["From:"]),
-        h("span",{},[ payload.from || "—" ])
-      ]),
-      payload.msg ? h("div",{class:"msg"},[
-        document.createTextNode(payload.msg)
-      ]) : null
-    ]);
-
     const cardContainer = h("div",{class:"cardContainer"},[stage]);
     
     // Create top action bar
