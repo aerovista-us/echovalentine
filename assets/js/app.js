@@ -130,8 +130,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         el.style.transform =
           `translate(-50%,-50%) rotate(${st.rot || 0}deg) scale(${st.sp || 1})`;
 
-        // Use percent-based base size for better cross-device consistency
-        el.style.width = `clamp(34px, ${(st.wv || 9)}vw, 110px)`;
+        // wv is stored as % of stage width (not viewport width)
+        const wPct = (typeof st.wv === "number" ? st.wv : 9);
+        el.style.width = `clamp(34px, ${wPct}%, 180px)`;
 
         if(interactive){
           el.style.cursor = "move";
@@ -420,7 +421,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       // Convert percent to pixels for interactive editing
       const xPx = (stickerData.xp || 0) * rect.width;
       const yPx = (stickerData.yp || 0) * rect.height;
-      const sizePx = (stickerData.wv || 9) * (rect.width / 100); // Convert vw to px
+      const sizePx = (stickerData.wv || 9) * (rect.width / 100); // wv is % of stage width
       
       el.style.position = "absolute";
       el.style.left = xPx + "px";
@@ -462,7 +463,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           // Store scale and size
           s.sp = s.sp || 1;
           s.rot = s.rot || 0;
-          // Store size as viewport width percentage for responsive scaling
+          // Store size as percentage of stage width (not viewport width)
           s.wv = (elRect.width / stageRect.width) * 100;
         }
       });
@@ -477,7 +478,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         yp: Math.random() * 0.6 + 0.2, // 20-80% of stage height
         sp: 1,
         rot: 0,
-        wv: 9 // 9vw base size
+        wv: 9 // 9% of stage width base size
       };
       state.stickers.push(stickerData);
       const el = createStickerElement(stickerData);
@@ -688,11 +689,108 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     const tracks = (data.tracks?.tracks || []);
     const trackPicker = tracks.length > 0 ? h("div",{class:"pickerSection"},[
       h("div",{class:"small", html:"Track (optional)"}),
-      h("select",{class:"input", onchange:(e)=>{state.track=e.target.value;sync();}},[
+      h("select",{class:"input", id:"trackPickerSelect", onchange:(e)=>{state.track=e.target.value;sync();}},[
         h("option",{value:"", html:"No track"}),
         ...tracks.map(t => h("option",{value:t.id || t.title || "", html:t.title || t.name || "Untitled"}))
       ])
     ]) : null;
+
+    // --- Track preview (compose) ---
+    let previewAudio = null;
+    let previewBtn = null;
+    let previewTitle = null;
+    let previewTime = null;
+
+    function fmtTime(sec){
+      if(!isFinite(sec) || sec < 0) return "0:00";
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${String(s).padStart(2,"0")}`;
+    }
+
+    function stopPreview(){
+      if(previewAudio){
+        previewAudio.pause();
+        previewAudio.currentTime = 0;
+      }
+      if(previewBtn) previewBtn.textContent = "Preview ▶";
+    }
+
+    function updateTrackPreview(){
+      const trackPickerSelect = document.getElementById("trackPickerSelect");
+      if(!trackPickerSelect) return;
+      const trackId = trackPickerSelect.value || "";
+      if(!trackId){
+        stopPreview();
+        if(previewTitle) previewTitle.textContent = "No track selected";
+        if(previewTime) previewTime.textContent = "";
+        return;
+      }
+
+      const t = (tracks || []).find(x => (x.id || x.title || "") === trackId) || null;
+      if(!t){
+        stopPreview();
+        if(previewTitle) previewTitle.textContent = "Track not found";
+        if(previewTime) previewTime.textContent = "";
+        return;
+      }
+
+      const src = t.src || t.url || t.file || "";
+      if(!src){
+        stopPreview();
+        if(previewTitle) previewTitle.textContent = t.title || t.name || trackId;
+        if(previewTime) previewTime.textContent = "No audio file";
+        return;
+      }
+
+      const fullSrc = src.startsWith("http") ? src : `packs/${packDir}/${src}`;
+
+      if(!previewAudio) previewAudio = new Audio();
+      if(previewAudio.src !== fullSrc){
+        previewAudio.src = fullSrc;
+        previewAudio.preload = "metadata";
+      }
+
+      if(previewTitle) previewTitle.textContent = t.title || t.name || trackId;
+      const tick = () => {
+        if(previewTime){
+          previewTime.textContent = `${fmtTime(previewAudio.currentTime)} / ${fmtTime(previewAudio.duration)}`;
+        }
+      };
+      previewAudio.ontimeupdate = tick;
+      previewAudio.onloadedmetadata = tick;
+      previewAudio.onended = () => { if(previewBtn) previewBtn.textContent = "Preview ▶"; };
+    }
+
+    const trackPreviewEl = trackPicker ? (function(){
+      previewBtn = h("button",{class:"btn", type:"button", onclick: async ()=>{
+        if(!previewAudio) updateTrackPreview();
+        if(!previewAudio || !previewAudio.src) return;
+        if(previewAudio.paused){
+          try{
+            await previewAudio.play();
+            previewBtn.textContent = "Preview ❚❚";
+          } catch(e){
+            toast("Tap again to allow audio", "bad");
+          }
+        } else {
+          previewAudio.pause();
+          previewBtn.textContent = "Preview ▶";
+        }
+      }},["Preview ▶"]);
+
+      previewTitle = h("div",{class:"small", style:"font-weight:700; margin-top:8px;"},[""]);
+      previewTime  = h("div",{class:"small", style:"opacity:.8"},[""]);
+
+      // Pause preview if user navigates away
+      window.addEventListener("hashchange", stopPreview, { once:true });
+
+      return h("div",{class:"player", style:"margin-top:10px;"},[
+        h("div",{class:"row"},[previewBtn]),
+        previewTitle,
+        previewTime
+      ]);
+    })() : null;
 
     // Build the top action bar
     const actionBar = h("div",{class:"actionBar"},[
@@ -740,8 +838,21 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       ])
     ]);
     
+    // Wire up track picker change handler
+    const trackPickerSelect = document.getElementById("trackPickerSelect");
+    if(trackPickerSelect){
+      trackPickerSelect.onchange = (e)=>{
+        state.track = e.target.value;
+        sync();
+        updateTrackPreview();
+      };
+    }
+    
     // Initialize track preview if track is already selected
-    if(state.track) updateTrackPreview();
+    if(state.track && trackPickerSelect){
+      trackPickerSelect.value = state.track;
+      updateTrackPreview();
+    }
 
     const right = h("section",{class:"card"},[
       h("div",{class:"inner"},[

@@ -14,8 +14,10 @@
     splashEl.className = "splash-screen";
     splashEl.innerHTML = `
       <div class="splash-content">
-        <div class="splash-svg-container">
-          <img src="assets/img/splash.svg" alt="Loading..." class="splash-svg" onload="window.EV_SPLASH.onSvgLoad()" onerror="window.EV_SPLASH.onSvgError()">
+        <div class="splash-video-container">
+          <video src="assets/img/echovalentine_splash.mp4" autoplay muted loop playsinline class="splash-video" onloadeddata="window.EV_SPLASH.onSvgLoad()" onerror="window.EV_SPLASH.onSvgError()">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     `;
@@ -85,9 +87,9 @@
     contentReady = false;
     svgLoadTime = null;
     
-    // Force re-check SVG load status (in case it's cached)
-    const img = splash.querySelector(".splash-svg");
-    if(img && img.complete && img.naturalWidth > 0){
+    // Force re-check video load status (in case it's cached)
+    const video = splash.querySelector(".splash-video");
+    if(video && video.readyState >= 2){
       onSvgLoad();
     }
   }
@@ -103,7 +105,7 @@
   }
 
   function onSvgError(){
-    console.warn("Splash SVG failed to load");
+    console.warn("Splash video failed to load");
     // Still mark as loaded to prevent infinite waiting
     svgLoaded = true;
     svgLoadTime = Date.now();
