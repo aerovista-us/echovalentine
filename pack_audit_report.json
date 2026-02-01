@@ -2,26 +2,25 @@
   "summary": {
     "total_packs": 16,
     "packs_with_errors": 0,
-    "packs_with_warnings": 3,
+    "packs_with_warnings": 0,
     "packs_with_dummy_data": 2,
-    "packs_v2_compliant": 0,
+    "packs_v2_compliant": 16,
     "total_dummy_items": 12,
-    "total_file_issues": 6
+    "total_file_issues": 0,
+    "total_format_issues": 0
   },
   "reports": [
     {
       "pack_id": "sample_love",
       "errors": [],
-      "warnings": [
-        "No cover.svg or cover.webp found",
-        "Does not match v2 folder structure"
-      ],
+      "warnings": [],
       "info": [],
       "structure": {
         "has_assets_dir": true,
         "has_cards_dir": true,
         "has_stickers_dir": true,
-        "has_covers_dir": false,
+        "has_covers_dir": true,
+        "has_cover_svg": true,
         "cards_count": 6,
         "stickers_count": 6,
         "tracks_count": 0
@@ -107,10 +106,11 @@
         }
       ],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
-        "v2_structure": false,
+        "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -125,15 +125,16 @@
         "has_covers_dir": true,
         "has_cover_svg": true,
         "cards_count": 32,
-        "stickers_count": 4,
+        "stickers_count": 2,
         "tracks_count": 6
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -149,21 +150,15 @@
         "has_cover_svg": true,
         "cards_count": 30,
         "stickers_count": 25,
-        "tracks_count": 14
+        "tracks_count": 7
       },
       "dummy_data": [],
-      "file_issues": [
-        "Track left_on_read_ritual_of_detach: Filename may be a long DALLE name (should be short)",
-        "Track left_on_read_ritual_of_detach_2: Filename may be a long DALLE name (should be short)",
-        "Track left_on_read_ritual_of_detach_3: Filename may be a long DALLE name (should be short)",
-        "Track left_on_read_ritual_of_detach_alt: Filename may be a long DALLE name (should be short)",
-        "Track no_valentine_hype__funny_2: Filename may be a long DALLE name (should be short)",
-        "Track no_valentine_hype__funny_alt: Filename may be a long DALLE name (should be short)"
-      ],
+      "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
-        "v2_naming": false,
-        "v2_formats": false
+        "v2_naming": true,
+        "v2_formats": true
       }
     },
     {
@@ -183,10 +178,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -206,10 +202,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -229,10 +226,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -252,10 +250,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -303,10 +302,11 @@
         }
       ],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -326,10 +326,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -349,10 +350,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -372,10 +374,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -395,10 +398,11 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -412,16 +416,17 @@
         "has_stickers_dir": false,
         "has_covers_dir": true,
         "has_cover_svg": true,
-        "cards_count": 30,
+        "cards_count": 24,
         "stickers_count": 6,
         "tracks_count": 8
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
@@ -441,58 +446,57 @@
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
         "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
       "pack_id": "yo_bro",
       "errors": [],
-      "warnings": [
-        "No cover.svg or cover.webp found",
-        "Does not match v2 folder structure"
-      ],
+      "warnings": [],
       "info": [],
       "structure": {
         "has_assets_dir": true,
         "has_cards_dir": true,
         "has_stickers_dir": false,
-        "has_covers_dir": false,
+        "has_covers_dir": true,
+        "has_cover_svg": true,
         "stickers_count": 0,
         "tracks_count": 0
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
-        "v2_structure": false,
+        "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     },
     {
       "pack_id": "dearest_mother",
       "errors": [],
-      "warnings": [
-        "No cover.svg or cover.webp found",
-        "Does not match v2 folder structure"
-      ],
+      "warnings": [],
       "info": [],
       "structure": {
         "has_assets_dir": true,
         "has_cards_dir": true,
         "has_stickers_dir": false,
-        "has_covers_dir": false,
+        "has_covers_dir": true,
+        "has_cover_svg": true,
         "stickers_count": 0,
         "tracks_count": 0
       },
       "dummy_data": [],
       "file_issues": [],
+      "format_issues": [],
       "compliance": {
-        "v2_structure": false,
+        "v2_structure": true,
         "v2_naming": true,
-        "v2_formats": false
+        "v2_formats": true
       }
     }
   ]

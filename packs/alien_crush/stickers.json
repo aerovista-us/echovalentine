@@ -4,22 +4,12 @@
     {
       "id": "AC-ST-07",
       "name": "Alien Dude",
-      "src": "assets/stickers/AC-ST-07.png"
+      "src": "assets/stickers/ac-st-07.webp"
     },
     {
       "id": "AC-ST-08",
       "name": "Alien Kiss",
-      "src": "assets/stickers/AC-ST-08.png"
-    },
-    {
-      "id": "ac_st_07",
-      "name": "Ac St 07",
-      "src": "assets/stickers/ac-st-07.png"
-    },
-    {
-      "id": "ac_st_08",
-      "name": "Ac St 08",
-      "src": "assets/stickers/ac-st-08.png"
+      "src": "assets/stickers/ac-st-08.webp"
     }
   ]
 }

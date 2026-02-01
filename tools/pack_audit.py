@@ -104,6 +104,7 @@ def audit_pack(pack_dir: Path) -> Dict[str, Any]:
         "structure": {},
         "dummy_data": [],
         "file_issues": [],
+        "format_issues": [],
         "compliance": {
             "v2_structure": False,
             "v2_naming": False,
@@ -149,6 +150,7 @@ def audit_pack(pack_dir: Path) -> Dict[str, Any]:
         cards_dir = assets_dir / "cards"
         stickers_dir = assets_dir / "stickers"
         covers_dir = assets_dir / "covers"
+        audio_dir = assets_dir / "audio"
         
         report["structure"]["has_cards_dir"] = cards_dir.exists()
         report["structure"]["has_stickers_dir"] = stickers_dir.exists()
@@ -164,6 +166,20 @@ def audit_pack(pack_dir: Path) -> Dict[str, Any]:
             report["structure"]["has_cover_webp"] = True
         else:
             report["warnings"].append("No cover.svg or cover.webp found")
+
+        # Check file formats
+        if cards_dir.exists():
+            for f in cards_dir.iterdir():
+                if f.is_file() and f.suffix.lstrip('.') not in V2_REQUIREMENTS["card_format"]:
+                    report["format_issues"].append(f"Invalid card format: {f.name}")
+        if stickers_dir.exists():
+            for f in stickers_dir.iterdir():
+                if f.is_file() and f.suffix.lstrip('.') not in V2_REQUIREMENTS["sticker_format"]:
+                    report["format_issues"].append(f"Invalid sticker format: {f.name}")
+        if audio_dir.exists():
+            for f in audio_dir.iterdir():
+                if f.is_file() and f.suffix.lstrip('.') not in V2_REQUIREMENTS["audio_format"]:
+                    report["format_issues"].append(f"Invalid audio format: {f.name}")
     
     # Check cards.json
     cards_json_path = pack_dir / "cards.json"
@@ -329,6 +345,10 @@ def audit_pack(pack_dir: Path) -> Dict[str, Any]:
     if len(report["file_issues"]) == 0:
         report["compliance"]["v2_naming"] = True
     
+    # Check format compliance
+    if len(report["format_issues"]) == 0:
+        report["compliance"]["v2_formats"] = True
+        
     return report
 
 def main():
@@ -352,6 +372,7 @@ def main():
         "packs_v2_compliant": 0,
         "total_dummy_items": 0,
         "total_file_issues": 0,
+        "total_format_issues": 0,
     }
     
     print("=" * 80)
@@ -383,6 +404,7 @@ def main():
         
         summary["total_dummy_items"] += len(report["dummy_data"])
         summary["total_file_issues"] += len(report["file_issues"])
+        summary["total_format_issues"] += len(report["format_issues"])
     
     print()
     print("=" * 80)
@@ -395,6 +417,7 @@ def main():
     print(f"V2 compliant packs: {summary['packs_v2_compliant']}")
     print(f"Total dummy/placeholder items: {summary['total_dummy_items']}")
     print(f"Total file issues: {summary['total_file_issues']}")
+    print(f"Total format issues: {summary['total_format_issues']}")
     print()
     
     # Detailed reports
@@ -428,6 +451,11 @@ def main():
         if report["file_issues"]:
             print("\n[FILE ISSUES]")
             for issue in report["file_issues"]:
+                print(f"  - {issue}")
+
+        if report["format_issues"]:
+            print("\n[FORMAT ISSUES]")
+            for issue in report["format_issues"]:
                 print(f"  - {issue}")
         
         print(f"\nStructure: {report['structure']}")

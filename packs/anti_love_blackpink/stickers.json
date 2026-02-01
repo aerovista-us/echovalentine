@@ -4,127 +4,127 @@
     {
       "id": "albp-blender",
       "name": "Blender",
-      "src": "assets/stickers/sticker.pk.1/blender_sticker.png"
+      "src": "assets/stickers/sticker.pk.1/blender_sticker.webp"
     },
     {
       "id": "albp-business",
       "name": "Business",
-      "src": "assets/stickers/sticker.pk.1/business.png"
+      "src": "assets/stickers/sticker.pk.1/business.webp"
     },
     {
       "id": "albp-business2",
       "name": "Business 2",
-      "src": "assets/stickers/sticker.pk.1/business2.png"
+      "src": "assets/stickers/sticker.pk.1/business2.webp"
     },
     {
       "id": "albp-business3",
       "name": "Business 3",
-      "src": "assets/stickers/sticker.pk.1/business3.png"
+      "src": "assets/stickers/sticker.pk.1/business3.webp"
     },
     {
       "id": "albp-business4",
       "name": "Business 4",
-      "src": "assets/stickers/sticker.pk.1/business4.png"
+      "src": "assets/stickers/sticker.pk.1/business4.webp"
     },
     {
       "id": "albp-business5",
       "name": "Business 5",
-      "src": "assets/stickers/sticker.pk.1/business5.png"
+      "src": "assets/stickers/sticker.pk.1/business5.webp"
     },
     {
       "id": "albp-business6",
       "name": "Business 6",
-      "src": "assets/stickers/sticker.pk.1/business6.png"
+      "src": "assets/stickers/sticker.pk.1/business6.webp"
     },
     {
       "id": "albp-business7",
       "name": "Business 7",
-      "src": "assets/stickers/sticker.pk.1/business7.png"
+      "src": "assets/stickers/sticker.pk.1/business7.webp"
     },
     {
       "id": "albp-business8",
       "name": "Business 8",
-      "src": "assets/stickers/sticker.pk.1/business8.png"
+      "src": "assets/stickers/sticker.pk.1/business8.webp"
     },
     {
       "id": "albp-microwave",
       "name": "Microwave",
-      "src": "assets/stickers/sticker.pk.1/microwave_sticker.png"
+      "src": "assets/stickers/sticker.pk.1/microwave_sticker.webp"
     },
     {
       "id": "nope",
       "name": "Nope",
-      "src": "assets/stickers/nope.png"
+      "src": "assets/stickers/nope.webp"
     },
     {
       "id": "nope2",
       "name": "Nope2",
-      "src": "assets/stickers/nope2.png"
+      "src": "assets/stickers/nope2.webp"
     },
     {
       "id": "nope2_sticker",
       "name": "Nope2 Sticker",
-      "src": "assets/stickers/nope2_sticker.png"
+      "src": "assets/stickers/nope2_sticker.webp"
     },
     {
       "id": "nope_sticker",
       "name": "Nope Sticker",
-      "src": "assets/stickers/nope_sticker.png"
+      "src": "assets/stickers/nope_sticker.webp"
     },
     {
       "id": "single1",
       "name": "Single1",
-      "src": "assets/stickers/single1.png"
+      "src": "assets/stickers/single1.webp"
     },
     {
       "id": "single2",
       "name": "Single2",
-      "src": "assets/stickers/single2.png"
+      "src": "assets/stickers/single2.webp"
     },
     {
       "id": "single3",
       "name": "Single3",
-      "src": "assets/stickers/single3.png"
+      "src": "assets/stickers/single3.webp"
     },
     {
       "id": "single4",
       "name": "Single4",
-      "src": "assets/stickers/single4.png"
+      "src": "assets/stickers/single4.webp"
     },
     {
       "id": "single5",
       "name": "Single5",
-      "src": "assets/stickers/single5.png"
+      "src": "assets/stickers/single5.webp"
     },
     {
       "id": "single6",
       "name": "Single6",
-      "src": "assets/stickers/single6.png"
+      "src": "assets/stickers/single6.webp"
     },
     {
       "id": "trash",
       "name": "Trash",
-      "src": "assets/stickers/trash.png"
+      "src": "assets/stickers/trash.webp"
     },
     {
       "id": "trash1",
       "name": "Trash1",
-      "src": "assets/stickers/trash1.png"
+      "src": "assets/stickers/trash1.webp"
     },
     {
       "id": "trash2",
       "name": "Trash2",
-      "src": "assets/stickers/trash2.png"
+      "src": "assets/stickers/trash2.webp"
     },
     {
       "id": "trash3",
       "name": "Trash3",
-      "src": "assets/stickers/trash3.png"
+      "src": "assets/stickers/trash3.webp"
     },
     {
       "id": "trash4",
       "name": "Trash4",
-      "src": "assets/stickers/trash4.png"
+      "src": "assets/stickers/trash4.webp"
     }
   ]
 }
