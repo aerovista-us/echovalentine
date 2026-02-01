@@ -200,6 +200,21 @@ body{
 @media(min-width: 860px){
   .grid.two{grid-template-columns: 1fr 1fr;}
 }
+/* Landscape orientation: better sizing for constrained height */
+@media (orientation: landscape) and (max-height: 700px){
+  .composeStage{
+    max-height: min(65vh, 550px);
+  }
+}
+/* Very constrained landscape: stack vertically */
+@media (orientation: landscape) and (max-height: 500px){
+  .grid.two{
+    grid-template-columns: 1fr;
+  }
+  .composeStage{
+    max-height: min(50vh, 400px);
+  }
+}
 
 .btn{
   border:1px solid var(--line);
@@ -539,7 +554,7 @@ textarea.input{min-height: 110px; resize: vertical;}
 /* Shared stage (Compose + Open) */
 .cardStage{
   position: relative;
-  width: min(96vw, 860px);
+  width: 100%;
   max-width: 860px;
   margin: 0 auto;
   overflow: hidden;
@@ -582,8 +597,12 @@ textarea.input{min-height: 110px; resize: vertical;}
   justify-content: center;
   /* Critical: don't force portrait-ish sizing */
   min-height: 0;
-  /* Optional: keep it from getting ridiculously tall */
-  max-height: 75vh;
+  /* Responsive sizing for landscape */
+  max-width: 100%;
+  max-height: min(75vh, 600px);
+  width: 100%;
+  /* Ensure it fits within container */
+  box-sizing: border-box;
 }
 .composeStage.drop-active{
   border-color: var(--accent);
