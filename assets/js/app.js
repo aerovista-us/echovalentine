@@ -881,158 +881,167 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     }
     const packDir = getPackDir(packId);
 
-    const data = await ensurePackData(packId);
-    const card = (data.cards?.cards || []).find(x => String(x.id) === String(cardId));
-    if(!card){
-      if(window.EV_SPLASH) window.EV_SPLASH.markContentReady();
-      return renderNotFound(appEl);
-    }
+    try {
+      const data = await ensurePackData(packId);
+      const card = (data.cards?.cards || []).find(x => String(x.id) === String(cardId));
+      if(!card){
+        if(window.EV_SPLASH) window.EV_SPLASH.markContentReady();
+        return renderNotFound(appEl);
+      }
 
-    // Build playlist from tracks
-    const packTracks = (data.tracks?.tracks || []);
-    if(packTracks.length > 0){
-      window.EV_PLAYER.buildPlaylist(packTracks, packDir);
-      // Select specific track if specified in payload
-      if(payload.track){
-        const trackIndex = packTracks.findIndex(t => (t.id || t.title || "") === payload.track);
-        if(trackIndex >= 0){
-          window.EV_PLAYER.currentIndex = trackIndex;
-          window.EV_PLAYER.loadTrack(packTracks[trackIndex], packDir);
+      // Build playlist from tracks
+      const packTracks = (data.tracks?.tracks || []);
+      if(packTracks.length > 0){
+        window.EV_PLAYER.buildPlaylist(packTracks, packDir);
+        // Select specific track if specified in payload
+        if(payload.track){
+          const trackIndex = packTracks.findIndex(t => (t.id || t.title || "") === payload.track);
+          if(trackIndex >= 0){
+            window.EV_PLAYER.currentIndex = trackIndex;
+            window.EV_PLAYER.loadTrack(packTracks[trackIndex], packDir);
+          }
         }
       }
-    }
 
-    // Use shared card stage renderer
-    const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
-    
-    // Handle stickers - support both old format (single string) and new format (JSON array)
-    let stickers = [];
-    if(payload.sticker){
-      try{
-        const parsed = JSON.parse(payload.sticker);
-        if(Array.isArray(parsed)){
-          stickers = parsed;
-        } else {
+      // Use shared card stage renderer
+      const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
+      
+      // Handle stickers - support both old format (single string) and new format (JSON array)
+      let stickers = [];
+      if(payload.sticker){
+        try{
+          const parsed = JSON.parse(payload.sticker);
+          if(Array.isArray(parsed)){
+            stickers = parsed;
+          } else {
+            // Old format - single sticker string
+            stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
+          }
+        } catch(e){
           // Old format - single sticker string
           stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
         }
-      } catch(e){
-        // Old format - single sticker string
-        stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
       }
-    }
 
-    // Meta for backward compatibility with pixel-based stickers
-    const meta = {
-      cw: Number(payload.cw || 0),
-      ch: Number(payload.ch || 0)
-    };
+      // Meta for backward compatibility with pixel-based stickers
+      const meta = {
+        cw: Number(payload.cw || 0),
+        ch: Number(payload.ch || 0)
+      };
 
-    const stage = renderCardStage({
-      cardSrc,
-      stickers,
-      meta,
-      stageId: "openStage",
-      packDir,
-      interactive: false
-    });
+      const stage = renderCardStage({
+        cardSrc,
+        stickers,
+        meta,
+        stageId: "openStage",
+        packDir,
+        interactive: false
+      });
 
-    // Text panel (single source of truth - not stamped on card)
-    const panel = h("div",{class:"openTextPanel"},[
-      h("div",{class:"line"},[
-        h("span",{class:"label"},["To:"]),
-        h("span",{},[ payload.to || "—" ])
-      ]),
-      h("div",{class:"line"},[
-        h("span",{class:"label"},["From:"]),
-        h("span",{},[ payload.from || "—" ])
-      ]),
-      payload.msg ? h("div",{class:"msg"},[
-        document.createTextNode(payload.msg)
-      ]) : null
-    ]);
-
-    const replyPack = packId;
-    const replyCard = cardId;
-
-    const replyParams = {
-      pack: replyPack,
-      card: replyCard
-    };
-
-    // swap to/from for reply
-    const to = payload.from || "";
-    const from = payload.to || "";
-
-    window.EV_STORE.setPrefs({ to, from, lastPack: replyPack, lastCard: replyCard });
-
-    // Create envelope with message inside (hidden until opened)
-    const envelopeEl = window.EV_ENVELOPE.create(payload.to || "", payload.from || "", payload.msg || "");
-    let envelopeOpen = false;
-
-    // Player UI
-    const playerEl = packTracks.length > 0 ? h("div",{class:"player"},[
-      h("div",{class:"player-controls"},[
-        h("button",{class:"player-btn", id:"playerPrev", onclick:()=>window.EV_PLAYER.playPrev(), title:"Previous"},[document.createTextNode("⟨")]),
-        h("button",{class:"player-btn", id:"playerPlay", onclick:()=>window.EV_PLAYER.togglePlay(), title:"Play/Pause"},[document.createTextNode("▶")]),
-        h("button",{class:"player-btn", id:"playerNext", onclick:()=>window.EV_PLAYER.playNext(), title:"Next"},[document.createTextNode("⟩")]),
-        h("div",{class:"player-info"},[
-          h("div",{class:"player-title", id:"playerTitle"},[document.createTextNode("No track")]),
-          h("div",{class:"player-time", id:"playerTime"},[document.createTextNode("0:00 / 0:00")])
+      // Text panel (single source of truth - not stamped on card)
+      const panel = h("div",{class:"openTextPanel"},[
+        h("div",{class:"line"},[
+          h("span",{class:"label"},["To:"]),
+          h("span",{},[ payload.to || "—" ])
         ]),
-        h("input",{type:"range", class:"player-vol", min:"0", max:"100", value:"80", oninput:(e)=>{window.EV_PLAYER.setVolume(e.target.value/100);}, title:"Volume"})
-      ])
-    ]) : null;
-
-    // Wrap stage in envelope container - card hidden until envelope opens
-    const cardContainer = h("div",{class:"cardContainer"},[stage]);
-    
-    // Create top action bar
-    const topActions = h("div",{class:"actionBar"},[
-      h("div",{class:"row wrap"},[
-        h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[
-          "Punch one back"
+        h("div",{class:"line"},[
+          h("span",{class:"label"},["From:"]),
+          h("span",{},[ payload.from || "—" ])
         ]),
-        h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
-          "Browse boxes"
+        payload.msg ? h("div",{class:"msg"},[
+          document.createTextNode(payload.msg)
+        ]) : null
+      ]);
+
+      const replyPack = packId;
+      const replyCard = cardId;
+
+      const replyParams = {
+        pack: replyPack,
+        card: replyCard
+      };
+
+      // swap to/from for reply
+      const to = payload.from || "";
+      const from = payload.to || "";
+
+      window.EV_STORE.setPrefs({ to, from, lastPack: replyPack, lastCard: replyCard });
+
+      // Create envelope with message inside (hidden until opened)
+      const envelopeEl = window.EV_ENVELOPE.create(payload.to || "", payload.from || "", payload.msg || "");
+      let envelopeOpen = false;
+
+      // Player UI
+      const playerEl = packTracks.length > 0 ? h("div",{class:"player"},[
+        h("div",{class:"player-controls"},[
+          h("button",{class:"player-btn", id:"playerPrev", onclick:()=>window.EV_PLAYER.playPrev(), title:"Previous"},[document.createTextNode("⟨")]),
+          h("button",{class:"player-btn", id:"playerPlay", onclick:()=>window.EV_PLAYER.togglePlay(), title:"Play/Pause"},[document.createTextNode("▶")]),
+          h("button",{class:"player-btn", id:"playerNext", onclick:()=>window.EV_PLAYER.playNext(), title:"Next"},[document.createTextNode("⟩")]),
+          h("div",{class:"player-info"},[
+            h("div",{class:"player-title", id:"playerTitle"},[document.createTextNode("No track")]),
+            h("div",{class:"player-time", id:"playerTime"},[document.createTextNode("0:00 / 0:00")])
+          ]),
+          h("input",{type:"range", class:"player-vol", min:"0", max:"100", value:"80", oninput:(e)=>{window.EV_PLAYER.setVolume(e.target.value/100);}, title:"Volume"})
         ])
-      ])
-    ]);
+      ]) : null;
 
-    const innerEl = h("div",{class:"inner"},[
-      h("div",{class:"h1 openTitle", html: esc(pack.name || "EchoValentines")}),
-      h("div",{class:"small", style:"margin-bottom:14px;", html:`You have a sealed envelope`}),
-      topActions,
-      h("div",{class:"hr"}),
-      h("div",{class:"envelopeWrapper", style:"position:relative;"},[
-        envelopeEl,
-        cardContainer
-      ]),
-      // Text panel - always visible, not on card
-      panel,
-      // Player UI - always visible when tracks exist
-      playerEl,
-      h("div",{class:"row", style:"margin-top:14px;"},[
-        h("button",{class:"btn primary", id:"openEnvelopeBtn", onclick:()=>{
-          if(!envelopeOpen){
-            window.EV_ENVELOPE.open(envelopeEl, cardContainer);
-            envelopeOpen = true;
-            // Text panel is always visible, no need to show/hide elements on card
-            // Hide the button after opening
-            const btn = document.getElementById("openEnvelopeBtn");
-            if(btn) btn.style.display = "none";
-          }
-        }},[document.createTextNode("Open envelope")])
-      ]),
-    ]);
+      // Wrap stage in envelope container - card hidden until envelope opens
+      const cardContainer = h("div",{class:"cardContainer"},[stage]);
+      
+      // Create top action bar
+      const topActions = h("div",{class:"actionBar"},[
+        h("div",{class:"row wrap"},[
+          h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[
+            "Punch one back"
+          ]),
+          h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
+            "Browse boxes"
+          ])
+        ])
+      ]);
 
-    const cardEl = h("div",{class:"card"},[innerEl]);
+      const innerEl = h("div",{class:"inner"},[
+        h("div",{class:"h1 openTitle", html: esc(pack.name || "EchoValentines")}),
+        h("div",{class:"small", style:"margin-bottom:14px;", html:`You have a sealed envelope`}),
+        topActions,
+        h("div",{class:"hr"}),
+        h("div",{class:"envelopeWrapper", style:"position:relative;"},[
+          envelopeEl,
+          cardContainer
+        ]),
+        // Text panel - always visible, not on card
+        panel,
+        // Player UI - always visible when tracks exist
+        playerEl,
+        h("div",{class:"row", style:"margin-top:14px;"},[
+          h("button",{class:"btn primary", id:"openEnvelopeBtn", onclick:()=>{
+            if(!envelopeOpen){
+              window.EV_ENVELOPE.open(envelopeEl, cardContainer);
+              envelopeOpen = true;
+              // Text panel is always visible, no need to show/hide elements on card
+              // Hide the button after opening
+              const btn = document.getElementById("openEnvelopeBtn");
+              if(btn) btn.style.display = "none";
+            }
+          }},[document.createTextNode("Open envelope")])
+        ]),
+      ]);
 
-    appEl.appendChild(cardEl);
-    track("open", { pack: packId, card: cardId });
-    
-    if(window.EV_SPLASH){
-      window.EV_SPLASH.markContentReady();
+      const cardEl = h("div",{class:"card"},[innerEl]);
+
+      appEl.appendChild(cardEl);
+      track("open", { pack: packId, card: cardId });
+    } catch(err) {
+      console.error("Error rendering open page:", err);
+      appEl.appendChild(h("div",{class:"card"},[h("div",{class:"inner"},[
+        h("div",{class:"h1", html:"Error loading card"}),
+        h("p",{class:"p", html: esc(String(err && err.message ? err.message : err))})
+      ])]));
+    } finally {
+      // Always mark content ready, even if there was an error
+      if(window.EV_SPLASH){
+        window.EV_SPLASH.markContentReady();
+      }
     }
   }
 
