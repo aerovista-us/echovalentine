@@ -28,7 +28,7 @@
     }catch(e){}
   }
 
-  function createEnvelope(to, from, message){
+  function createEnvelope(to, from, message, sealSrc){
     const env = document.createElement("div");
     env.className = "envelope";
     // Message only shown on card, not in envelope
@@ -40,6 +40,9 @@
         <div class="envelope-tofrom-from">${from ? `From: <b>${escapeHtml(from)}</b>` : ''}</div>
       </div>
     ` : '';
+    const sealHtml = sealSrc
+      ? `<div class="envelope-sealWrap"><img class="envelope-seal" src="${escapeHtml(sealSrc)}" alt="Envelope seal" loading="lazy" decoding="async"/></div>`
+      : `<div class="envelope-sealWrap envelope-sealWrap-fallback" aria-hidden="true"></div>`;
     const badgeText = to ? `To: ${escapeHtml(to)}` : 'Sealed envelope';
     env.innerHTML = `
       <div class="envelope-shell">
@@ -51,6 +54,7 @@
         </div>
         <div class="envelope-flap"></div>
         <div class="envelope-front">
+          ${sealHtml}
           ${toFromHtml}
         </div>
       </div>
