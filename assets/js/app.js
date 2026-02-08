@@ -1,4 +1,4 @@
-// app.js: EchoValentines Viral — single addictive loop
+// app.js: EchoValentines Viral - single addictive loop
 (function(){
   const S = {
     packs: [],       // [{id, packPath, pack}]
@@ -103,7 +103,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       appEl.innerHTML = "";
       appEl.appendChild(h("div",{class:"card"},[
         h("div",{class:"inner"},[
-          h("div",{class:"h1", html:"Loading…"}),
+          h("div",{class:"h1", html:"Loading..."}),
           h("p",{class:"p", html:"Warming up the card composer."})
         ])
       ]));
@@ -175,6 +175,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     const shelf = h("div",{class:"shelf", style:"margin-top:14px;"});
     for(const p of S.packs){
+      const cardCount = p.pack.cards_count || "";
       const coverImage = p.pack.assets?.box_art ? `packs/${p.packDir}/${p.pack.assets.box_art}` : null;
       const b = h("div",{class:"pack-box", onclick:()=>location.hash=`#/box/${encodeURIComponent(p.id)}`},[
         h("div",{class:"pack-cover-wrapper"},[
@@ -183,7 +184,8 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         ]),
         h("div",{class:"pack-info"},[
           h("div",{class:"pack-header"},[
-            h("div",{class:"pack-badge", html:`<span class="dot"></span> Ready`})
+            h("div",{class:"pack-badge", html:`<span class="dot"></span> Ready`}),
+            cardCount ? h("div",{class:"pack-count", html: `${esc(cardCount)} cards`}) : null
           ]),
           h("div",{class:"pack-title", html: esc(p.pack.name || p.id)}),
           h("div",{class:"pack-description", html: esc(p.pack.description || p.pack.tagline || "")}),
@@ -205,7 +207,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
   }
 
   async function renderBox(appEl, packId){
-    appEl.innerHTML = ""; // ✅ ensures loading card disappears
+    appEl.innerHTML = ""; // ensures loading card disappears
     if(!packId || !S.packIndex[packId]) return renderNotFound(appEl);
     const pack = S.packIndex[packId];
     const packDir = getPackDir(packId);
@@ -230,7 +232,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       ])
     ]);
 
-    // Gallery: Only show cards (no stickers, tracks, or other items)
+    // Gallery: launch cards only (sticker-cards removed)
     const gallery = h("div",{class:"card", style:"margin-top:14px;"},[
       h("div",{class:"inner"},[
         h("div",{class:"h2", html:"Choose a card"}),
@@ -238,7 +240,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("div",{class:"hr"}),
         (function(){
           const g = h("div",{class:"gallery"});
-          // Only iterate through cards - stickers and tracks are available on compose page
+          // Only iterate through launch cards
           for(const c of cards){
             const cardImage = `packs/${packDir}/${getCardImage(c)}`;
             const t = h("div",{class:"card-thumb", onclick:()=>location.hash=`#/compose?${qs({pack:packId, card:c.id})}`},[
@@ -263,13 +265,13 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
   function templates(){
     return [
-      "You’re my favorite glitch in the matrix.",
+      "You're my favorite glitch in the matrix.",
       "I choose you. Every timeline.",
-      "If this is a simulation… keep me in yours.",
+      "If this is a simulation... keep me in yours.",
       "Your vibe? Unreasonably elite.",
-      "I’d fight a bear for you (politely).",
+      "I'd fight a bear for you (politely).",
       "You + me = soft chaos, perfect.",
-      "Here’s a tiny spell: be kind to yourself."
+      "Here's a tiny spell: be kind to yourself."
     ];
   }
 
@@ -293,7 +295,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
   }
 
   function quickStartPack(packId){
-    // open pack page (gallery) — or jump to last card if exists
+    // open pack page (gallery) - or jump to last card if exists
     const prefs = window.EV_STORE.getPrefs();
     if(prefs.lastPack === packId && prefs.lastCard){
       location.hash = `#/compose?${qs({ pack: packId, card: prefs.lastCard })}`;
@@ -326,6 +328,11 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       track: "",
       seal: pickEnvelopeSeal(data.stickers?.stickers || [])
     };
+    const sealOptions = (data.stickers?.stickers || [])
+      .map(s => String(s?.src || ""))
+      .filter(src => isSvgPath(src));
+    if(state.seal && !sealOptions.includes(state.seal)) state.seal = "";
+    if(!state.seal && sealOptions.length > 0) state.seal = sealOptions[0];
 
     const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
     const stage = renderCardStage({
@@ -336,6 +343,14 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     function sync(){
       window.EV_STORE.setPrefs({ to: state.to, from: state.from });
+    }
+
+    function sealFullSrc(sealRel){
+      return sealRel ? `packs/${packDir}/${sealRel}` : "";
+    }
+    function sealLabel(sealRel){
+      if(!sealRel) return "No seal";
+      return sealRel.split("/").pop().replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ");
     }
 
     async function punchAndCopy(){
@@ -378,7 +393,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     const tracks = (data.tracks?.tracks || []);
     const trackPicker = tracks.length > 0 ? h("div",{class:"pickerSection"},[
       h("div",{class:"small", html:"Track (optional)"}),
-      h("select",{class:"input", id:"trackPickerSelect", onchange:(e)=>{state.track=e.target.value;sync();}},[
+      h("select",{class:"input", id:"trackPickerSelect", onchange:(e)=>{state.track=e.target.value;sync();updateTrackPreview();}},[
         h("option",{value:"", html:"No track"}),
         ...tracks.map(t => h("option",{value:t.id || t.title || "", html:t.title || t.name || "Untitled"}))
       ])
@@ -479,6 +494,73 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       ]);
     })() : null;
 
+    let sealPreviewImg = null;
+    let sealNameEl = null;
+    function updateSealPicker(){
+      if(sealPreviewImg){
+        if(state.seal){
+          sealPreviewImg.src = sealFullSrc(state.seal);
+          sealPreviewImg.style.display = "";
+        } else {
+          sealPreviewImg.removeAttribute("src");
+          sealPreviewImg.style.display = "none";
+        }
+      }
+      if(sealNameEl){
+        sealNameEl.textContent = sealLabel(state.seal);
+      }
+    }
+    function cycleSeal(step){
+      if(sealOptions.length === 0) return;
+      const current = sealOptions.indexOf(state.seal);
+      const start = current >= 0 ? current : 0;
+      const next = (start + step + sealOptions.length) % sealOptions.length;
+      state.seal = sealOptions[next];
+      updateSealPicker();
+      sync();
+    }
+    function randomSealChoice(){
+      if(sealOptions.length === 0) return;
+      state.seal = randPick(sealOptions) || sealOptions[0];
+      updateSealPicker();
+      sync();
+    }
+    function clearSealChoice(){
+      state.seal = "";
+      updateSealPicker();
+      sync();
+    }
+
+    const sealPicker = (function(){
+      const section = h("div",{class:"pickerSection"},[
+        h("div",{class:"small", html:"Envelope seal (optional)"})
+      ]);
+      if(sealOptions.length === 0){
+        section.appendChild(h("div",{class:"small", style:"margin-top:8px;"},[
+          document.createTextNode("No SVG seals available in this pack.")
+        ]));
+        return section;
+      }
+
+      sealPreviewImg = h("img",{class:"sealPreviewImg", alt:"Selected envelope seal", loading:"lazy", decoding:"async"});
+      sealNameEl = h("div",{class:"small", style:"font-weight:700;"},[""]);
+
+      const row = h("div",{class:"sealPicker"},[
+        h("div",{class:"sealPreviewCard"},[sealPreviewImg]),
+        h("div",{style:"flex:1;"},[
+          sealNameEl,
+          h("div",{class:"row", style:"margin-top:8px;"},[
+            h("button",{class:"btn", type:"button", onclick:()=>cycleSeal(-1)},["Prev"]),
+            h("button",{class:"btn", type:"button", onclick:randomSealChoice},["Random"]),
+            h("button",{class:"btn", type:"button", onclick:()=>cycleSeal(1)},["Next"]),
+            h("button",{class:"btn", type:"button", onclick:clearSealChoice},["None"])
+          ])
+        ])
+      ]);
+      section.appendChild(row);
+      return section;
+    })();
+
     const actionBar = h("div",{class:"actionBar"},[
       h("div",{class:"row wrap"},[
         h("button",{class:"btn", onclick:()=>shuffleAndCompose(packId)},["Shuffle card"])
@@ -514,24 +596,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         trackPicker ? h("div",{style:"height:10px"}) : null,
         trackPicker,
         trackPreviewEl,
-        state.seal ? h("div",{style:"height:10px"}) : null,
-        state.seal ? h("div",{class:"small", html:"An SVG seal from this pack will appear on the envelope before opening."}) : null
+        h("div",{style:"height:10px"}),
+        sealPicker
       ])
     ]);
-
-    const trackPickerSelect = document.getElementById("trackPickerSelect");
-    if(trackPickerSelect){
-      trackPickerSelect.onchange = (e)=>{
-        state.track = e.target.value;
-        sync();
-        updateTrackPreview();
-      };
-    }
-
-    if(state.track && trackPickerSelect){
-      trackPickerSelect.value = state.track;
-      updateTrackPreview();
-    }
 
     const right = h("section",{class:"card"},[
       h("div",{class:"inner"},[
@@ -540,11 +608,17 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("div",{class:"hr"}),
         stage,
         h("div",{style:"height:10px"}),
-        h("div",{class:"small", html:`Pack: <b>${esc(pack.name || packId)}</b> ? Card: <b>${esc(card.title || cardId)}</b>`})
+        h("div",{class:"small", html:`Pack: <b>${esc(pack.name || packId)}</b> - Card: <b>${esc(card.title || cardId)}</b>`})
       ])
     ]);
 
     appEl.appendChild(h("div",{class:"grid two"},[left, right]));
+    const trackPickerSelect = document.getElementById("trackPickerSelect");
+    if(state.track && trackPickerSelect){
+      trackPickerSelect.value = state.track;
+      updateTrackPreview();
+    }
+    updateSealPicker();
     sync();
 
     (function maybeTutorial(){
@@ -606,12 +680,11 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
   }
 
   async function renderOpen(appEl, params){
-    appEl.innerHTML = ""; // ✅ ensures loading card disappears
-    // Show splash screen for card opening
+    appEl.innerHTML = "";
     if(window.EV_SPLASH){
       window.EV_SPLASH.show();
     }
-    
+
     const token = params.get("token");
     if(!token){
       if(window.EV_SPLASH) window.EV_SPLASH.markContentReady();
@@ -649,17 +722,15 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     try {
       const data = await ensurePackData(packId);
-      const card = (data.cards?.cards || []).find(x => String(x.id) === String(cardId));
+      const card = getLaunchCards(data.cards?.cards || []).find(x => String(x.id) === String(cardId));
       if(!card){
         if(window.EV_SPLASH) window.EV_SPLASH.markContentReady();
         return renderNotFound(appEl);
       }
 
-      // Build playlist from tracks
       const packTracks = (data.tracks?.tracks || []);
       if(packTracks.length > 0){
         window.EV_PLAYER.buildPlaylist(packTracks, packDir);
-        // Select specific track if specified in payload
         if(payload.track){
           const trackIndex = packTracks.findIndex(t => (t.id || t.title || "") === payload.track);
           if(trackIndex >= 0){
@@ -669,83 +740,47 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         }
       }
 
-      // Use shared card stage renderer
       const cardSrc = `packs/${packDir}/${getCardImage(card)}`;
-      
-      // Handle stickers - support both old format (single string) and new format (JSON array)
-      let stickers = [];
-      if(payload.sticker){
-        try{
-          const parsed = JSON.parse(payload.sticker);
-          if(Array.isArray(parsed)){
-            stickers = parsed;
-          } else {
-            // Old format - single sticker string
-            stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
-          }
-        } catch(e){
-          // Old format - single sticker string
-          stickers = [{src: payload.sticker, x: 0, y: 0, w: 84, h: 84}];
-        }
-      }
-
-      // Meta for backward compatibility with pixel-based stickers
-      const meta = {
-        cw: Number(payload.cw || 0),
-        ch: Number(payload.ch || 0)
-      };
-
       const stage = renderCardStage({
         cardSrc,
-        stickers,
-        meta,
         stageId: "openStage",
-        packDir,
         interactive: false
       });
 
-      // Message ON the card — visible only after open (handled by .cardContainer.revealed .cardMessage)
-      const cardMessageEl = h("div", { class: "cardMessage" }, [
-        document.createTextNode(payload.msg || "")
-      ]);
-      stage.appendChild(cardMessageEl);
-
-      // Text panel: To/From only (message is on the card)
       const panel = h("div",{class:"openTextPanel"},[
         h("div",{class:"line"},[
           h("span",{class:"label"},["To:"]),
-          h("span",{},[ payload.to || "—" ])
+          h("span",{},[ payload.to || "-" ])
         ]),
         h("div",{class:"line"},[
           h("span",{class:"label"},["From:"]),
-          h("span",{},[ payload.from || "—" ])
-        ])
+          h("span",{},[ payload.from || "-" ])
+        ]),
+        payload.msg ? h("div",{class:"msg"},[
+          document.createTextNode(payload.msg)
+        ]) : null
       ]);
 
-      const replyPack = packId;
-      const replyCard = cardId;
-
       const replyParams = {
-        pack: replyPack,
-        card: replyCard
+        pack: packId,
+        card: cardId
       };
 
-      // swap to/from for reply
       const to = payload.from || "";
       const from = payload.to || "";
+      window.EV_STORE.setPrefs({ to, from, lastPack: packId, lastCard: cardId });
 
-      window.EV_STORE.setPrefs({ to, from, lastPack: replyPack, lastCard: replyCard });
-
-      // Create envelope with message inside (hidden until opened)
-      const envelopeEl = window.EV_ENVELOPE.create(payload.to || "", payload.from || "", payload.msg || "");
+      const sealSrc = isSvgPath(payload.seal || "")
+        ? ((payload.seal || "").startsWith("http") ? payload.seal : `packs/${packDir}/${payload.seal}`)
+        : "";
+      const envelopeEl = window.EV_ENVELOPE.create(payload.to || "", payload.from || "", payload.msg || "", sealSrc);
       let envelopeOpen = false;
 
-      // Player UI
       const playerEl = packTracks.length > 0 ? h("div",{class:"player"},[
         h("div",{class:"player-controls"},[
-          h("button",{class:"player-btn", id:"playerPrev", onclick:()=>window.EV_PLAYER.playPrev(), title:"Previous"},[document.createTextNode("⟨")]),
-          h("button",{class:"player-btn", id:"playerPlay", onclick:()=>window.EV_PLAYER.togglePlay(), title:"Play/Pause"},[document.createTextNode("▶")]),
-          h("button",{class:"player-btn", id:"playerNext", onclick:()=>window.EV_PLAYER.playNext(), title:"Next"},[document.createTextNode("⟩")]),
+          h("button",{class:"player-btn", id:"playerPrev", onclick:()=>window.EV_PLAYER.playPrev(), title:"Previous"},[document.createTextNode("<")]),
+          h("button",{class:"player-btn", id:"playerPlay", onclick:()=>window.EV_PLAYER.togglePlay(), title:"Play/Pause"},[document.createTextNode("Play")]),
+          h("button",{class:"player-btn", id:"playerNext", onclick:()=>window.EV_PLAYER.playNext(), title:"Next"},[document.createTextNode(">")]),
           h("div",{class:"player-info"},[
             h("div",{class:"player-title", id:"playerTitle"},[document.createTextNode("No track")]),
             h("div",{class:"player-time", id:"playerTime"},[document.createTextNode("0:00 / 0:00")])
@@ -754,13 +789,11 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         ])
       ]) : null;
 
-      // Wrap stage in envelope container - card hidden until envelope opens
       const cardContainer = h("div",{class:"cardContainer"},[stage]);
-      
-      // Create top action bar — Punch one back goes to box selection
+
       const topActions = h("div",{class:"actionBar"},[
         h("div",{class:"row wrap"},[
-          h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
+          h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[
             "Punch one back"
           ]),
           h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
@@ -771,24 +804,20 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
       const innerEl = h("div",{class:"inner"},[
         h("div",{class:"h1 openTitle", html: esc(pack.name || "EchoValentines")}),
-        h("div",{class:"small", style:"margin-bottom:14px;", html:`You have a sealed envelope`}),
+        h("div",{class:"small", style:"margin-bottom:14px;", html:"You have a sealed envelope"}),
         topActions,
         h("div",{class:"hr"}),
         h("div",{class:"envelopeWrapper", style:"position:relative;"},[
           envelopeEl,
           cardContainer
         ]),
-        // Text panel - always visible, not on card
         panel,
-        // Player UI - always visible when tracks exist
         playerEl,
         h("div",{class:"row", style:"margin-top:14px;"},[
           h("button",{class:"btn primary", id:"openEnvelopeBtn", onclick:()=>{
             if(!envelopeOpen){
               window.EV_ENVELOPE.open(envelopeEl, cardContainer);
               envelopeOpen = true;
-              // Text panel is always visible, no need to show/hide elements on card
-              // Hide the button after opening
               const btn = document.getElementById("openEnvelopeBtn");
               if(btn) btn.style.display = "none";
             }
@@ -807,7 +836,6 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("p",{class:"p", html: esc(String(err && err.message ? err.message : err))})
       ])]));
     } finally {
-      // Always mark content ready, even if there was an error
       if(window.EV_SPLASH){
         window.EV_SPLASH.markContentReady();
       }
@@ -818,9 +846,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     appEl.appendChild(h("div",{class:"card"},[
       h("div",{class:"inner"},[
         h("div",{class:"h1", html:"About"}),
-        h("p",{class:"p", html:"EchoValentines is a tiny, fast Valentine sharing ritual: pick a box, pick a card, write one line, punch & copy. The receiver opens instantly — no logins, no accounts."}),
+        h("p",{class:"p", html:"EchoValentines is a tiny, fast Valentine sharing ritual: pick a box, pick a card, write one line, punch & copy. The receiver opens instantly - no logins, no accounts."}),
         h("div",{class:"hr"}),
-        h("div",{class:"p", html:"Privacy: your message travels inside the link. Don’t put anything sensitive in it."}),
+        h("div",{class:"p", html:"Privacy: your message travels inside the link. Don't put anything sensitive in it."}),
         h("div",{style:"height:10px"}),
         h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[document.createTextNode("Back")])
       ])
@@ -831,7 +859,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     appEl.appendChild(h("div",{class:"card"},[
       h("div",{class:"inner"},[
         h("div",{class:"h1", html:"Not found"}),
-        h("p",{class:"p", html:"That page doesn’t exist."}),
+        h("p",{class:"p", html:"That page doesn't exist."}),
         h("div",{style:"height:10px"}),
         h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[document.createTextNode("Go home")])
       ])

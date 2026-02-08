@@ -590,24 +590,6 @@ textarea.input{min-height: 110px; resize: vertical;}
   object-fit: contain;
 }
 
-/* Sticker overlay layer */
-.stickerLayer{
-  position: absolute;
-  inset: 0;
-  pointer-events: none; /* received page shouldn't drag */
-}
-
-.cardStage.composeStage .stickerLayer{
-  pointer-events: auto; /* compose page should allow dragging */
-}
-
-.stickerEl{
-  position: absolute;
-  transform-origin: center;
-  image-rendering: auto;
-  user-select: none;
-}
-
 /* Compose stage specific */
 .composeStage{
   aspect-ratio: 900 / 600; /* default fallback */
@@ -623,101 +605,33 @@ textarea.input{min-height: 110px; resize: vertical;}
   /* Ensure it fits within container */
   box-sizing: border-box;
 }
-.composeStage.drop-active{
-  border-color: var(--accent);
-  background: rgba(255,79,216,.05);
-}
-
-/* Sticker elements */
-.stickerElement{
-  position: absolute;
-  cursor: move;
-  user-select: none;
-  touch-action: none;
-}
-.stickerElement:hover{
-  outline: 2px solid rgba(255,79,216,.5);
-  outline-offset: 2px;
-}
-.stickerResizer{
-  position: absolute;
-  right: -6px;
-  bottom: -6px;
-  width: 16px;
-  height: 16px;
-  background: var(--accent);
-  border-radius: 50%;
-  cursor: nwse-resize;
-  opacity: 0;
-  transition: opacity .15s ease;
-}
-.stickerElement:hover .stickerResizer{
-  opacity: 1;
-}
 
 /* Picker sections */
 .pickerSection{
   margin: 14px 0;
 }
-.pickerTabs{
+
+.sealPicker{
   display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-.pickerTab{
-  padding: 6px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .15s ease;
-}
-.pickerTab:hover{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.16);
-}
-.pickerTab.active{
-  background: rgba(255,79,216,.12);
-  border-color: var(--accent);
-  color: var(--text);
-}
-.pickerContents{
-  position: relative;
-}
-.pickerContent{
-  display: block;
-}
-.pickerContent:not(.active){
-  display: none;
-}
-.pickerGrid{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 12px;
+  align-items: center;
   margin-top: 8px;
 }
-.pickerItem{
-  aspect-ratio: 1;
+.sealPreviewCard{
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
   background: rgba(255,255,255,.04);
-  transition: transform .1s ease, border-color .15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
-.pickerItem:hover{
-  transform: translateY(-2px);
-  border-color: var(--accent);
-}
-.pickerItem img{
-  width: 100%;
-  height: 100%;
+.sealPreviewImg{
+  width: 80%;
+  height: 80%;
   object-fit: contain;
-  padding: 8px;
 }
 
 .toastHost{
@@ -920,47 +834,6 @@ textarea.input{min-height: 110px; resize: vertical;}
     transform: translateY(0);
   }
 }
-/* Message written ON the card - visible only after open (viewer) or always (compose preview) */
-.cardMessage{
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 78%;
-  max-width: 85%;
-  text-align: center;
-  padding: 8% 6%;
-  pointer-events: none;
-  z-index: 5;
-  font-family: var(--font);
-  font-size: clamp(15px, 3.2vw, 22px);
-  line-height: 1.5;
-  font-weight: 500;
-  color: rgba(255,255,255,.98);
-  text-shadow: 0 2px 8px rgba(0,0,0,.7), 0 1px 2px rgba(0,0,0,.5);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-.cardContainer.revealed .cardMessage{
-  display: block;
-}
-/* Compose preview: message on card always visible */
-.composeStage .cardMessage{
-  display: block;
-}
-.cardToFrom-closed{
-  display: flex;
-}
-.cardContainer.revealed .cardToFrom-closed{
-  display: none;
-}
-.cardContainer.revealed .cardToFrom{
-  display: flex;
-  animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-
 /* Card container - hidden behind envelope until opened */
 .envelopeWrapper{
   position: relative;

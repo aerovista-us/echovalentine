@@ -29,34 +29,5 @@
     return { cards, stickers, tracks };
   }
 
-  async function loadStickerPackManifest(){
-    try{
-      return await j("packs/sticker_packs/manifest.json");
-    } catch(e){
-      console.warn("Failed to load sticker pack manifest:", e);
-      return { packs: [] };
-    }
-  }
-
-  async function loadStickerPacks(){
-    try{
-      const manifest = await loadStickerPackManifest();
-      const packs = manifest.packs || [];
-      const loaded = await Promise.all(packs.map(async (packEntry) => {
-        try{
-          const pack = await j(`packs/sticker_packs/${packEntry.packPath}`);
-          return pack;
-        } catch(e){
-          console.warn(`Failed to load sticker pack ${packEntry.id}:`, e);
-          return null;
-        }
-      }));
-      return loaded.filter(p => p !== null);
-    } catch(e){
-      console.warn("Failed to load sticker packs:", e);
-      return [];
-    }
-  }
-
-  window.EV_LOADER = { loadManifest, loadPack, loadPackData, loadStickerPacks };
+  window.EV_LOADER = { loadManifest, loadPack, loadPackData };
 })();
