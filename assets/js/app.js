@@ -399,6 +399,12 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       packDir,
       interactive: true
     });
+
+    // Message ON the card for compose preview (styled to match viewer)
+    const previewMessageEl = h("div", { class: "cardMessage", id: "composePreviewMessage" }, [
+      document.createTextNode(state.msg || "")
+    ]);
+    stage.appendChild(previewMessageEl);
     
     // Get the sticker layer for interactive editing
     const stickerLayer = stage.querySelector(".stickerLayer");
@@ -827,7 +833,12 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("div",{style:"height:10px"}),
         h("label",{class:"small", html:"Message"}),
         (function(){
-          const ta = h("textarea",{class:"input", placeholder:"Keep it short…", value: state.msg || "", oninput:(e)=>{state.msg=e.target.value;sync();}});
+          const ta = h("textarea",{class:"input", placeholder:"Keep it short…", value: state.msg || "", oninput:(e)=>{
+            state.msg = e.target.value;
+            sync();
+            const preview = document.getElementById("composePreviewMessage");
+            if (preview) preview.textContent = state.msg || "";
+          }});
           return ta;
         })(),
         trackPicker ? h("div",{style:"height:10px"}) : null,
@@ -1049,7 +1060,13 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         interactive: false
       });
 
-      // Text panel (single source of truth - not stamped on card)
+      // Message ON the card — visible only after open (handled by .cardContainer.revealed .cardMessage)
+      const cardMessageEl = h("div", { class: "cardMessage" }, [
+        document.createTextNode(payload.msg || "")
+      ]);
+      stage.appendChild(cardMessageEl);
+
+      // Text panel: To/From only (message is on the card)
       const panel = h("div",{class:"openTextPanel"},[
         h("div",{class:"line"},[
           h("span",{class:"label"},["To:"]),
@@ -1058,10 +1075,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("div",{class:"line"},[
           h("span",{class:"label"},["From:"]),
           h("span",{},[ payload.from || "—" ])
-        ]),
-        payload.msg ? h("div",{class:"msg"},[
-          document.createTextNode(payload.msg)
-        ]) : null
+        ])
       ]);
 
       const replyPack = packId;

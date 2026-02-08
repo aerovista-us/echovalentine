@@ -868,11 +868,33 @@ textarea.input{min-height: 110px; resize: vertical;}
     transform: translateY(0);
   }
 }
+/* Message written ON the card - visible only after open (viewer) or always (compose preview) */
 .cardMessage{
   display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  max-width: 85%;
+  text-align: center;
+  padding: 8% 6%;
+  pointer-events: none;
+  z-index: 5;
+  font-family: var(--font);
+  font-size: clamp(14px, 2.8vw, 20px);
+  line-height: 1.45;
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 .cardContainer.revealed .cardMessage{
+  display: block;
+}
+/* Compose preview: message on card always visible */
+.composeStage .cardMessage{
   display: block;
 }
 .cardToFrom-closed{
@@ -889,12 +911,31 @@ textarea.input{min-height: 110px; resize: vertical;}
 /* Card container - hidden behind envelope until opened */
 .envelopeWrapper{
   position: relative;
-  min-height: clamp(420px, 62vw, 560px);
+  min-height: clamp(320px, 50vw, 420px);
   max-height: 78vh;
   aspect-ratio: 900 / 600;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  overflow: visible;
+}
+/* Viewer (open) page: ensure full card visible on mobile - stage fills container, img fits inside */
+.cardContainer .cardStage{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardContainer .cardStage > img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 .cardContainer{
   position: absolute;
@@ -910,12 +951,26 @@ textarea.input{min-height: 110px; resize: vertical;}
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
+  padding: 0;
 }
 .cardContainer.revealed{
   opacity: 1;
   visibility: visible;
   transform: scale(1);
   transition: opacity 500ms ease 300ms, transform 500ms ease 300ms, visibility 0s linear 0s;
+}
+/* Mobile: prevent card from being cut off on viewer */
+@media (max-width: 600px){
+  .envelopeWrapper{
+    min-height: clamp(280px, 55vh, 380px);
+    max-height: 62vh;
+  }
+}
+@media (orientation: portrait) and (max-width: 600px){
+  .envelopeWrapper{
+    max-height: 58vh;
+  }
 }
 .envelope{
   position: relative;
@@ -1006,20 +1061,24 @@ textarea.input{min-height: 110px; resize: vertical;}
   accent-color: var(--accent);
 }
 
-/* Splash Screen */
+/* Splash Screen — full screen top to bottom; black side bands on wide screens (one full image) */
 .splash-screen{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #000;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
   transition: opacity 0.5s ease-out;
+  overflow: hidden;
 }
 .splash-screen.splash-hiding{
   opacity: 0;
@@ -1027,31 +1086,38 @@ textarea.input{min-height: 110px; resize: vertical;}
 }
 .splash-content{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 0;
 }
 .splash-video-container{
-  width: min(80vw, 600px);
-  height: min(80vw, 600px);
-  max-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.splash-video{
   width: 100%;
   height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100vw;
+}
+.splash-video{
+  width: auto;
+  height: 100%;
+  max-height: 100vh;
+  max-height: 100dvh;
+  max-width: 100vw;
   object-fit: contain;
+  object-position: center center;
 }
 /* Mobile readability + tap targets */
 @media (max-width: 600px){
   .splash-video-container{
-    width: min(86vw, 450px);
-    height: min(86vw, 450px);
-    max-height: 60vh;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   .brand-logo-animated{
     height: 50px;
