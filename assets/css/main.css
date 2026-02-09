@@ -55,10 +55,10 @@ body{
 .container{max-width:var(--max); margin:0 auto; padding: 0 14px; position:relative; z-index:1;}
 .topbar{
   position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(10px);
-  background: rgba(11,11,16,.85);
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, rgba(11,11,16,.92) 0%, rgba(11,11,16,.88) 100%);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.04) inset;
 }
 .topbar-inner{
   display:flex; 
@@ -85,7 +85,11 @@ body{
   height: 70px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(255,79,216,.3));
+  filter: drop-shadow(0 4px 12px rgba(255,79,216,.35));
+  transition: filter 0.2s ease;
+}
+.brand:hover .brand-logo-animated{
+  filter: drop-shadow(0 6px 16px rgba(255,79,216,.45));
 }
 .brand-visual{
   display: none; /* Hide text, SVG handles it */
@@ -224,16 +228,23 @@ body{
   border-radius: 14px;
   cursor:pointer;
   font-weight: 700;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 .btn:hover{background: rgba(255,255,255,.09)}
 .btn.primary{
   border-color: rgba(255,79,216,.55);
   background: linear-gradient(135deg, rgba(255,79,216,.95), rgba(255,47,119,.85));
-  box-shadow: 0 12px 30px rgba(255,79,216,.15);
+  box-shadow: 0 12px 30px rgba(255,79,216,.15), 0 0 0 1px rgba(255,255,255,.12) inset;
 }
-.btn.primary:hover{filter: brightness(1.04)}
+.btn.primary:hover{
+  filter: brightness(1.06);
+  box-shadow: 0 14px 36px rgba(255,79,216,.28), 0 0 24px rgba(255,79,216,.12), 0 0 0 1px rgba(255,255,255,.15) inset;
+}
 .btn.ghost{
   background: transparent;
+}
+.btn.ghost:hover{
+  background: rgba(255,255,255,.06);
 }
 .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
 .row.spread{justify-content:space-between}
@@ -268,8 +279,9 @@ body{
 .pack-box:hover{
   transform: translateY(-6px) scale(1.03);
   box-shadow: 
-    0 12px 32px rgba(0,0,0,.25),
-    0 0 0 1px rgba(0,0,0,.1) inset;
+    0 16px 40px rgba(0,0,0,.28),
+    0 0 0 1px rgba(0,0,0,.1) inset,
+    0 0 40px rgba(255,79,216,.08);
   z-index: 10;
 }
 
@@ -436,13 +448,14 @@ body{
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.1s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
 }
 
 .card-thumb:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.45), 0 0 0 1px rgba(255,79,216,.2);
+  border-color: rgba(255,79,216,.25);
 }
 
 .card-image-wrapper{
@@ -538,8 +551,10 @@ textarea.input{min-height: 110px; resize: vertical;}
   border: 1px solid rgba(255,255,255,.18);
   background: linear-gradient(145deg, rgba(0,0,0,.35), rgba(0,0,0,.25));
   padding: 22px 24px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.06) inset;
+  box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 60px rgba(255,79,216,.06);
 }
+.openTextPanel .line:first-of-type{ margin-top: 0; }
+.openTextPanel .line:last-of-type{ margin-bottom: 0; }
 
 .openTextPanel .line{
   font-size: clamp(18px, 2.6vw, 24px);
@@ -580,7 +595,7 @@ textarea.input{min-height: 110px; resize: vertical;}
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(0,0,0,.14);
-  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  box-shadow: 0 18px 60px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 80px rgba(255,79,216,.04);
 }
 
 .cardStage > img{
@@ -642,18 +657,19 @@ textarea.input{min-height: 110px; resize: vertical;}
 }
 .toast{
   pointer-events:none;
-  border:1px solid var(--line);
-  background: rgba(11,11,16,.85);
+  border:1px solid rgba(255,255,255,.15);
+  background: rgba(11,11,16,.92);
   backdrop-filter: blur(12px);
   color: var(--text);
   padding: 10px 12px;
   border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08) inset;
   max-width: min(92vw, 520px);
   display:flex; gap:10px; align-items:center;
 }
 .toast .dot{width:10px;height:10px}
 .toast.good .dot{background: var(--good)}
+.toast.good{ box-shadow: 0 12px 40px rgba(0,0,0,.5), 0 0 24px rgba(77,255,181,.12), 0 0 0 1px rgba(255,255,255,.08) inset; }
 .toast.bad .dot{background: var(--bad)}
 
 .actionBar{
@@ -674,8 +690,17 @@ textarea.input{min-height: 110px; resize: vertical;}
   position:relative; z-index:1;
 }
 .sep{opacity:.35}
-.link{color: rgba(255,255,255,.85); opacity:.85; text-decoration:none}
-.link:hover{opacity:1; text-decoration:underline}
+.link{
+  color: rgba(255,255,255,.9);
+  opacity: .9;
+  text-decoration: none;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.link:hover{
+  opacity: 1;
+  color: var(--accent);
+  text-decoration: underline;
+}
 
 /* Simple confetti */
 .confetti{
@@ -701,8 +726,9 @@ textarea.input{min-height: 110px; resize: vertical;}
   height: var(--env-h);
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255,255,255,.14);
   background: rgba(0,0,0,.18);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.06) inset;
   perspective: 900px;
 }
 .envelope-back{
@@ -886,6 +912,37 @@ textarea.input{min-height: 110px; resize: vertical;}
   transform: scale(1);
   transition: opacity 500ms ease 300ms, transform 500ms ease 300ms, visibility 0s linear 0s;
 }
+
+/* Message on card (viewer) — visible only after open */
+.cardMessage{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  max-width: 85%;
+  text-align: center;
+  padding: 8% 6%;
+  pointer-events: none;
+  z-index: 5;
+  font-family: var(--font);
+  font-size: clamp(15px, 3.2vw, 22px);
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(255,255,255,.98);
+  text-shadow: 0 2px 8px rgba(0,0,0,.7), 0 1px 2px rgba(0,0,0,.5);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+.cardContainer.revealed .cardMessage{
+  display: block;
+}
+.composeStage .cardMessage{
+  display: block;
+}
+
 /* Mobile: prevent card from being cut off on viewer */
 @media (max-width: 600px){
   .envelopeWrapper{

@@ -341,6 +341,11 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       interactive: true
     });
 
+    const previewMessageEl = h("div", { class: "cardMessage", id: "composePreviewMessage" }, [
+      document.createTextNode(state.msg || "")
+    ]);
+    stage.appendChild(previewMessageEl);
+
     function sync(){
       window.EV_STORE.setPrefs({ to: state.to, from: state.from });
     }
@@ -592,7 +597,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         h("input",{class:"input", placeholder:"Name", value: state.from, oninput:(e)=>{state.from=e.target.value;sync();}}),
         h("div",{style:"height:10px"}),
         h("label",{class:"small", html:"Message"}),
-        h("textarea",{class:"input", placeholder:"Keep it short...", value: state.msg || "", oninput:(e)=>{state.msg=e.target.value;sync();}}),
+        h("textarea",{class:"input", placeholder:"Keep it short...", value: state.msg || "", oninput:(e)=>{state.msg=e.target.value;sync(); const el=document.getElementById("composePreviewMessage"); if(el) el.textContent=state.msg||"";}}),
         trackPicker ? h("div",{style:"height:10px"}) : null,
         trackPicker,
         trackPreviewEl,
@@ -604,7 +609,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     const right = h("section",{class:"card"},[
       h("div",{class:"inner"},[
         h("div",{class:"h2", html:"Preview"}),
-        h("p",{class:"p", html:"Card art preview. Message appears in the text panel on open."}),
+        h("p",{class:"p", html:"Card art preview. Message appears on the card after opening."}),
         h("div",{class:"hr"}),
         stage,
         h("div",{style:"height:10px"}),
@@ -747,18 +752,22 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         interactive: false
       });
 
+      // Message ON the card — visible only after open
+      const cardMessageEl = h("div", { class: "cardMessage" }, [
+        document.createTextNode(payload.msg || "")
+      ]);
+      stage.appendChild(cardMessageEl);
+
+      // Panel: To/From only (message is on the card)
       const panel = h("div",{class:"openTextPanel"},[
         h("div",{class:"line"},[
           h("span",{class:"label"},["To:"]),
-          h("span",{},[ payload.to || "-" ])
+          h("span",{},[ payload.to || "—" ])
         ]),
         h("div",{class:"line"},[
           h("span",{class:"label"},["From:"]),
-          h("span",{},[ payload.from || "-" ])
-        ]),
-        payload.msg ? h("div",{class:"msg"},[
-          document.createTextNode(payload.msg)
-        ]) : null
+          h("span",{},[ payload.from || "—" ])
+        ])
       ]);
 
       const replyParams = {
@@ -793,7 +802,7 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
       const topActions = h("div",{class:"actionBar"},[
         h("div",{class:"row wrap"},[
-          h("button",{class:"btn primary", onclick:()=>location.hash=`#/compose?${qs(replyParams)}`},[
+          h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
             "Punch one back"
           ]),
           h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[

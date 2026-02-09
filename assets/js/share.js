@@ -18,8 +18,12 @@
   window.EV_SHARE = {
     encode(payload){ return toB64Url(JSON.stringify(payload)); },
     decode(token){
-      const s = fromB64Url(token);
-      return JSON.parse(s);
+      try {
+        const s = fromB64Url(token);
+        return JSON.parse(s);
+      } catch (e) {
+        throw new Error("Invalid or corrupted link");
+      }
     }
   };
 })();
