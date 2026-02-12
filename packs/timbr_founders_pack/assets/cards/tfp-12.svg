@@ -18,8 +18,7 @@
   <path d="M92 512h716" stroke="rgba(255,255,255,.14)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 14"/>
   <rect x="96" y="122" width="520" height="70" rx="22" fill="rgba(0,0,0,.32)" stroke="rgba(255,255,255,.12)"/>
   <text x="118" y="170" font-family="Arial Black, Arial" font-size="34" fill="rgba(234,241,255,.94)">The One I Protect</text>
-  <text x="96" y="240" font-family="Arial, sans-serif" font-size="22" fill="rgba(234,241,255,.82)">To: ____________</text>
-  <text x="96" y="280" font-family="Arial, sans-serif" font-size="22" fill="rgba(234,241,255,.82)">From: __________</text>
+  <!-- To/From drawn by app overlay -->
   <g opacity=".9">
     <circle cx="760" cy="152" r="44" fill="rgba(0,245,255,.14)" stroke="rgba(0,245,255,.75)" stroke-width="3"/>
     <path d="M732 152h56" stroke="rgba(255,43,214,.85)" stroke-width="8" stroke-linecap="round"/>

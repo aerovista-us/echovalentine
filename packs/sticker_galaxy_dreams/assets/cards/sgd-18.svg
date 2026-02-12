@@ -16,5 +16,5 @@
   </g>
   <text x="116.67" y="200" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.80)" letter-spacing="2">SGD-18</text>
   <text x="450" y="350" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff">Forever Float</text>
-  <text x="450" y="430" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.78)">To: ________   From: ________</text>
+  <!-- To/From drawn by app overlay -->
 </svg>

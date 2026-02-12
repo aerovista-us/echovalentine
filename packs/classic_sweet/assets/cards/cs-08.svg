@@ -34,6 +34,5 @@
   <rect x="82" y="108" width="436" height="58" rx="18" fill="rgba(0,0,0,.30)" stroke="rgba(255,255,255,.18)"/>
   <text x="102" y="148" font-family="Arial Black, Arial" font-size="30" fill="rgba(255,255,255,.92)">SPARKLY THOUGHTS</text>
 
-  <!-- To/From line hints -->
-  <text x="92" y="532" font-family="Arial" font-size="22" fill="rgba(255,255,255,.86)">To: ________   From: ________</text>
+  <!-- To/From drawn by app overlay -->
 </svg>
