@@ -8,6 +8,38 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/landing.css"/>
   <script src="assets/js/hero-interactive.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var trigger = document.getElementById("landing-more-trigger");
+      var block = document.getElementById("landing-more");
+      var tabs = document.querySelectorAll(".landing-tab");
+      var panels = document.querySelectorAll(".landing-slide");
+      tabs.forEach(function(btn, i) {
+        btn.addEventListener("click", function() {
+          tabs.forEach(function(t, j) { t.setAttribute("aria-selected", j === i); });
+          panels.forEach(function(p, j) { p.classList.toggle("is-active", j === i); });
+        });
+      });
+      if (trigger && block) {
+        function toggle() {
+          var open = block.classList.toggle("is-open");
+          trigger.setAttribute("aria-expanded", open);
+          block.setAttribute("aria-hidden", !open);
+          if (open) block.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        trigger.addEventListener("click", function(e) {
+          e.preventDefault();
+          toggle();
+        });
+        if (location.hash === "#landing-more" || location.hash.indexOf("#landing-more") === 0) {
+          setTimeout(function(){ toggle(); }, 100);
+          var h = location.hash || "";
+          if (h.indexOf("--about") !== -1) setTimeout(function(){ if (tabs[2]) tabs[2].click(); }, 200);
+          else if (h.indexOf("--how") !== -1) setTimeout(function(){ if (tabs[1]) tabs[1].click(); }, 200);
+        }
+      }
+    });
+  </script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -23,9 +55,9 @@
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a class="nav-link" href="landing.html">Overview</a>
-        <a class="nav-link" href="howto.html">How it works</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link nav-link--primary" href="index.html#/boxes">Open the app</a>
+        <a class="nav-link" href="landing.html#landing-more--how">How it works</a>
+        <a class="nav-link" href="landing.html#landing-more--about">About</a>
+        <a class="nav-link nav-link--primary" href="index.html?from=landing#/boxes">Open the app</a>
       </nav>
     </div>
   </header>
@@ -49,12 +81,12 @@
         </p>
 
         <div class="hero-cta-row" aria-label="Primary actions">
-          <a class="btn-pill primary" href="index.html#/boxes">
+          <a class="btn-pill primary" href="index.html?from=landing#/boxes">
             Start a Valentine
             <span aria-hidden="true">→</span>
           </a>
-          <a class="btn-pill ghost" href="howto.html">
-            See the 3‑step flow
+          <a class="btn-pill ghost" href="#landing-more" id="landing-more-trigger" aria-expanded="false">
+            Learn more
           </a>
         </div>
 
@@ -70,6 +102,14 @@
       </div>
     </section>
 
+    <div id="landing-more" class="landing-below-hero" aria-hidden="true">
+      <div class="landing-slides-tabs" role="tablist" aria-label="About sections">
+        <button type="button" class="landing-tab" role="tab" aria-selected="true" data-slide="0">Overview</button>
+        <button type="button" class="landing-tab" role="tab" aria-selected="false" data-slide="1">How it works</button>
+        <button type="button" class="landing-tab" role="tab" aria-selected="false" data-slide="2">About</button>
+      </div>
+    <div class="landing-slides">
+    <div class="landing-slide is-active" role="tabpanel" id="landing-slide-0">
     <section class="section" aria-label="Receiver view info">
       <aside class="hero-card" aria-label="What the receiver sees">
         <div class="hero-card-head">
@@ -136,7 +176,8 @@
         </article>
       </div>
     </section>
-
+    </div>
+    <div class="landing-slide" role="tabpanel" id="landing-slide-1">
     <section class="section" aria-label="How it works at a glance">
       <div class="layout-two">
         <div>
@@ -191,15 +232,30 @@
         </aside>
       </div>
     </section>
+    </div>
+    <div class="landing-slide" role="tabpanel" id="landing-slide-2">
+    <section class="section" aria-label="About">
+      <div class="section-head">
+        <h2 class="section-title">A very small Valentine engine, on purpose</h2>
+        <p class="section-kicker">No accounts. No tracking. Static and local‑friendly.</p>
+      </div>
+      <p class="feature-body">EchoValentine is a focused toy — not a social network or CRM. One box, one card, one link. Built for mobile, with no sign‑up wall. Your message lives in the link and in their device cache.</p>
+      <div class="badge-row" style="margin-top:14px;">
+        <span class="badge-pill">No accounts</span>
+        <span class="badge-pill">No pushy gamification</span>
+        <span class="badge-pill">Safe for professional settings</span>
+      </div>
+    </section>
+    </div>
+    </div><!-- .landing-slides -->
+    </div><!-- .landing-below-hero -->
 
     <footer class="footer" aria-label="Footer">
       <span>EchoValentine is a tiny, self‑contained experiment for sending sweet, minimal Valentines.</span>
       <div class="footer-links">
-        <a href="howto.html">How it works</a>
+        <a href="landing.html#landing-more">Learn more</a>
         <span aria-hidden="true">•</span>
-        <a href="about.html">About the app</a>
-        <span aria-hidden="true">•</span>
-        <a href="index.html#/boxes">Open the app</a>
+        <a href="index.html?from=landing#/boxes">Open the app</a>
       </div>
     </footer>
   </main>

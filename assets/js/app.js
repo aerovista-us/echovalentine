@@ -839,13 +839,18 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       const from = payload.to || "";
       window.EV_STORE.setPrefs({ to, from, lastPack: packId, lastCard: cardId });
 
-      const sealSrc = isSvgPath(payload.seal || "")
-        ? ((payload.seal || "").startsWith("http") ? payload.seal : `packs/${packDir}/${payload.seal}`)
+      let sealRel = payload.seal || "";
+      if (!isSvgPath(sealRel)) {
+        const packSeals = (data.stickers?.stickers || []).map(s => String(s?.src || "")).filter(src => isSvgPath(src));
+        if (packSeals.length > 0) sealRel = packSeals[0];
+      }
+      const sealSrc = sealRel
+        ? (sealRel.startsWith("http") ? sealRel : `packs/${packDir}/${sealRel}`)
         : "";
       const envelopeEl = window.EV_ENVELOPE.create(payload.to || "", payload.from || "", payload.msg || "", sealSrc);
       let envelopeOpen = false;
 
-      const playerEl = packTracks.length > 0 ? h("div",{class:"player"},[
+      const playerEl = packTracks.length > 0 ? h("div",{class:"player envelope-player"},[
         h("div",{class:"player-controls"},[
           h("button",{class:"player-btn", id:"playerPrev", onclick:()=>window.EV_PLAYER.playPrev(), title:"Previous"},[document.createTextNode("<")]),
           h("button",{class:"player-btn", id:"playerPlay", onclick:()=>window.EV_PLAYER.togglePlay(), title:"Play/Pause"},[document.createTextNode("Play")]),
@@ -858,7 +863,8 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         ])
       ]) : null;
 
-      const cardContainer = h("div",{class:"cardContainer"},[stage]);
+      const cardContainerChildren = playerEl ? [stage, playerEl] : [stage];
+      const cardContainer = h("div",{class:"cardContainer"}, cardContainerChildren);
 
       const topActions = h("div",{class:"actionBar"},[
         h("div",{class:"row wrap"},[
@@ -883,7 +889,6 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
           cardContainer
         ]),
         panel,
-        playerEl,
         h("div",{class:"row", style:"margin-top:14px;"},[
           h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
             "Punch one back"
@@ -983,6 +988,23 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     }
 
     S.packs = packs;
+
+    // First-time redirect: send first-time visitors (not from a received link) to landing
+    const hash = location.hash || "";
+    const isOpenWithToken = /^#\/open(\?|$)/.test(hash) && hash.includes("token=");
+    const fromLanding = new URLSearchParams(location.search || "").get("from") === "landing";
+    if (fromLanding) {
+      try { localStorage.setItem("ev_landing_seen", "1"); } catch (_) {}
+      if (window.history && history.replaceState) history.replaceState(null, "", location.pathname + location.hash || "#/boxes");
+    }
+    if (!isOpenWithToken && !fromLanding) {
+      try {
+        if (!localStorage.getItem("ev_landing_seen")) {
+          location.replace("landing.html");
+          return;
+        }
+      } catch (_) {}
+    }
 
     // router
     window.addEventListener("hashchange", ()=>render(app()));

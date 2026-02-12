@@ -738,12 +738,13 @@ textarea.input{min-height: 110px; resize: vertical;}
 .envelope-back{
   position:absolute; inset:10px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255,79,216,.12), rgba(77,255,181,.08));
-  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(145deg, rgba(255,255,255,.08) 0%, rgba(0,0,0,.15) 100%);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
 }
 .envelope-paper{
   position:absolute; left:16px; right:16px; bottom:16px;
-  top: calc(16px + (var(--flap-h) * 0.42));
+  top: calc(16px + var(--flap-h));
   border-radius: 12px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.10);
@@ -759,25 +760,29 @@ textarea.input{min-height: 110px; resize: vertical;}
 .envelope-flap{
   position:absolute; left:10px; right:10px; top:10px;
   height: var(--flap-h);
-  transform-origin: 50% 0%;
+  transform-origin: 50% 100%;
   transform: rotateX(0deg);
   transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+  z-index: 2;
 }
 .envelope-flap:before{
   content:"";
   position:absolute; inset:0;
   clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-  border-radius: 12px;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(160deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.04) 50%, rgba(0,0,0,.08) 100%);
+  border: 1px solid rgba(255,255,255,.14);
+  border-bottom: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 .envelope-front{
   position:absolute; left:10px; right:10px; bottom:10px;
-  top: calc(10px + (var(--flap-h) * 0.65));
-  clip-path: polygon(0% 0%, 50% 65%, 100% 0%, 100% 100%, 0% 100%);
-  border-radius: 12px;
-  background: rgba(0,0,0,.16);
-  border: 1px solid rgba(255,255,255,.12);
+  top: calc(10px + var(--flap-h));
+  clip-path: polygon(0% 0%, 50% 28%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(0,0,0,.2) 100%);
+  border: 1px solid rgba(255,255,255,.14);
+  border-top: none;
 }
 .envelope-sealWrap{
   position: absolute;
@@ -879,7 +884,8 @@ textarea.input{min-height: 110px; resize: vertical;}
 /* Viewer (open) page: ensure full card visible on mobile - stage fills container, img fits inside */
 .cardContainer .cardStage{
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   max-width: 100%;
   max-height: 100%;
   display: flex;
@@ -905,6 +911,7 @@ textarea.input{min-height: 110px; resize: vertical;}
   transition: opacity 500ms ease 300ms, transform 500ms ease 300ms, visibility 0s linear 0s;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: visible;
@@ -915,6 +922,13 @@ textarea.input{min-height: 110px; resize: vertical;}
   visibility: visible;
   transform: scale(1);
   transition: opacity 500ms ease 300ms, transform 500ms ease 300ms, visibility 0s linear 0s;
+}
+/* Player lives inside envelope – only visible after open */
+.cardContainer .envelope-player{
+  width: 100%;
+  max-width: 420px;
+  margin-top: 12px;
+  flex-shrink: 0;
 }
 
 /* Standardized card overlay zones — To/From side-by-side, message below */
