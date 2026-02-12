@@ -919,23 +919,23 @@ textarea.input{min-height: 110px; resize: vertical;}
 
 /* Standardized card overlay zones — To/From side-by-side, message below */
 
-/* Row: To and From next to each other (top of card) */
+/* Row: To and From next to each other (top of card), centered */
 .cardToFromRow{
   display: none;
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
   top: 14%;
-  transform: translate(-50%, 0);
-  width: 90%;
-  max-width: 95%;
-  padding: 0 4%;
+  width: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
   pointer-events: none;
   z-index: 5;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: baseline;
-  gap: 1em 2em;
+  gap: 2em;
   animation: fadeInUp 0.5s ease-out 0.2s both;
 }
 .cardContainer.revealed .cardToFromRow,
@@ -945,13 +945,14 @@ textarea.input{min-height: 110px; resize: vertical;}
 
 .cardToFromRow .cardTo,
 .cardToFromRow .cardFrom{
-  display: inline;
+  display: inline-block;
   position: static;
   width: auto;
-  max-width: 42%;
+  max-width: 40%;
+  flex-shrink: 0;
   transform: none;
   padding: 0;
-  text-align: left;
+  text-align: center;
   animation: none;
 }
 .cardTo,

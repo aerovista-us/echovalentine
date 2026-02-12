@@ -16,11 +16,7 @@
   </g>
   <text x="116.67" y="200" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.80)" letter-spacing="2">NSH-05</text>
   <text x="450" y="350" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff">Bright Signal</text>
-  <!-- Standard overlay zones: To/From row (app-drawn), message below. Placeholder line for layout. -->
-  <g id="zone-tofrom" opacity="0.5">
-    <text x="450" y="100" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.5)">To: _______________   From: _______________</text>
-  </g>
-  <g id="zone-message" opacity="0.35">
-    <rect x="80" y="280" width="740" height="240" rx="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="10 8"/>
-  </g>
+  <!-- Reserved for app overlay: To/From row (top), message (middle). No visible placeholder so app overlay is the only text. -->
+  <g id="zone-tofrom" visibility="hidden" aria-hidden="true"><text x="450" y="100" text-anchor="middle">To: ___   From: ___</text></g>
+  <g id="zone-message" opacity="0.2" aria-hidden="true"><rect x="80" y="280" width="740" height="240" rx="16" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="8 6"/></g>
 </svg>

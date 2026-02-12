@@ -11,12 +11,7 @@
   <rect x="36" y="36" width="828" height="528" rx="34" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.18)"/>
   <rect x="56" y="56" width="788" height="488" rx="28" fill="url(#g)"/>
   <rect x="56" y="56" width="788" height="488" rx="28" fill="url(#dots)"/>
-  <!-- Standard overlay zones: To/From row ~14% from top, message ~52% (app-drawn). Reserve space below. -->
-  <g id="zone-tofrom" opacity="0.4">
-    <text x="450" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="rgba(11,13,18,.6)">To: _______________   From: _______________</text>
-  </g>
-  <g id="zone-message">
-    <rect x="90" y="260" width="720" height="220" rx="12" fill="none" stroke="rgba(11,13,18,.25)" stroke-width="2" stroke-dasharray="8 6"/>
-    <text x="450" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="rgba(11,13,18,.5)">Message (app overlay)</text>
-  </g>
+  <!-- Reserved for app overlay: To/From row (top), message (middle). Layout guide only. -->
+  <g id="zone-tofrom" visibility="hidden"><text x="450" y="118" text-anchor="middle">To: ___   From: ___</text></g>
+  <g id="zone-message" opacity="0.25"><rect x="90" y="260" width="720" height="220" rx="12" fill="none" stroke="rgba(11,13,18,.2)" stroke-width="1" stroke-dasharray="8 6"/></g>
 </svg>
