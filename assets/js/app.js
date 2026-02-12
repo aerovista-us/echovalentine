@@ -341,9 +341,17 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       interactive: true
     });
 
+    const previewToEl = h("div", { class: "cardTo", id: "composePreviewTo" }, [
+      document.createTextNode("To: " + (state.to || ""))
+    ]);
+    const previewFromEl = h("div", { class: "cardFrom", id: "composePreviewFrom" }, [
+      document.createTextNode("From: " + (state.from || ""))
+    ]);
+    const previewToFromRow = h("div", { class: "cardToFromRow" }, [previewToEl, previewFromEl]);
     const previewMessageEl = h("div", { class: "cardMessage", id: "composePreviewMessage" }, [
       document.createTextNode(state.msg || "")
     ]);
+    stage.appendChild(previewToFromRow);
     stage.appendChild(previewMessageEl);
 
     function sync(){
@@ -591,10 +599,10 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         outWrap,
         h("div",{class:"hr"}),
         h("label",{class:"small", html:"To"}),
-        h("input",{class:"input", placeholder:"Name", value: state.to, oninput:(e)=>{state.to=e.target.value;sync();}}),
+        h("input",{class:"input", placeholder:"Recipient's name", value: state.to, oninput:(e)=>{state.to=e.target.value;sync(); const el=document.getElementById("composePreviewTo"); if(el) el.textContent="To: "+(state.to||"");}}),
         h("div",{style:"height:10px"}),
         h("label",{class:"small", html:"From"}),
-        h("input",{class:"input", placeholder:"Name", value: state.from, oninput:(e)=>{state.from=e.target.value;sync();}}),
+        h("input",{class:"input", placeholder:"Your name", value: state.from, oninput:(e)=>{state.from=e.target.value;sync(); const el=document.getElementById("composePreviewFrom"); if(el) el.textContent="From: "+(state.from||"");}}),
         h("div",{style:"height:10px"}),
         h("label",{class:"small", html:"Message"}),
         h("textarea",{class:"input", placeholder:"Keep it short...", value: state.msg || "", oninput:(e)=>{state.msg=e.target.value;sync(); const el=document.getElementById("composePreviewMessage"); if(el) el.textContent=state.msg||"";}}),
@@ -752,13 +760,21 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         interactive: false
       });
 
-      // Message ON the card — visible only after open
+      // Standardized overlays: To/From side-by-side, message below
+      const cardToEl = h("div", { class: "cardTo" }, [
+        document.createTextNode("To: " + (payload.to || ""))
+      ]);
+      const cardFromEl = h("div", { class: "cardFrom" }, [
+        document.createTextNode("From: " + (payload.from || ""))
+      ]);
+      const cardToFromRow = h("div", { class: "cardToFromRow" }, [cardToEl, cardFromEl]);
       const cardMessageEl = h("div", { class: "cardMessage" }, [
         document.createTextNode(payload.msg || "")
       ]);
+      stage.appendChild(cardToFromRow);
       stage.appendChild(cardMessageEl);
 
-      // Panel: To/From only (message is on the card)
+      // Panel: To/From repeated below for accessibility / clarity
       const panel = h("div",{class:"openTextPanel"},[
         h("div",{class:"line"},[
           h("span",{class:"label"},["To:"]),
