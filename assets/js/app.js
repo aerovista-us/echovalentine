@@ -88,6 +88,44 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     return stage;
   }
 
+  function applyOverlayStyles(pack, toFromRow, messageEl){
+    if(!pack || !pack.overlay) return; // No overlay config, use CSS defaults
+
+    const overlay = pack.overlay;
+
+    // Apply To/From row styles
+    if(overlay.toFrom && toFromRow){
+      const toFrom = overlay.toFrom;
+      if(toFrom.top !== undefined) toFromRow.style.top = toFrom.top;
+      if(toFrom.gap !== undefined) toFromRow.style.gap = toFrom.gap;
+      if(toFrom.padding !== undefined) toFromRow.style.padding = toFrom.padding;
+      
+      // Apply to child To/From elements
+      const toEl = toFromRow.querySelector(".cardTo");
+      const fromEl = toFromRow.querySelector(".cardFrom");
+      if(toEl || fromEl){
+        [toEl, fromEl].filter(Boolean).forEach(el => {
+          if(toFrom.fontSize !== undefined) el.style.fontSize = toFrom.fontSize;
+          if(toFrom.color !== undefined) el.style.color = toFrom.color;
+          if(toFrom.textShadow !== undefined) el.style.textShadow = toFrom.textShadow;
+        });
+      }
+    }
+
+    // Apply message box styles
+    if(overlay.message && messageEl){
+      const msg = overlay.message;
+      if(msg.top !== undefined) messageEl.style.top = msg.top;
+      if(msg.width !== undefined) messageEl.style.width = msg.width;
+      if(msg.maxWidth !== undefined) messageEl.style.maxWidth = msg.maxWidth;
+      if(msg.padding !== undefined) messageEl.style.padding = msg.padding;
+      if(msg.fontSize !== undefined) messageEl.style.fontSize = msg.fontSize;
+      if(msg.color !== undefined) messageEl.style.color = msg.color;
+      if(msg.textShadow !== undefined) messageEl.style.textShadow = msg.textShadow;
+      if(msg.lineHeight !== undefined) messageEl.style.lineHeight = msg.lineHeight;
+    }
+  }
+
   async function render(appEl){
     const mySeq = ++S.renderSeq;
 
@@ -353,6 +391,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
     ]);
     stage.appendChild(previewToFromRow);
     stage.appendChild(previewMessageEl);
+
+    // Apply pack-specific overlay styles
+    applyOverlayStyles(pack, previewToFromRow, previewMessageEl);
 
     function sync(){
       window.EV_STORE.setPrefs({ to: state.to, from: state.from });
@@ -774,6 +815,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
       stage.appendChild(cardToFromRow);
       stage.appendChild(cardMessageEl);
 
+      // Apply pack-specific overlay styles
+      applyOverlayStyles(pack, cardToFromRow, cardMessageEl);
+
       // Panel: To/From repeated below for accessibility / clarity
       const panel = h("div",{class:"openTextPanel"},[
         h("div",{class:"line"},[
@@ -818,12 +862,14 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
       const topActions = h("div",{class:"actionBar"},[
         h("div",{class:"row wrap"},[
-          h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
-            "Punch one back"
-          ]),
-          h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
-            "Browse boxes"
-          ])
+          h("button",{class:"btn primary", id:"openEnvelopeBtn", onclick:()=>{
+            if(!envelopeOpen){
+              window.EV_ENVELOPE.open(envelopeEl, cardContainer);
+              envelopeOpen = true;
+              const btn = document.getElementById("openEnvelopeBtn");
+              if(btn) btn.style.display = "none";
+            }
+          }},[document.createTextNode("Open envelope")])
         ])
       ]);
 
@@ -839,14 +885,12 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
         panel,
         playerEl,
         h("div",{class:"row", style:"margin-top:14px;"},[
-          h("button",{class:"btn primary", id:"openEnvelopeBtn", onclick:()=>{
-            if(!envelopeOpen){
-              window.EV_ENVELOPE.open(envelopeEl, cardContainer);
-              envelopeOpen = true;
-              const btn = document.getElementById("openEnvelopeBtn");
-              if(btn) btn.style.display = "none";
-            }
-          }},[document.createTextNode("Open envelope")])
+          h("button",{class:"btn primary", onclick:()=>location.hash="#/boxes"},[
+            "Punch one back"
+          ]),
+          h("button",{class:"btn", onclick:()=>location.hash="#/boxes"},[
+            "Browse boxes"
+          ])
         ]),
       ]);
 

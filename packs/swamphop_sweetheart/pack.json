@@ -32,5 +32,20 @@
     "original_art_only": true,
     "no_brand_names": true,
     "notes": "Original art inspired by bayou aesthetics. Hand-drawn style with warm, earthy tones."
+  },
+  "overlay": {
+    "toFrom": {
+      "top": "57.5%",
+      "gap": "2em",
+      "fontSize": "clamp(14px, 3vw, 20px)",
+      "color": "rgba(255,252,248,.98)"
+    },
+    "message": {
+      "top": "62%",
+      "width": "82%",
+      "maxWidth": "90%",
+      "fontSize": "clamp(17px, 4vw, 26px)",
+      "color": "rgba(255,252,248,.98)"
+    }
   }
 }

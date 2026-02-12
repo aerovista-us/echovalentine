@@ -69,11 +69,8 @@
     audio.addEventListener("loadedmetadata", ()=>updateUI());
     audio.addEventListener("timeupdate", ()=>updateUI());
     audio.addEventListener("ended", ()=>{
-      if(currentIndex < playlist.length - 1){
-        playNext();
-      } else {
-        stop();
-      }
+      // Stop after track ends - don't auto-play next track
+      stop();
     });
     audio.addEventListener("error", (e)=>{
       console.warn("Audio load error:", e);

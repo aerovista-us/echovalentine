@@ -1,6 +1,8 @@
-# Card packs audit — To/From placeholder
+# Card packs audit — To/From placeholder & Overlay Configuration
 
 All note (card) packs are checked so that **only the app overlay** shows To/From and message; card SVGs should not contain visible "To: ____ From: ____" placeholder text.
+
+Each pack now includes an `overlay` configuration section in `pack.json` for pack-specific CSS overrides. See `PACK_OVERLAY_SCHEMA.md` for details.
 
 ## Status by pack
 
@@ -36,3 +38,19 @@ All note (card) packs are checked so that **only the app overlay** shows To/From
    `<text ...>To: ____________</text>` and `<text ...>From: __________</text>`.
 
 After fix: card art has no visible To/From; app draws them via `.cardToFromRow` and `.cardMessage` in `main.css` / `app.js`.
+
+## Overlay Configuration Status
+
+All packs now have baseline `overlay` configurations in their `pack.json` files. These use default positioning values and should be adjusted per-pack based on visual testing with Playwright.
+
+**Baseline values:**
+- To/From: `top: 57.5%`
+- Message: `top: 62%`, `width: 82%`, `maxWidth: 90%`
+
+**Next steps:**
+1. Run Playwright audit (`test/audit-packs.js`) to identify packs needing adjustment
+2. Review screenshots in `test/audit-results/`
+3. Adjust overlay values in `pack.json` files as needed
+4. Re-test until all packs are visually correct
+
+See `test/README.md` for instructions on running the audit.

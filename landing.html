@@ -7,6 +7,7 @@
   <meta name="description" content="A tiny, zero-login Valentine web toy. Pick a box, punch a card, drop a link. Perfect for fast, lightweight moments with friends, teams, and subscribers."/>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/landing.css"/>
+  <script src="assets/js/hero-interactive.js" defer></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -30,9 +31,13 @@
   </header>
 
   <main class="shell">
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <span class="hero-eyebrow">
+    <section class="hero-interactive-wrapper" aria-labelledby="hero-title">
+      <div class="hero-interactive-container">
+        <div class="hero-svg-wrapper" id="heroSvgContainer">
+          <!-- Interactive SVG will be injected here -->
+        </div>
+        <div class="hero-content-overlay">
+          <span class="hero-eyebrow">
           <span class="hero-dot" aria-hidden="true"></span>
           Zero‑login Valentine web toy
         </span>
@@ -61,8 +66,11 @@
           <span class="chip">Mobile‑first layout</span>
           <span class="chip">Works great for teams &amp; creators</span>
         </div>
+        </div>
       </div>
+    </section>
 
+    <section class="section" aria-label="Receiver view info">
       <aside class="hero-card" aria-label="What the receiver sees">
         <div class="hero-card-head">
           <div>

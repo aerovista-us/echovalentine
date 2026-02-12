@@ -1,29 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" style="background:#0a0a1a">
-  <rect width="900" height="600" fill="#1a1a2e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
   <defs>
-    <pattern id="scanlinesAL9002" patternUnits="userSpaceOnUse" width="2" height="2">
-      <rect width="2" height="1" fill="#00ff41" opacity="0.1"/>
+    <pattern id="scanlines2" patternUnits="userSpaceOnUse" width="2" height="2">
+      <rect width="2" height="1" fill="#00ff41" opacity="0.08"/>
     </pattern>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="900" height="600" fill="url(#scanlinesAL9002)"/>
+  <rect width="900" height="600" fill="#0a0a1a"/>
+  <rect width="900" height="600" fill="url(#scanlines2)"/>
   
-  <!-- Side decorative frames -->
-  <rect x="50" y="50" width="250" height="500" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
-  <rect x="600" y="50" width="250" height="500" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+  <!-- Joystick and buttons -->
+  <g transform="translate(300, 350)">
+    <!-- Joystick base -->
+    <circle cx="0" cy="0" r="40" fill="#333" stroke="#00ffff" stroke-width="2"/>
+    <circle cx="0" cy="0" r="25" fill="#1a1a2e" stroke="#00ff41" stroke-width="1"/>
+    <!-- Joystick stick -->
+    <rect x="-5" y="-50" width="10" height="50" fill="#555" stroke="#00ffff" stroke-width="1"/>
+    <circle cx="0" cy="-50" r="12" fill="#00ffff" opacity="0.8"/>
+  </g>
   
-  <!-- Main border frame -->
-  <rect x="50" y="30" width="800" height="540" fill="none" stroke="#00ffff" stroke-width="2" stroke-dasharray="4 4"/>
-  <rect x="100" y="50" width="700" height="500" fill="none" stroke="#ff00ff" stroke-width="1"/>
+  <!-- Action buttons -->
+  <circle cx="550" cy="320" r="20" fill="#ff00ff" stroke="#fff" stroke-width="2" opacity="0.9"/>
+  <circle cx="600" cy="320" r="20" fill="#00ff41" stroke="#fff" stroke-width="2" opacity="0.9"/>
+  <circle cx="550" cy="370" r="20" fill="#00ffff" stroke="#fff" stroke-width="2" opacity="0.9"/>
+  <circle cx="600" cy="370" r="20" fill="#ffff00" stroke="#fff" stroke-width="2" opacity="0.9"/>
   
-  <!-- Center heart -->
-  <rect x="400" y="380" width="100" height="80" fill="none" stroke="#00ff41" stroke-width="2"/>
-  <path d="M 450 380 L 470 420 L 510 430 L 480 460 L 490 500 L 450 480 L 410 500 L 420 460 L 390 430 L 430 420 Z" fill="#00ff41" opacity="0.3"/>
-  
-  <!-- Side hearts -->
-  <path d="M 200 380 L 220 420 L 260 430 L 230 460 L 240 500 L 200 480 L 160 500 L 170 460 L 140 430 L 180 420 Z" fill="#00ff41" opacity="0.2"/>
-  <path d="M 700 380 L 720 420 L 760 430 L 730 460 L 740 500 L 700 480 L 660 500 L 670 460 L 640 430 L 680 420 Z" fill="#00ff41" opacity="0.2"/>
-  
-  <!-- Main text -->
-  <text x="450" y="280" font-family="monospace" font-size="36" fill="#00ffff" text-anchor="middle" font-weight="bold">I Choose You For Co-Op</text>
+  <!-- Text -->
+  <text x="450" y="200" font-family="monospace" font-size="36" fill="#00ffff" text-anchor="middle" font-weight="bold" filter="url(#glow2)">I Choose You</text>
+  <text x="450" y="240" font-family="monospace" font-size="28" fill="#ff00ff" text-anchor="middle" filter="url(#glow2)">For Co-Op</text>
   <text x="450" y="550" font-family="monospace" font-size="14" fill="#00ff41" text-anchor="middle" opacity="0.6">HAPPY VALENTINE'S</text>
 </svg>

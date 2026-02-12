@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" id="heroSvg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="heartGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4fd8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff5a9a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="heartGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7cf8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8fe7;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGrad">
+      <stop offset="0%" style="stop-color:#ff4fd8;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ff4fd8;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Filters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Patterns -->
+    <pattern id="sparkle" patternUnits="userSpaceOnUse" width="20" height="20">
+      <circle cx="10" cy="10" r="1" fill="#fff" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#06030a"/>
+  
+  <!-- Animated background hearts (floating) -->
+  <g id="floatingHearts" opacity="0.4">
+    <path class="heart" id="heart1" d="M 200 150 L 220 180 L 250 185 L 225 210 L 230 245 L 200 230 L 170 245 L 175 210 L 150 185 L 180 180 Z" fill="url(#heartGrad1)" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 10,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path class="heart" id="heart2" d="M 1000 200 L 1020 230 L 1050 235 L 1025 260 L 1030 295 L 1000 280 L 970 295 L 975 260 L 950 235 L 980 230 Z" fill="url(#heartGrad2)" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -15,10; 0,0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path class="heart" id="heart3" d="M 150 450 L 170 480 L 200 485 L 175 510 L 180 545 L 150 530 L 120 545 L 125 510 L 100 485 L 130 480 Z" fill="url(#heartGrad1)" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,12; 0,0" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    <path class="heart" id="heart4" d="M 1050 450 L 1070 480 L 1100 485 L 1075 510 L 1080 545 L 1050 530 L 1020 545 L 1025 510 L 1000 485 L 1030 480 Z" fill="url(#heartGrad2)" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -12,-8; 0,0" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Interactive clickable hearts -->
+  <g id="interactiveHearts">
+    <path class="clickable-heart" id="clickHeart1" d="M 300 250 L 320 280 L 350 285 L 325 310 L 330 345 L 300 330 L 270 345 L 275 310 L 250 285 L 280 280 Z" fill="url(#heartGrad1)" filter="url(#glow)" opacity="0.7" cursor="pointer">
+      <animateTransform attributeName="transform" type="scale" values="1;1.1;1" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path class="clickable-heart" id="clickHeart2" d="M 900 300 L 920 330 L 950 335 L 925 360 L 930 395 L 900 380 L 870 395 L 875 360 L 850 335 L 880 330 Z" fill="url(#heartGrad2)" filter="url(#glow)" opacity="0.7" cursor="pointer">
+      <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path class="clickable-heart" id="clickHeart3" d="M 600 100 L 620 130 L 650 135 L 625 160 L 630 195 L 600 180 L 570 195 L 575 160 L 550 135 L 580 130 Z" fill="url(#heartGrad1)" filter="url(#glow)" opacity="0.6" cursor="pointer">
+      <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Sparkles -->
+  <g id="sparkles" opacity="0.6">
+    <circle class="sparkle" cx="400" cy="150" r="3" fill="#fff">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="0.5;1.5;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle class="sparkle" cx="800" cy="180" r="2.5" fill="#7cf8ff">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animateTransform attributeName="transform" type="scale" values="0.5;1.5;0.5" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle class="sparkle" cx="500" cy="500" r="2" fill="#ff8fe7">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animateTransform attributeName="transform" type="scale" values="0.5;1.5;0.5" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle class="sparkle" cx="700" cy="450" r="2.5" fill="#fff">
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="1.5s"/>
+      <animateTransform attributeName="transform" type="scale" values="0.5;1.5;0.5" dur="2.2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+  
+  <!-- Central message area (will be overlaid with text) -->
+  <g id="messageArea" opacity="0.3">
+    <rect x="400" y="200" width="400" height="200" rx="20" fill="none" stroke="url(#heartGrad1)" stroke-width="2" stroke-dasharray="5,5">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Stylized A with orbital ring -->
+  <g id="stylizedA" transform="translate(600, 300)">
+    <!-- A letter - thinner legs (stroke-width reduced to ~50% of original) -->
+    <!-- Left leg -->
+    <line x1="-30" y1="40" x2="-10" y2="-40" 
+          stroke="url(#heartGrad1)" 
+          stroke-width="4" 
+          stroke-linecap="round"
+          filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Right leg -->
+    <line x1="10" y1="-40" x2="30" y2="40" 
+          stroke="url(#heartGrad1)" 
+          stroke-width="4" 
+          stroke-linecap="round"
+          filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Crossbar of A -->
+    <line x1="-12" y1="8" x2="12" y2="8" 
+          stroke="url(#heartGrad1)" 
+          stroke-width="4" 
+          stroke-linecap="round"
+          filter="url(#glow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Orbital ring around A peak - tilted with right side higher -->
+    <!-- Center at A peak (0, -40), but offset to right and higher -->
+    <ellipse cx="8" cy="-45" rx="32" ry="20" 
+             fill="none" 
+             stroke="url(#heartGrad2)" 
+             stroke-width="2.5" 
+             stroke-dasharray="3,3"
+             opacity="0.85"
+             transform="rotate(25 8 -45)">
+      <animateTransform attributeName="transform" 
+                        type="rotate" 
+                        values="25 8 -45; 385 8 -45; 25 8 -45" 
+                        dur="10s" 
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Small orbiting particle -->
+    <circle r="3" fill="#7cf8ff" opacity="0.9" filter="url(#glow)">
+      <animateMotion 
+        path="M 40 -45 A 32 20 25 1 1 -24 -45 A 32 20 25 1 1 40 -45"
+        dur="8s" 
+        repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Particle effects (will be generated by JS) -->
+  <g id="particles"></g>
+</svg>

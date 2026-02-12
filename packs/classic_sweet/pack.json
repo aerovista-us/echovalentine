@@ -17,5 +17,20 @@
   "assets": {
     "box_art": "assets/covers/cover.svg",
     "og_image": "assets/covers/cover.svg"
+  },
+  "overlay": {
+    "toFrom": {
+      "top": "57.5%",
+      "gap": "2em",
+      "fontSize": "clamp(14px, 3vw, 20px)",
+      "color": "rgba(255,252,248,.98)"
+    },
+    "message": {
+      "top": "62%",
+      "width": "82%",
+      "maxWidth": "90%",
+      "fontSize": "clamp(17px, 4vw, 26px)",
+      "color": "rgba(255,252,248,.98)"
+    }
   }
 }
