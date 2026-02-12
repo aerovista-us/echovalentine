@@ -919,13 +919,13 @@ textarea.input{min-height: 110px; resize: vertical;}
 
 /* Standardized card overlay zones — To/From side-by-side, message below */
 
-/* Row: To and From next to each other (top of card), centered */
+/* Row: To and From next to each other, below card title area; centered */
 .cardToFromRow{
   display: none;
   position: absolute;
   left: 0;
   right: 0;
-  top: 14%;
+  top: 26%;
   width: 100%;
   padding: 0 5%;
   box-sizing: border-box;
@@ -970,12 +970,12 @@ textarea.input{min-height: 110px; resize: vertical;}
   overflow-wrap: break-word;
 }
 
-/* Message: below To/From row */
+/* Message: below To/From row, lower so not overlapping card title */
 .cardMessage{
   display: none;
   position: absolute;
   left: 50%;
-  top: 52%;
+  top: 62%;
   transform: translate(-50%, -50%);
   width: 82%;
   max-width: 90%;
