@@ -2,6 +2,11 @@
   "version": 1,
   "stickers": [
     {
+      "id": "albp-seal-svg",
+      "name": "Anti Love Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    },
+    {
       "id": "albp-blender",
       "name": "Blender",
       "src": "assets/stickers/sticker.pk.1/blender_sticker.webp"

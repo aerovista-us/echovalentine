@@ -1,3 +1,9 @@
 {
-  "stickers": []
+  "stickers": [
+    {
+      "id": "mom-seal-svg",
+      "title": "Mother Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    }
+  ]
 }

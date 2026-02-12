@@ -119,41 +119,6 @@
       "id": "al90-24",
       "title": "Al90 24",
       "src": "assets/cards/al90-24.svg"
-    },
-    {
-      "id": "al90-st-01",
-      "title": "al90 St 01",
-      "src": "assets/cards/al90-st-01.svg"
-    },
-    {
-      "id": "al90-st-02",
-      "title": "al90 St 02",
-      "src": "assets/cards/al90-st-02.svg"
-    },
-    {
-      "id": "al90-st-03",
-      "title": "al90 St 03",
-      "src": "assets/cards/al90-st-03.svg"
-    },
-    {
-      "id": "al90-st-04",
-      "title": "al90 St 04",
-      "src": "assets/cards/al90-st-04.svg"
-    },
-    {
-      "id": "al90-st-05",
-      "title": "al90 St 05",
-      "src": "assets/cards/al90-st-05.svg"
-    },
-    {
-      "id": "al90-st-06",
-      "title": "al90 St 06",
-      "src": "assets/cards/al90-st-06.svg"
-    },
-    {
-      "id": "alen_dude",
-      "title": "Alen Dude",
-      "src": "assets/cards/alen_dude.webp"
     }
   ]
 }

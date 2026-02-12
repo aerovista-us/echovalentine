@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>About EchoValentine — Punch &amp; Send</title>
+  <meta name="description" content="Learn what EchoValentine is (and isn’t): a tiny, self‑contained Valentine playground for fast, thoughtful card links."/>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/landing.css"/>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" aria-label="EchoValentine navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="landing.html">
+        <span class="nav-logo" aria-hidden="true"></span>
+        <span class="nav-title">
+          <span class="nav-title-main">ECHOVALENTINE</span>
+          <span class="nav-title-tag">Punch &amp; Send micro‑cards</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="landing.html">Overview</a>
+        <a class="nav-link" href="howto.html">How it works</a>
+        <a class="nav-link" href="about.html" aria-current="page">About</a>
+        <a class="nav-link nav-link--primary" href="index.html#/boxes">Open the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="about-title">
+      <div>
+        <span class="hero-eyebrow">
+          <span class="hero-dot" aria-hidden="true"></span>
+          What EchoValentine is
+        </span>
+        <h1 id="about-title" class="hero-title">A very small Valentine engine, on purpose.</h1>
+        <p class="hero-sub">
+          EchoValentine started as a micro‑experiment: how little UI can we add while still
+          giving someone a delightful “you thought of me” moment? The answer was: one box,
+          one card, one link.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn-pill primary" href="index.html#/boxes">Start a Valentine</a>
+          <a class="btn-pill ghost" href="howto.html">See how it works</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Design principles">
+        <div class="hero-card-head">
+          <div>
+            <div class="hero-card-label">Design principles</div>
+            <p class="hero-card-body">
+              Small, legible, and low‑pressure. EchoValentine should feel like
+              a side‑quest, not a second job.
+            </p>
+          </div>
+          <span class="hero-card-tag">Static &amp; local‑friendly</span>
+        </div>
+        <div class="hero-card-body">
+          The app is a static site: HTML, CSS, and JavaScript only.
+          You can run it locally for reliability, or use it directly from a hosted copy.
+        </div>
+        <div class="hero-card-meta">
+          <span class="mini">Built with mobile screens as the first‑class canvas.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" aria-label="What it is and isn’t">
+      <div class="layout-two">
+        <div>
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">What EchoValentine is</h2>
+              <p class="section-kicker">A small, opinionated utility.</p>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-label">A focused toy</div>
+              <h3 class="feature-title">Not a social network</h3>
+              <p class="feature-body">
+                There are no feeds, no profiles, and no public timelines. It’s closer
+                to a digital greeting card than a new platform.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-label">A tiny canvas</div>
+              <h3 class="feature-title">Not a slide deck</h3>
+              <p class="feature-body">
+                You get one moment, not a deck. That constraint keeps messages short,
+                focused, and easy to read on a phone.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="feature-label">A safe add‑on</div>
+              <h3 class="feature-title">Not a CRM</h3>
+              <p class="feature-body">
+                EchoValentine pairs well with your existing tools (email, chat, community),
+                but doesn’t try to replace them.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <aside>
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">What it deliberately avoids</h2>
+              <p class="section-kicker">Things EchoValentine will not do.</p>
+            </div>
+          </div>
+          <ul class="steps" style="list-style:none; padding:0; margin:0;">
+            <li class="step-row">
+              <span class="step-num">1</span>
+              <div class="step-body">
+                No inbox, no “read” receipts.<br/>
+                <span class="mini">
+                  If you need full message tracking, use your existing email or CRM.
+                  EchoValentine is just the moment of delight on top.
+                </span>
+              </div>
+            </li>
+            <li class="step-row">
+              <span class="step-num">2</span>
+              <div class="step-body">
+                No surprise analytics dashboards.<br/>
+                <span class="mini">
+                  There is no analytics UI inside the Valentine app. You can instrument
+                  the hosting layer separately if you need metrics.
+                </span>
+              </div>
+            </li>
+            <li class="step-row">
+              <span class="step-num">3</span>
+              <div class="step-body">
+                No algorithmic feeds.<br/>
+                <span class="mini">
+                  Cards are 1:1 or 1:few on purpose. The app is intentionally quiet until
+                  you decide to send something.
+                </span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-label="For operators and teams">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">For operators who care about polish</h2>
+          <p class="section-kicker">
+            Under the hood, EchoValentine focuses on load time, mobile layout, and not breaking links.
+          </p>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-label">Layout</div>
+          <h3 class="feature-title">Card‑first on mobile</h3>
+          <p class="feature-body">
+            The viewer layout was tuned to keep the card centered and fully visible on
+            small screens while the envelope animation still feels playful.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-label">Links</div>
+          <h3 class="feature-title">Deep links for every view</h3>
+          <p class="feature-body">
+            The viewer and compose screens use hash‑based routes, so every Valentine can
+            be opened via a single URL without needing a backend router.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-label">Footprint</div>
+          <h3 class="feature-title">Static and fork‑friendly</h3>
+          <p class="feature-body">
+            Because it is a static bundle, it’s easy to host, mirror, or fork the app
+            for your own seasonal campaigns or brand‑safe palettes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <span>EchoValentine is meant to be a tiny, delightful extra — not a new system you have to maintain.</span>
+      <div class="footer-links">
+        <a href="landing.html">Overview</a>
+        <span aria-hidden="true">•</span>
+        <a href="howto.html">How it works</a>
+        <span aria-hidden="true">•</span>
+        <a href="index.html#/boxes">Open the app</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
+

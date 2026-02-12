@@ -139,66 +139,6 @@
       "id": "neon_03",
       "title": "Neon 03",
       "src": "assets/cards/neon_03.svg"
-    },
-    {
-      "id": "snn_st_01",
-      "title": "Snn St 01",
-      "src": "assets/cards/snn-st-01.svg"
-    },
-    {
-      "id": "snn_st_02",
-      "title": "Snn St 02",
-      "src": "assets/cards/snn-st-02.svg"
-    },
-    {
-      "id": "snn_st_03",
-      "title": "Snn St 03",
-      "src": "assets/cards/snn-st-03.svg"
-    },
-    {
-      "id": "snn_st_04",
-      "title": "Snn St 04",
-      "src": "assets/cards/snn-st-04.svg"
-    },
-    {
-      "id": "snn_st_05",
-      "title": "Snn St 05",
-      "src": "assets/cards/snn-st-05.svg"
-    },
-    {
-      "id": "snn_st_06",
-      "title": "Snn St 06",
-      "src": "assets/cards/snn-st-06.svg"
-    },
-    {
-      "id": "snn_st_07",
-      "title": "Snn St 07",
-      "src": "assets/cards/snn-st-07.svg"
-    },
-    {
-      "id": "snn_st_08",
-      "title": "Snn St 08",
-      "src": "assets/cards/snn-st-08.svg"
-    },
-    {
-      "id": "snn_st_09",
-      "title": "Snn St 09",
-      "src": "assets/cards/snn-st-09.svg"
-    },
-    {
-      "id": "snn_st_10",
-      "title": "Snn St 10",
-      "src": "assets/cards/snn-st-10.svg"
-    },
-    {
-      "id": "snn_st_11",
-      "title": "Snn St 11",
-      "src": "assets/cards/snn-st-11.svg"
-    },
-    {
-      "id": "snn_st_12",
-      "title": "Snn St 12",
-      "src": "assets/cards/snn-st-12.svg"
     }
   ]
 }

@@ -6,8 +6,19 @@
     return await r.json();
   }
 
+  function validatePackPath(packPath){
+    if(!packPath || typeof packPath !== "string") return false;
+    if(packPath.includes("..") || /[<>"\\|?*\x00-\x1f]/.test(packPath)) return false;
+    if(!/\.json$/i.test(packPath)) return false;
+    if(!/^[a-zA-Z0-9_\-/.]+$/.test(packPath)) return false;
+    return true;
+  }
+
   async function loadManifest(){ return await j("packs/manifest.json"); }
-  async function loadPack(packPath){ return await j(`packs/${packPath}`); }
+  async function loadPack(packPath){
+    if(!validatePackPath(packPath)) throw new Error("Invalid pack path");
+    return await j(`packs/${packPath}`);
+  }
 
   async function loadPackData(packId, pack){
     const base = `packs/${packId}/`;

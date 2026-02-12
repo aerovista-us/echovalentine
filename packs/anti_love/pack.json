@@ -1,10 +1,11 @@
 {
-  "id": "anti_love_blackpink",
-  "name": "Anti Love Blackpink",
-  "title": "Anti Love Blackpink",
+  "id": "anti_love_legacy_archive",
+  "name": "Anti Love Legacy (Archive)",
+  "title": "Anti Love Legacy (Archive)",
   "tagline": "Anti-love vibes with attitude",
   "description": "Edgy anti-love cards with bold graphics and attitude. Perfect for those who want to send a different kind of Valentine message.",
   "version": "1.0.0",
+  "archived": true,
   "cards_count": 24,
   "pricing": {
     "tier": "free"

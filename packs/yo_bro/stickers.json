@@ -1,3 +1,9 @@
 {
-  "stickers": []
+  "stickers": [
+    {
+      "id": "bro-seal-svg",
+      "title": "Bro Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    }
+  ]
 }

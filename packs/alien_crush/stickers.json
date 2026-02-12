@@ -2,6 +2,11 @@
   "version": 1,
   "stickers": [
     {
+      "id": "ac-seal-svg",
+      "name": "Alien Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    },
+    {
       "id": "AC-ST-07",
       "name": "Alien Dude",
       "src": "assets/stickers/ac-st-07.webp"

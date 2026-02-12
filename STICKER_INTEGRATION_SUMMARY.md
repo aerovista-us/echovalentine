@@ -1,131 +1,119 @@
-# Sticker Integration Summary - Alien Crush Pack
+# Sticker Integration Summary — Audit & Changelog
 
-## ✅ Completed: Fixed `alien_crush/stickers.json`
-
-### Changes Made:
-1. **Fixed Structure**: Changed from array format to proper object format with wrapper
-   - **Before**: `[{id, title, src}, ...]` (incorrect)
-   - **After**: `{version: 1, stickers: [{id, name, src}, ...]}` (correct)
-
-2. **Fixed Field Names**:
-   - Changed `title` → `name` (proper field name)
-   - Kept `id` and `src` fields
-
-3. **Fixed Paths**:
-   - Changed `assets/cards/` → `assets/stickers/` (correct directory)
-   - Updated file names to match `_DONE` format: `AC-ST-01.svg` (uppercase with hyphens)
-
-4. **Removed Duplicates**:
-   - Removed duplicate entries for AC-ST-07 and AC-ST-08
-
-5. **Updated IDs**:
-   - Changed from lowercase `ac-st-01` to proper format `AC-ST-01`
-   - Matches the file naming convention from `_DONE`
-
-### File Structure Now Matches:
-```
-packs/alien_crush/
-  ├── stickers.json ✅ (FIXED - now matches _DONE format)
-  └── assets/
-      └── stickers/
-          ├── AC-ST-01.svg (needs to be copied from _DONE)
-          ├── AC-ST-02.svg (needs to be copied from _DONE)
-          ├── AC-ST-03.svg (needs to be copied from _DONE)
-          ├── AC-ST-04.svg (needs to be copied from _DONE)
-          ├── AC-ST-05.svg (needs to be copied from _DONE)
-          ├── AC-ST-06.svg (needs to be copied from _DONE)
-          ├── AC-ST-07.png ✅ (already exists)
-          └── AC-ST-08.png ✅ (already exists)
-```
+**Last updated:** 2026-02-11  
+**Scope:** Real-file audit of sticker usage in simp.v; where the feature was vs where it is now.
 
 ---
 
-## 📋 Next Steps Required:
+## Changelog — Where It Was vs Where It Is Now
 
-### Step 1: Copy Sticker Files from `_DONE`
-Copy the following files from:
-`\\100.115.9.61\Collab\av-share\valentines\_DONE\alien_crush\assets\stickers\`
+### Before (earlier design / val.dev)
 
-To:
-`\\100.115.9.61\Collab\mini.shops\Valentines\simp.v\packs\alien_crush\assets\stickers\`
+- **Stickers on the card:** Some builds (e.g. val.dev) had a **sticker-on-card** feature: users could pick stickers and place them on the card art (e.g. drag-and-drop), and the payload included a `sticker` field so the open view could render the sticker on the card.
+- **Standalone sticker packs:** val.dev had a separate system: `packs/sticker_packs/` with multiple sticker packs (Neon Hearts, Arcade Icons, Witchy Moods), `loadStickerPacks()` in loader, and a **tabbed sticker picker** in the compose UI to choose from both pack stickers and standalone packs.
+- **Payload:** Included sticker placement data (e.g. `payload.sticker` with packId/source for loading).
+- **UI:** Sticker picker for “add sticker to card” plus envelope seal picker.
 
-**Files to copy:**
-- ✅ `AC-ST-01.svg`
-- ✅ `AC-ST-02.svg`
-- ✅ `AC-ST-03.svg`
-- ✅ `AC-ST-04.svg`
-- ✅ `AC-ST-05.svg`
-- ✅ `AC-ST-06.svg`
-- ⚠️ `AC-ST-07.png` (already exists, verify it matches)
-- ⚠️ `AC-ST-08.png` (already exists, verify it matches)
+### Now (current simp.v)
 
-### Step 2: Verify File Names Match
-Ensure the files in `assets/stickers/` match the names in `stickers.json`:
-- File names are case-sensitive
-- Must match exactly: `AC-ST-01.svg` (not `ac-st-01.svg`)
+- **Stickers on the card:** **Removed.** There is no UI to place stickers on the card, no `sticker` in the share payload, and no rendering of a sticker on the card in the open view. E2E_AUDIT explicitly states: *“Tutorial: Steps match current flow (message on card, **no stickers in this build**).”*
+- **Standalone sticker packs:** **Not present.** simp.v has no `packs/sticker_packs/`, no `loadStickerPacks()`, and no tabbed sticker picker. VAL_DEV_FEATURES_COMPARISON.md describes these as “Not in Main.”
+- **Pack stickers:** **Still loaded and used only for envelope seals.**  
+  - Loader still fetches each pack’s `data.stickers` (e.g. `stickers.json`) and normalizes to `{ stickers: [...] }`.  
+  - In compose, **only SVG stickers** are used: `sealOptions` is built from `data.stickers.stickers` filtered by `isSvgPath(src)`.  
+  - The only sticker-related UI is the **seal picker** (optional envelope seal). Non-SVG stickers (e.g. .webp) in a pack’s stickers.json are **not** shown anywhere in the app.
+- **Payload:** Share payload includes `to`, `from`, `msg`, `track`, `seal`, `ts` — **no `sticker` field.**
+- **Sticker “cards”:** Cards that look like stickers (id/title/src containing “sticker”, “-st-”, etc.) are **filtered out** of the box gallery and compose card list via `getLaunchCards()` so they don’t appear as selectable cards.
 
-### Step 3: Test Integration
-After copying files, test that:
-1. Pack loads correctly in the app
-2. Stickers appear in the sticker picker
-3. Stickers can be added to cards
-4. No console errors
+So: **stickers were (in other builds) a full “stickers on the card” + optional standalone packs feature; in current simp.v they are only “envelope seal art” sourced from pack SVG stickers.**
 
 ---
 
-## 🔍 Comparison: Before vs After
+## Real-File Audit (Current Codebase)
 
-### Before (INCORRECT):
-```json
-[
-  {
-    "id": "ac-st-01",
-    "title": "Ac St 01",
-    "src": "assets/cards/ac-st-01.svg"  // ❌ Wrong path
-  }
-]
-```
+### 1. Loader — `assets/js/loader.js`
 
-### After (CORRECT):
-```json
-{
-  "version": 1,
-  "stickers": [
-    {
-      "id": "AC-ST-01",
-      "name": "UFO",  // ✅ Proper name
-      "src": "assets/stickers/AC-ST-01.svg"  // ✅ Correct path
-    }
-  ]
-}
-```
+- **Lines 15, 19:** Loads `pack.data.stickers` (e.g. `stickers.json`) per pack; normalizes to `{ stickers: stickersRaw }` (handles both array and object format).
+- **Exports:** `loadPackData` returns `{ cards, stickers, tracks }`. No `loadStickerPacks()`; no reference to `sticker_packs/`.
 
----
+### 2. App — `assets/js/app.js`
 
-## 📝 Notes:
+| Location   | What it does |
+|-----------|----------------|
+| **6**     | `dataCache` holds `{ cards, stickers, tracks }` per pack. |
+| **40–52** | `isStickerCard(card)` — detects “sticker” cards (by id/title/src) so they can be excluded from the card list. |
+| **56**    | `getLaunchCards(cards)` — filters out sticker cards so gallery/compose only show launch cards. |
+| **59–61** | `pickEnvelopeSeal(stickers)` — picks a random **SVG** sticker from the pack’s stickers array for default seal. |
+| **235**   | Comment: “Gallery: launch cards only (sticker-cards removed).” |
+| **329**   | Compose initial state: `seal: pickEnvelopeSeal(data.stickers?.stickers || [])`. |
+| **331–335** | `sealOptions` = pack stickers **filtered to SVG paths only**; used to validate and default `state.seal`. |
+| **539–601** | Seal picker UI: only rendered when `sealOptions.length > 0`; cycle/random/clear seal. |
+| **361–370** | Punch payload: `to`, `from`, `msg`, `track`, `seal`, `ts` — **no `sticker`.** |
+| **777–780** | Open view: uses `payload.seal` only for envelope image; **no use of `payload.sticker`.** |
 
-1. **Loader Compatibility**: The loader.js handles both formats:
-   - Array format: `Array.isArray(stickersRaw) ? { stickers: stickersRaw } : stickersRaw`
-   - So the new format with wrapper is fully compatible
+There is no drag-drop module, no sticker-on-card layer, and no `payload.sticker` encode/decode.
 
-2. **File Naming**: The `_DONE` version uses uppercase IDs (`AC-ST-01`) which is more consistent with the pack naming convention
+### 3. Pack data (examples)
 
-3. **Path Structure**: All paths are relative to the pack directory (`packs/alien_crush/`)
+- **alien_crush/stickers.json:** `{ "version": 1, "stickers": [ seal_launch.svg, ac-st-07.webp, ac-st-08.webp ] }`. Only `seal_launch.svg` is eligible for the seal picker (SVG-only in app).
+- **anti_love_blackpink, arcade_love_90s, dearest_mother, found_family, yo_bro, etc.:** Various packs have `stickers.json` and many reference `assets/stickers/seal_launch.svg` plus other assets. Only `.svg` entries appear in the compose seal picker.
+- **pack.json:** Many packs have `"data": { "stickers": "stickers.json" }`. Loader uses this to load stickers; app uses them only for `sealOptions`.
+
+### 4. Directories
+
+- **simp.v:** No `packs/sticker_packs/` directory. No `dragdrop.js` or equivalent in `assets/js/`.
 
 ---
 
-## ✅ Validation Checklist:
+## Why the Doc Said “Sticker Picker” and “Add to Cards”
 
-- [x] `stickers.json` structure fixed (object with `version` and `stickers` array)
-- [x] Field names corrected (`name` instead of `title`)
-- [x] Paths corrected (`assets/stickers/` instead of `assets/cards/`)
-- [x] IDs updated to match file naming (`AC-ST-01` format)
-- [x] Duplicates removed
-- [ ] Sticker files copied from `_DONE` to `simp.v/packs/alien_crush/assets/stickers/`
-- [ ] Files verified to exist
-- [ ] Integration tested in app
+This summary originally described fixing **alien_crush** `stickers.json` (structure, paths, IDs) and “test that stickers appear in the sticker picker” and “stickers can be added to cards.” That matched a **planned or previous** build where:
+
+- A “sticker picker” let users choose stickers to put **on the card**.
+- Sticker assets (including Alien Crush SVGs) would be used for that picker.
+
+In the **current** simp.v build:
+
+- The only picker that uses pack stickers is the **seal picker** (envelope seal).
+- “Sticker picker” in the sense of “add sticker to card” does not exist. The previous doc’s “Next Steps”—**copy files, test stickers in picker, add to cards**—are **obsolete** and not applicable to current behavior.
 
 ---
 
-*Integration completed: stickers.json structure fixed*
-*Next: Copy sticker files from _DONE directory*
+## Summary Table (before vs now)
+
+| Feature / artifact              | Where it was (or planned)     | Where it is now (simp.v)        |
+|---------------------------------|------------------------------|----------------------------------|
+| Stickers on the card            | Yes (e.g. val.dev)           | **No** — removed / not in build  |
+| Payload `sticker` field         | Yes                          | **No** — payload has `seal` only |
+| Standalone sticker packs        | val.dev: `sticker_packs/`    | **No** — not in simp.v           |
+| loadStickerPacks()              | val.dev loader               | **No** — not in simp.v loader    |
+| Tabbed sticker picker UI        | val.dev compose              | **No**                           |
+| Pack stickers loaded            | Yes                          | **Yes** — loader + dataCache     |
+| Envelope seal from pack stickers| Yes                          | **Yes** — SVG only → seal picker |
+| Seal in payload                 | Yes                          | **Yes** — `payload.seal`         |
+| Sticker cards hidden from gallery| Yes                          | **Yes** — getLaunchCards()        |
+
+### Current simp.v only (quick reference)
+
+| Feature / artifact       | Current simp.v |
+|--------------------------|----------------|
+| Sticker-on-card UI       | No             |
+| payload.sticker          | No             |
+| Standalone sticker_packs/| No             |
+| loadStickerPacks()       | No             |
+| Tabbed sticker picker    | No             |
+| Pack stickers loaded     | Yes            |
+| Envelope seal picker uses stickers | Yes (SVG only) |
+| payload.seal supported   | Yes            |
+
+---
+
+## If You Re-Enable “Stickers on the Card” Later
+
+- You’d need to restore or add: UI to pick/place stickers on the card, a `sticker` (or equivalent) field in the share payload, and open-view logic to render that sticker on the card.
+- Pack sticker files (e.g. alien_crush `stickers.json` and assets) are already loaded; you’d add a second use (card stickers) alongside the existing seal use.
+- The alien_crush structure fix described in the original summary (object with `version` + `stickers` array, correct paths/IDs) remains valid for pack authors; only the “sticker picker” and “add to cards” steps are obsolete in the current app.
+
+---
+
+*Audit completed from real files in simp.v; changelog reflects removal of sticker-on-card and standalone sticker packs in favor of envelope-seal-only usage.*

@@ -1,6 +1,11 @@
 {
   "stickers": [
     {
+      "id": "al90-seal-svg",
+      "title": "Arcade Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    },
+    {
       "id": "kiss",
       "title": "Kiss",
       "src": "assets/stickers/kiss.webp"

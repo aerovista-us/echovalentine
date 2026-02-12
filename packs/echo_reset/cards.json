@@ -119,66 +119,6 @@
       "id": "nsh-24",
       "title": "Nsh 24",
       "src": "assets/cards/nsh-24.svg"
-    },
-    {
-      "id": "nsh_st_01",
-      "title": "Nsh St 01",
-      "src": "assets/cards/nsh-st-01.svg"
-    },
-    {
-      "id": "nsh_st_02",
-      "title": "Nsh St 02",
-      "src": "assets/cards/nsh-st-02.svg"
-    },
-    {
-      "id": "nsh_st_03",
-      "title": "Nsh St 03",
-      "src": "assets/cards/nsh-st-03.svg"
-    },
-    {
-      "id": "nsh_st_04",
-      "title": "Nsh St 04",
-      "src": "assets/cards/nsh-st-04.svg"
-    },
-    {
-      "id": "nsh_st_05",
-      "title": "Nsh St 05",
-      "src": "assets/cards/nsh-st-05.svg"
-    },
-    {
-      "id": "nsh_st_06",
-      "title": "Nsh St 06",
-      "src": "assets/cards/nsh-st-06.svg"
-    },
-    {
-      "id": "nsh_st_07",
-      "title": "Nsh St 07",
-      "src": "assets/cards/nsh-st-07.svg"
-    },
-    {
-      "id": "nsh_st_08",
-      "title": "Nsh St 08",
-      "src": "assets/cards/nsh-st-08.svg"
-    },
-    {
-      "id": "nsh_st_09",
-      "title": "Nsh St 09",
-      "src": "assets/cards/nsh-st-09.svg"
-    },
-    {
-      "id": "nsh_st_10",
-      "title": "Nsh St 10",
-      "src": "assets/cards/nsh-st-10.svg"
-    },
-    {
-      "id": "nsh_st_11",
-      "title": "Nsh St 11",
-      "src": "assets/cards/nsh-st-11.svg"
-    },
-    {
-      "id": "nsh_st_12",
-      "title": "Nsh St 12",
-      "src": "assets/cards/nsh-st-12.svg"
     }
   ]
 }

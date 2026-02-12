@@ -119,46 +119,6 @@
       "id": "ac-24",
       "title": "Ac 24",
       "src": "assets/cards/ac-24.svg"
-    },
-    {
-      "id": "ac-st-01",
-      "title": "Ac St 01",
-      "src": "assets/cards/ac-st-01.svg"
-    },
-    {
-      "id": "ac-st-02",
-      "title": "Ac St 02",
-      "src": "assets/cards/ac-st-02.svg"
-    },
-    {
-      "id": "ac-st-03",
-      "title": "Ac St 03",
-      "src": "assets/cards/ac-st-03.svg"
-    },
-    {
-      "id": "ac-st-04",
-      "title": "Ac St 04",
-      "src": "assets/cards/ac-st-04.svg"
-    },
-    {
-      "id": "ac-st-05",
-      "title": "Ac St 05",
-      "src": "assets/cards/ac-st-05.svg"
-    },
-    {
-      "id": "ac-st-06",
-      "title": "Ac St 06",
-      "src": "assets/cards/ac-st-06.svg"
-    },
-    {
-      "id": "ac-st-07",
-      "title": "Ac St 07",
-      "src": "assets/cards/ac-st-07.webp"
-    },
-    {
-      "id": "ac-st-08",
-      "title": "Ac St 08",
-      "src": "assets/cards/ac-st-08.webp"
     }
   ]
 }

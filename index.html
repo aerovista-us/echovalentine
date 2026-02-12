@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>EchoValentines - Punch & Send</title>
   <meta name="description" content="Pick a box. Punch a card. Send a vibe. Zero friction valentine sharing."/>
-  <meta http-equiv="Cache-Control" content="public, max-age=31536000"/>
+  <!-- Caching: control at host/CDN. index.html = no-cache or short TTL; assets/ = hashed or longer TTL -->
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
@@ -32,7 +32,7 @@
   </header>
 
   <main class="container">
-    <div id="app" class="app" aria-live="polite"></div>
+    <div id="app" class="app" aria-live="polite" tabindex="-1"></div>
 
     <footer class="footer">
       <span>Static. No accounts. Your data stays in the link + your device.</span>

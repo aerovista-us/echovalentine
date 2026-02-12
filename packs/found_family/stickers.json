@@ -1,3 +1,9 @@
 {
-  "stickers": []
+  "stickers": [
+    {
+      "id": "ff-seal-svg",
+      "title": "Found Family Seal",
+      "src": "assets/stickers/seal_launch.svg"
+    }
+  ]
 }
