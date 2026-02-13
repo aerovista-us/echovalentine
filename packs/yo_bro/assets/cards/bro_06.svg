@@ -28,8 +28,6 @@
   <text x="450" y="330" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="22" fill="rgba(255,255,255,0.85)" opacity="0.9">Legend Behavior</text>
   <g opacity="0.85">
     <rect x="100" y="380" width="700" height="160" rx="16" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <text x="450" y="430" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="rgba(255,255,255,0.7)" opacity="0.9">Inside message goes here</text>
-    <text x="450" y="460" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="14" fill="rgba(255,255,255,0.6)" opacity="0.8">(User-customizable in composer)</text>
   </g>
   <text x="450" y="570" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="16" fill="rgba(255,255,255,0.6)" opacity="0.8" letter-spacing="2">YO, BRO</text>
 </svg>
