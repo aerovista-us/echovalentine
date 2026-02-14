@@ -50,7 +50,7 @@
   <!-- Title bar -->
   <rect x="96" y="122" width="520" height="70" rx="22" fill="rgba(0,0,0,.4)" stroke="rgba(255,255,255,.08)"/>
   <text x="118" y="170" font-family="Arial Black, Arial" font-size="32" fill="rgba(255,252,248,.97)">To Our Team</text>
-  <!-- Central motif: gratitude / everyone ? many nodes, one circle (community) -->
+  <!-- Central motif: gratitude, everyone ? many nodes, one circle (community) -->
   <g transform="translate(450 300)">
     <!-- Outer ring: many small dots (everyone) -->
     <g filter="url(#softGlow)" opacity="0.9">
@@ -102,5 +102,5 @@
     <path d="M760 124v56" stroke="rgba(160,200,240,.7)" stroke-width="6" stroke-linecap="round"/>
   </g>
   <!-- Footer -->
-  <text x="96" y="540" font-family="Arial, sans-serif" font-size="17" fill="rgba(130,155,190,.92)">TFP · Founder Pack · Demo</text>
+  <text x="96" y="540" font-family="Arial, sans-serif" font-size="17" fill="rgba(130,155,190,.92)">TFP &#183; Founder Pack &#183; Demo</text>
 </svg>

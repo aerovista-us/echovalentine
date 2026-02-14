@@ -360,9 +360,9 @@ const { app, h, toast, confettiBurst, installUmami, track } = window.EV_UI;
 
     const prefs = window.EV_STORE.getPrefs();
     const state = {
-      to: prefs.to || "",
-      from: prefs.from || "",
-      msg: params.get("t") || "",
+      to: params.get("to") || prefs.to || "",
+      from: params.get("from") || prefs.from || "",
+      msg: params.get("t") || params.get("msg") || "",
       track: "",
       seal: pickEnvelopeSeal(data.stickers?.stickers || [])
     };
