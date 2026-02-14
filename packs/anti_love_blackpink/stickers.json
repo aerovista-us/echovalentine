@@ -7,6 +7,16 @@
       "src": "assets/stickers/seal_launch.svg"
     },
     {
+      "id": "albp-seal-heart",
+      "name": "Heart Seal",
+      "src": "assets/stickers/seal_heart.svg"
+    },
+    {
+      "id": "albp-seal-star",
+      "name": "Star Seal",
+      "src": "assets/stickers/seal_star.svg"
+    },
+    {
       "id": "albp-blender",
       "name": "Blender",
       "src": "assets/stickers/sticker.pk.1/blender_sticker.webp"

@@ -1,9 +1,1 @@
-{
-  "stickers": [
-    {
-      "id": "mom-seal-svg",
-      "title": "Mother Seal",
-      "src": "assets/stickers/seal_launch.svg"
-    }
-  ]
-}
+{"stickers":[{"id":"mom-seal-svg","title":"Mother Seal","src":"assets/stickers/seal_launch.svg"},{"id":"mom-seal-heart","title":"Heart Seal","src":"assets/stickers/seal_heart.svg"},{"id":"mom-seal-star","title":"Star Seal","src":"assets/stickers/seal_star.svg"}]}

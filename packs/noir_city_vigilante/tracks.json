@@ -1,3 +1,7 @@
 {
-  "tracks": []
+  "tracks": [
+    {"id": "backseat_silence", "title": "Backseat Silence", "src": "assets/audio/backseat_silence.mp3"},
+    {"id": "raincheck", "title": "Raincheck", "src": "assets/audio/raincheck.mp3"},
+    {"id": "streetlight_oath", "title": "Streetlight Oath", "src": "assets/audio/streetlight_oath.mp3"}
+  ]
 }

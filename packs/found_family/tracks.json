@@ -1,3 +1,7 @@
 {
-  "tracks": []
+  "tracks": [
+    {"id": "over_time", "title": "Over Time", "src": "assets/audio/over_time.mp3"},
+    {"id": "built_not_named", "title": "Built Not Named", "src": "assets/audio/built_not_named.mp3"},
+    {"id": "streetlight_oath", "title": "Streetlight Oath", "src": "assets/audio/streetlight_oath.mp3"}
+  ]
 }

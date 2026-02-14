@@ -1,3 +1,7 @@
 {
-  "tracks": []
+  "tracks": [
+    {"id": "proud_always", "title": "Proud Always", "src": "assets/audio/proud_always.mp3"},
+    {"id": "everyday_love_alt", "title": "Everyday Love (Alt)", "src": "assets/audio/everyday_love_alt.mp3"},
+    {"id": "everyday_love", "title": "Everyday Love", "src": "assets/audio/everyday_love.mp3"}
+  ]
 }

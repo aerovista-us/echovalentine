@@ -1,3 +1,7 @@
 {
-  "tracks": []
+  "tracks": [
+    {"id": "moonbeam_messages", "title": "Moonbeam Messages", "src": "assets/audio/moonbeam_messages.mp3"},
+    {"id": "constellation_crush", "title": "Constellation Crush", "src": "assets/audio/constellation_crush.mp3"},
+    {"id": "starlight_stickers", "title": "Starlight Stickers", "src": "assets/audio/starlight_stickers.mp3"}
+  ]
 }

@@ -1,9 +1,1 @@
-{
-  "stickers": [
-    {
-      "id": "ff-seal-svg",
-      "title": "Found Family Seal",
-      "src": "assets/stickers/seal_launch.svg"
-    }
-  ]
-}
+{"stickers":[{"id":"ff-seal-svg","title":"Found Family Seal","src":"assets/stickers/seal_launch.svg"},{"id":"ff-seal-heart","title":"Heart Seal","src":"assets/stickers/seal_heart.svg"},{"id":"ff-seal-star","title":"Star Seal","src":"assets/stickers/seal_star.svg"}]}

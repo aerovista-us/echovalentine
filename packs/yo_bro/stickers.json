@@ -1,9 +1,1 @@
-{
-  "stickers": [
-    {
-      "id": "bro-seal-svg",
-      "title": "Bro Seal",
-      "src": "assets/stickers/seal_launch.svg"
-    }
-  ]
-}
+{"stickers":[{"id":"bro-seal-svg","title":"Bro Seal","src":"assets/stickers/seal_launch.svg"},{"id":"bro-seal-heart","title":"Heart Seal","src":"assets/stickers/seal_heart.svg"},{"id":"bro-seal-star","title":"Star Seal","src":"assets/stickers/seal_star.svg"}]}

@@ -1,3 +1,10 @@
 {
-  "tracks": []
+  "tracks": [
+    {"id": "lowkey_loyal", "title": "Lowkey Loyal", "src": "assets/audio/lowkey_loyal.mp3"},
+    {"id": "we_ride", "title": "We Ride", "src": "assets/audio/we_ride.mp3"},
+    {"id": "bro_code_alt", "title": "Bro Code (Alt)", "src": "assets/audio/bro_code_alt.mp3"},
+    {"id": "bro_code", "title": "Bro Code", "src": "assets/audio/bro_code.mp3"},
+    {"id": "lowkey_loyal_alt", "title": "Lowkey Loyal (Alt)", "src": "assets/audio/lowkey_loyal_alt.mp3"},
+    {"id": "lowkey_loyal_2", "title": "Lowkey Loyal (2)", "src": "assets/audio/lowkey_loyal_(2).mp3"}
+  ]
 }
