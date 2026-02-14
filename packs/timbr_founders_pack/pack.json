@@ -5,7 +5,7 @@
   "tagline": "Founder's exclusive collection",
   "description": "Exclusive founder's pack with unique cards and special designs. A limited collection for early supporters.",
   "version": "1.0.0",
-  "cards_count": 16,
+  "cards_count": 17,
   "pricing": {
     "tier": "premium",
     "price_usd": 5,

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0f1a"/>
+      <stop offset="0.5" stop-color="#12162a"/>
+      <stop offset="1" stop-color="#07080d"/>
+    </linearGradient>
+    <linearGradient id="cardFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(22,26,48,.92)"/>
+      <stop offset="1" stop-color="rgba(12,14,32,.95)"/>
+    </linearGradient>
+    <linearGradient id="heartGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#c41e5e"/>
+      <stop offset="0.4" stop-color="#e84d7a"/>
+      <stop offset="1" stop-color="#ff7aa0"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgba(0,245,255,.5)"/>
+      <stop offset="0.5" stop-color="rgba(255,43,214,.7)"/>
+      <stop offset="1" stop-color="rgba(0,245,255,.5)"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-opacity=".42"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+    <!-- Decorative heart shape (centered at 0,0, ~20 units wide) -->
+    <path id="heart" d="M0-10c-6-7-16-7-20 0-6 10 0 20 11 28 11-8 17-18 11-28-4-7-14-7-20 0z" fill="url(#heartGrad)" opacity="0.9"/>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <rect x="40" y="40" width="820" height="520" rx="42" fill="url(#cardFill)" filter="url(#shadow)" stroke="rgba(255,255,255,.1)"/>
+  <rect x="40" y="40" width="820" height="520" rx="42" fill="url(#grain)" opacity=".6"/>
+  <!-- Top / bottom rule lines -->
+  <path d="M92 92h716" stroke="url(#accentLine)" stroke-width="3" stroke-linecap="round" stroke-dasharray="12 16" opacity="0.9"/>
+  <path d="M92 512h716" stroke="url(#accentLine)" stroke-width="3" stroke-linecap="round" stroke-dasharray="12 16" opacity="0.9"/>
+  <!-- Title bar -->
+  <rect x="96" y="122" width="520" height="70" rx="22" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.1)"/>
+  <text x="118" y="170" font-family="Arial Black, Arial" font-size="32" fill="rgba(255,252,248,.96)">To Our Team</text>
+  <!-- Central illustration: layered hearts -->
+  <g transform="translate(450 300)">
+    <g opacity="0.2"><use href="#heart" transform="scale(10)"/></g>
+    <g opacity="0.32"><use href="#heart" transform="scale(6) translate(-22,-14)"/><use href="#heart" transform="scale(6) translate(20,-16)"/></g>
+    <g opacity="0.48"><use href="#heart" transform="scale(4) translate(-32,6)"/><use href="#heart" transform="scale(4) translate(30,4)"/></g>
+    <g opacity="0.72" filter="url(#glow)"><use href="#heart" transform="scale(2.6) translate(-14,0)"/><use href="#heart" transform="scale(2.6) translate(12,-2)"/></g>
+    <circle cx="-50" cy="-30" r="6" fill="rgba(255,122,160,.55)"/>
+    <circle cx="48" cy="-32" r="5" fill="rgba(0,245,255,.38)"/>
+    <circle cx="-44" cy="28" r="5" fill="rgba(255,43,214,.32)"/>
+    <circle cx="52" cy="26" r="6" fill="rgba(255,252,248,.22)"/>
+  </g>
+  <!-- Right-side accent (plus icon like other cards) -->
+  <g opacity=".9">
+    <circle cx="760" cy="152" r="44" fill="rgba(0,245,255,.12)" stroke="rgba(0,245,255,.7)" stroke-width="3"/>
+    <path d="M732 152h56" stroke="rgba(255,43,214,.85)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M760 124v56" stroke="rgba(255,43,214,.85)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <!-- Footer -->
+  <text x="96" y="540" font-family="Arial, sans-serif" font-size="18" fill="rgba(142,160,200,.9)">TFP ? Founder Pack ? Demo</text>
+</svg>

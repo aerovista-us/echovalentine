@@ -79,6 +79,11 @@
       "id": "tfp_04",
       "title": "Tfp 04",
       "src": "assets/cards/tfp_04.svg"
+    },
+    {
+      "id": "tfp-demo",
+      "title": "To Our Team (Demo)",
+      "src": "assets/cards/tfp-demo.svg"
     }
   ]
 }
